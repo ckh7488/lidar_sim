@@ -1,0 +1,143 @@
+{
+  "views": [
+    {
+      "name": "초반",
+      "file": "window_0.f32",
+      "start_s": 1.0,
+      "duration_s": 1.67,
+      "valid_return_count": 187103,
+      "shown_sample_count": 150000,
+      "columns": [
+        "local_x",
+        "local_y",
+        "local_z",
+        "world_x",
+        "world_y",
+        "world_z",
+        "range_m",
+        "reflectivity",
+        "signal",
+        "nir",
+        "time_s"
+      ],
+      "sampling": "Deterministic uniform sample of positive valid returns, never selected by suspected noise",
+      "world_pose": "Most recently captured rotor angle per packet, demonstrative only; clocks/latency not solved",
+      "sha256": "9abbfb1c2608332cdeb24aee075913fa593e0a3d0d5740f16351dbb96715638a"
+    },
+    {
+      "name": "중간",
+      "file": "window_1.f32",
+      "start_s": 15.1757995,
+      "duration_s": 1.67,
+      "valid_return_count": 190734,
+      "shown_sample_count": 150000,
+      "columns": [
+        "local_x",
+        "local_y",
+        "local_z",
+        "world_x",
+        "world_y",
+        "world_z",
+        "range_m",
+        "reflectivity",
+        "signal",
+        "nir",
+        "time_s"
+      ],
+      "sampling": "Deterministic uniform sample of positive valid returns, never selected by suspected noise",
+      "world_pose": "Most recently captured rotor angle per packet, demonstrative only; clocks/latency not solved",
+      "sha256": "38984dc1deb3a0e49f0dea6b8408128e2884013bb4bf9e2f7f7c445511329fff"
+    },
+    {
+      "name": "후반",
+      "file": "window_2.f32",
+      "start_s": 29.351599,
+      "duration_s": 1.67,
+      "valid_return_count": 191606,
+      "shown_sample_count": 150000,
+      "columns": [
+        "local_x",
+        "local_y",
+        "local_z",
+        "world_x",
+        "world_y",
+        "world_z",
+        "range_m",
+        "reflectivity",
+        "signal",
+        "nir",
+        "time_s"
+      ],
+      "sampling": "Deterministic uniform sample of positive valid returns, never selected by suspected noise",
+      "world_pose": "Most recently captured rotor angle per packet, demonstrative only; clocks/latency not solved",
+      "sha256": "35e9b3fb0601e4ce22aa2710986957c0f2c4e927447530ae5e3ad8363ed1c7e8"
+    }
+  ],
+  "range_images": [
+    {
+      "name": "초반",
+      "frame_id": 4329,
+      "file": "range_image_0.f32",
+      "shape": [
+        32,
+        1024,
+        4
+      ],
+      "fields": [
+        "range_m",
+        "nir",
+        "signal",
+        "reflectivity"
+      ],
+      "time_s": 0.99607,
+      "valid_return_count": 8896,
+      "zero_range_count": 23872,
+      "note": "Raw measurement ID x channel, not destaggered. Zero range displayed as black in range mode; NIR remains visible.",
+      "sha256": "8078efc57a613d85be7b0e4a96a3bb1915df706c3d45e151b4dcdddeaa221440"
+    },
+    {
+      "name": "중간",
+      "frame_id": 4471,
+      "file": "range_image_1.f32",
+      "shape": [
+        32,
+        1024,
+        4
+      ],
+      "fields": [
+        "range_m",
+        "nir",
+        "signal",
+        "reflectivity"
+      ],
+      "time_s": 15.196007,
+      "valid_return_count": 11821,
+      "zero_range_count": 20947,
+      "note": "Raw measurement ID x channel, not destaggered. Zero range displayed as black in range mode; NIR remains visible.",
+      "sha256": "db625f881830e6579280d976a3a7ee6ab6403a09548838ed5cbfc7510a3292c1"
+    },
+    {
+      "name": "후반",
+      "frame_id": 4613,
+      "file": "range_image_2.f32",
+      "shape": [
+        32,
+        1024,
+        4
+      ],
+      "fields": [
+        "range_m",
+        "nir",
+        "signal",
+        "reflectivity"
+      ],
+      "time_s": 29.396239,
+      "valid_return_count": 12784,
+      "zero_range_count": 19984,
+      "note": "Raw measurement ID x channel, not destaggered. Zero range displayed as black in range mode; NIR remains visible.",
+      "sha256": "5a03995f1afcd45472be907a0ce228aa79bfe68f8fae855fdc61667c2befab3b"
+    }
+  ],
+  "audit": "audit.json",
+  "binary_columns": 11
+}

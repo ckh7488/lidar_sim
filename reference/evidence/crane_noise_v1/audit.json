@@ -1,0 +1,1013 @@
+{
+  "format": "crane-noise-review-v1",
+  "source": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\pcap데이터\\#2 26.09.04.pcapng",
+  "source_sha256": "8674e7ead0021685973c9780dc11aaf6a019642d914e0009e90ed7eb0e4a6836",
+  "capture": {
+    "sha256": "8674e7ead0021685973c9780dc11aaf6a019642d914e0009e90ed7eb0e4a6836",
+    "bytes": 141669520,
+    "interfaces": [
+      {
+        "link": 1,
+        "snaplen": 262144,
+        "name": "\\Device\\NPF_{EA8F7D5B-4AE1-4E3A-B258-97E6499329F5}",
+        "description": "GBE2_LIDAR2",
+        "ts_resolution": 6
+      }
+    ],
+    "statistics": [
+      {
+        "interface": 0,
+        "options": {
+          "comment": [
+            "Counters provided by dumpcap"
+          ],
+          "capture_start_us": [
+            1788489991906573
+          ],
+          "capture_end_us": [
+            1788490023918292
+          ],
+          "received_packets": [
+            137925
+          ],
+          "dropped_packets": [
+            0
+          ]
+        }
+      }
+    ],
+    "counts": {
+      "frames": 137925,
+      "fragment_frames": 102474,
+      "reassembled_datagrams": 20494,
+      "non_ipv4": 4
+    },
+    "incomplete_fragment_groups": [
+      {
+        "key": "(0, '192.168.102.101', '192.168.102.103', 40340, 17)",
+        "frames": [
+          137921,
+          137922,
+          137923,
+          137925
+        ],
+        "offsets": [
+          0,
+          1480,
+          2960,
+          4440
+        ]
+      }
+    ],
+    "capture_timestamp_backsteps_us": {
+      "min": -1.0,
+      "p01": -1.0,
+      "p50": -1.0,
+      "p90": -1.0,
+      "p99": -1.0,
+      "p999": -1.0,
+      "max": -1.0,
+      "count": 3
+    },
+    "start_us": 1788489991906454,
+    "end_us": 1788490023929568,
+    "duration_s": 32.023114,
+    "start_kst": "2026-09-04T11:46:31.906454+09:00",
+    "end_kst": "2026-09-04T11:47:03.929568+09:00",
+    "streams": [
+      {
+        "src": "192.168.102.102",
+        "dst": "192.168.102.103",
+        "sport": 62511,
+        "dport": 6001,
+        "payload_bytes": 8,
+        "packets": 32023
+      },
+      {
+        "src": "192.168.102.101",
+        "dst": "192.168.102.103",
+        "sport": 40906,
+        "dport": 7502,
+        "payload_bytes": 6400,
+        "packets": 20494
+      },
+      {
+        "src": "192.168.102.101",
+        "dst": "192.168.102.103",
+        "sport": 59435,
+        "dport": 7503,
+        "payload_bytes": 48,
+        "packets": 3203
+      },
+      {
+        "src": "192.168.102.102",
+        "dst": "224.0.1.129",
+        "sport": 62510,
+        "dport": 319,
+        "payload_bytes": 44,
+        "packets": 32
+      },
+      {
+        "src": "192.168.102.102",
+        "dst": "224.0.1.129",
+        "sport": 62510,
+        "dport": 320,
+        "payload_bytes": 44,
+        "packets": 32
+      },
+      {
+        "src": "192.168.102.103",
+        "dst": "192.168.102.102",
+        "sport": 7001,
+        "dport": 7001,
+        "payload_bytes": 11,
+        "packets": 32
+      },
+      {
+        "src": "192.168.102.102",
+        "dst": "192.168.102.103",
+        "sport": 7001,
+        "dport": 7001,
+        "payload_bytes": 6,
+        "packets": 32
+      },
+      {
+        "src": "192.168.102.101",
+        "dst": "224.0.1.129",
+        "sport": 319,
+        "dport": 319,
+        "payload_bytes": 44,
+        "packets": 34
+      },
+      {
+        "src": "192.168.102.102",
+        "dst": "224.0.1.129",
+        "sport": 62512,
+        "dport": 320,
+        "payload_bytes": 54,
+        "packets": 34
+      },
+      {
+        "src": "192.168.102.102",
+        "dst": "224.0.1.129",
+        "sport": 62510,
+        "dport": 320,
+        "payload_bytes": 64,
+        "packets": 16
+      }
+    ],
+    "lidar_columns": {
+      "invalid_status_columns": 0,
+      "nonmonotonic_columns": 0
+    },
+    "ptp_count": 148,
+    "crc64": {
+      "checked": 20494,
+      "matched": 20494,
+      "mismatch_capture_frames": []
+    }
+  },
+  "sensor_config": {
+    "path": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\pcap데이터\\interfacerotor.json",
+    "sha256": "58b9ffa4edde29b7aab96c323cd8942f7f76fea09e6917dfaa817e911aa650bd",
+    "section": "Rotor2",
+    "product": "OS-1-32-U2-SR",
+    "profile": "RNG19_RFL8_SIG16_NIR16",
+    "scan_start": 1,
+    "configured_target_rpm": 37,
+    "mounting_transform_provenance": "Adjacent configuration, not independently surveyed; historical executable version not established"
+  },
+  "integrity": {
+    "lidar_packets": 20494,
+    "sample_slots": 10492928,
+    "valid_columns": 327904,
+    "invalid_columns": 0,
+    "zero_ranges": 6899222,
+    "zero_range_pct": 65.75116116302333,
+    "positive_valid_returns": 3593706,
+    "sequence_step_counts": {
+      "16": 20493
+    },
+    "missing_columns_inside_capture": 0,
+    "non_forward_steps": 0,
+    "interior_frames": 319,
+    "interior_complete_frames": 319,
+    "edge_frames_excluded_from_completeness": true,
+    "zero_range_interpretation": "No detected range, not evidence of a missing packet, and not an optical-noise label"
+  },
+  "return_descriptors": {
+    "range_m": {
+      "min": 0.6350000500679016,
+      "p01": 0.983050039410594,
+      "p50": 3.182000160217285,
+      "p90": 40.86300277709961,
+      "p99": 67.48900604248047,
+      "p999": 98.99947753906213,
+      "max": 226.84701538085938,
+      "count": 3593706
+    },
+    "signal_positive": {
+      "min": 5.0,
+      "p01": 23.0,
+      "p50": 1129.0,
+      "p90": 3191.0,
+      "p99": 3902.0,
+      "p999": 4400.0,
+      "max": 5713.0,
+      "count": 3593706
+    },
+    "reflectivity_positive": {
+      "min": 1.0,
+      "p01": 1.0,
+      "p50": 12.0,
+      "p90": 30.0,
+      "p99": 43.0,
+      "p999": 58.0,
+      "max": 204.0,
+      "count": 3593706
+    },
+    "nir_all_slots": {
+      "min": 0.0,
+      "p01": 396.0,
+      "p50": 4050.0,
+      "p90": 15083.0,
+      "p99": 31837.0,
+      "p999": 65535.0,
+      "max": 65535.0,
+      "count": 10492928
+    },
+    "nir_at_encoding_max_count": 14985,
+    "nir_at_encoding_max_pct": 0.1428104719674051,
+    "nir_max_zero_range_pct": 98.21154487821154,
+    "nir_max_interpretation": "Encoding maximum, not proof of receiver saturation, sunlight fault or a removable point",
+    "range_bins_m": [
+      0,
+      0.5,
+      2,
+      5,
+      10,
+      20,
+      40,
+      80,
+      150,
+      524.288
+    ],
+    "positive_range_counts": [
+      0,
+      941320,
+      1255971,
+      268623,
+      90996,
+      666998,
+      356855,
+      12869,
+      74
+    ]
+  },
+  "timing": {
+    "lidar_capture_interval_ms": {
+      "min": 0.6339999999998014,
+      "p01": 1.2379999999998503,
+      "p50": 1.5630000000008692,
+      "p90": 1.760000000000872,
+      "p99": 1.8960000000003419,
+      "p999": 2.1235079999979565,
+      "max": 2.3269999999975255,
+      "count": 20493
+    },
+    "lidar_device_interval_ms": {
+      "min": 1.5510159999996276,
+      "p01": 1.55465599999971,
+      "p50": 1.5624159999987342,
+      "p90": 1.567303999999936,
+      "p99": 1.5712566400016215,
+      "p999": 1.5741366399992336,
+      "max": 1.575896000002075,
+      "count": 20493
+    },
+    "capture_gaps_over_10ms": 0,
+    "device_gaps_over_10ms": 0,
+    "motor_reported_rpm": {
+      "min": 16.5,
+      "p01": 34.5,
+      "p50": 36.0,
+      "p90": 36.0,
+      "p99": 37.5,
+      "p999": 42.0,
+      "max": 54.0,
+      "count": 32023
+    },
+    "motor_fit_rpm": 35.36478170964458,
+    "motor_angle_fit_residual_deg": {
+      "min": -0.20150324620408355,
+      "p01": -0.18726938727066111,
+      "p50": -0.004335469116085733,
+      "p90": 0.17825776100071378,
+      "p99": 0.19742832217809334,
+      "p999": 0.20446802505495992,
+      "max": 0.2942993085332546,
+      "count": 32023
+    },
+    "latest_arrival_angle_age_ms": {
+      "min": 0.0,
+      "p01": 0.0,
+      "p50": 0.653,
+      "p90": 1.225,
+      "p99": 1.352,
+      "p999": 1.6045210000000043,
+      "max": 1.764,
+      "count": 20494
+    },
+    "rotor_minus_lidar_clock_ms": {
+      "min": 9628.219672,
+      "p01": 9628.352723760001,
+      "p50": 9628.966284,
+      "p90": 9629.3843192,
+      "p99": 9629.57663856,
+      "p999": 9629.648765959999,
+      "max": 9629.917664,
+      "count": 20494
+    },
+    "latest_arrival_pose_is_ground_truth": false
+  },
+  "per_second": [
+    {
+      "second": 0,
+      "packets": 640,
+      "positive_returns": 107589,
+      "zero_range_pct": 67.16644287109375,
+      "nir_p50": 3905.0,
+      "nir_p99": 28611.630000000063,
+      "signal_p50_positive": 1084.0
+    },
+    {
+      "second": 1,
+      "packets": 640,
+      "positive_returns": 111174,
+      "zero_range_pct": 66.0723876953125,
+      "nir_p50": 4113.0,
+      "nir_p99": 28873.050000000105,
+      "signal_p50_positive": 1294.0
+    },
+    {
+      "second": 2,
+      "packets": 640,
+      "positive_returns": 109536,
+      "zero_range_pct": 66.572265625,
+      "nir_p50": 4283.0,
+      "nir_p99": 30106.420000000042,
+      "signal_p50_positive": 1264.0
+    },
+    {
+      "second": 3,
+      "packets": 640,
+      "positive_returns": 118632,
+      "zero_range_pct": 63.79638671875,
+      "nir_p50": 4060.0,
+      "nir_p99": 32990.840000000084,
+      "signal_p50_positive": 1102.0
+    },
+    {
+      "second": 4,
+      "packets": 640,
+      "positive_returns": 111237,
+      "zero_range_pct": 66.05316162109375,
+      "nir_p50": 3830.0,
+      "nir_p99": 33178.21000000002,
+      "signal_p50_positive": 1009.0
+    },
+    {
+      "second": 5,
+      "packets": 640,
+      "positive_returns": 112463,
+      "zero_range_pct": 65.67901611328125,
+      "nir_p50": 3620.0,
+      "nir_p99": 28692.0,
+      "signal_p50_positive": 957.0
+    },
+    {
+      "second": 6,
+      "packets": 640,
+      "positive_returns": 110531,
+      "zero_range_pct": 66.26861572265625,
+      "nir_p50": 3305.0,
+      "nir_p99": 28118.420000000042,
+      "signal_p50_positive": 1197.0
+    },
+    {
+      "second": 7,
+      "packets": 640,
+      "positive_returns": 108900,
+      "zero_range_pct": 66.766357421875,
+      "nir_p50": 3564.0,
+      "nir_p99": 28277.21000000002,
+      "signal_p50_positive": 1234.0
+    },
+    {
+      "second": 8,
+      "packets": 640,
+      "positive_returns": 118653,
+      "zero_range_pct": 63.78997802734375,
+      "nir_p50": 3993.0,
+      "nir_p99": 31332.630000000063,
+      "signal_p50_positive": 1223.0
+    },
+    {
+      "second": 9,
+      "packets": 640,
+      "positive_returns": 111526,
+      "zero_range_pct": 65.9649658203125,
+      "nir_p50": 4042.0,
+      "nir_p99": 35191.89000000019,
+      "signal_p50_positive": 1031.0
+    },
+    {
+      "second": 10,
+      "packets": 640,
+      "positive_returns": 115887,
+      "zero_range_pct": 64.63409423828125,
+      "nir_p50": 4003.0,
+      "nir_p99": 31273.420000000042,
+      "signal_p50_positive": 919.0
+    },
+    {
+      "second": 11,
+      "packets": 640,
+      "positive_returns": 110153,
+      "zero_range_pct": 66.38397216796875,
+      "nir_p50": 3811.0,
+      "nir_p99": 29485.050000000105,
+      "signal_p50_positive": 1115.0
+    },
+    {
+      "second": 12,
+      "packets": 640,
+      "positive_returns": 108100,
+      "zero_range_pct": 67.010498046875,
+      "nir_p50": 3858.0,
+      "nir_p99": 29248.630000000063,
+      "signal_p50_positive": 1161.0
+    },
+    {
+      "second": 13,
+      "packets": 640,
+      "positive_returns": 116631,
+      "zero_range_pct": 64.40704345703125,
+      "nir_p50": 4154.5,
+      "nir_p99": 30078.21000000002,
+      "signal_p50_positive": 1300.0
+    },
+    {
+      "second": 14,
+      "packets": 640,
+      "positive_returns": 110615,
+      "zero_range_pct": 66.24298095703125,
+      "nir_p50": 4175.0,
+      "nir_p99": 35397.260000000126,
+      "signal_p50_positive": 1132.0
+    },
+    {
+      "second": 15,
+      "packets": 640,
+      "positive_returns": 117972,
+      "zero_range_pct": 63.997802734375,
+      "nir_p50": 4181.0,
+      "nir_p99": 34973.260000000126,
+      "signal_p50_positive": 963.0
+    },
+    {
+      "second": 16,
+      "packets": 640,
+      "positive_returns": 111279,
+      "zero_range_pct": 66.04034423828125,
+      "nir_p50": 4032.0,
+      "nir_p99": 31780.0,
+      "signal_p50_positive": 1025.0
+    },
+    {
+      "second": 17,
+      "packets": 640,
+      "positive_returns": 107435,
+      "zero_range_pct": 67.21343994140625,
+      "nir_p50": 3945.0,
+      "nir_p99": 30751.840000000084,
+      "signal_p50_positive": 1095.0
+    },
+    {
+      "second": 18,
+      "packets": 640,
+      "positive_returns": 112797,
+      "zero_range_pct": 65.57708740234375,
+      "nir_p50": 4354.0,
+      "nir_p99": 30916.0,
+      "signal_p50_positive": 1306.0
+    },
+    {
+      "second": 19,
+      "packets": 640,
+      "positive_returns": 109423,
+      "zero_range_pct": 66.60675048828125,
+      "nir_p50": 4489.0,
+      "nir_p99": 33103.42000000004,
+      "signal_p50_positive": 1254.0
+    },
+    {
+      "second": 20,
+      "packets": 640,
+      "positive_returns": 118235,
+      "zero_range_pct": 63.91754150390625,
+      "nir_p50": 4353.0,
+      "nir_p99": 36585.0,
+      "signal_p50_positive": 1071.0
+    },
+    {
+      "second": 21,
+      "packets": 640,
+      "positive_returns": 110337,
+      "zero_range_pct": 66.32781982421875,
+      "nir_p50": 4239.0,
+      "nir_p99": 35031.47000000015,
+      "signal_p50_positive": 1011.0
+    },
+    {
+      "second": 22,
+      "packets": 640,
+      "positive_returns": 110125,
+      "zero_range_pct": 66.39251708984375,
+      "nir_p50": 4176.0,
+      "nir_p99": 31280.0,
+      "signal_p50_positive": 1030.0
+    },
+    {
+      "second": 23,
+      "packets": 640,
+      "positive_returns": 109380,
+      "zero_range_pct": 66.619873046875,
+      "nir_p50": 4240.0,
+      "nir_p99": 31076.630000000063,
+      "signal_p50_positive": 1246.0
+    },
+    {
+      "second": 24,
+      "packets": 640,
+      "positive_returns": 108828,
+      "zero_range_pct": 66.788330078125,
+      "nir_p50": 4499.0,
+      "nir_p99": 31123.840000000084,
+      "signal_p50_positive": 1268.0
+    },
+    {
+      "second": 25,
+      "packets": 640,
+      "positive_returns": 117948,
+      "zero_range_pct": 64.005126953125,
+      "nir_p50": 4347.0,
+      "nir_p99": 34568.260000000126,
+      "signal_p50_positive": 1202.0
+    },
+    {
+      "second": 26,
+      "packets": 640,
+      "positive_returns": 110878,
+      "zero_range_pct": 66.1627197265625,
+      "nir_p50": 4258.0,
+      "nir_p99": 37271.21000000002,
+      "signal_p50_positive": 1040.5
+    },
+    {
+      "second": 27,
+      "packets": 640,
+      "positive_returns": 113850,
+      "zero_range_pct": 65.2557373046875,
+      "nir_p50": 4210.0,
+      "nir_p99": 31602.260000000126,
+      "signal_p50_positive": 944.0
+    },
+    {
+      "second": 28,
+      "packets": 640,
+      "positive_returns": 109592,
+      "zero_range_pct": 66.55517578125,
+      "nir_p50": 4041.0,
+      "nir_p99": 30430.050000000105,
+      "signal_p50_positive": 1150.0
+    },
+    {
+      "second": 29,
+      "packets": 640,
+      "positive_returns": 108293,
+      "zero_range_pct": 66.95159912109375,
+      "nir_p50": 4074.0,
+      "nir_p99": 30154.21000000002,
+      "signal_p50_positive": 1191.0
+    },
+    {
+      "second": 30,
+      "packets": 640,
+      "positive_returns": 117708,
+      "zero_range_pct": 64.078369140625,
+      "nir_p50": 4124.0,
+      "nir_p99": 31313.630000000063,
+      "signal_p50_positive": 1276.0
+    },
+    {
+      "second": 31,
+      "packets": 640,
+      "positive_returns": 111831,
+      "zero_range_pct": 65.87188720703125,
+      "nir_p50": 3877.0,
+      "nir_p99": 36269.21000000002,
+      "signal_p50_positive": 1073.0
+    },
+    {
+      "second": 32,
+      "packets": 14,
+      "positive_returns": 6168,
+      "zero_range_pct": 13.950892857142858,
+      "nir_p50": 4677.0,
+      "nir_p99": 16353.96,
+      "signal_p50_positive": 959.0
+    }
+  ],
+  "training": false,
+  "optical_cause_labels": false,
+  "scope": "Fault-state diagnostic sample. NIR is a background-light channel, not a sunlight fault label. No clean/shaded paired capture supplied.",
+  "code_sha256": {
+    "E:\\NOCOL\\Nocol_SSM\\tools\\false_positive_yjib1\\pcap_timing.py": "e224e730503c8bbfbb0e7ba696a103bab2d11c37ca29374616f355e48b9f256b",
+    "E:\\NOCOL\\Nocol_SSM\\tools\\jib_pose_lab\\jib_pose_lab\\parser.py": "e4c4703f4803b3e62a7449ea11b95f0b22e9e04d7612a537a6b998f3af35cdf4",
+    "E:\\NOCOL\\Nocol_SSM\\core\\3rd\\Device\\os1_32_rev7\\protocolOS1_32_rev7.h": "1e973d2b50914fa634df35431ff6adf3116b8b971e987f837f521526a5680401",
+    "E:\\NeuralMap\\scripts\\analyze_crane_noise_v1.py": "87cce1001fc017915ec32ed9acc39306d04ca189ae9eb6a0e8fcb56dc7d935bc"
+  },
+  "decoder_crosscheck": {
+    "against": "Existing project packet_to_xyz (same product convention, not independent hardware truth)",
+    "packet_count": 3,
+    "max_difference_m": 5.081013503884786e-06,
+    "passed": true,
+    "optical_origin_offset": "Matches project approximation; not Ouster SDK beam-origin calibrated geometry"
+  },
+  "views": [
+    {
+      "name": "초반",
+      "file": "window_0.f32",
+      "start_s": 1.0,
+      "duration_s": 1.67,
+      "valid_return_count": 187103,
+      "shown_sample_count": 150000,
+      "columns": [
+        "local_x",
+        "local_y",
+        "local_z",
+        "world_x",
+        "world_y",
+        "world_z",
+        "range_m",
+        "reflectivity",
+        "signal",
+        "nir",
+        "time_s"
+      ],
+      "sampling": "Deterministic uniform sample of positive valid returns, never selected by suspected noise",
+      "world_pose": "Most recently captured rotor angle per packet, demonstrative only; clocks/latency not solved",
+      "sha256": "9abbfb1c2608332cdeb24aee075913fa593e0a3d0d5740f16351dbb96715638a"
+    },
+    {
+      "name": "중간",
+      "file": "window_1.f32",
+      "start_s": 15.1757995,
+      "duration_s": 1.67,
+      "valid_return_count": 190734,
+      "shown_sample_count": 150000,
+      "columns": [
+        "local_x",
+        "local_y",
+        "local_z",
+        "world_x",
+        "world_y",
+        "world_z",
+        "range_m",
+        "reflectivity",
+        "signal",
+        "nir",
+        "time_s"
+      ],
+      "sampling": "Deterministic uniform sample of positive valid returns, never selected by suspected noise",
+      "world_pose": "Most recently captured rotor angle per packet, demonstrative only; clocks/latency not solved",
+      "sha256": "38984dc1deb3a0e49f0dea6b8408128e2884013bb4bf9e2f7f7c445511329fff"
+    },
+    {
+      "name": "후반",
+      "file": "window_2.f32",
+      "start_s": 29.351599,
+      "duration_s": 1.67,
+      "valid_return_count": 191606,
+      "shown_sample_count": 150000,
+      "columns": [
+        "local_x",
+        "local_y",
+        "local_z",
+        "world_x",
+        "world_y",
+        "world_z",
+        "range_m",
+        "reflectivity",
+        "signal",
+        "nir",
+        "time_s"
+      ],
+      "sampling": "Deterministic uniform sample of positive valid returns, never selected by suspected noise",
+      "world_pose": "Most recently captured rotor angle per packet, demonstrative only; clocks/latency not solved",
+      "sha256": "35e9b3fb0601e4ce22aa2710986957c0f2c4e927447530ae5e3ad8363ed1c7e8"
+    }
+  ],
+  "range_images": [
+    {
+      "name": "초반",
+      "frame_id": 4329,
+      "file": "range_image_0.f32",
+      "shape": [
+        32,
+        1024,
+        4
+      ],
+      "fields": [
+        "range_m",
+        "nir",
+        "signal",
+        "reflectivity"
+      ],
+      "time_s": 0.99607,
+      "valid_return_count": 8896,
+      "zero_range_count": 23872,
+      "note": "Raw measurement ID x channel, not destaggered. Zero range displayed as black in range mode; NIR remains visible.",
+      "sha256": "8078efc57a613d85be7b0e4a96a3bb1915df706c3d45e151b4dcdddeaa221440"
+    },
+    {
+      "name": "중간",
+      "frame_id": 4471,
+      "file": "range_image_1.f32",
+      "shape": [
+        32,
+        1024,
+        4
+      ],
+      "fields": [
+        "range_m",
+        "nir",
+        "signal",
+        "reflectivity"
+      ],
+      "time_s": 15.196007,
+      "valid_return_count": 11821,
+      "zero_range_count": 20947,
+      "note": "Raw measurement ID x channel, not destaggered. Zero range displayed as black in range mode; NIR remains visible.",
+      "sha256": "db625f881830e6579280d976a3a7ee6ab6403a09548838ed5cbfc7510a3292c1"
+    },
+    {
+      "name": "후반",
+      "frame_id": 4613,
+      "file": "range_image_2.f32",
+      "shape": [
+        32,
+        1024,
+        4
+      ],
+      "fields": [
+        "range_m",
+        "nir",
+        "signal",
+        "reflectivity"
+      ],
+      "time_s": 29.396239,
+      "valid_return_count": 12784,
+      "zero_range_count": 19984,
+      "note": "Raw measurement ID x channel, not destaggered. Zero range displayed as black in range mode; NIR remains visible.",
+      "sha256": "5a03995f1afcd45472be907a0ce228aa79bfe68f8fae855fdc61667c2befab3b"
+    }
+  ],
+  "diagnostic_logs": [
+    {
+      "path": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\2026년 9월 3일 13시 38분 30초.log",
+      "sha256": "1e7d57b81523e1ffe8d24767255464a955492668670b0da6611105ec1a72d447",
+      "bytes": 100235864,
+      "records": 38340,
+      "separators": 60,
+      "sensors": {
+        "0": {
+          "points": 2775488,
+          "zero": 0,
+          "code": {
+            "23": 19170
+          },
+          "packets": 19170,
+          "lidar_time_span_s": 30.007972248000442,
+          "device_interval_ms": {
+            "min": 0.0,
+            "p01": 1.5553439989162143,
+            "p50": 1.5624640000169165,
+            "p90": 1.566904000355862,
+            "p99": 1.5702265604340937,
+            "p999": 1.5728639991721138,
+            "max": 18.76213600189658,
+            "count": 19169
+          },
+          "nonpositive_time_steps": 2,
+          "reported_rpm": {
+            "min": 0.0,
+            "p01": 0.0,
+            "p50": 0.0,
+            "p90": 0.0,
+            "p99": 36.989999999865425,
+            "p999": 37.050000000202175,
+            "max": 37.080000000202425,
+            "count": 19170
+          },
+          "angle_step_deg": {
+            "min": 0.0,
+            "p01": 0.0,
+            "p50": 0.4319999999999595,
+            "p90": 0.4410000000000025,
+            "p99": 0.6480000000000246,
+            "p999": 1.6947359999997182,
+            "max": 4.788000000000011,
+            "count": 19169
+          },
+          "lidar_minus_rotor_ms": {
+            "min": 18042650.321384,
+            "p01": 18042659.99255416,
+            "p50": 18042662.274160005,
+            "p90": 18042662.824952003,
+            "p99": 18042663.73839816,
+            "p999": 18042667.061581556,
+            "max": 18042668.992768,
+            "count": 19170
+          }
+        },
+        "1": {
+          "points": 3369411,
+          "zero": 0,
+          "code": {
+            "23": 19170
+          },
+          "packets": 19170,
+          "lidar_time_span_s": 30.006058663999283,
+          "device_interval_ms": {
+            "min": 0.0,
+            "p01": 1.5543359986622818,
+            "p50": 1.5623839972249698,
+            "p90": 1.5675040012865793,
+            "p99": 1.5720640003564768,
+            "p999": 1.5763033585681108,
+            "max": 17.19554400187917,
+            "count": 19169
+          },
+          "nonpositive_time_steps": 6,
+          "reported_rpm": {
+            "min": 0.0,
+            "p01": 0.0,
+            "p50": 0.0,
+            "p90": 0.0,
+            "p99": 36.12000000007241,
+            "p999": 36.209999999868266,
+            "max": 36.24000000052736,
+            "count": 19170
+          },
+          "angle_step_deg": {
+            "min": 0.0,
+            "p01": 0.0,
+            "p50": 0.4140000000000157,
+            "p90": 0.43199999999998795,
+            "p99": 0.4410000000000025,
+            "p999": 3.3914879999999896,
+            "max": 5.93100000000004,
+            "count": 19169
+          },
+          "lidar_minus_rotor_ms": {
+            "min": 15350198.041728003,
+            "p01": 15350215.529728081,
+            "p50": 15350227.278212002,
+            "p90": 15350227.7243496,
+            "p99": 15350233.871896641,
+            "p999": 15350242.664511705,
+            "max": 15350248.649048002,
+            "count": 19170
+          }
+        }
+      },
+      "parsed_without_truncation": true,
+      "not_same_time_as_pcap": true,
+      "optical_signal_fields": "Range, azimuth, altitude, intensity only; NIR and raw signal not retained in these log records"
+    },
+    {
+      "path": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\pcap데이터\\26_0908_JIB1\\2026년 9월 8일 13시 47분 0초.log",
+      "sha256": "e4fe42b7555d21fc3848e9e82f0dfc2e31f856f2ad9192f8c546267acad9c57e",
+      "bytes": 99312744,
+      "records": 38340,
+      "separators": 60,
+      "sensors": {
+        "0": {
+          "points": 2718640,
+          "zero": 0,
+          "code": {
+            "23": 19170
+          },
+          "packets": 19170,
+          "lidar_time_span_s": 29.99688967199836,
+          "device_interval_ms": {
+            "min": -9.379991999594495,
+            "p01": 1.5550720017927233,
+            "p50": 1.5625039995939005,
+            "p90": 1.56698399950983,
+            "p99": 1.570304000779288,
+            "p999": 3.1199623043939932,
+            "max": 15.634608000254957,
+            "count": 19169
+          },
+          "nonpositive_time_steps": 5,
+          "reported_rpm": {
+            "min": 0.0,
+            "p01": 0.0,
+            "p50": 0.0,
+            "p90": 0.0,
+            "p99": 0.0,
+            "p999": 37.050000000202175,
+            "max": 37.34999999986407,
+            "count": 19170
+          },
+          "angle_step_deg": {
+            "min": -2.187000000000012,
+            "p01": 0.20699999999999363,
+            "p50": 0.43199999999998795,
+            "p90": 0.4410000000000025,
+            "p99": 0.45899999999997476,
+            "p999": 1.3034879999999673,
+            "max": 3.474000000000018,
+            "count": 19169
+          },
+          "lidar_minus_rotor_ms": {
+            "min": 18041826.551624,
+            "p01": 18041831.240173683,
+            "p50": 18041831.901836,
+            "p90": 18041832.307996802,
+            "p99": 18041832.45694328,
+            "p999": 18041833.198813375,
+            "max": 18041836.729896,
+            "count": 19170
+          }
+        },
+        "1": {
+          "points": 3368564,
+          "zero": 0,
+          "code": {
+            "23": 19170
+          },
+          "packets": 19170,
+          "lidar_time_span_s": 29.99628515999939,
+          "device_interval_ms": {
+            "min": -10.947327999019763,
+            "p01": 1.554096001200378,
+            "p50": 1.5623439976479858,
+            "p90": 1.5676559996791184,
+            "p99": 1.5722960015409626,
+            "p999": 1.575895935849985,
+            "max": 17.208447996381437,
+            "count": 19169
+          },
+          "nonpositive_time_steps": 6,
+          "reported_rpm": {
+            "min": 0.0,
+            "p01": 0.0,
+            "p50": 0.0,
+            "p90": 0.0,
+            "p99": 35.939999999869286,
+            "p999": 36.17999999986838,
+            "max": 36.210000000526925,
+            "count": 19170
+          },
+          "angle_step_deg": {
+            "min": -2.3220000000000027,
+            "p01": 0.1980000000000075,
+            "p50": 0.4140000000000441,
+            "p90": 0.43199999999998795,
+            "p99": 0.4348800000000002,
+            "p999": 1.22824799999974,
+            "max": 3.8070000000000164,
+            "count": 19169
+          },
+          "lidar_minus_rotor_ms": {
+            "min": 15350247.619408,
+            "p01": 15350253.138298802,
+            "p50": 15350254.006912,
+            "p90": 15350254.502625601,
+            "p99": 15350254.76710936,
+            "p999": 15350255.129019786,
+            "max": 15350258.896168001,
+            "count": 19170
+          }
+        }
+      },
+      "parsed_without_truncation": true,
+      "not_same_time_as_pcap": true,
+      "optical_signal_fields": "Range, azimuth, altitude, intensity only; NIR and raw signal not retained in these log records"
+    }
+  ]
+}

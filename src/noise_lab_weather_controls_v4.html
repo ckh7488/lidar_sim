@@ -1,0 +1,7 @@
+<fieldset class="controls" id="weather-controls" hidden><legend>날씨 후보 · 독립적인 단순화 모델</legend>
+<label><input id="weather-enabled" type="checkbox" checked>날씨 효과 켜기</label>
+<span id="weather-particles" class="controls"><label>입자 수 농도 <input id="weatherConcentration" type="range" min="0" max="100" step="1" value="40"><output id="weatherConcentration-out">40</output>개/m³</label>
+<label>단일 입자 지름 <input id="weatherDiameter" type="range" min=".1" max="10" step=".1" value="1"><output id="weatherDiameter-out">1</output>mm</label>
+<label>상대 반환 계수 <input id="weatherReturn" type="range" min="0" max="1" step=".01" value=".02"><output id="weatherReturn-out">.02</output></label></span>
+<label>균일 감쇠 α <input id="weatherAlpha" type="range" min="0" max=".12" step=".001" value=".002"><output id="weatherAlpha-out">.002</output>m⁻¹</label>
+<p class="muted">센서 응답은 미교정 가정입니다. 빔 반각 1mrad·출발 반경 1mm. 기본은 광자 수 변동과 적응 문턱이며, 이전 고정 문턱 2×10⁻⁶도 비교할 수 있습니다. 비·눈의 상대 반환 계수와 균일 감쇠 α를 조절할 수 있습니다. ‘날씨 효과’를 끄면 기준 장면과 비교할 수 있습니다.</p></fieldset>

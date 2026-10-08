@@ -1,0 +1,29 @@
+{
+  "revision": "confirmed-observation-defaults-v16",
+  "created": "2026-10-07T09:54:37.710Z",
+  "v15_omitted_radial_error_reproduced": true,
+  "world_background_exact_lidar_xyz": true,
+  "world_particles_unchanged": true,
+  "range_toggle_changes_world_background": true,
+  "user_seed": 73031,
+  "user_geometry": {
+    "terrainCm": 0.285,
+    "pitchDeg": 0.179,
+    "rollDeg": 0.54,
+    "wobbleDeg": 0.32,
+    "wobblePhase": 319,
+    "wobbleCycles": 1,
+    "opticalOffset": true,
+    "compensateWobble": false
+  },
+  "surface_range_rms_m": 0.059996998626167024,
+  "terrain_mesh_std_m": 0.005000000000272935,
+  "ground_hit_rms_m": {
+    "flat": 4.983792106106786e-8,
+    "terrain": 0.0030199415330087525
+  },
+  "wobble_uncorrected_vs_compensated_xyz_rms_m": 0.06213650880079088,
+  "matched_default_samples": 3000,
+  "field_calibrated": false,
+  "training": false
+}

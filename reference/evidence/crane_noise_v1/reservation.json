@@ -1,0 +1,45 @@
+{
+  "created_utc": "2026-10-07T08:31:01.410619+00:00",
+  "scope": "Reserved before this NeuralMap task inspected payloads; files may have been used by the original project. Not a globally unseen test set.",
+  "diagnostic_only": [
+    "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\pcap데이터\\#2 26.09.04.pcapng",
+    "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\2026년 9월 3일 13시 38분 30초.log",
+    "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\pcap데이터\\26_0908_JIB1\\2026년 9월 8일 13시 47분 0초.log"
+  ],
+  "reserved_unopened": [
+    {
+      "path": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\2026년 9월 3일 13시 39분 0초.log",
+      "bytes": 100352440
+    },
+    {
+      "path": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\2026년 9월 3일 13시 39분 30초.log",
+      "bytes": 100261768
+    },
+    {
+      "path": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\pcap데이터\\26_0908_JIB1\\2026년 9월 8일 13시 47분 30초.log",
+      "bytes": 99475832
+    },
+    {
+      "path": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\pcap데이터\\26_0908_JIB1\\2026년 9월 8일 13시 49분 30초.log",
+      "bytes": 100982712
+    },
+    {
+      "path": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\pcap데이터\\26_0908_JIB1\\2026년 9월 8일 13시 53분 30초.log",
+      "bytes": 101495368
+    },
+    {
+      "path": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\pcap데이터\\26_0908_JIB1\\2026년 9월 8일 14시 11분 0초.log",
+      "bytes": 114028904
+    },
+    {
+      "path": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\pcap데이터\\26_0908_JIB1\\2026년 9월 8일 14시 11분 30초.log",
+      "bytes": 114262488
+    },
+    {
+      "path": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\pcap데이터\\26_0908_JIB1\\2026년 9월 8일 14시 14분 30초.log",
+      "bytes": 109079272
+    }
+  ],
+  "training": false,
+  "raw_write_allowed": false
+}

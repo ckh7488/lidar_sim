@@ -1,0 +1,1482 @@
+{
+  "snapshot": "2026-10-08",
+  "source_revision": 18,
+  "files": [
+    {
+      "source": "scripts\\noise_lab_parameters_v18.js",
+      "target": "src/noise_lab_parameters_v18.js",
+      "bytes": 1261,
+      "sha256": "af528b4ed8de529b6ce7ac690ac894d816f17d9079e6333ddf4f9d6b2c82cb00"
+    },
+    {
+      "source": "scripts\\noise_lab_defaults_principle_v11.html",
+      "target": "src/noise_lab_defaults_principle_v11.html",
+      "bytes": 1879,
+      "sha256": "c70a88831459cbaebe3eb7fd39b903523b00db92c5e3be0b081541fcde074a5d"
+    },
+    {
+      "source": "scripts\\noise_lab_fullrange_v11.js",
+      "target": "src/noise_lab_fullrange_v11.js",
+      "bytes": 9130,
+      "sha256": "82808b8ada8c96772aab7cbb496382592a6d67b5622691f59c2a967197d89aa5"
+    },
+    {
+      "source": "scripts\\noise_lab_fullrange_client_v10.js",
+      "target": "src/noise_lab_fullrange_client_v10.js",
+      "bytes": 5203,
+      "sha256": "089aa10ad0613fb027efcf5b33fe7a5f67a7ad215b755361cd4efb986ab5cb3e"
+    },
+    {
+      "source": "scripts\\noise_lab_fullrange_principle_v10.html",
+      "target": "src/noise_lab_fullrange_principle_v10.html",
+      "bytes": 3345,
+      "sha256": "5d10c5820b89a20cdf6956d51a5c6a1e2474ad95ee71c6012c0fa67533f83881"
+    },
+    {
+      "source": "scripts\\noise_lab_navigation_v9.js",
+      "target": "src/noise_lab_navigation_v9.js",
+      "bytes": 3764,
+      "sha256": "6a9dd4724094b3e03bf9cdd72d9518311f8701c25948e7a5c99c19717dbe18e0"
+    },
+    {
+      "source": "scripts\\noise_lab_unavailable_v9.html",
+      "target": "src/noise_lab_unavailable_v9.html",
+      "bytes": 5059,
+      "sha256": "953fac9935624aaae21cc797871c8c7ca494c6dd39b7768d96826aa57ce8bd2c"
+    },
+    {
+      "source": "stage0\\assets\\three-0.160.1.min.js",
+      "target": "vendor/three-0.160.1.min.js",
+      "bytes": 669884,
+      "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa"
+    },
+    {
+      "source": "scripts\\noise_lab_receiver_v7.js",
+      "target": "src/noise_lab_receiver_v7.js",
+      "bytes": 7633,
+      "sha256": "09cd32c4fcad1b50c32a102e20e2ec893168551cc388a359ae83eeb34e2107c0"
+    },
+    {
+      "source": "scripts\\noise_lab_solar_v7.js",
+      "target": "src/noise_lab_solar_v7.js",
+      "bytes": 3050,
+      "sha256": "3ad16a2e4e6626b806ec59f00bdac929f4903478b0a3b4952d8ece7e5e793578"
+    },
+    {
+      "source": "scripts\\noise_lab_atmosphere_v8.js",
+      "target": "src/noise_lab_atmosphere_v8.js",
+      "bytes": 11335,
+      "sha256": "9439b5badd03a5fa61327b89f987b3ee3e5c816ef1e2c74b2c82da15fc5f6500"
+    },
+    {
+      "source": "scripts\\noise_lab_atmosphere_controls_v8.html",
+      "target": "src/noise_lab_atmosphere_controls_v8.html",
+      "bytes": 2767,
+      "sha256": "176b80c812508b3df33a1276516e5ba7ba47ab171589f48679520407059821bd"
+    },
+    {
+      "source": "scripts\\noise_lab_atmosphere_principle_v8.html",
+      "target": "src/noise_lab_atmosphere_principle_v8.html",
+      "bytes": 5414,
+      "sha256": "f2564609b035b025d616ba52726170f5b7343c31d172d7444eb50971061e1aec"
+    },
+    {
+      "source": "scripts\\noise_lab_solar_controls_v7.html",
+      "target": "src/noise_lab_solar_controls_v7.html",
+      "bytes": 2428,
+      "sha256": "b861014437fe3f8cddabea8448b0930ecbb82c71cd15cf890c0f6c5110bc4cc4"
+    },
+    {
+      "source": "scripts\\noise_lab_solar_principle_v7.html",
+      "target": "src/noise_lab_solar_principle_v7.html",
+      "bytes": 4655,
+      "sha256": "97a49ef410730d154bcb80862e05be7ffa0814722e3798c545317eb163ece9e4"
+    },
+    {
+      "source": "scripts\\noise_lab_motion_v6.js",
+      "target": "src/noise_lab_motion_v6.js",
+      "bytes": 15992,
+      "sha256": "0d276fdf0f7eccf3df79752a797865953cf12a073578b5371c3aacc0129995fc"
+    },
+    {
+      "source": "scripts\\noise_lab_motion_controls_v6.html",
+      "target": "src/noise_lab_motion_controls_v6.html",
+      "bytes": 2738,
+      "sha256": "2ec7bccb69610c8472406c6ef2d1147a96a8436f8d6ecbf25a03defb8fc0ee6c"
+    },
+    {
+      "source": "scripts\\noise_lab_motion_principle_v6.html",
+      "target": "src/noise_lab_motion_principle_v6.html",
+      "bytes": 4047,
+      "sha256": "49941e897f6bd2230a53a33b95030562a939b2b46ba96b21167af77477681247"
+    },
+    {
+      "source": "scripts\\noise_lab_motion_worker_v6.js",
+      "target": "src/noise_lab_motion_worker_v6.js",
+      "bytes": 3048,
+      "sha256": "6709a44f194ca9e39fc4ebd5b60924eae7e943f82fb876d9e47681a20857ed6e"
+    },
+    {
+      "source": "scripts\\noise_lab_core_v1.js",
+      "target": "src/noise_lab_core_v1.js",
+      "bytes": 7718,
+      "sha256": "9c80ac197467b499f34d93d979d17b061a964fe11f63b3aef95f5de39fa73630"
+    },
+    {
+      "source": "scripts\\noise_lab_weather_v4.js",
+      "target": "src/noise_lab_weather_v4.js",
+      "bytes": 2550,
+      "sha256": "eee8fa5c544b99c696f16ac413e399cae7a02a1f80e48a823eee703bf5d060d5"
+    },
+    {
+      "source": "scripts\\noise_lab_weather_controls_v4.html",
+      "target": "src/noise_lab_weather_controls_v4.html",
+      "bytes": 1305,
+      "sha256": "c6f15fcf40db56a83bb589cb504e74627d6791e26dfca2d399c11ddc79a94bed"
+    },
+    {
+      "source": "scripts\\noise_lab_weather_principle_v4.html",
+      "target": "src/noise_lab_weather_principle_v4.html",
+      "bytes": 3647,
+      "sha256": "6ec0cf6a84cdb0be0284e7559c5731a8af0feb7aa594b9ac0bc0e71c87844815"
+    },
+    {
+      "source": "scripts\\noise_lab_metrics_v1.js",
+      "target": "src/noise_lab_metrics_v1.js",
+      "bytes": 2164,
+      "sha256": "ee00b712f6c5d711b771c5b7a2a308c9fa2efc908b8967382f6a2974eb59f91e"
+    },
+    {
+      "source": "scripts\\noise_lab_client_v1.js",
+      "target": "src/noise_lab_client_v1.js",
+      "bytes": 29696,
+      "sha256": "409bd33117ade2e8238a19582e0f177a4af22ce87285c1046369d3e75889b888"
+    },
+    {
+      "source": "scripts\\noise_lab_geometry_client_v3.js",
+      "target": "src/noise_lab_geometry_client_v3.js",
+      "bytes": 4903,
+      "sha256": "8470ded77c81f6ee94c6e49ca3909c81a66b342eb9d03f018d0a53d9104789d5"
+    },
+    {
+      "source": "scripts\\noise_lab_random_v4.js",
+      "target": "src/noise_lab_random_v4.js",
+      "bytes": 1077,
+      "sha256": "fdd69e81bd235105bcdfd11b00480ee2f9151b2c937565f9e49eba26805c099b"
+    },
+    {
+      "source": "scripts\\noise_lab_jobs_v13.js",
+      "target": "src/noise_lab_jobs_v13.js",
+      "bytes": 1501,
+      "sha256": "e4b31e4f4dc05d8661bc9eaa89d0c6dd1d841881718ba6e8143da5fce5a2286c"
+    },
+    {
+      "source": "scripts\\noise_lab_weather_client_v4.js",
+      "target": "src/noise_lab_weather_client_v4.js",
+      "bytes": 8247,
+      "sha256": "0106b15353dbb51a284f7cf9b955b7f337f738da045a786a94dd47568f2cc44f"
+    },
+    {
+      "source": "scripts\\noise_lab_motion_client_v6.js",
+      "target": "src/noise_lab_motion_client_v6.js",
+      "bytes": 10311,
+      "sha256": "ba32a7c059abe8245eb48e470479bc81edb665cb85c9d8dc72c9fa462c4d78c8"
+    },
+    {
+      "source": "scripts\\noise_lab_solar_client_v7.js",
+      "target": "src/noise_lab_solar_client_v7.js",
+      "bytes": 4370,
+      "sha256": "0c71163084c3517fcbe29bd6f53a9bb11648ce636dda43559c499155b0e4e8c8"
+    },
+    {
+      "source": "scripts\\noise_lab_atmosphere_client_v8.js",
+      "target": "src/noise_lab_atmosphere_client_v8.js",
+      "bytes": 9749,
+      "sha256": "96fec24fc3b05673c6818e3281906398a5ac60c52f5bffa5a6ed511083c1b489"
+    },
+    {
+      "source": "stage0\\assets\\three-mesh-bvh-0.7.6.umd.js",
+      "target": "vendor/three-mesh-bvh-0.7.6.umd.js",
+      "bytes": 194804,
+      "sha256": "48e34303290ec5a8cc08b28b60636a37e5102497485da95b07fd97a421ffe410"
+    },
+    {
+      "source": "scripts\\noise_lab_geometry_v3.js",
+      "target": "src/noise_lab_geometry_v3.js",
+      "bytes": 5686,
+      "sha256": "114874dae53e552c32aa8cf7fd0ec890db3bcc2329458ee01b28800233e0fb5e"
+    },
+    {
+      "source": "scripts\\noise_lab_geometry_worker_v3.js",
+      "target": "src/noise_lab_geometry_worker_v3.js",
+      "bytes": 1345,
+      "sha256": "316f5d888aeec5d766a6308be190142e9f91a0269d20d52549b9b095e0002385"
+    },
+    {
+      "source": "scripts\\noise_lab_v18_template.html",
+      "target": "src/template.html",
+      "bytes": 50250,
+      "sha256": "6c474668a3223d96f41432fc07841c8aeff7a1110d513ddf6c1a415becee0c46"
+    },
+    {
+      "source": "configs\\confirmed_observation_defaults_v16.json",
+      "target": "configs/confirmed_observation_defaults_v16.json",
+      "bytes": 1409,
+      "sha256": "baa2d8126d8070012e5fddc8876d2edacc684374f498e63e84c6c2e8d6e0e2cb"
+    },
+    {
+      "source": "configs\\parameter_distributions_v18.json",
+      "target": "configs/parameter_distributions_v18.json",
+      "bytes": 3466,
+      "sha256": "a6e8b5640467f522a7ae65a17a620acfb67f7c9506dd536ffd144fc4cadd0beb"
+    },
+    {
+      "source": "configs\\noise_library_policy_v6.json",
+      "target": "configs/noise_library_policy_v6.json",
+      "bytes": 17977,
+      "sha256": "fe7ee42574a0af5a422f57700068ba12a133bf68ec823aed6fce651726700907"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\air_CA05USGSB4_1.json",
+      "target": "data/noise_lab_v1/air_CA05USGSB4_1.json",
+      "bytes": 68717,
+      "sha256": "c05cd6d4bce9a2b0b681f72fd36172425bf4bf104db15a1e104615585084b3c2"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\air_CA05USGSB4_2.json",
+      "target": "data/noise_lab_v1/air_CA05USGSB4_2.json",
+      "bytes": 204283,
+      "sha256": "31de2fd89a8e96e33e99c10ba506f19be0e835f08819024371b46cb17084335a"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\air_CA05USGSB4_3.json",
+      "target": "data/noise_lab_v1/air_CA05USGSB4_3.json",
+      "bytes": 88235,
+      "sha256": "7ca1a8016004ce2115f69f77fe5d0597a1ef58c2c7ab0883fa53b385095ea62e"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\air_CRB_10_Jul_1.json",
+      "target": "data/noise_lab_v1/air_CRB_10_Jul_1.json",
+      "bytes": 287489,
+      "sha256": "a021eddc38c3131db0832a6a29bfd1d359e0b31811006c22925e5ebad64d7705"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\air_CRB_10_Jul_2.json",
+      "target": "data/noise_lab_v1/air_CRB_10_Jul_2.json",
+      "bytes": 458412,
+      "sha256": "8e85944646b72bbaa8e94326a496aee65a6da8970b819f370bf1a8faa1372613"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\air_CRB_10_Jul_3.json",
+      "target": "data/noise_lab_v1/air_CRB_10_Jul_3.json",
+      "bytes": 521036,
+      "sha256": "de02f31aa969fb30c7734bdff29902d298d045f338e4094c99d1250b9ca3d866"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\air_UT18_Dennison_1.json",
+      "target": "data/noise_lab_v1/air_UT18_Dennison_1.json",
+      "bytes": 1387318,
+      "sha256": "18812b95671d7decb6981c8cec408f75b9d004dcf77f0eb233aecc9390aba52f"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\air_UT18_Dennison_2.json",
+      "target": "data/noise_lab_v1/air_UT18_Dennison_2.json",
+      "bytes": 520757,
+      "sha256": "ce09d557b8f8858434d93e309d002a6733bf5f8035f13ef47bd994afa89bf780"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\air_UT18_Dennison_3.json",
+      "target": "data/noise_lab_v1/air_UT18_Dennison_3.json",
+      "bytes": 1387319,
+      "sha256": "2b1606283ca816c238db28dd592e9457ea857524eb0fa5883f1e56a876ebe24f"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\apartment_v1.json",
+      "target": "data/noise_lab_v1/apartment_v1.json",
+      "bytes": 350010,
+      "sha256": "0ed62991e385cfb69bce722cd652035eaf058df1384cfec0e71d046d21ad795a"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\apartment_v2.json",
+      "target": "data/noise_lab_v1/apartment_v2.json",
+      "bytes": 350010,
+      "sha256": "1db1a92c90829ea2d60c68bc40ee4b9901a7c466862fc9dec9ef24d98ebc5fc2"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\apartment_v3.json",
+      "target": "data/noise_lab_v1/apartment_v3.json",
+      "bytes": 350010,
+      "sha256": "196d8408321a36601916cb25b7ec4522101109f4c5efca844910542ae54d3f06"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\asset_models_v18.json",
+      "target": "data/noise_lab_v1/asset_models_v18.json",
+      "bytes": 159775,
+      "sha256": "13086ce3456dbed76985e2e5da61fe5fb2febc339ff1c6624ee57896d2836525"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\beam_profiles_v2.json",
+      "target": "data/noise_lab_v1/beam_profiles_v2.json",
+      "bytes": 1034998,
+      "sha256": "e06ce2f4d3eeca4300c89de1f24862b6d732d9a1256a77b2d3fb46f928059efc"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\construction_v1.json",
+      "target": "data/noise_lab_v1/construction_v1.json",
+      "bytes": 350189,
+      "sha256": "e45e73028ffcf8d8117c3e827419ab2fbb06f86db63fbece2014e788e878188c"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\construction_v2.json",
+      "target": "data/noise_lab_v1/construction_v2.json",
+      "bytes": 350190,
+      "sha256": "3072d3bd4e6e76fefec52bb009abae7ae75bd4095ccdc4f931d9bec217f5c4fe"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\construction_v3.json",
+      "target": "data/noise_lab_v1/construction_v3.json",
+      "bytes": 350189,
+      "sha256": "b6390e1c6728f090c27d0fc75bf8bd6da8f23dcf9780d1de9895e254d42eeb2c"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\corridor_v1.json",
+      "target": "data/noise_lab_v1/corridor_v1.json",
+      "bytes": 349871,
+      "sha256": "d5a6a83281d5ec2e4aa44eaa813fb3e7a3bf99c34ceb48de2d919559469a1117"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\corridor_v2.json",
+      "target": "data/noise_lab_v1/corridor_v2.json",
+      "bytes": 349871,
+      "sha256": "309b6e2453be0512697eab1a330194d45cbc524a9e6bbfb33cc40af3838dbea3"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\corridor_v3.json",
+      "target": "data/noise_lab_v1/corridor_v3.json",
+      "bytes": 349871,
+      "sha256": "76915d6b0e7c66075acc69e7e799f476866ba61e83d585e56f6229ddcccce2e0"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\crane_yard_v1.json",
+      "target": "data/noise_lab_v1/crane_yard_v1.json",
+      "bytes": 350149,
+      "sha256": "26bb6b1261b5426d233c48ed72e4b4192c88d01153898b4af07f9bc4db9dc770"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\crane_yard_v2.json",
+      "target": "data/noise_lab_v1/crane_yard_v2.json",
+      "bytes": 350154,
+      "sha256": "d667521078dc6c683a1a1ce88c09de3ba1d0ea0729c0d59ef8b766b8670e96b7"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\crane_yard_v3.json",
+      "target": "data/noise_lab_v1/crane_yard_v3.json",
+      "bytes": 350154,
+      "sha256": "031886fd93d69551d2dc12298bd24c9cfd92ca60676feadb1943a1201936628a"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\department_store_v1.json",
+      "target": "data/noise_lab_v1/department_store_v1.json",
+      "bytes": 349971,
+      "sha256": "f9b6902b53173356f9e65ba8ccfafb1a2de88bff99317105f973c363708e1f44"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\department_store_v2.json",
+      "target": "data/noise_lab_v1/department_store_v2.json",
+      "bytes": 349971,
+      "sha256": "a303c978ccf463cbd3748ffa1d04aca844476f687ac633451c627e15f3136573"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\department_store_v3.json",
+      "target": "data/noise_lab_v1/department_store_v3.json",
+      "bytes": 349971,
+      "sha256": "547bb25bffc35379f4204a5cae5295a9afdf0b5e52ad24b3281eba8cf29ecbfc"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\dust_0.json",
+      "target": "data/noise_lab_v1/dust_0.json",
+      "bytes": 631226,
+      "sha256": "1997e729c0b4bdc73fd0047949586e53cdee7933534a1a7e1358a4fd666f1853"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\dust_1.json",
+      "target": "data/noise_lab_v1/dust_1.json",
+      "bytes": 422963,
+      "sha256": "828eeeff75ca72b655f60494a20907275ca7adfc5af50bb2c0c425eeb4490769"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\dust_10.json",
+      "target": "data/noise_lab_v1/dust_10.json",
+      "bytes": 177497,
+      "sha256": "fcc34cbc6f3e34254d2c4e2f43283df2ec9f6d024180782d6f81485006c383fa"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\dust_11.json",
+      "target": "data/noise_lab_v1/dust_11.json",
+      "bytes": 133732,
+      "sha256": "5f9d544757a28a10a0227d714ee77372185a839e00c9d621aaefba1a599a8ad3"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\dust_2.json",
+      "target": "data/noise_lab_v1/dust_2.json",
+      "bytes": 359128,
+      "sha256": "f843276bdfcfc3f1da1c0ec917a7eb3d5f9f025ffc4c6973e15782bcb21b8942"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\dust_3.json",
+      "target": "data/noise_lab_v1/dust_3.json",
+      "bytes": 700423,
+      "sha256": "0eb3b94d622221ff924bb289a3847ceea7e3a671187cfde6b6f64560a997a92c"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\dust_4.json",
+      "target": "data/noise_lab_v1/dust_4.json",
+      "bytes": 646723,
+      "sha256": "150048e5587e67295b6f3c0406831ed98afe5b3b0ec4c960a7495938038192d1"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\dust_5.json",
+      "target": "data/noise_lab_v1/dust_5.json",
+      "bytes": 778929,
+      "sha256": "247da517ffafbb63c2acdb005891f4a8006e945f42b681c9585b9dd08d993da4"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\dust_6.json",
+      "target": "data/noise_lab_v1/dust_6.json",
+      "bytes": 233913,
+      "sha256": "a172b54f53afc908cf09cd13d3da7906a41ce32f1af129507093f13e671e4f6c"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\dust_7.json",
+      "target": "data/noise_lab_v1/dust_7.json",
+      "bytes": 160761,
+      "sha256": "2124ef86dcc369b21c9e25a3469bd50e387810006ba1e7c49953c3953327e338"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\dust_8.json",
+      "target": "data/noise_lab_v1/dust_8.json",
+      "bytes": 119474,
+      "sha256": "e1340d13ff586987ab71bae7065ba0eed8d75310260f144324ee7e2452c694d2"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\dust_9.json",
+      "target": "data/noise_lab_v1/dust_9.json",
+      "bytes": 117813,
+      "sha256": "541c0350ccdc933d0ea0c77bb56ac576d3965177cd48cc2253e56bf14b3852a5"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_apartment_v1_v18.json",
+      "target": "data/noise_lab_v1/geometry_apartment_v1_v18.json",
+      "bytes": 3836635,
+      "sha256": "15a256b40bf116c7f62a4397889a571a21f681a0e4400d450a9b9d824b113d69"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_apartment_v2_v18.json",
+      "target": "data/noise_lab_v1/geometry_apartment_v2_v18.json",
+      "bytes": 3833196,
+      "sha256": "e1384b4424046ece7ad53888683a78419bedc962dae18d070a4d22cf7e9e0639"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_apartment_v3_v18.json",
+      "target": "data/noise_lab_v1/geometry_apartment_v3_v18.json",
+      "bytes": 3841171,
+      "sha256": "2fa067875930d703db13558e63a096ea9debe5bbdcddc1e456df00ff7b92d59e"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_construction_v1_v18.json",
+      "target": "data/noise_lab_v1/geometry_construction_v1_v18.json",
+      "bytes": 3020655,
+      "sha256": "63e203bb398d879198fb396affcd25979a9143ca15c0797da62c1f8973229316"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_construction_v2_v18.json",
+      "target": "data/noise_lab_v1/geometry_construction_v2_v18.json",
+      "bytes": 2713952,
+      "sha256": "b65b9e5a1c0fe2ac96cc7a9d445bce887df76cbb3ced8de16dc60fc746b886fd"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_construction_v3_v18.json",
+      "target": "data/noise_lab_v1/geometry_construction_v3_v18.json",
+      "bytes": 3050943,
+      "sha256": "d45ab7d3f5b65a8e5bf45769072d13e62351c2387a65232bbd44cda831519c99"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_corridor_v1_v3.json",
+      "target": "data/noise_lab_v1/geometry_corridor_v1_v3.json",
+      "bytes": 207086,
+      "sha256": "75978e48f383d31f3b56b5b5a00b357f9bdf3fcebba0be4906d2860ae39129a1"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_corridor_v2_v3.json",
+      "target": "data/noise_lab_v1/geometry_corridor_v2_v3.json",
+      "bytes": 206553,
+      "sha256": "900482e6e9bac79e4e94796b6056832aeb0136c47296f2ca28b55aac56246eda"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_corridor_v3_v3.json",
+      "target": "data/noise_lab_v1/geometry_corridor_v3_v3.json",
+      "bytes": 207749,
+      "sha256": "f5c1e3f97c7f8d72a4282c11f70797cdc6c00b68297b5bc394214a58b8ce8d34"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_crane_yard_v1_v18.json",
+      "target": "data/noise_lab_v1/geometry_crane_yard_v1_v18.json",
+      "bytes": 11379501,
+      "sha256": "c40f583833edc9faf24197ad0249bba6db6533f8b64fd4ba8f546f2e47a10db0"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_crane_yard_v2_v18.json",
+      "target": "data/noise_lab_v1/geometry_crane_yard_v2_v18.json",
+      "bytes": 11633738,
+      "sha256": "5aeb1404d1f15195c70d56043696e8a55969538dfb182ed6c2604678451685f3"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_crane_yard_v3_v18.json",
+      "target": "data/noise_lab_v1/geometry_crane_yard_v3_v18.json",
+      "bytes": 11534510,
+      "sha256": "97908e4034491ffeca727c5c93b560e95d05d3e4e75098845f75c2230d6cb6ad"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_department_store_v1_v3.json",
+      "target": "data/noise_lab_v1/geometry_department_store_v1_v3.json",
+      "bytes": 256210,
+      "sha256": "d549c1c3b665fd3d48a94d55800a8824cd69102e9932dbe2f46a552dff1f9637"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_department_store_v2_v3.json",
+      "target": "data/noise_lab_v1/geometry_department_store_v2_v3.json",
+      "bytes": 256553,
+      "sha256": "a954db84ae1f6b2eb5e07abd828512440a2cd80e05a17b6af8dbf19c5019e073"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_department_store_v3_v3.json",
+      "target": "data/noise_lab_v1/geometry_department_store_v3_v3.json",
+      "bytes": 268262,
+      "sha256": "b506cecc36d6420a398f8a685fefb04b40ed164a1e37423cdcf63e44514245a4"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_room_v1_v3.json",
+      "target": "data/noise_lab_v1/geometry_room_v1_v3.json",
+      "bytes": 110992,
+      "sha256": "f1bd3212c4edfcdb3c91dddf480a4364425e8dfe9fcab860c1685060b23a207f"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_room_v2_v3.json",
+      "target": "data/noise_lab_v1/geometry_room_v2_v3.json",
+      "bytes": 112559,
+      "sha256": "64d549ea185c0d89ee5c812a1bc99694e36a3f29c6a09e17838b61f7827fe8be"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_room_v3_v3.json",
+      "target": "data/noise_lab_v1/geometry_room_v3_v3.json",
+      "bytes": 101640,
+      "sha256": "83de35cb957f8ebac234f000da1916c88dfb8d15ce3d22ea69defbcd904b1a1d"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_underground_parking_v1_v3.json",
+      "target": "data/noise_lab_v1/geometry_underground_parking_v1_v3.json",
+      "bytes": 636398,
+      "sha256": "0290b4f4adbd1984a3f943e4ae64bbc26d599f605a58f8e1255deeb3eef221c0"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_underground_parking_v2_v3.json",
+      "target": "data/noise_lab_v1/geometry_underground_parking_v2_v3.json",
+      "bytes": 622233,
+      "sha256": "b6d48266c1923d37c08b2c9e5be097dffe0f9b4b6e73195a87b290cafeca7ba3"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_underground_parking_v3_v3.json",
+      "target": "data/noise_lab_v1/geometry_underground_parking_v3_v3.json",
+      "bytes": 633294,
+      "sha256": "c7e6b68a25f51fb65bec26010c8734646cbfa0511428ec6d9fd0297a4a296678"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_warehouse_v1_v3.json",
+      "target": "data/noise_lab_v1/geometry_warehouse_v1_v3.json",
+      "bytes": 310340,
+      "sha256": "c02e653787fc2b8029b606487f73c1553097af197d60b2b4e16ab071de0f6936"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_warehouse_v2_v3.json",
+      "target": "data/noise_lab_v1/geometry_warehouse_v2_v3.json",
+      "bytes": 310823,
+      "sha256": "b62b425a06aa534bb65d72410f587213e8be9aa6df8692f29eca050472ca400f"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\geometry_warehouse_v3_v3.json",
+      "target": "data/noise_lab_v1/geometry_warehouse_v3_v3.json",
+      "bytes": 310928,
+      "sha256": "de71e6dd907a0042930e09c7d65a0f75891834edc85dafc871f894b82ac54dc3"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\index.json",
+      "target": "data/noise_lab_v1/index.json",
+      "bytes": 134925,
+      "sha256": "22725c63845e49d6a3d3488108c3146bd8bf30f14e23b18e1721541470c3dd98"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\mirror_elevator_0.json",
+      "target": "data/noise_lab_v1/mirror_elevator_0.json",
+      "bytes": 1770252,
+      "sha256": "2977fa3b7f09d3b6f5874e891f098871303dd39179bcbea69abc3abc9f0163ca"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\mirror_elevator_1.json",
+      "target": "data/noise_lab_v1/mirror_elevator_1.json",
+      "bytes": 1793688,
+      "sha256": "f657cd96900c76ac016a3de9ee3f1230012a8523a4f20338f96d050ec94ed8a4"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\mirror_elevator_2.json",
+      "target": "data/noise_lab_v1/mirror_elevator_2.json",
+      "bytes": 1800844,
+      "sha256": "2895a7b867d418b105fa6198003df76413b14fb12357bd1ce78510ba81961d14"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\msu_2022_rain_0.json",
+      "target": "data/noise_lab_v1/msu_2022_rain_0.json",
+      "bytes": 490909,
+      "sha256": "595ecaae85a52433cdb68ae3d43fed0cf62805b00bd2b1d4f403cd5f2258f7c8"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\msu_2022_rain_1.json",
+      "target": "data/noise_lab_v1/msu_2022_rain_1.json",
+      "bytes": 595793,
+      "sha256": "3e6a44d76319d8b5b80bc617ac40912dd0048aca188e8a31f932d2405d042a8b"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\msu_2022_rain_2.json",
+      "target": "data/noise_lab_v1/msu_2022_rain_2.json",
+      "bytes": 608653,
+      "sha256": "450637c473e2418e49982dde6870519f7f3bb39b408d4d608de595aa9d951ec6"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\msu_2022_spring_snow_0.json",
+      "target": "data/noise_lab_v1/msu_2022_spring_snow_0.json",
+      "bytes": 801580,
+      "sha256": "b5194aaf19dd9cff48248810142924aa6fe5d347ebf20bc59e82bc4bf524df5c"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\msu_2022_spring_snow_1.json",
+      "target": "data/noise_lab_v1/msu_2022_spring_snow_1.json",
+      "bytes": 626064,
+      "sha256": "c8da1397d6e609c800caf4e43f4e4a47a653da9406f66c7109a65969ec2dc420"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\msu_2022_spring_snow_2.json",
+      "target": "data/noise_lab_v1/msu_2022_spring_snow_2.json",
+      "bytes": 560404,
+      "sha256": "19749f6a6ebf7bfc3a5ed74c4fd9391616de900d4c1da68d5eea480c7eb7b8cd"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\msu_2023_snow_0.json",
+      "target": "data/noise_lab_v1/msu_2023_snow_0.json",
+      "bytes": 571885,
+      "sha256": "cca34c3352769a223df70194507ac4665c12f29554b223f6abbb94772362d3f3"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\msu_2023_snow_1.json",
+      "target": "data/noise_lab_v1/msu_2023_snow_1.json",
+      "bytes": 683217,
+      "sha256": "aae054bfaff1e3a0c265770188292a7228517d6f927a991649e394d28bd263f4"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\msu_2023_snow_2.json",
+      "target": "data/noise_lab_v1/msu_2023_snow_2.json",
+      "bytes": 599149,
+      "sha256": "120d0751dd84a0b8a3af2a90f42a6c50188c321a1a5c11457b14c2fbd532dcde"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\room_v1.json",
+      "target": "data/noise_lab_v1/room_v1.json",
+      "bytes": 349933,
+      "sha256": "f8a1b4a499e84674e1b1680644e8226172bfa9e2f3c90cee1efeac660414e51d"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\room_v2.json",
+      "target": "data/noise_lab_v1/room_v2.json",
+      "bytes": 349933,
+      "sha256": "6a4353df5e1680eda0cd033754d016e8903902ba546c1406a766dd2a1cc5ed32"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\room_v3.json",
+      "target": "data/noise_lab_v1/room_v3.json",
+      "bytes": 349933,
+      "sha256": "5eac2072fb949f1043bc5cae61eba9b9265b8aaaadc3fee2fef8b01ac7dc573a"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_apartment_v1_os1_center.json",
+      "target": "data/noise_lab_v1/scan_apartment_v1_os1_center.json",
+      "bytes": 531840,
+      "sha256": "572dc9a238f8abc5166699a288f8f6c1e74b6d295d36dde8acbbbab922a28578"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_apartment_v1_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_apartment_v1_os1_offset.json",
+      "bytes": 532111,
+      "sha256": "59a0aaf1722c6c2a9aa282f07aaf53e065c8b4d08c4dddb44b4e1e380989f332"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_apartment_v1_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_apartment_v1_os1_terrain.json",
+      "bytes": 781996,
+      "sha256": "a883c8a0dc360bb1184566cec90f4cebb2227f2c5d104f93936be60324e8b250"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_apartment_v2_os1_center.json",
+      "target": "data/noise_lab_v1/scan_apartment_v2_os1_center.json",
+      "bytes": 518516,
+      "sha256": "7876f0cd5149ad0856a4baa46c933a4cf03bda5aae4beb1eb9e961c6046c55c1"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_apartment_v2_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_apartment_v2_os1_offset.json",
+      "bytes": 519023,
+      "sha256": "cfee70bd64bb02cf86b8e853964eb3287f301d0189dee2d2d42aab36eeb23d15"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_apartment_v2_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_apartment_v2_os1_terrain.json",
+      "bytes": 774567,
+      "sha256": "438ae433f28855dc6fbe7be4751e4a8a45de1b7f010866319d8f07c0e2c874c5"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_apartment_v3_os1_center.json",
+      "target": "data/noise_lab_v1/scan_apartment_v3_os1_center.json",
+      "bytes": 542744,
+      "sha256": "6cbc29f84670272759564530d2716c791de671b274cca09157ea665be239d240"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_apartment_v3_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_apartment_v3_os1_offset.json",
+      "bytes": 543087,
+      "sha256": "c95a29212cdfa0ea58ab199a767242128bb5927c4dc3bda2eea941a589dbd2e6"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_apartment_v3_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_apartment_v3_os1_terrain.json",
+      "bytes": 795412,
+      "sha256": "32f22bd70c07e8e5951d9a6f1b9863adf7a40580b507bf3e120fe5c6501f315b"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_construction_v1_os1_center.json",
+      "target": "data/noise_lab_v1/scan_construction_v1_os1_center.json",
+      "bytes": 440938,
+      "sha256": "38e6a8a5c16b6cda7c776ff71e4a0ec78fb662549e8dc927f71852f08857f29e"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_construction_v1_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_construction_v1_os1_offset.json",
+      "bytes": 442701,
+      "sha256": "13e7d1a0c1f4837d7719a6db91b59fda16c637dd2509a2735ac51d55709d810f"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_construction_v1_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_construction_v1_os1_terrain.json",
+      "bytes": 680555,
+      "sha256": "502eb8359f3d1ca64b5e982622ce5c280b86bf8d6ef959dbe322af51b91570a0"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_construction_v2_os1_center.json",
+      "target": "data/noise_lab_v1/scan_construction_v2_os1_center.json",
+      "bytes": 457402,
+      "sha256": "6ce62210bcacaf347dae6a4164b1629d6ff91fecebf6ac848a8c0ff9956fdcce"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_construction_v2_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_construction_v2_os1_offset.json",
+      "bytes": 459553,
+      "sha256": "a2e3ad82756bdf5422288dda61d111c47ba400ae810d2f75283d667bc3514328"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_construction_v2_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_construction_v2_os1_terrain.json",
+      "bytes": 692309,
+      "sha256": "ee414baa443d32b382c415429626701c5f306fb1370884208e37c4b32b1ead47"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_construction_v3_os1_center.json",
+      "target": "data/noise_lab_v1/scan_construction_v3_os1_center.json",
+      "bytes": 460114,
+      "sha256": "8e1c6f08be1cfbf91d4ddafb0466367a49465aa9e8826f1d709dff26fc20bdeb"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_construction_v3_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_construction_v3_os1_offset.json",
+      "bytes": 461985,
+      "sha256": "cb78881e3ee02d2637f01807c80a6df62686217dd7f68cb87ce7e7aa07ffa31f"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_construction_v3_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_construction_v3_os1_terrain.json",
+      "bytes": 694975,
+      "sha256": "b0f674f6961b1c0cb083e97811c94cca9045427c038124b0208fd4dbafde67f1"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_corridor_v1_os1_center.json",
+      "target": "data/noise_lab_v1/scan_corridor_v1_os1_center.json",
+      "bytes": 885651,
+      "sha256": "36ca76cfb7fbe578812ecac81514967b3cc2eb2d7c80d0a339324c78f05de1eb"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_corridor_v1_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_corridor_v1_os1_offset.json",
+      "bytes": 893222,
+      "sha256": "8db6802b7edd15d9937457629add610c2ce75996f95784b86e7419ef1f7c33ae"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_corridor_v1_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_corridor_v1_os1_terrain.json",
+      "bytes": 1037981,
+      "sha256": "05bbc7eb7a79f56ca8a6c10aebd88ce5070727a3538be24b7be1878993797caa"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_corridor_v2_os1_center.json",
+      "target": "data/noise_lab_v1/scan_corridor_v2_os1_center.json",
+      "bytes": 885339,
+      "sha256": "2df0c1af9bdf9cb82fd569ae39e94dc87183911878666cc9e1839461e57d70c0"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_corridor_v2_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_corridor_v2_os1_offset.json",
+      "bytes": 892710,
+      "sha256": "c6b6710e1420801e240314098a2c78924d61dd01947c0f1ddf7c30812403d6bd"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_corridor_v2_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_corridor_v2_os1_terrain.json",
+      "bytes": 1039554,
+      "sha256": "fb3075a9405f176bfe0c4fdd6e863a99a9b3a3e9c9516bcecebf6bbc866d8055"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_corridor_v3_os1_center.json",
+      "target": "data/noise_lab_v1/scan_corridor_v3_os1_center.json",
+      "bytes": 882539,
+      "sha256": "fa361c8b3cad7ee077a5dbd69b116390e7cd49d6de2a27f84114f700a256ddbd"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_corridor_v3_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_corridor_v3_os1_offset.json",
+      "bytes": 889886,
+      "sha256": "b0c5cbda245d5123519cff8e84b84dbb7b7b6099b78e2373e92d8946f98b4073"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_corridor_v3_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_corridor_v3_os1_terrain.json",
+      "bytes": 1037144,
+      "sha256": "f1170862a12428368ef088b99f8389af99690cc07ec3985cf24ff729b2dd9f12"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_crane_yard_v1_os1_center.json",
+      "target": "data/noise_lab_v1/scan_crane_yard_v1_os1_center.json",
+      "bytes": 443290,
+      "sha256": "b278948811bef6b11c6703b197495d203ab2006387057990fa730066fc9136de"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_crane_yard_v1_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_crane_yard_v1_os1_offset.json",
+      "bytes": 443889,
+      "sha256": "cd6808a5550d621533a2ba2ee5e2e8b638389e40500f2ba1f828668e3dda20a5"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_crane_yard_v1_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_crane_yard_v1_os1_terrain.json",
+      "bytes": 673330,
+      "sha256": "5e0e65a37e4391f611c253b9941031ab69a77fc061b75c29dd385282dd8ab4fc"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_crane_yard_v2_os1_center.json",
+      "target": "data/noise_lab_v1/scan_crane_yard_v2_os1_center.json",
+      "bytes": 457838,
+      "sha256": "4fa23f117bebe2f28bd207e7f54aa278d411840f1a968c48cdd98aefce5297e5"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_crane_yard_v2_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_crane_yard_v2_os1_offset.json",
+      "bytes": 458445,
+      "sha256": "d5d1c8a3057e3a8b0ac94490d150c08c6cc735ed0a0a5af2c99a66181ec5f81a"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_crane_yard_v2_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_crane_yard_v2_os1_terrain.json",
+      "bytes": 683099,
+      "sha256": "f2bb21694155e9eb9ab1307cc8e692f2dd7954b8f4a32f10246903c7ac109e92"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_crane_yard_v3_os1_center.json",
+      "target": "data/noise_lab_v1/scan_crane_yard_v3_os1_center.json",
+      "bytes": 433450,
+      "sha256": "b4496425c7328fd235a0f2577090e894cfa450f104633495b718fa8ab2813f4c"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_crane_yard_v3_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_crane_yard_v3_os1_offset.json",
+      "bytes": 433849,
+      "sha256": "2c3cf44317515b2085fd494f0c6f840e5ced252c4729fe8064ec7bb0ae49783b"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_crane_yard_v3_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_crane_yard_v3_os1_terrain.json",
+      "bytes": 666324,
+      "sha256": "a5eee35e6e41e183406e54da78eab889be41664f25b71749d860b008df90b44c"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_department_store_v1_os1_center.json",
+      "target": "data/noise_lab_v1/scan_department_store_v1_os1_center.json",
+      "bytes": 798399,
+      "sha256": "e6b8a5c61dd7f6cbae7a47d055f2d02851369d8775c1fecf5be521ad0ad066cd"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_department_store_v1_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_department_store_v1_os1_offset.json",
+      "bytes": 798482,
+      "sha256": "d36a2fbe0ff45ccb0f83dde6790671b550cef00c1c1a7feb0454f17c7da5e649"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_department_store_v1_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_department_store_v1_os1_terrain.json",
+      "bytes": 1164121,
+      "sha256": "fada29fa0523f1f742db5baa1b7755965c05df52fb0ff54c61247c7bf6746e73"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_department_store_v2_os1_center.json",
+      "target": "data/noise_lab_v1/scan_department_store_v2_os1_center.json",
+      "bytes": 801563,
+      "sha256": "0688ce94a2e841391597f6a24fa9123b9025571a0f0cc82e223dfab0c18d1222"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_department_store_v2_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_department_store_v2_os1_offset.json",
+      "bytes": 801914,
+      "sha256": "dc8310af50daab3d1fcb63ce54a687dd6df1a7ad62c3b9f00869ae45d5640a26"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_department_store_v2_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_department_store_v2_os1_terrain.json",
+      "bytes": 1170406,
+      "sha256": "18aff54b2b9ce5422f424222461c345a17b6c99fd4511d9970cf3941d2ca1340"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_department_store_v3_os1_center.json",
+      "target": "data/noise_lab_v1/scan_department_store_v3_os1_center.json",
+      "bytes": 804707,
+      "sha256": "f3f2b327e5dfc32136104dbc5d9c0ba7781786f893b2c2aa0a9495b03d88224f"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_department_store_v3_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_department_store_v3_os1_offset.json",
+      "bytes": 805234,
+      "sha256": "3bec0c6906aabb3ef575fdcbff33216182049c45871d768a1e6b8a63fc21e8ca"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_department_store_v3_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_department_store_v3_os1_terrain.json",
+      "bytes": 1176280,
+      "sha256": "2594e3b0cafa0ab59a1835ad4f84c89ffc57bcefcad1732858545192440cd5a9"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_room_v1_os1_center.json",
+      "target": "data/noise_lab_v1/scan_room_v1_os1_center.json",
+      "bytes": 831403,
+      "sha256": "cd372727b8cda5cc4c0b45a89aa08c7bdd17359c8c8fbeffe18b06a4266eda0a"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_room_v1_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_room_v1_os1_offset.json",
+      "bytes": 835826,
+      "sha256": "2dfccb51aa0f2f8524c664ccd36e33745515319ba9340a1b9626cd1a4845ba78"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_room_v1_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_room_v1_os1_terrain.json",
+      "bytes": 1139661,
+      "sha256": "7fe0cb112ac4a7a203d787d18c6fbd925fd0fba88f005d7db3a5074472014c01"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_room_v2_os1_center.json",
+      "target": "data/noise_lab_v1/scan_room_v2_os1_center.json",
+      "bytes": 843771,
+      "sha256": "abbce41564e5d23df6fceeebdfcad496c8cb07fc0bd9236321b054eb605675d1"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_room_v2_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_room_v2_os1_offset.json",
+      "bytes": 848262,
+      "sha256": "b0dd7452a63f19f1cc30dddf4f3a5d5ccbed00e914cb1789f84c851256dedae8"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_room_v2_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_room_v2_os1_terrain.json",
+      "bytes": 1146530,
+      "sha256": "3089952f3e90d58c2b8c107843a9d9090d2260f7f4eac6a34a505be1e97849cf"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_room_v3_os1_center.json",
+      "target": "data/noise_lab_v1/scan_room_v3_os1_center.json",
+      "bytes": 829087,
+      "sha256": "483a1bf8274eab205d8bb931e374275270b2904da5e694b7e1d39a7f439ae2d9"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_room_v3_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_room_v3_os1_offset.json",
+      "bytes": 834246,
+      "sha256": "19862af11c38174ccd4a521783fa53e70108bcd0b53d5d0230343b5addb5cfb5"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_room_v3_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_room_v3_os1_terrain.json",
+      "bytes": 1146340,
+      "sha256": "2b6ba2d866915ed248abc0cfec0970d11b20e9b06e01053c710519adbba2b485"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_underground_parking_v1_os1_center.json",
+      "target": "data/noise_lab_v1/scan_underground_parking_v1_os1_center.json",
+      "bytes": 770073,
+      "sha256": "c0f0104bb1e0808a6cb137652a2689ca5dce372f6f1bbfcbd9a6185733de3ce5"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_underground_parking_v1_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_underground_parking_v1_os1_offset.json",
+      "bytes": 770604,
+      "sha256": "9353d7f201c713e418e7ed5a81d0768cc439ff012e5292ca3cbe650a972ed43e"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_underground_parking_v1_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_underground_parking_v1_os1_terrain.json",
+      "bytes": 1178215,
+      "sha256": "6c9dc7a62284f11eff4b3df91a4a2fda419e6013c2f5c395b4106f27f4cf32db"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_underground_parking_v2_os1_center.json",
+      "target": "data/noise_lab_v1/scan_underground_parking_v2_os1_center.json",
+      "bytes": 769533,
+      "sha256": "5b1bab48d10424abbd3097646b244cc120e69462e287fd2e1f46953f67152efc"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_underground_parking_v2_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_underground_parking_v2_os1_offset.json",
+      "bytes": 770512,
+      "sha256": "745dfab9438388d62c61813ef527e2502500470233297614fe62549e049334eb"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_underground_parking_v2_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_underground_parking_v2_os1_terrain.json",
+      "bytes": 1186476,
+      "sha256": "76919fbb6919fd029574ffabec99e34d549f681940778cf3110d41f839f79df6"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_underground_parking_v3_os1_center.json",
+      "target": "data/noise_lab_v1/scan_underground_parking_v3_os1_center.json",
+      "bytes": 776497,
+      "sha256": "6fb3cc32d9ed8e6095a8b0485ef3c5a96ab7182479497b1635a13946523a7a7d"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_underground_parking_v3_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_underground_parking_v3_os1_offset.json",
+      "bytes": 777076,
+      "sha256": "ff90a1aa2752b309a296d433b586a73137c649455c1d81bbb1539c2c9b9c5e68"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_underground_parking_v3_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_underground_parking_v3_os1_terrain.json",
+      "bytes": 1192526,
+      "sha256": "91af3f8d6370a0000539d9bb05be3f4f7a73e0d3143d74df20e0c1c5f0b3560a"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_warehouse_v1_os1_center.json",
+      "target": "data/noise_lab_v1/scan_warehouse_v1_os1_center.json",
+      "bytes": 921413,
+      "sha256": "804d4e3b1ef758082f5e2ea8ca2907e1d9862af655ed45c61002a37615725c4c"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_warehouse_v1_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_warehouse_v1_os1_offset.json",
+      "bytes": 923220,
+      "sha256": "8adfab4cc57a14981ea0431e9aa14261d909303110ff3c3c5503e7acb39d71c9"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_warehouse_v1_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_warehouse_v1_os1_terrain.json",
+      "bytes": 1181363,
+      "sha256": "e420925b8dfa04dcbe11405fd6c664f2c74c19d506d6d7258ddcac7f09a9b1c9"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_warehouse_v2_os1_center.json",
+      "target": "data/noise_lab_v1/scan_warehouse_v2_os1_center.json",
+      "bytes": 930425,
+      "sha256": "23061f0d103becc5e72703010e3013ecea7a8a31a516685aa15b22c29fc6dc03"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_warehouse_v2_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_warehouse_v2_os1_offset.json",
+      "bytes": 932936,
+      "sha256": "61284ab7b848f03d0a131521251cd27009c2fef3e3d87d318c794116a8f74e7b"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_warehouse_v2_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_warehouse_v2_os1_terrain.json",
+      "bytes": 1186048,
+      "sha256": "449fea8a1b0c41a34f159cd02739aacc11cfdeb2cff6a66eac7c1883e7e04e0c"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_warehouse_v3_os1_center.json",
+      "target": "data/noise_lab_v1/scan_warehouse_v3_os1_center.json",
+      "bytes": 930305,
+      "sha256": "f077aa162a3455f5aaed0251c0486169e4510ab60b3844e6a4e3aa4a1503deec"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_warehouse_v3_os1_offset.json",
+      "target": "data/noise_lab_v1/scan_warehouse_v3_os1_offset.json",
+      "bytes": 932532,
+      "sha256": "69a43bf181278212feb75354e6125e0b30cfe0b87aaf6fe65a84f918c046aca3"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\scan_warehouse_v3_os1_terrain.json",
+      "target": "data/noise_lab_v1/scan_warehouse_v3_os1_terrain.json",
+      "bytes": 1189130,
+      "sha256": "709a8bb8f7abf25dce93b1b51c30d3c26f4a9bc4449cc32e9a25b642be89fd9a"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\spray_0.json",
+      "target": "data/noise_lab_v1/spray_0.json",
+      "bytes": 529957,
+      "sha256": "70848239706b5969fbef5f0b662f04c2dc0e021f03f14e127de83c8982ea1a0a"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\spray_1.json",
+      "target": "data/noise_lab_v1/spray_1.json",
+      "bytes": 534081,
+      "sha256": "b9070cc1af1d6b1ef35ef0f720823125273dd5255aaee99600835ace52796197"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\spray_2.json",
+      "target": "data/noise_lab_v1/spray_2.json",
+      "bytes": 529697,
+      "sha256": "b9fa9b7af5c6c3e3ce87f6c3167843583814bc9e00ec7483424dbe6d447028e2"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\underground_parking_v1.json",
+      "target": "data/noise_lab_v1/underground_parking_v1.json",
+      "bytes": 349922,
+      "sha256": "dd45e63180b61d9c2f636b28cd6c9db7cfddafa467790d1adf0c781028ca85be"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\underground_parking_v2.json",
+      "target": "data/noise_lab_v1/underground_parking_v2.json",
+      "bytes": 349922,
+      "sha256": "01b68ab7cdec551f913f9290de22fd4846e1e15694485fe697d2855739c0d4b6"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\underground_parking_v3.json",
+      "target": "data/noise_lab_v1/underground_parking_v3.json",
+      "bytes": 349922,
+      "sha256": "6b6a53094b2f5d0832ff475d44474ba952f28d600fbd664b25672dd9776b60cb"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\warehouse_v1.json",
+      "target": "data/noise_lab_v1/warehouse_v1.json",
+      "bytes": 349928,
+      "sha256": "1fc6e5cf46b5676ae3e3007e98dbd69c60486817b3a76c88b3185fa84141dd30"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\warehouse_v2.json",
+      "target": "data/noise_lab_v1/warehouse_v2.json",
+      "bytes": 349928,
+      "sha256": "adb126602579389b678a463119d9e6c09cb7a20412560c59127dd308babec71a"
+    },
+    {
+      "source": "stage0\\assets\\noise_lab_v1\\warehouse_v3.json",
+      "target": "data/noise_lab_v1/warehouse_v3.json",
+      "bytes": 349928,
+      "sha256": "7981d5b29cc66e38fa6b7e5cf2e0ba68c8ca56a2275eea92b743a99352f66988"
+    },
+    {
+      "source": "stage0\\assets\\three-LICENSE.txt",
+      "target": "vendor/three-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d"
+    },
+    {
+      "source": "stage0\\assets\\three-mesh-bvh-LICENSE.txt",
+      "target": "vendor/three-mesh-bvh-LICENSE.txt",
+      "bytes": 1072,
+      "sha256": "b106ef6198a9862ed2b5b873e944ecf3583c631a84a7462d400ecc1910ce7fee"
+    },
+    {
+      "source": "assets\\public\\kenney\\car-kit\\License.txt",
+      "target": "licenses/kenney/car-kit.txt",
+      "bytes": 696,
+      "sha256": "c33b7f6453d134deae7b1b8493717d9ccfa754c25ab97f6de89b88f8fda19b00"
+    },
+    {
+      "source": "assets\\public\\kenney\\city-kit-commercial\\License.txt",
+      "target": "licenses/kenney/city-kit-commercial.txt",
+      "bytes": 708,
+      "sha256": "c38cee408d022e57e44e49f1cd655c2fe0dc881a07b881276b795215cdc0de69"
+    },
+    {
+      "source": "assets\\public\\kenney\\city-kit-industrial\\License.txt",
+      "target": "licenses/kenney/city-kit-industrial.txt",
+      "bytes": 708,
+      "sha256": "60a8c5c31191256ec9779dc18745dea6d69c46f4b29703459ce064c1765a59ea"
+    },
+    {
+      "source": "assets\\public\\kenney\\city-kit-roads\\License.txt",
+      "target": "licenses/kenney/city-kit-roads.txt",
+      "bytes": 703,
+      "sha256": "87b9404aef5dff6162ae1e53a27bc6427fe1cdd2e2dd5ec05fdd25f17da10498"
+    },
+    {
+      "source": "assets\\public\\kenney\\factory-kit\\License.txt",
+      "target": "licenses/kenney/factory-kit.txt",
+      "bytes": 700,
+      "sha256": "61e86565dd297e143ad631594980eda0a17fc81a4cd7c6d71acf2f5e0cad30b6"
+    },
+    {
+      "source": "assets\\public\\kenney\\furniture-kit\\License.txt",
+      "target": "licenses/kenney/furniture-kit.txt",
+      "bytes": 614,
+      "sha256": "bc0de1a0742cb490f9ed4bae0bd284286ebb27e23149b9917c7d8c0d590b8b29"
+    },
+    {
+      "source": "assets\\public\\kenney\\nature-kit\\License.txt",
+      "target": "licenses/kenney/nature-kit.txt",
+      "bytes": 611,
+      "sha256": "cb96b75e3560ac78d7a53ce6f083f4cdb5c53faea6141b62d63458dcfe1e4b9d"
+    },
+    {
+      "source": "assets\\public\\kenney\\manifest.json",
+      "target": "provenance/kenney_manifest.json",
+      "bytes": 2543,
+      "sha256": "8ea2885b4825f7b2c861c0293a8c076b274bbdd2e97a6e1cdf1295f3a342722d"
+    },
+    {
+      "source": "assets\\public\\kenney\\manifest_roads_v18.json",
+      "target": "provenance/kenney_manifest_roads_v18.json",
+      "bytes": 2901,
+      "sha256": "a015fa608f3ddef8a43d918988f48db45aaba6ecc442915a4cea96aa5bae1820"
+    },
+    {
+      "source": "stage0\\crane_sunlight_review_v14.html",
+      "target": "reference/crane_sunlight_review_v14.html",
+      "bytes": 4525,
+      "sha256": "30db3876bcb60d84f5f88ea1a4d45b442a7a04b7ab09813ebdbbceb843eaff3c"
+    },
+    {
+      "source": "stage0\\evidence\\crane_noise_v1\\sunlight_association_v14.json",
+      "target": "reference/evidence/crane_noise_v1/sunlight_association_v14.json",
+      "bytes": 7787,
+      "sha256": "9fd7d1d8af7064589f4700408c8f8101ff4afeb796b77e965ffeaf8690d2447d"
+    },
+    {
+      "source": "stage0\\crane_noise_review_v1.html",
+      "target": "reference/crane_noise_review_v1.html",
+      "bytes": 720057,
+      "sha256": "7bb54148a542bec4f9b84914b9639d1fb2a22f70d43c9bbe09e6d3a4359122ed"
+    },
+    {
+      "source": "stage0\\evidence\\noise_lab_v1\\concentration_audit_v12.json",
+      "target": "reference/evidence/noise_lab_v1/concentration_audit_v12.json",
+      "bytes": 2869,
+      "sha256": "fbaf1f0a04b5220986586925174d9af756b9467024e4d739d44d5d6f69f026f8"
+    },
+    {
+      "source": "stage0\\evidence\\crane_noise_v1\\reservation.json",
+      "target": "reference/evidence/crane_noise_v1/reservation.json",
+      "bytes": 2024,
+      "sha256": "b3230218f39a37cc1ee60ef39fa477961cc2dde0f89b1d5799933963f3cad4d7"
+    },
+    {
+      "source": "stage0\\evidence\\crane_noise_v1\\audit.json",
+      "target": "reference/evidence/crane_noise_v1/audit.json",
+      "bytes": 29023,
+      "sha256": "17428d3aa23f38cd2cae62ac39c367f4a859e23ba372df6398544963e38c8ac9"
+    },
+    {
+      "source": "stage0\\aerial_noise_review_v1.html",
+      "target": "reference/aerial_noise_review_v1.html",
+      "bytes": 718397,
+      "sha256": "18aff5eb776b62b27ab613384f8466102fb165c28a6aca073c6d5ac79d0ea706"
+    },
+    {
+      "source": "stage0\\evidence\\aerial_noise_v1\\downloads.json",
+      "target": "reference/evidence/aerial_noise_v1/downloads.json",
+      "bytes": 4874,
+      "sha256": "04b8a85d3d3771c211f5ba8408381dbed9f5974b9ffbd351d2aac80cd030ec6d"
+    },
+    {
+      "source": "stage0\\evidence\\aerial_noise_v1\\reservation.json",
+      "target": "reference/evidence/aerial_noise_v1/reservation.json",
+      "bytes": 434179,
+      "sha256": "b94b8d54f3433736206f770c784094a1946d2751747fe0975425b3a1b5c7de1c"
+    },
+    {
+      "source": "stage0\\evidence\\aerial_noise_v1\\analysis.json",
+      "target": "reference/evidence/aerial_noise_v1/analysis.json",
+      "bytes": 23288,
+      "sha256": "292ce034fa58024f92f13995f4a14e8e726654adff42e71ffb2441c00f6d6137"
+    },
+    {
+      "source": "stage0\\aerial_noise_v1_evidence.zip",
+      "target": "reference/aerial_noise_v1_evidence.zip",
+      "bytes": 59713,
+      "sha256": "18f3a2abfc10536bd0e15aa6458052d1747a8d0b9006a865cd893c2344faf9ef"
+    },
+    {
+      "source": "stage0\\aerial_noise_sources_v1.json",
+      "target": "reference/aerial_noise_sources_v1.json",
+      "bytes": 5781,
+      "sha256": "8d9891f6b4931e139228fc7c99ad2226c7f683733e1ddb09d0a6f6c8631166f7"
+    },
+    {
+      "source": "stage0\\dust_structure_v1.html",
+      "target": "reference/dust_structure_v1.html",
+      "bytes": 387386,
+      "sha256": "ffdb1327a55ff7de1b7c3963bc7d662ec93cae40787b5588afd2140630036e11"
+    },
+    {
+      "source": "stage0\\evidence\\dust_structure_v1\\input_manifest.json",
+      "target": "reference/evidence/dust_structure_v1/input_manifest.json",
+      "bytes": 118318,
+      "sha256": "c1aa0be081aaf931869319e9693ab22ffd051b574f72c0f71c3c3ea00a6853be"
+    },
+    {
+      "source": "stage0\\evidence\\dust_structure_v1\\analysis.json",
+      "target": "reference/evidence/dust_structure_v1/analysis.json",
+      "bytes": 685537,
+      "sha256": "f302c806d683a79703b92c828630ba35230391bb29ff7bf016f90ad5ce8ecc6d"
+    },
+    {
+      "source": "stage0\\assets\\aerial_noise_v1\\CA05USGSB4_1.json",
+      "target": "reference/assets/aerial_noise_v1/CA05USGSB4_1.json",
+      "bytes": 1456625,
+      "sha256": "6f354b50b302db2961a6d0e09b09fff7bfc16eebe44b235635e6b7f491d2012c"
+    },
+    {
+      "source": "stage0\\assets\\aerial_noise_v1\\CA05USGSB4_2.json",
+      "target": "reference/assets/aerial_noise_v1/CA05USGSB4_2.json",
+      "bytes": 1786499,
+      "sha256": "d63fe129d990301e56a854d5e670c2c2328aa80ba3448ed7041829223c6b566f"
+    },
+    {
+      "source": "stage0\\assets\\aerial_noise_v1\\CA05USGSB4_3.json",
+      "target": "reference/assets/aerial_noise_v1/CA05USGSB4_3.json",
+      "bytes": 1621207,
+      "sha256": "def59da6d376e540c44aba3b8063b0b45f20c20e91d709ddbe89a25fd48bdb0c"
+    },
+    {
+      "source": "stage0\\assets\\aerial_noise_v1\\CRB_10_Jul_1.json",
+      "target": "reference/assets/aerial_noise_v1/CRB_10_Jul_1.json",
+      "bytes": 2537929,
+      "sha256": "a033746ace3f2a06fcd9a671994adb9b8f04c3d6579b10cd0b0f95cf292eb458"
+    },
+    {
+      "source": "stage0\\assets\\aerial_noise_v1\\CRB_10_Jul_2.json",
+      "target": "reference/assets/aerial_noise_v1/CRB_10_Jul_2.json",
+      "bytes": 2843505,
+      "sha256": "184f5e4dbcf92ca4fe8319ff8a4396379b88a3f27f7e566c222c17d986d26a05"
+    },
+    {
+      "source": "stage0\\assets\\aerial_noise_v1\\CRB_10_Jul_3.json",
+      "target": "reference/assets/aerial_noise_v1/CRB_10_Jul_3.json",
+      "bytes": 2867035,
+      "sha256": "00fb0846ea9119d85c7d1cc078b23baa501c30582b7f6de8174e98a5c043a866"
+    },
+    {
+      "source": "stage0\\assets\\aerial_noise_v1\\UT18_Dennison_1.json",
+      "target": "reference/assets/aerial_noise_v1/UT18_Dennison_1.json",
+      "bytes": 1387975,
+      "sha256": "97e773d303b0193751ced18ae74e1cba77076bff05612150eaac6090229e1c1f"
+    },
+    {
+      "source": "stage0\\assets\\aerial_noise_v1\\UT18_Dennison_2.json",
+      "target": "reference/assets/aerial_noise_v1/UT18_Dennison_2.json",
+      "bytes": 1908739,
+      "sha256": "eec0447d5b3400bae49a44d0ac162090b77a1acac01baf38f7260d22eef2c4e3"
+    },
+    {
+      "source": "stage0\\assets\\aerial_noise_v1\\UT18_Dennison_3.json",
+      "target": "reference/assets/aerial_noise_v1/UT18_Dennison_3.json",
+      "bytes": 1387942,
+      "sha256": "003f42ec8dbc573f79c33a7d0b8f85d18f3c10f4cb079b8b804b8675a7feef42"
+    },
+    {
+      "source": "stage0\\evidence\\noise_lab_v1\\scan_geometry_v2.json",
+      "target": "reference/evidence/noise_lab_v1/scan_geometry_v2.json",
+      "bytes": 23131,
+      "sha256": "179ab65102a2e66987ee4d1b191a52adf96b08e3479351708d13e35f79f04939"
+    },
+    {
+      "source": "stage0\\evidence\\noise_lab_v1\\parameter_asset_checks_v18.json",
+      "target": "reference/evidence/noise_lab_v1/parameter_asset_checks_v18.json",
+      "bytes": 3837,
+      "sha256": "5a4ab75e973094056f35c8fcc229b16de2855adbabc26a1509eb9a3723b7b12f"
+    },
+    {
+      "source": "stage0\\evidence\\noise_lab_v1\\asset_expansion_v18.json",
+      "target": "reference/evidence/noise_lab_v1/asset_expansion_v18.json",
+      "bytes": 81682,
+      "sha256": "a288d2043f0787165b9ec5ee4fc3f1500d76b753f4e3e9fc81ed2756484d5a8b"
+    },
+    {
+      "source": "stage0\\evidence\\noise_lab_v1\\browser_v18.json",
+      "target": "reference/evidence/noise_lab_v1/browser_v18.json",
+      "bytes": 981,
+      "sha256": "197838b3d33eff32c45353ce37cb09665cd4e56cf66216f6938558631ef6edf5"
+    },
+    {
+      "source": "stage0\\evidence\\noise_lab_v1\\observation_checks_v16.json",
+      "target": "reference/evidence/noise_lab_v1/observation_checks_v16.json",
+      "bytes": 863,
+      "sha256": "21ae5fd89aa73c635241455f861869362818c745393f291ae22361fac80472e7"
+    },
+    {
+      "source": "scripts\\test_noise_lab_jobs_v13.cjs",
+      "target": "tests/worker-lifecycle.cjs",
+      "bytes": 2117,
+      "sha256": "eba0e90f1c26ec28cff7db852a5c6304ce16c3416acb151336c991b1439a1526"
+    },
+    {
+      "source": "stage0/evidence/crane_noise_v1/range_image_0.f32",
+      "target": "reference/evidence/crane_noise_v1/range_image_0.f32",
+      "bytes": 524288,
+      "sha256": "8078efc57a613d85be7b0e4a96a3bb1915df706c3d45e151b4dcdddeaa221440"
+    },
+    {
+      "source": "stage0/evidence/crane_noise_v1/range_image_1.f32",
+      "target": "reference/evidence/crane_noise_v1/range_image_1.f32",
+      "bytes": 524288,
+      "sha256": "db625f881830e6579280d976a3a7ee6ab6403a09548838ed5cbfc7510a3292c1"
+    },
+    {
+      "source": "stage0/evidence/crane_noise_v1/range_image_2.f32",
+      "target": "reference/evidence/crane_noise_v1/range_image_2.f32",
+      "bytes": 524288,
+      "sha256": "5a03995f1afcd45472be907a0ce228aa79bfe68f8fae855fdc61667c2befab3b"
+    },
+    {
+      "source": "stage0/evidence/crane_noise_v1/window_0.f32",
+      "target": "reference/evidence/crane_noise_v1/window_0.f32",
+      "bytes": 6600000,
+      "sha256": "9abbfb1c2608332cdeb24aee075913fa593e0a3d0d5740f16351dbb96715638a"
+    },
+    {
+      "source": "stage0/evidence/crane_noise_v1/window_1.f32",
+      "target": "reference/evidence/crane_noise_v1/window_1.f32",
+      "bytes": 6600000,
+      "sha256": "38984dc1deb3a0e49f0dea6b8408128e2884013bb4bf9e2f7f7c445511329fff"
+    },
+    {
+      "source": "stage0/evidence/crane_noise_v1/window_2.f32",
+      "target": "reference/evidence/crane_noise_v1/window_2.f32",
+      "bytes": 6600000,
+      "sha256": "35e9b3fb0601e4ce22aa2710986957c0f2c4e927447530ae5e3ad8363ed1c7e8"
+    },
+    {
+      "source": "stage0/evidence/crane_noise_v1/manifest.json",
+      "target": "reference/evidence/crane_noise_v1/manifest.json",
+      "bytes": 4144,
+      "sha256": "3b3f6c7dd295c17467553abde037d72052eb7e9670a48bc876e318e5e0b01bd5"
+    }
+  ]
+}

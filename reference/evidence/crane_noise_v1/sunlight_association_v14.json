@@ -1,0 +1,281 @@
+{
+  "version": "crane-sunlight-association-v14",
+  "utc": "2026-10-07T09:10:38.705549+00:00",
+  "source_sha256": "8674e7ead0021685973c9780dc11aaf6a019642d914e0009e90ed7eb0e4a6836",
+  "capture_seconds": 32.023114,
+  "sensor": "OS-1-32-U2-SR",
+  "nir_bins": [
+    {
+      "nir_from_inclusive": 0,
+      "nir_to_exclusive": 1000,
+      "slots": 1080236,
+      "valid_returns": 253147,
+      "no_return_pct": 76.56558381686965,
+      "positive_range_m": {
+        "min": 0.6690000295639038,
+        "p01": 1.3480000495910645,
+        "p50": 4.879000186920166,
+        "p90": 47.40800094604492,
+        "p99": 72.20054428100586,
+        "p999": 100.2850594024656,
+        "max": 226.84701538085938,
+        "count": 253147
+      },
+      "positive_signal": {
+        "min": 5.0,
+        "p01": 12.0,
+        "p50": 257.0,
+        "p90": 1614.0,
+        "p99": 3167.0,
+        "p999": 3910.707999999984,
+        "max": 4560.0,
+        "count": 253147
+      }
+    },
+    {
+      "nir_from_inclusive": 1000,
+      "nir_to_exclusive": 4000,
+      "slots": 4121551,
+      "valid_returns": 1448034,
+      "no_return_pct": 64.86676981553788,
+      "positive_range_m": {
+        "min": 0.6350000500679016,
+        "p01": 1.0,
+        "p50": 3.811000108718872,
+        "p90": 45.117000579833984,
+        "p99": 71.30767646789543,
+        "p999": 102.48590849304183,
+        "max": 216.66201782226562,
+        "count": 1448034
+      },
+      "positive_signal": {
+        "min": 5.0,
+        "p01": 21.0,
+        "p50": 631.0,
+        "p90": 2880.0,
+        "p99": 3835.0,
+        "p999": 4532.0,
+        "max": 5713.0,
+        "count": 1448034
+      }
+    },
+    {
+      "nir_from_inclusive": 4000,
+      "nir_to_exclusive": 8000,
+      "slots": 2290966,
+      "valid_returns": 976258,
+      "no_return_pct": 57.38662206248368,
+      "positive_range_m": {
+        "min": 0.6540000438690186,
+        "p01": 0.9530000686645508,
+        "p50": 2.944000244140625,
+        "p90": 33.854000091552734,
+        "p99": 67.08800506591797,
+        "p999": 86.51774851226808,
+        "max": 216.7110137939453,
+        "count": 976258
+      },
+      "positive_signal": {
+        "min": 9.0,
+        "p01": 59.0,
+        "p50": 1382.0,
+        "p90": 3361.0,
+        "p99": 3978.0,
+        "p999": 4476.743000000017,
+        "max": 5641.0,
+        "count": 976258
+      }
+    },
+    {
+      "nir_from_inclusive": 8000,
+      "nir_to_exclusive": 16000,
+      "slots": 2132026,
+      "valid_returns": 804760,
+      "no_return_pct": 62.253743622263514,
+      "positive_range_m": {
+        "min": 0.6810000538825989,
+        "p01": 0.9910000562667847,
+        "p50": 2.2710001468658447,
+        "p90": 31.57600212097168,
+        "p99": 59.47241371154789,
+        "p999": 71.5752454452515,
+        "max": 105.0830078125,
+        "count": 804760
+      },
+      "positive_signal": {
+        "min": 15.0,
+        "p01": 89.0,
+        "p50": 2245.0,
+        "p90": 3342.0,
+        "p99": 3873.0,
+        "p999": 4239.241000000038,
+        "max": 4883.0,
+        "count": 804760
+      }
+    },
+    {
+      "nir_from_inclusive": 16000,
+      "nir_to_exclusive": 32000,
+      "slots": 764487,
+      "valid_returns": 109449,
+      "no_return_pct": 85.68334059310361,
+      "positive_range_m": {
+        "min": 0.8870000243186951,
+        "p01": 0.9980000257492065,
+        "p50": 4.889000415802002,
+        "p90": 33.29820022583007,
+        "p99": 60.24372360229496,
+        "p999": 72.15010546875,
+        "max": 99.23700714111328,
+        "count": 109449
+      },
+      "positive_signal": {
+        "min": 28.0,
+        "p01": 148.0,
+        "p50": 2203.0,
+        "p90": 3464.0,
+        "p99": 4113.0,
+        "p999": 4493.551999999996,
+        "max": 4830.0,
+        "count": 109449
+      }
+    },
+    {
+      "nir_from_inclusive": 32000,
+      "nir_to_exclusive": 65535,
+      "slots": 88677,
+      "valid_returns": 1790,
+      "no_return_pct": 97.98143825343662,
+      "positive_range_m": {
+        "min": 8.988000869750977,
+        "p01": 25.556001663208008,
+        "p50": 26.67500114440918,
+        "p90": 31.650301551818856,
+        "p99": 58.34963417053223,
+        "p999": 67.00240634918214,
+        "max": 67.15299987792969,
+        "count": 1790
+      },
+      "positive_signal": {
+        "min": 41.0,
+        "p01": 78.89,
+        "p50": 721.5,
+        "p90": 1378.0,
+        "p99": 1701.0,
+        "p999": 2000.4860000000003,
+        "max": 2126.0,
+        "count": 1790
+      }
+    },
+    {
+      "nir_from_inclusive": 65535,
+      "nir_to_exclusive": 65536,
+      "slots": 14985,
+      "valid_returns": 268,
+      "no_return_pct": 98.21154487821154,
+      "positive_range_m": {
+        "min": 25.512001037597656,
+        "p01": 25.533030948638917,
+        "p50": 26.196500778198242,
+        "p90": 26.974601173400877,
+        "p99": 34.832930183410646,
+        "p999": 36.06733241271973,
+        "max": 36.44300079345703,
+        "count": 268
+      },
+      "positive_signal": {
+        "min": 86.0,
+        "p01": 100.67,
+        "p50": 437.5,
+        "p90": 700.8000000000002,
+        "p99": 1274.429999999999,
+        "p999": 1366.4560000000001,
+        "max": 1375.0,
+        "count": 268
+      }
+    }
+  ],
+  "encoding_max": {
+    "slots": 14985,
+    "valid_returns": 268,
+    "per_channel_counts": [
+      279,
+      265,
+      293,
+      358,
+      419,
+      480,
+      530,
+      579,
+      590,
+      578,
+      534,
+      491,
+      469,
+      443,
+      467,
+      464,
+      472,
+      574,
+      593,
+      605,
+      670,
+      658,
+      599,
+      563,
+      492,
+      461,
+      355,
+      331,
+      317,
+      311,
+      351,
+      394
+    ]
+  },
+  "matched_view_diagnostic": {
+    "motor_angle_bin_deg": 2,
+    "internal_column_bin_count": 16,
+    "internal_angle_width_deg": 5.625,
+    "channel_separate": true,
+    "pose_association": "latest motor packet by capture order, not synchronized per-beam deskew",
+    "minimum_high_samples": 2,
+    "minimum_comparison_samples": 8,
+    "rows": [
+      {
+        "nir_threshold": 32000,
+        "groups": 5741,
+        "high_slots": 76326,
+        "comparison_slots": 166762,
+        "high_valid_pct": 2.322930587217986,
+        "comparison_valid_pct_same_high_group_weights": 2.651881234649019,
+        "both_return_rates_below_5pct_groups": 5210,
+        "high_minus_comparison_percentage_points": -0.328950647431033
+      },
+      {
+        "nir_threshold": 65535,
+        "groups": 1118,
+        "high_slots": 11742,
+        "comparison_slots": 36082,
+        "high_valid_pct": 1.498892863226026,
+        "comparison_valid_pct_same_high_group_weights": 2.9452356913928854,
+        "both_return_rates_below_5pct_groups": 967,
+        "high_minus_comparison_percentage_points": -1.4463428281668596
+      }
+    ]
+  },
+  "interpretation_limits": [
+    "NIR measures background infrared, not a sunlight-noise label",
+    "Zero range can mean empty sky, out-of-range, occlusion, weak return or fault",
+    "Coarse pose matching reduces some scene-composition differences but does not control surface, motion, true solar irradiance or hardware fault",
+    "No daylight/shade intervention and no pointwise optical-error truth",
+    "No sunlight false-return rate or range error variance identifiable from this audit"
+  ],
+  "model_changes_applied": false,
+  "training": false,
+  "reserved_logs_opened": false,
+  "references": [
+    "https://docs.ouster.com/sensor-docs/firmware/3.2/lidar-data",
+    "https://ouster.com/insights/blog/the-camera-is-in-the-lidar"
+  ]
+}

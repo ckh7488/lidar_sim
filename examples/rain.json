@@ -1,0 +1,8 @@
+{
+  "scene": "apartment_v2",
+  "kind": "rain",
+  "seed": 73032,
+  "time": 3.25,
+  "weatherJitter": true,
+  "controls": {"rainRate": 5}
+}

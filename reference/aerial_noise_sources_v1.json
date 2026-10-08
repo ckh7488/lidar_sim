@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "verified_date": "2026-10-07",
+  "scope": "Public aerial LiDAR noise-label candidates, with nine calibration/demo tiles only. Not dust/sunlight ground truth or Ouster sensor calibration.",
+  "sources": [
+    {
+      "id": "ECLAIR",
+      "name": "ECLAIR",
+      "url": "https://github.com/SharperShape/eclair-dataset",
+      "paper": "https://arxiv.org/html/2404.10699v1",
+      "request_url": "https://docs.google.com/forms/d/e/1FAIpQLSe5nrufRYcXwTcE1RBz65nqv13zwWkE1QWImOsb8Y7cRSl5TA/viewform",
+      "label": 5,
+      "meaning": "Sporadic airborne or underground noise points; physical cause unspecified.",
+      "quality": "All labels initially automatic. Ground/Vegetation/Unassigned/Noise excluded from per-class misclassification threshold used to designate GT vs pseudo tiles. GT designation does not certify Noise quality.",
+      "license": "Dataset CC BY-NC-SA 4.0; repository MIT is not the data license. Commercial use requires separate arrangement.",
+      "access": "Form with email/name/institution/purpose; no request sent and no point data acquired.",
+      "use": "Candidate for general anomaly and thin-wire preservation review after access/license/label QA; not weather synthesis."
+    },
+    {
+      "id": "TS40K",
+      "name": "TS40K",
+      "url": "https://github.com/dlavado/TS40K",
+      "paper": "https://arxiv.org/html/2405.13989v2",
+      "label": 0,
+      "published_noise_percent": 1.348,
+      "meaning": "Noise in UAV power-infrastructure scenes; physical cause unspecified.",
+      "quality": "Paper acknowledges mislabeled noise, power lines, ground and towers. Check model ignore-index and class remapping before using pretrained outputs.",
+      "license": "Academic research only; commercial use requires prior owner consent.",
+      "access": "Institutional-email request to data owners; no message sent and no point data acquired.",
+      "use": "Candidate for distinguishing anomalous points from wires/towers, not a dust or sunlight label set."
+    },
+    {
+      "id": "CA05USGSB4",
+      "name": "B4 · San Andreas / San Jacinto",
+      "url": "https://portal.opentopography.org/datasetMetadata?otCollectionID=OT.032018.32611.1",
+      "bulk_instructions": "https://portal.opentopography.org/lidarDataset?opentopoID=OTLAS.032018.32611.1",
+      "doi": "10.5066/F7TQ5ZQ6",
+      "citation": "Bevis, M. and Hudnut, K. (2005), B4 Lidar Project. NCALM, USGS, Ohio State University, Southern California Integrated GPS Project; classified reprocessing by Stephen B. DeLong, USGS. Distributed by OpenTopography.",
+      "label": 7,
+      "meaning": "Low Point (low noise), not a physical-cause label.",
+      "published_total_points": 5681610713,
+      "published_noise_points": 1570585,
+      "license": "CC BY 4.0 per OpenTopography metadata; acknowledge data providers and OpenTopography.",
+      "crs": "WGS84 / UTM 11N EPSG:32611; ellipsoid heights; meters.",
+      "access": "Official anonymous S3 pc-bulk/CA05USGSB4; three metadata-selected calibration/demo tiles.",
+      "use": "Separate aerial general-anomaly reference; preserve original classifications, context and LAS fields."
+    },
+    {
+      "id": "CRB_10_Jul",
+      "name": "Christina River Basin · July 2010",
+      "url": "https://portal.opentopography.org/datasetMetadata?otCollectionID=OT.102011.26918.2",
+      "bulk_instructions": "https://portal.opentopography.org/lidarDataset?opentopoID=OTLAS.102011.26918.2",
+      "doi": "10.5069/G9X63JTW",
+      "citation": "Christina River Basin Critical Zone Observatory July 2010 Lidar Survey. NCALM; NSF, UC Merced and CRB-CZO. Distributed by OpenTopography.",
+      "label": 7,
+      "meaning": "Low Point (low noise), not a physical-cause label.",
+      "published_total_points": 1478601793,
+      "published_noise_points": 601848,
+      "license": "CC BY 4.0; acknowledge data providers and OpenTopography.",
+      "crs": "NAD83 / UTM 18N EPSG:26918; NAVD88 EPSG:5703; meters.",
+      "access": "Official anonymous S3 pc-bulk/CRB_10_Jul; selected bulk originals are LAS, not LAZ. Three calibration/demo tiles.",
+      "use": "Separate aerial general-anomaly reference; preserve original classifications, context and LAS fields."
+    },
+    {
+      "id": "UT18_Dennison",
+      "name": "Utah · Woodland Ecosystems 2018",
+      "url": "https://portal.opentopography.org/datasetMetadata?otCollectionID=OT.092020.26912.1",
+      "bulk_instructions": "https://portal.opentopography.org/lidarDataset?opentopoID=OTLAS.092020.26912.1",
+      "doi": "10.5069/G90C4SZ9",
+      "citation": "Monitoring Woodland Ecosystems, Utah 2018. NCALM for Philip Dennison and Brian Codding, University of Utah; NSF. Distributed by OpenTopography.",
+      "label": 7,
+      "meaning": "Low Point (low noise), not a physical-cause label.",
+      "published_total_points": 5038541117,
+      "published_noise_points": 48209,
+      "license": "CC BY 4.0; acknowledge data providers and OpenTopography.",
+      "crs": "NAD83 / UTM 12N EPSG:26912; NAVD88 EPSG:5703; meters.",
+      "access": "Official anonymous S3 pc-bulk/UT18_Dennison; three metadata-selected calibration/demo tiles.",
+      "use": "Separate aerial general-anomaly reference; preserve original classifications, context and LAS fields."
+    }
+  ],
+  "integration_policy": {
+    "cause_unknown": true,
+    "original_labels_preserved": true,
+    "common_review_group": "aerial_general_anomaly",
+    "do_not_map_to": ["dust", "rain", "sunlight", "Ouster dropout", "mirror/glass removal"],
+    "training": false,
+    "patch_copy_into_ground_simulator": false,
+    "evaluation_note": "Compare by source/capture/region with spatial buffers and source-level holdout when designing a future benchmark; not random point splits. No model result is reported here."
+  }
+}

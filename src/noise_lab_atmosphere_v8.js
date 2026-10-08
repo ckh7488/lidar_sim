@@ -1,0 +1,57 @@
+/* Independent single-scatter waveform integration. Sensor coefficients are review assumptions. */
+(function(root){'use strict';
+const C=299792458,PI=Math.PI,DR=.25,MAX=100;
+const rng=seed=>{let a=seed>>>0;return()=>{a+=0x6D2B79F5;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296;}};
+const normal=r=>Math.sqrt(-2*Math.log(Math.max(1e-12,r())))*Math.cos(2*PI*r());
+function config(c){return {enabled:c.reviewEnabled!==false,visibility:c.fogVisibility??100,lidarRatio:c.fogRatio??65,pulseNs:c.fogPulse??20,r1:c.fogNear??.9,r2:c.fogFull??1.5,variation:c.fogVariation??0,backscatter:c.fogBackscatter!==false,photons:c.weakPhotons??100,weakFloor:c.weakFloor??.01,edgePulseNs:c.edgePulse??4,beamMrad:c.edgeBeam??1,markErrorM:.05,seed:c.seed>>>0,time:c.time||0,photonGain:2e6};}
+const pulse=(x,L)=>Math.abs(x)>=L/2?0:Math.cos(PI*x/L)**2;
+function overlap(r,c){return r<=c.r1?0:r>=c.r2?1:(r-c.r1)/(c.r2-c.r1);}
+function field(c,o,d){const rand=rng(c.seed^0x25ac651),q=[rand()*6.28,rand()*6.28,rand()*6.28];return r=>{if(!c.variation)return 1;const x=o[0]+r*d[0]-.6*c.time,y=o[1]+r*d[1],z=o[2]+r*d[2];const f=.5*Math.sin(.23*x+.19*y+.13*z+q[0])+.3*Math.sin(.47*y-.17*x+.31*z+q[1])+.2*Math.cos(.39*x+.41*z+q[2]);return 1+c.variation*f;};}
+function fogWave(limit,response,c,density){
+ const n=Math.ceil(MAX/DR),alpha=c.enabled?Math.log(20)/c.visibility:0,L=C*c.pulseNs*1e-9,w=2*PI/L,hard=limit>0&&limit<MAX,stop=hard?limit:MAX,soft=new Float64Array(n),solid=new Float64Array(n),signal=new Float64Array(n),A=new Float64Array(n+1),B=new Float64Array(n+1),D=new Float64Array(n+1);let tau=0;
+ for(let j=0;j<n;j++){const a=j*DR,b=Math.min((j+1)*DR,stop),r=(a+b)/2,ds=Math.max(0,b-a);let value=0;if(ds){const extinction=alpha*density(r),dt=extinction*ds;value=c.backscatter?extinction/c.lidarRatio*overlap(r,c)*Math.exp(-2*(tau+.5*dt))/(Math.max(.05,r)**2)*ds:0;tau+=dt;}const x=(j+.5)*DR;A[j+1]=A[j]+value;B[j+1]=B[j]+value*Math.cos(w*x);D[j+1]=D[j]+value*Math.sin(w*x);}
+ const p=hard?response/PI*overlap(limit,c)*Math.exp(-2*tau)/(limit*limit):0;
+ for(let j=0;j<n;j++){const r=(j+.5)*DR,lo=Math.max(0,Math.ceil((r-L/2)/DR-.5)),hi=Math.min(n,Math.floor((r+L/2)/DR-.5)+1);soft[j]=Math.max(0,.5*((A[hi]-A[lo])+Math.cos(w*r)*(B[hi]-B[lo])+Math.sin(w*r)*(D[hi]-D[lo])));solid[j]=p*pulse(r-limit,L);signal[j]=soft[j]+solid[j];}
+ return {soft,solid,signal,tau,hardPower:p,dr:DR,pulseSupportM:L};
+}
+function reproject(input,cfg,ranges,labels,powers,errors,summary){
+ const xyz=[],ids=[],nominal=[],delta=[],labs=[],pw=[],scatter=[],counts=[0,0,0],removed=[],rs=[{n:0,sum:0,sum2:0,clipped:0},{n:0,sum:0,sum2:0,clipped:0}],hist=new Uint32Array(100);let lost=0,replaced=0,sky=0,clean=0;
+ for(let i=0;i<ranges.length;i++){const r0=input.ranges[i],has=r0>0&&r0<100,k=i*3;if(has)clean++;const r=ranges[i],lab=labels[i];if(!r){if(has)lost++;}else{counts[lab]++;if(lab===1){if(has)replaced++;else sky++;hist[Math.min(99,Math.floor(r))]++;}const err=errors?.[i]||0,rr=Math.max(.3,r+err),o=input.reportedOrigins||input.origins,d=input.reportedDirections||input.directions;const p=[0,1,2].map(a=>(o?o[k+a]:input.sensor[a])+rr*d[k+a]);xyz.push(...p);if(lab===1)scatter.push(...p);ids.push(i);nominal.push(r);delta.push(rr-r);labs.push(lab);pw.push(powers[i]);const s=rs[lab===1?1:0];s.n++;s.sum+=rr-r;s.sum2+=(rr-r)**2;s.clipped+=rr===.3&&r+err<.3?1:0;}
+  if(has&&(!r||lab===1))for(let a=0;a<3;a++)removed.push((input.origins?input.origins[k+a]:input.sensor[a])+r0*input.directions[k+a]);
+ }
+ for(const s of rs){s.mean=s.n?s.sum/s.n:0;s.rms=s.n?Math.sqrt(s.sum2/s.n):0;s.std=s.n?Math.sqrt(Math.max(0,s.sum2/s.n-s.mean*s.mean)):0;}
+ const scatteringRanges=nominal.filter((r,j)=>labs[j]===1).sort((a,b)=>a-b);let start=0,shell=0;for(let end=0;end<scatteringRanges.length;end++){while(scatteringRanges[end]-scatteringRanges[start]>1)start++;shell=Math.max(shell,end-start+1);}
+ return {xyz:new Float32Array(xyz),labels:new Uint8Array(labs),rayIds:new Uint32Array(ids),powers:new Float32Array(pw),dust:new Float32Array(scatter),removed:new Float32Array(removed),nominalRanges:new Float32Array(nominal),rangeErrors:new Float32Array(delta),config:{...cfg},field:null,stats:{rays:ranges.length,clean,surface:counts[0]+counts[2],dust:counts[1],uncertain:counts[2],lost,replaced,skyDust:sky,noiseFraction:counts[1]/Math.max(1,labs.length),rangeError:{enabled:!!errors?.some(x=>x!==0),surface:rs[0],dust:rs[1]},weather:{mode:cfg.weather||'none',enabled:!!summary.enabled,intersections:summary.scatteringRays||0,alpha:summary.alpha||0},review:summary,model:'mechanism-review-v8',fieldCalibration:false,training:false},rangeShellFraction:counts[1]?shell/counts[1]:0};
+}
+function fog(input,cfg,receiver){const c=config(cfg),n=input.ranges.length,ranges=new Float32Array(n),labels=new Uint8Array(n),powers=new Float32Array(n),errors=new Float32Array(n);let scatteringRays=0,ambiguous=0,trace=null;const cache=new Map();if(c.r2<=c.r1)throw Error('광학 겹침 완료 거리는 시작 거리보다 커야 합니다.');if(!c.enabled){for(let i=0;i<n;i++){ranges[i]=input.ranges[i];errors[i]=normal(rng(c.seed^Math.imul(i+1,0x6c8e9cf5)))*Math.hypot(cfg.radialSigma||0,(cfg.radialSlope||0)*ranges[i]);}return reproject(input,cfg,ranges,labels,powers,errors,{kind:'fog',enabled:false,config:c,alpha:0,scatteringRays:0,shellFraction:0,trainingEligible:false});}
+ for(let i=0;i<n;i++){const k=3*i,r=input.ranges[i],response=cfg.surfaceModel&&input.response?input.response[i]:.35,o=input.origins?input.origins.subarray(k,k+3):input.sensor,d=input.directions.subarray(k,k+3),rand=rng(c.seed^Math.imul(i+1,0x9e3779b1)),key=r+'/'+response;let wave;
+  if(!c.variation&&cache.has(key))wave=cache.get(key);else{wave=fogWave(r,response,c,field(c,o,d));if(!c.variation&&cache.size<4096)cache.set(key,wave);}
+  let best=-1,peak=0,ties=0;for(let j=1;j<wave.signal.length;j++){const count=receiver.poisson(wave.signal[j]*c.photonGain,rand);if(count>peak){peak=count;best=j;ties=1;}else if(count===peak&&rand()<1/(++ties))best=j;}
+  if(best>=0&&peak>=4){const fogFraction=wave.soft[best]/Math.max(1e-30,wave.signal[best]),lab=fogFraction>.8?1:fogFraction>=.2?2:0;let detected=(best+.5)*DR;
+   // Keep a pure hard echo at its known geometric center; do not quantize clean surfaces.
+   if(lab===0&&r>0&&Math.abs(detected-r)<wave.pulseSupportM/2)detected=r;
+   ranges[i]=detected;labels[i]=lab;powers[i]=wave.signal[best];if(lab===1)scatteringRays++;if(lab===2)ambiguous++;
+   errors[i]=normal(rng(c.seed^Math.imul(i+1,0x6c8e9cf5)))*Math.hypot(cfg.radialSigma||0,(cfg.radialSlope||0)*detected);
+   if((!trace&&r>15&&r<25)||(lab===1&&(!trace||trace.kind!=='scatter'))){trace={ray:i,target:r,kind:lab===1?'scatter':'surface',selected:detected,rangeStep:DR,soft:Array.from(wave.soft),solid:Array.from(wave.solid),tau:wave.tau};}
+  }
+ }
+ const summary={kind:'fog',enabled:c.enabled,alpha:c.enabled?Math.log(20)/c.visibility:0,scatteringRays,ambiguous,config:c,trace,fieldCalibrated:false,trainingEligible:false,reason:'Generic waveform and uncalibrated overlap/receiver. No paired measured fog available.'};const result=reproject(input,cfg,ranges,labels,powers,errors,summary);summary.shellFraction=result.rangeShellFraction;summary.shellWarning=scatteringRays>200&&result.rangeShellFraction>.8;return result;
+}
+function weak(input,cfg,receiver){const c=config(cfg),n=input.ranges.length,ranges=new Float32Array(n),labels=new Uint8Array(n),powers=new Float32Array(n),errors=new Float32Array(n),sigmas=[];let low=0;
+ for(let i=0;i<n;i++){const r=input.ranges[i];if(!r)continue;const rand=rng(c.seed^Math.imul(i+1,0x9e3779b1)),response=input.response?input.response[i]:.25,mu=c.photons*(response/.25)*(20/r)**2,count=c.enabled?receiver.poisson(mu,rand):Math.max(4,mu);if(count<4){low++;continue;}ranges[i]=r;powers[i]=mu;const sigma=c.enabled?Math.hypot(c.weakFloor,.255/Math.sqrt(Math.max(1,mu))):0;errors[i]=normal(rng(c.seed^Math.imul(i+1,0x6c8e9cf5)))*sigma;sigmas.push(sigma);}
+ return reproject(input,cfg,ranges,labels,powers,errors,{kind:'weak',enabled:c.enabled,config:c,lowSignalMisses:low,meanSigma:sigmas.reduce((s,x)=>s+x,0)/Math.max(1,sigmas.length),trainingEligible:false,removalTruthPoints:0,reason:'Surface uncertainty and missed detections; do not label all perturbed surfaces for removal.'});
+}
+function gaussian(x,sigma){return Math.exp(-.5*(x/sigma)**2);}
+function mixedPeak(echoes,pulseNs){const sigma=C*pulseNs*1e-9/(2*2.354820045),value=r=>echoes.reduce((s,e)=>s+e.power*gaussian(r-e.range,sigma),0);let best=echoes[0]?.range||0,power=value(best);const seeds=echoes.map(e=>e.range);for(let i=0;i<echoes.length;i++)for(let j=i+1;j<echoes.length;j++)if(Math.abs(echoes[i].range-echoes[j].range)<3*sigma)seeds.push((echoes[i].range+echoes[j].range)/2);for(const r of seeds){const p=value(r);if(p>power){power=p;best=r;}}
+ let lo=best-sigma,hi=best+sigma;for(let i=0;i<26;i++){const a=lo+(hi-lo)/3,b=hi-(hi-lo)/3;if(value(a)>value(b))hi=b;else lo=a;}const range=(lo+hi)/2;return {range,power:value(range),sigma};}
+function edge(input,cfg,castRay){const c=config(cfg),n=input.ranges.length,ranges=new Float32Array(n),labels=new Uint8Array(n),powers=new Float32Array(n),errors=new Float32Array(n);let bundles=0,mixed=0,maxBias=0,trace=null;
+ for(let i=0;i<n;i++){const r=input.ranges[i],k=i*3,d=Array.from(input.directions.subarray(k,k+3)),o=input.origins?Array.from(input.origins.subarray(k,k+3)):input.sensor;let candidate=false;if(c.enabled)for(const j of [i-1,i+1,i-1024,i+1024])if(j>=0&&j<n&&Math.abs((input.ranges[j]||100)-(r||100))>.1){candidate=true;break;}
+  if(!candidate||c.beamMrad===0){ranges[i]=r;powers[i]=r?(input.response?.[i]||.25)/(r*r):0;continue;}
+  bundles++;const ref=Math.abs(d[2])<.9?[0,0,1]:[1,0,0],u=[d[1]*ref[2]-d[2]*ref[1],d[2]*ref[0]-d[0]*ref[2],d[0]*ref[1]-d[1]*ref[0]],norm=Math.hypot(...u);for(let a=0;a<3;a++)u[a]/=norm;const v=[d[1]*u[2]-d[2]*u[1],d[2]*u[0]-d[0]*u[2],d[0]*u[1]-d[1]*u[0]],echoes=[];let weights=0;
+  for(let b=0;b<13;b++){const radius=b===0?0:Math.sqrt(b<=6?.25:.75),angle=(b-1)%6*PI/3+(b>6?PI/6:0),weight=Math.exp(-2*radius*radius),dir=d.map((x,a)=>x+c.beamMrad/1000*radius*(u[a]*Math.cos(angle)+v[a]*Math.sin(angle))),nn=Math.hypot(...dir);for(let a=0;a<3;a++)dir[a]/=nn;weights+=weight;const hit=castRay(o,dir);if(hit)echoes.push({range:hit.range,power:weight*hit.response/(hit.range**2)});}
+  if(!echoes.length)continue;for(const e of echoes)e.power/=weights;const p=mixedPeak(echoes,c.edgePulseNs);if(p.power<2e-6)continue;ranges[i]=p.range;powers[i]=p.power;const bias=r?p.range-r:0,nearest=Math.min(...echoes.map(e=>Math.abs(e.range-p.range)));if(r&&Math.abs(bias)>c.markErrorM){labels[i]=2;mixed++;maxBias=Math.max(maxBias,Math.abs(bias));if(!trace||nearest>trace.nearestSurfaceRangeGap)trace={ray:i,target:r,selected:p.range,echoes,nearestSurfaceRangeGap:nearest};}
+ }
+ return reproject(input,cfg,ranges,labels,powers,errors,{kind:'edge',enabled:c.enabled,config:c,bundles,mixed,maxBias,trace,trainingEligible:false,removalTruthPoints:0,reason:'Unresolved pulsed returns; highlighted bias is a correction candidate, not automatic removal truth. No AMCW extrapolation.'});
+}
+root.NoiseLabAtmosphere={config,pulse,overlap,field,fogWave,fog,weak,edge,mixedPeak,reproject};if(typeof module!=='undefined')module.exports=root.NoiseLabAtmosphere;
+})(typeof self!=='undefined'?self:globalThis);

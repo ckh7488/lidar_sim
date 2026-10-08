@@ -1,0 +1,104 @@
+{
+  "files": [
+    {
+      "key": "CA05USGSB4/ot_b4_216000_3942000.laz",
+      "bytes": 5682120,
+      "etag": "\"00000000000000000000000000000000-1\"",
+      "dataset": "CA05USGSB4",
+      "id": "CA05USGSB4_1",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/CA05USGSB4/ot_b4_216000_3942000.laz",
+      "split": "calibration_demo_only",
+      "path": "E:\\NeuralMap\\runtime\\tmp\\aerial_noise_v1\\CA05USGSB4\\ot_b4_216000_3942000.laz",
+      "sha256": "7cd363491207073c97db62a660abdaad6629b9361f88b87b22417bcb4ec4a7f5"
+    },
+    {
+      "key": "CA05USGSB4/ot_b4_552000_3692000.laz",
+      "bytes": 6892131,
+      "etag": "\"00000000000000000000000000000000-1\"",
+      "dataset": "CA05USGSB4",
+      "id": "CA05USGSB4_2",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/CA05USGSB4/ot_b4_552000_3692000.laz",
+      "split": "calibration_demo_only",
+      "path": "E:\\NeuralMap\\runtime\\tmp\\aerial_noise_v1\\CA05USGSB4\\ot_b4_552000_3692000.laz",
+      "sha256": "8867b21527d410c2227085616f027b70f88c319bf9f42438860a595607258a46"
+    },
+    {
+      "key": "CA05USGSB4/ot_b4_198000_3962000.laz",
+      "bytes": 8196876,
+      "etag": "\"00000000000000000000000000000000-1\"",
+      "dataset": "CA05USGSB4",
+      "id": "CA05USGSB4_3",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/CA05USGSB4/ot_b4_198000_3962000.laz",
+      "split": "calibration_demo_only",
+      "path": "E:\\NeuralMap\\runtime\\tmp\\aerial_noise_v1\\CA05USGSB4\\ot_b4_198000_3962000.laz",
+      "sha256": "af1965736ba488fc2195e3fed19fd150069c134b6c424b1906a478161f4b0f26"
+    },
+    {
+      "key": "CRB_10_Jul/ot_CRB2_451500_4409000.las",
+      "bytes": 55922752,
+      "etag": "\"00000000000000000000000000000000-1\"",
+      "dataset": "CRB_10_Jul",
+      "id": "CRB_10_Jul_1",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/CRB_10_Jul/ot_CRB2_451500_4409000.las",
+      "split": "calibration_demo_only",
+      "path": "E:\\NeuralMap\\runtime\\tmp\\aerial_noise_v1\\CRB_10_Jul\\ot_CRB2_451500_4409000_retry.las",
+      "sha256": "9761610835defb951df0043087e003e30a05ff3a02264babd0edc79f78d984f7"
+    },
+    {
+      "key": "CRB_10_Jul/ot_CRB2_450000_4409000.las",
+      "bytes": 75169280,
+      "etag": "\"00000000000000000000000000000000-1\"",
+      "dataset": "CRB_10_Jul",
+      "id": "CRB_10_Jul_2",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/CRB_10_Jul/ot_CRB2_450000_4409000.las",
+      "split": "calibration_demo_only",
+      "path": "E:\\NeuralMap\\runtime\\tmp\\aerial_noise_v1\\CRB_10_Jul\\ot_CRB2_450000_4409000_retry.las",
+      "sha256": "74fe93a5a6df2a8c365af8c3b713ee168b87954b2556ffb90aa3c9d40a59df3f"
+    },
+    {
+      "key": "CRB_10_Jul/ot_CRB2_434000_4417500.las",
+      "bytes": 67857864,
+      "etag": "\"00000000000000000000000000000000-1\"",
+      "dataset": "CRB_10_Jul",
+      "id": "CRB_10_Jul_3",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/CRB_10_Jul/ot_CRB2_434000_4417500.las",
+      "split": "calibration_demo_only",
+      "path": "E:\\NeuralMap\\runtime\\tmp\\aerial_noise_v1\\CRB_10_Jul\\ot_CRB2_434000_4417500.las",
+      "sha256": "71c213552007217202a98943c5ce8ffa66cb759f4d856704b2097057d3ccf686"
+    },
+    {
+      "key": "UT18_Dennison/582000_4151500.laz",
+      "bytes": 1164123,
+      "etag": "\"00000000000000000000000000000000-1\"",
+      "dataset": "UT18_Dennison",
+      "id": "UT18_Dennison_1",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/UT18_Dennison/582000_4151500.laz",
+      "split": "calibration_demo_only",
+      "path": "E:\\NeuralMap\\runtime\\tmp\\aerial_noise_v1\\UT18_Dennison\\582000_4151500.laz",
+      "sha256": "4e1db5026bf10c47a57b08ec98d58296d69384a861d08c2062b1fc5f298ef8f1"
+    },
+    {
+      "key": "UT18_Dennison/597000_4163500.laz",
+      "bytes": 27821651,
+      "etag": "\"00000000000000000000000000000000-1\"",
+      "dataset": "UT18_Dennison",
+      "id": "UT18_Dennison_2",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/UT18_Dennison/597000_4163500.laz",
+      "split": "calibration_demo_only",
+      "path": "E:\\NeuralMap\\runtime\\tmp\\aerial_noise_v1\\UT18_Dennison\\597000_4163500.laz",
+      "sha256": "f7e9ef774b37556f71ad149128948df2832a9e6a92719c6578c7322f1b9556e3"
+    },
+    {
+      "key": "UT18_Dennison/582000_4180500.laz",
+      "bytes": 10020855,
+      "etag": "\"00000000000000000000000000000000-1\"",
+      "dataset": "UT18_Dennison",
+      "id": "UT18_Dennison_3",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/UT18_Dennison/582000_4180500.laz",
+      "split": "calibration_demo_only",
+      "path": "E:\\NeuralMap\\runtime\\tmp\\aerial_noise_v1\\UT18_Dennison\\582000_4180500.laz",
+      "sha256": "af18432683f27f53277b7a7539396824a3e2e8fe98bfdb68f375986b62d05e55"
+    }
+  ],
+  "total_bytes": 258727652
+}

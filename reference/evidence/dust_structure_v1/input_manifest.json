@@ -1,0 +1,2499 @@
+{
+  "scope": "All previously prepared calibration files; exploratory descriptive statistics only",
+  "files": [
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0136_ouster_0001_1690447458_0771306.npz",
+      "dataset": "Ouster",
+      "group": "0136",
+      "capture_group": "['2023-07-27']",
+      "sha256": "7c880b6f2a95d918970b56ec425714e38ca0efd4c5a31be1cae7682efbcef5d5"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0136_ouster_0081_1690447470_0767393.npz",
+      "dataset": "Ouster",
+      "group": "0136",
+      "capture_group": "['2023-07-27']",
+      "sha256": "260fd69052b74022d898d0b3c7fb1f6fcdf8bc14d7e108c30305187812bbed23"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0136_ouster_0161_1690447481_9765418.npz",
+      "dataset": "Ouster",
+      "group": "0136",
+      "capture_group": "['2023-07-27']",
+      "sha256": "08e7b56882be5f3e4b2df9804025126be734dac3fdec10faac0109d966b1ecb0"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0136_ouster_0241_1690447493_9763894.npz",
+      "dataset": "Ouster",
+      "group": "0136",
+      "capture_group": "['2023-07-27']",
+      "sha256": "03361b667af2501258b59f095555188dc44e0c3153b2b46084a231b0810483e3"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0137_ouster_0001_1690447494_5766985.npz",
+      "dataset": "Ouster",
+      "group": "0137",
+      "capture_group": "['2023-07-27']",
+      "sha256": "952b999781ae5ff03a4ed82825a2c3b7f90a5a6cf357c5af125a451445fe219f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0137_ouster_0081_1690447506_4757378.npz",
+      "dataset": "Ouster",
+      "group": "0137",
+      "capture_group": "['2023-07-27']",
+      "sha256": "5b756e561f02eaf1f6a2387a8b78573a7be4e51fae5571e72d5be1b9ea5263d4"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0137_ouster_0166_1690447519_1762223.npz",
+      "dataset": "Ouster",
+      "group": "0137",
+      "capture_group": "['2023-07-27']",
+      "sha256": "52f43fd88adbe1bd15b9c8fe68ac4e8adf303157d53228ba167411ebeb38f1dd"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0137_ouster_0246_1690447531_1759186.npz",
+      "dataset": "Ouster",
+      "group": "0137",
+      "capture_group": "['2023-07-27']",
+      "sha256": "faac6e23d6565774b24fc766bde46678309d20bee6b72a11b39c5ccb4405669a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0139_ouster_0001_1692685988_2735639.npz",
+      "dataset": "Ouster",
+      "group": "0139",
+      "capture_group": "['2023-08-22']",
+      "sha256": "79bd5fc4e9e3cd01710e067c28cfc3197d6bf6cd20c49c7112a41e7e1a55727d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0139_ouster_0056_1692685999_8737264.npz",
+      "dataset": "Ouster",
+      "group": "0139",
+      "capture_group": "['2023-08-22']",
+      "sha256": "4fa815d19c07f6c365589edf67266c16dab34a6a8847e2419afac9ed2f4c61fa"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0139_ouster_0116_1692686012_4734960.npz",
+      "dataset": "Ouster",
+      "group": "0139",
+      "capture_group": "['2023-08-22']",
+      "sha256": "f95af3cff4fd3b27ea4742f899d356e57e5a19486a366b1bd2c652b5f12aaf3e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0139_ouster_0171_1692686024_1400073.npz",
+      "dataset": "Ouster",
+      "group": "0139",
+      "capture_group": "['2023-08-22']",
+      "sha256": "02197689dc3e757b592bce4135a0e1819f4823eb5ecb5326609b6fccf86bb1fd"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0140_ouster_0001_1690447641_1737473.npz",
+      "dataset": "Ouster",
+      "group": "0140",
+      "capture_group": "['2023-07-27']",
+      "sha256": "2ace0ef85c79717c108d13068d45b997e4dcb958628356d4a13665d45ef49e21"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0140_ouster_0016_1690447643_3739295.npz",
+      "dataset": "Ouster",
+      "group": "0140",
+      "capture_group": "['2023-07-27']",
+      "sha256": "e8b56d680cfdfe95b0d626d5f71a6ccfc9233c55d2aff6b0d1c0df97337baa94"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0140_ouster_0026_1690447644_8741150.npz",
+      "dataset": "Ouster",
+      "group": "0140",
+      "capture_group": "['2023-07-27']",
+      "sha256": "70d6b36f23f925155c47d7e40220977fdf14cbdeec9ec67851389b35e47e795f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0140_ouster_0041_1690447647_0735343.npz",
+      "dataset": "Ouster",
+      "group": "0140",
+      "capture_group": "['2023-07-27']",
+      "sha256": "666accd2d1dc2db8d089136d65fa3f5a951c2a2e148e5ce4459329bc18289581"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0141_ouster_0001_1692685855_1319980.npz",
+      "dataset": "Ouster",
+      "group": "0141",
+      "capture_group": "['2023-08-22']",
+      "sha256": "b3c47dfa52d5e7d1d3c2d031c3c970b1ab90a9dbf3d31f9fd70d659f7a531073"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0141_ouster_0121_1692685867_1321023.npz",
+      "dataset": "Ouster",
+      "group": "0141",
+      "capture_group": "['2023-08-22']",
+      "sha256": "ef402cd9a2f7c346e4d3bd78eb1fabd5a00bc4c16b67f66533dbf4a5af55b5d8"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0141_ouster_0246_1692685879_5968970.npz",
+      "dataset": "Ouster",
+      "group": "0141",
+      "capture_group": "['2023-08-22']",
+      "sha256": "fad1dccd6f5fe150da0fea774a95d2704a956fd84a8b2782afdf5d563f9b32ca"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0141_ouster_0366_1692685891_6764960.npz",
+      "dataset": "Ouster",
+      "group": "0141",
+      "capture_group": "['2023-08-22']",
+      "sha256": "459ae4f8d7b1d50960c785903d58deeb81f7bb276a823df49be305a065bc213d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0142_ouster_0001_1692686193_7714744.npz",
+      "dataset": "Ouster",
+      "group": "0142",
+      "capture_group": "['2023-08-22']",
+      "sha256": "d31e692b312daeda417d48f050cff4469a1241d571befbc49008f30253be9cbd"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0142_ouster_0046_1692686199_5713313.npz",
+      "dataset": "Ouster",
+      "group": "0142",
+      "capture_group": "['2023-08-22']",
+      "sha256": "33f52069eb64e7575bdeb5757742146fc876fa28af6eb74bedb9df69fc59c702"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0142_ouster_0086_1692686204_6713414.npz",
+      "dataset": "Ouster",
+      "group": "0142",
+      "capture_group": "['2023-08-22']",
+      "sha256": "7088e6c2f332086e66ebfe61d52447eba6b7311a7705df57ac635738c2c0d228"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0142_ouster_0131_1692686210_3711345.npz",
+      "dataset": "Ouster",
+      "group": "0142",
+      "capture_group": "['2023-08-22']",
+      "sha256": "43d4e31b6b592776a666265462107d050460c531d8b4bbdd3c7e008d7ab68e83"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0143_ouster_0001_1692686024_9397920.npz",
+      "dataset": "Ouster",
+      "group": "0143",
+      "capture_group": "['2023-08-22']",
+      "sha256": "35dd7ed9c3681628d7706af50ec921aeec67bf90ffa618896e4fe029bc261534"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0143_ouster_0046_1692686034_2725255.npz",
+      "dataset": "Ouster",
+      "group": "0143",
+      "capture_group": "['2023-08-22']",
+      "sha256": "8520569d17c84c26ab72f37e083f787ec04e7a2cb9708436585a3df4b2001535"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0143_ouster_0096_1692686044_8729377.npz",
+      "dataset": "Ouster",
+      "group": "0143",
+      "capture_group": "['2023-08-22']",
+      "sha256": "ebdddd4b66d7cab5035cad88db1f375fc8242d2ef5b87ae9386bc25f8fe58512"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0143_ouster_0141_1692686054_3726280.npz",
+      "dataset": "Ouster",
+      "group": "0143",
+      "capture_group": "['2023-08-22']",
+      "sha256": "cd216002ca75f8f1c737f50c22839ebc988a058b27f7a49c3bc372ea37914f49"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0144_ouster_0001_1692686157_2718601.npz",
+      "dataset": "Ouster",
+      "group": "0144",
+      "capture_group": "['2023-08-22']",
+      "sha256": "1b347283d2a7f12f5649a6833c2fcf780feb89ef08345b7ed0d0ef25d474d6dc"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0144_ouster_0091_1692686169_2715008.npz",
+      "dataset": "Ouster",
+      "group": "0144",
+      "capture_group": "['2023-08-22']",
+      "sha256": "f08432e6a2d7c2d2e202ae336cee6ee913680a922a7ad758e3473c7750c9a6c1"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0144_ouster_0186_1692686181_7717395.npz",
+      "dataset": "Ouster",
+      "group": "0144",
+      "capture_group": "['2023-08-22']",
+      "sha256": "e9449303eb450e5c6f8ae3082b124d9e74ad205bd47837ac9d73df3ef3b6fd0f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0144_ouster_0276_1692686193_2710671.npz",
+      "dataset": "Ouster",
+      "group": "0144",
+      "capture_group": "['2023-08-22']",
+      "sha256": "6debccebec2df6c47ca5927c70395672868169b5ebfca1c6c9fde2f261886f7e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0145_ouster_0001_1692686426_3659453.npz",
+      "dataset": "Ouster",
+      "group": "0145",
+      "capture_group": "['2023-08-22']",
+      "sha256": "693611ac6a0ea558d84c46360428b65dd2bfacc8408326f6e3937b25f38c8b63"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0145_ouster_0076_1692686437_7659187.npz",
+      "dataset": "Ouster",
+      "group": "0145",
+      "capture_group": "['2023-08-22']",
+      "sha256": "8b276c12c038b19ccddb3e0ad22afb05972f5fe6e5ca76f76a9c790016f808f5"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0145_ouster_0156_1692686449_8650138.npz",
+      "dataset": "Ouster",
+      "group": "0145",
+      "capture_group": "['2023-08-22']",
+      "sha256": "d2f403e5729bd31be67f05535b6260647977cd080bc07734dd851a14ab573075"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0145_ouster_0231_1692686461_0648340.npz",
+      "dataset": "Ouster",
+      "group": "0145",
+      "capture_group": "['2023-08-22']",
+      "sha256": "4ebd12eff2033383c0b83a3eaf4b143c1febd698eea26f320e5d224fa8fe0428"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0158_ouster_0001_1692687354_6489558.npz",
+      "dataset": "Ouster",
+      "group": "0158",
+      "capture_group": "['2023-08-22']",
+      "sha256": "a4221c4baff4dd564fdc58197cb54689a6607a3299c317b4175f5d18dbe8c28b"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0158_ouster_0101_1692687365_3484688.npz",
+      "dataset": "Ouster",
+      "group": "0158",
+      "capture_group": "['2023-08-22']",
+      "sha256": "5ab1a530863a767051febf9470c9a483177a39d7dbd490109fa8cbeb63d11a51"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0158_ouster_0206_1692687376_9485824.npz",
+      "dataset": "Ouster",
+      "group": "0158",
+      "capture_group": "['2023-08-22']",
+      "sha256": "1b597e25b062b28dee2fb57000ae0257175e7af219da857d15513235ba46096d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0158_ouster_0306_1692687388_0491228.npz",
+      "dataset": "Ouster",
+      "group": "0158",
+      "capture_group": "['2023-08-22']",
+      "sha256": "483a7230303478ce44bca941eed49d6a9279f1f1df4c78ba6bf397a220c9045f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0160_ouster_0001_1692686173_4716165.npz",
+      "dataset": "Ouster",
+      "group": "0160",
+      "capture_group": "['2023-08-22']",
+      "sha256": "02576e80dc7c46b1604e6ae586e3078c5caa40a64221a560a5fed455091044b4"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0160_ouster_0071_1692686182_6715794.npz",
+      "dataset": "Ouster",
+      "group": "0160",
+      "capture_group": "['2023-08-22']",
+      "sha256": "74f7ed70feb00a06bbb145a68e9e77f18c00a6a2cf8122575e8298270a0bb154"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0160_ouster_0146_1692686192_3713436.npz",
+      "dataset": "Ouster",
+      "group": "0160",
+      "capture_group": "['2023-08-22']",
+      "sha256": "6373d40c5a7c0aa556a1a00c6635574188cd12ccf2c091ed4eedec8567362fa2"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0160_ouster_0216_1692686201_3709931.npz",
+      "dataset": "Ouster",
+      "group": "0160",
+      "capture_group": "['2023-08-22']",
+      "sha256": "552604e27eb18de7e4b9902a6f5cd70bf7dcb9678b717eac264eb77b2ca119d7"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0162_ouster_0001_1692686428_0655332.npz",
+      "dataset": "Ouster",
+      "group": "0162",
+      "capture_group": "['2023-08-22']",
+      "sha256": "04c8c26a29f52808c75fa1b48be20f7d509069feceb38c271ebd8ee2fb1e52ca"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0162_ouster_0051_1692686435_5659916.npz",
+      "dataset": "Ouster",
+      "group": "0162",
+      "capture_group": "['2023-08-22']",
+      "sha256": "6f1d0da9e92c989d1a2f356678fc6d44ef39fc7b6e20a05f346de3864a8d3dba"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0162_ouster_0101_1692686443_2656624.npz",
+      "dataset": "Ouster",
+      "group": "0162",
+      "capture_group": "['2023-08-22']",
+      "sha256": "bec9ab2678d36f73d7f6a00abf0be82d406359fc65bd9d4f7c2afd86a5e6d19c"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0162_ouster_0151_1692686450_7650917.npz",
+      "dataset": "Ouster",
+      "group": "0162",
+      "capture_group": "['2023-08-22']",
+      "sha256": "f4f9a81851f5ba297ab858f814cb0e00ae7be0ace58493fe07b61d41f386e874"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0164_ouster_0001_1692686014_1732738.npz",
+      "dataset": "Ouster",
+      "group": "0164",
+      "capture_group": "['2023-08-22']",
+      "sha256": "f9c881cb0283ad356e7b945672e2c53ea8280f4708d81329b31d470eb09c2483"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0164_ouster_0051_1692686024_7399158.npz",
+      "dataset": "Ouster",
+      "group": "0164",
+      "capture_group": "['2023-08-22']",
+      "sha256": "a0b45c4a5fe58ce6cf1f15f5215d493f9250d8e694883813d38738bd33de18e1"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0164_ouster_0101_1692686035_0726225.npz",
+      "dataset": "Ouster",
+      "group": "0164",
+      "capture_group": "['2023-08-22']",
+      "sha256": "53d78f29f422590f209aeaaf51d5d66d0bff4f82c2efeb2f8e6a02995f353f2b"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0164_ouster_0151_1692686045_6728418.npz",
+      "dataset": "Ouster",
+      "group": "0164",
+      "capture_group": "['2023-08-22']",
+      "sha256": "4efc2c5a5f1fb861c70c93654a6023d8a56a3a5eadbc2518543c730fcf1c68ef"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0167_ouster_0001_1692686364_7686267.npz",
+      "dataset": "Ouster",
+      "group": "0167",
+      "capture_group": "['2023-08-22']",
+      "sha256": "ddbc863e2f74d9ede5a6c40d483474a84c4ac78714c19ffd65d44fc1021724a9"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0167_ouster_0076_1692686373_7682877.npz",
+      "dataset": "Ouster",
+      "group": "0167",
+      "capture_group": "['2023-08-22']",
+      "sha256": "c67929f1dd4a43d82ea04a4b6fe4d30c2650e99c86f7f2f318636268fe772712"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0167_ouster_0146_1692686383_1677947.npz",
+      "dataset": "Ouster",
+      "group": "0167",
+      "capture_group": "['2023-08-22']",
+      "sha256": "2f92b13f63f1c69e47a51aaf9a444b4d550a0818dd366fd8a92626da62ccc630"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0167_ouster_0221_1692686394_8673680.npz",
+      "dataset": "Ouster",
+      "group": "0167",
+      "capture_group": "['2023-08-22']",
+      "sha256": "4f642ad720b9197168c10273a3c6d57f9c5b7cc8a0b70391db9e80a76f3069c6"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0169_ouster_0001_1692687475_3467462.npz",
+      "dataset": "Ouster",
+      "group": "0169",
+      "capture_group": "['2023-08-22']",
+      "sha256": "022e83b1c37dd1e868120bb663eb18dd5c2a28c102b78aeccfec39c947542aa6"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0169_ouster_0056_1692687484_1470397.npz",
+      "dataset": "Ouster",
+      "group": "0169",
+      "capture_group": "['2023-08-22']",
+      "sha256": "d65ee267a9d8b92e2233b8398e7dc80aede8a65a057fa04754c208cd3c80883f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0169_ouster_0116_1692687493_4465866.npz",
+      "dataset": "Ouster",
+      "group": "0169",
+      "capture_group": "['2023-08-22']",
+      "sha256": "d46985ba173b57df628007e6bccb64997f2b48075b33bb3d6d6db4839f1811ce"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0169_ouster_0171_1692687502_0460732.npz",
+      "dataset": "Ouster",
+      "group": "0169",
+      "capture_group": "['2023-08-22']",
+      "sha256": "65c1d4b7ca5c30a526e304887415be957b4506024752882c2dcd831e52d42082"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0170_ouster_0001_1692687425_8479250.npz",
+      "dataset": "Ouster",
+      "group": "0170",
+      "capture_group": "['2023-08-22']",
+      "sha256": "5bd27f351941f6c47408d827f319e64a4c1ef4a9f489f3890722cb43f268a602"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0170_ouster_0051_1692687432_2474744.npz",
+      "dataset": "Ouster",
+      "group": "0170",
+      "capture_group": "['2023-08-22']",
+      "sha256": "13439e37fccbf871368d4b0f6cc2365eb3868dcd8fd0a0f5f1a415e82897b630"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0170_ouster_0101_1692687438_7473545.npz",
+      "dataset": "Ouster",
+      "group": "0170",
+      "capture_group": "['2023-08-22']",
+      "sha256": "3d4c7fa16c434bcc508ccd9fb103903eefe47a307072d90979549bbff8df804b"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0170_ouster_0151_1692687446_5476487.npz",
+      "dataset": "Ouster",
+      "group": "0170",
+      "capture_group": "['2023-08-22']",
+      "sha256": "3e95bf655636e4b8546a03fd8efaf33ad3285f59eb0cfd3960556d552e528063"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0171_ouster_0001_1692687322_5696356.npz",
+      "dataset": "Ouster",
+      "group": "0171",
+      "capture_group": "['2023-08-22']",
+      "sha256": "6c624bf0e4f8d8891573abbcf9886d160edd44fea8e33a687059dc67ba39b808"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0171_ouster_0066_1692687329_5497828.npz",
+      "dataset": "Ouster",
+      "group": "0171",
+      "capture_group": "['2023-08-22']",
+      "sha256": "31e40a60de7f71338eac2cdc2bb7ab77b2fe7b11da52da19f4b1890927f3b707"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0171_ouster_0136_1692687337_2497401.npz",
+      "dataset": "Ouster",
+      "group": "0171",
+      "capture_group": "['2023-08-22']",
+      "sha256": "574bf5746431f1bbb578323a2e8b129c0dff13a7f76298fdec44de9ceb77c5b5"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0171_ouster_0201_1692687344_4489520.npz",
+      "dataset": "Ouster",
+      "group": "0171",
+      "capture_group": "['2023-08-22']",
+      "sha256": "05cd39446ee89a880c664a20e893a31e5dcedd922a112588c5c788d806afb0d3"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0172_ouster_0001_1692686427_8044546.npz",
+      "dataset": "Ouster",
+      "group": "0172",
+      "capture_group": "['2023-08-22']",
+      "sha256": "216a2bbe63420a2af0cbce473aa21b66893f293a3e760ee9db8ba4c009afa64c"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0172_ouster_0041_1692686433_9045992.npz",
+      "dataset": "Ouster",
+      "group": "0172",
+      "capture_group": "['2023-08-22']",
+      "sha256": "8bf35eebc83c67f3c3fff57ab3f3644bd830f849dd4f985c3d08fc1d256a0ea6"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0172_ouster_0081_1692686439_8047757.npz",
+      "dataset": "Ouster",
+      "group": "0172",
+      "capture_group": "['2023-08-22']",
+      "sha256": "d4c96eeaaa8b64223cf2b99ede1c237d58096b9f0d1ac985535bba9953a61406"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0172_ouster_0121_1692686445_7045680.npz",
+      "dataset": "Ouster",
+      "group": "0172",
+      "capture_group": "['2023-08-22']",
+      "sha256": "30c396d7f928fbe09aa6d83fc425a7adc444cbf64a187ce49e5c75c6b9b60aa2"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0173_ouster_0001_1692687477_9970841.npz",
+      "dataset": "Ouster",
+      "group": "0173",
+      "capture_group": "['2023-08-22']",
+      "sha256": "63b04f54c0cdf8afa9008325f9de084de89e61081d6fd76c7d299a6cab1cc18d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0173_ouster_0066_1692687484_6958130.npz",
+      "dataset": "Ouster",
+      "group": "0173",
+      "capture_group": "['2023-08-22']",
+      "sha256": "c649b60a1409ba46913a59f0d4d849e92536d2c0260fbd97328546122b8517bc"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0173_ouster_0136_1692687491_8958460.npz",
+      "dataset": "Ouster",
+      "group": "0173",
+      "capture_group": "['2023-08-22']",
+      "sha256": "83aea862b35ff0a8c4335bde7ca4f915c53ef7fc97176ab476cc3fe5a514a8f8"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0173_ouster_0201_1692687498_7948475.npz",
+      "dataset": "Ouster",
+      "group": "0173",
+      "capture_group": "['2023-08-22']",
+      "sha256": "5695cc3c09eb3b2788e5282b367c18778893e73d8c28e778f7b828d3a0aeb59e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0176_ouster_0001_1692686252_9054806.npz",
+      "dataset": "Ouster",
+      "group": "0176",
+      "capture_group": "['2023-08-22']",
+      "sha256": "92d91f95ed527dbde1243d806c62c301d72228655a40faca36aa330537c7f306"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0176_ouster_0051_1692686260_8054605.npz",
+      "dataset": "Ouster",
+      "group": "0176",
+      "capture_group": "['2023-08-22']",
+      "sha256": "2dc9b9cf03fc03c95dab9c410f45ceacdaaf825b49baa62d9afe77317cb69f6a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0176_ouster_0106_1692686269_5056665.npz",
+      "dataset": "Ouster",
+      "group": "0176",
+      "capture_group": "['2023-08-22']",
+      "sha256": "2e131957243fdd6c08c97100959507250b72399288caae0e705626c75e65ed84"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0176_ouster_0156_1692686277_5057151.npz",
+      "dataset": "Ouster",
+      "group": "0176",
+      "capture_group": "['2023-08-22']",
+      "sha256": "f040becbf06e7ed43b01c6807badd17754686e0c8d6e6952c41ff5f28e876660"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0177_ouster_0001_1692686179_3074222.npz",
+      "dataset": "Ouster",
+      "group": "0177",
+      "capture_group": "['2023-08-22']",
+      "sha256": "c471053d808e63fa278102f0da77d6e7aeae1bce6f9da923494e0013f7696811"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0177_ouster_0016_1692686182_8077166.npz",
+      "dataset": "Ouster",
+      "group": "0177",
+      "capture_group": "['2023-08-22']",
+      "sha256": "416d247aeed2c4cec54fd15144a1545de040dc32746c48b3b7d728cfd186b697"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0177_ouster_0036_1692686187_6070473.npz",
+      "dataset": "Ouster",
+      "group": "0177",
+      "capture_group": "['2023-08-22']",
+      "sha256": "8039222ab0a31cb3bdb59e278e18fec5530bea1166ff11131e47f39f14723881"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0177_ouster_0071_1692686196_0075200.npz",
+      "dataset": "Ouster",
+      "group": "0177",
+      "capture_group": "['2023-08-22']",
+      "sha256": "bc32738d84d4e82c4360220d947d115d7dec8d6d74a0a1587644eeb84ca51888"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0179_ouster_0001_1692685858_1765516.npz",
+      "dataset": "Ouster",
+      "group": "0179",
+      "capture_group": "['2023-08-22']",
+      "sha256": "0fa2a73c289b3266002418c56630d3b82166aba70047e804b5945278b9a1247c"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0179_ouster_0096_1692685867_4436626.npz",
+      "dataset": "Ouster",
+      "group": "0179",
+      "capture_group": "['2023-08-22']",
+      "sha256": "6db635b954930f51ecaadb9491fb9642a1bb8403e54c31101761268de43c6eb9"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0179_ouster_0186_1692685877_0809412.npz",
+      "dataset": "Ouster",
+      "group": "0179",
+      "capture_group": "['2023-08-22']",
+      "sha256": "e50c3464ae33fea3dcf87925b9e6bdc5a71d7ea324757c37ffef71e8fde99838"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0179_ouster_0281_1692685885_9094083.npz",
+      "dataset": "Ouster",
+      "group": "0179",
+      "capture_group": "['2023-08-22']",
+      "sha256": "98a76fa535070d955e75925d51221dc9556fda785a1c593c01000e5ccdbd2fa8"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0180_ouster_0001_1692687363_5974958.npz",
+      "dataset": "Ouster",
+      "group": "0180",
+      "capture_group": "['2023-08-22']",
+      "sha256": "af22adcd85f3eb72be86a8ca038b44a1344949de2761bed53030b93d7c3edf48"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0180_ouster_0071_1692687371_2976904.npz",
+      "dataset": "Ouster",
+      "group": "0180",
+      "capture_group": "['2023-08-22']",
+      "sha256": "ac0c417048e71ee68f6890b98dc4277d4244dd29bd849e82c2908c36717f4db9"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0180_ouster_0141_1692687378_7972875.npz",
+      "dataset": "Ouster",
+      "group": "0180",
+      "capture_group": "['2023-08-22']",
+      "sha256": "0eb5ace95ac3c336e90f931bad64a86959a41d674de34a9d45e3fb56e199638e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0180_ouster_0211_1692687386_3971744.npz",
+      "dataset": "Ouster",
+      "group": "0180",
+      "capture_group": "['2023-08-22']",
+      "sha256": "5dad3f47b974ae02c6a98fef0e31011458290381c63e3a79cc3326806028dd34"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0181_ouster_0001_1692687313_0977402.npz",
+      "dataset": "Ouster",
+      "group": "0181",
+      "capture_group": "['2023-08-22']",
+      "sha256": "6e1c17ece770b7fd582396fd6b4209954d09762992ca214f2d544112481cac01"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0181_ouster_0041_1692687317_3972123.npz",
+      "dataset": "Ouster",
+      "group": "0181",
+      "capture_group": "['2023-08-22']",
+      "sha256": "e341bfb2cf26d785f26054f7cf68fb7d231328742614156ca58b7127c65d6112"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0181_ouster_0076_1692687321_0976450.npz",
+      "dataset": "Ouster",
+      "group": "0181",
+      "capture_group": "['2023-08-22']",
+      "sha256": "e90fe4fb9d7daf61d6d758b0abfe865fdf050b1d65457cad8cf2ed566d5ed479"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0181_ouster_0116_1692687325_2976873.npz",
+      "dataset": "Ouster",
+      "group": "0181",
+      "capture_group": "['2023-08-22']",
+      "sha256": "8c654546eddc3bdaf38cadde34367b42e42ed8cd514b0d0f6e07fe077f8da0df"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0182_ouster_0001_1692686017_5089667.npz",
+      "dataset": "Ouster",
+      "group": "0182",
+      "capture_group": "['2023-08-22']",
+      "sha256": "fa783e08e3c47a4ce2b0334aa17d9ef6c1e5a2d414a5350b399cd527477e1ba1"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0182_ouster_0051_1692686023_8088567.npz",
+      "dataset": "Ouster",
+      "group": "0182",
+      "capture_group": "['2023-08-22']",
+      "sha256": "84095c8278731468a5a66ea316231b7d32581cff0fea52163a8588d6881d5479"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0182_ouster_0151_1692686036_7086718.npz",
+      "dataset": "Ouster",
+      "group": "0182",
+      "capture_group": "['2023-08-22']",
+      "sha256": "d98290928157bcfb69e0eafde5161063a7de061f7bd361080590e72dc319b941"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\lidardustx_calibration\\sequence_0182_ouster_0201_1692686043_1083155.npz",
+      "dataset": "Ouster",
+      "group": "0182",
+      "capture_group": "['2023-08-22']",
+      "sha256": "df737be219c102a114a33cba577be33a3af318bb895c8ee869217f85b77e00cd"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_1_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_1",
+      "capture_group": "exterior1",
+      "sha256": "6f46d0de83ddd4c8be189e7ca5af048ccb2a6edb570dbcef3e95b0a7e10325b2"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_1_amtc_042.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_1",
+      "capture_group": "exterior1",
+      "sha256": "af350820f2ee98636836a312ab9f2e1fece27d2918a0dc9477dca2ddecb33f44"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_1_amtc_084.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_1",
+      "capture_group": "exterior1",
+      "sha256": "47ec6522aa74af38e986517a81cbe5250086f6cd6c47a3144a96c319674576b8"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_1_amtc_126.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_1",
+      "capture_group": "exterior1",
+      "sha256": "86da03876fe1b92d23c80d4a281bcb101d637fd587ce723e8fc317c323270e23"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_1_amtc_168.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_1",
+      "capture_group": "exterior1",
+      "sha256": "78f9dff280b08bdac895b2aa46507ceffe98918935c48e81cbcd965f0e3f273d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_1_amtc_210.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_1",
+      "capture_group": "exterior1",
+      "sha256": "f1db7f4e95149c48f3171d639fb1e77bc3fc7972e435143af525b66165434c14"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_1_amtc_252.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_1",
+      "capture_group": "exterior1",
+      "sha256": "54d7b65c02e0a3e7c67499648c1c5f8758781eb5c950bd63b1761a854dd6366a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_1_amtc_295.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_1",
+      "capture_group": "exterior1",
+      "sha256": "0db51e68b3312f4fe758ce1f4017b31302f6216b405bc5b89f73b098f07d50c6"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_10_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_10",
+      "capture_group": "exterior1",
+      "sha256": "bb67c03b410642d824684aa826c8106658cc938f42839417409794ce3c341d75"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_10_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_10",
+      "capture_group": "exterior1",
+      "sha256": "c84e1833330c03b1dd2f9b8ba3f2a6495a483e1996875e95e84bf4507b54bdbb"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_10_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_10",
+      "capture_group": "exterior1",
+      "sha256": "cf5d48f698804fd85f22e59651e75759276e4d08c3be82050415dc30feae4e2d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_10_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_10",
+      "capture_group": "exterior1",
+      "sha256": "43a0efd08fe2401277fe85ed0d48eb1a3782b337b8f424a9b2fe2f910846f698"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_10_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_10",
+      "capture_group": "exterior1",
+      "sha256": "0db8893e6abf99fa7bbb1226083268ef41a8db1cf860964435af494ecabad164"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_10_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_10",
+      "capture_group": "exterior1",
+      "sha256": "1320eb9e423f3955cf87a70a7d43ab570a7fa6861bb7f11e8944879f834e92b6"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_10_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_10",
+      "capture_group": "exterior1",
+      "sha256": "8fe6f308c4333042e0e248f02c937fe0b95189e3b0be7310db569b36fe7dd676"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_10_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_10",
+      "capture_group": "exterior1",
+      "sha256": "b4221296a9a3ba94d0ac98a6e57331c921d91bf695585d0dbff90b29cc3e7652"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_2_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_2",
+      "capture_group": "exterior1",
+      "sha256": "e97c2aa76757eeb3f503861f08fef8870fac7a1561761ab1fcfab4ae01707fba"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_2_amtc_024.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_2",
+      "capture_group": "exterior1",
+      "sha256": "dd6170bf7744d346bc4db82b0c6f495274a32b26056bc7d081ae8e2af4c65df1"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_2_amtc_048.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_2",
+      "capture_group": "exterior1",
+      "sha256": "4f6f2f01202cf2c2145807b0739e120113e808006ff99e875e8d26ac4d6ca0ed"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_2_amtc_072.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_2",
+      "capture_group": "exterior1",
+      "sha256": "d7aa1596235a812581223e388b4e86503b2a851019f2f361ceebe06f32aa8f8e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_2_amtc_097.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_2",
+      "capture_group": "exterior1",
+      "sha256": "6f5705d6949efb0520da673cf658a97600e47f2f4969a157e8b1be69170cf1d7"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_2_amtc_121.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_2",
+      "capture_group": "exterior1",
+      "sha256": "54bc097c40c80a012652d3c91495aba75943b1ad396c1d75712555eb068914bf"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_2_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_2",
+      "capture_group": "exterior1",
+      "sha256": "49185e29f674864e56c7f2185c08f00b8d98b75fbcc6c8ba200f7359fd3caa01"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_2_amtc_170.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_2",
+      "capture_group": "exterior1",
+      "sha256": "21f7885eb544ed0a787b4fb2a0e839aac17565c077f42b0ca23e8132996379ef"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_3_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_3",
+      "capture_group": "exterior1",
+      "sha256": "552228c7b290d8eb1708651913bcb84ccb97f507528a39625dba6557c78c1369"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_3_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_3",
+      "capture_group": "exterior1",
+      "sha256": "a263bc669054d40269d8e23521fd43ed1101a95dcf83d73a1bd361f335e144de"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_3_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_3",
+      "capture_group": "exterior1",
+      "sha256": "43be4a6c2752ea11ffa707741b1aff92957b76783e27a81c10e9530dafdde7da"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_3_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_3",
+      "capture_group": "exterior1",
+      "sha256": "8c7eea55908f61cb111f2d903d91a74f791dcc72b0e8d8cdf4291f01ac67e9b4"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_3_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_3",
+      "capture_group": "exterior1",
+      "sha256": "de204b747ed55cfc87299dfadb7a40b326e2ff5ec8c9b50a3637da3914456571"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_3_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_3",
+      "capture_group": "exterior1",
+      "sha256": "7c7acdcfbc93d4d6fb28cbe1cdf6ed97da26be8baedcf54a88ce9cc62eeb658a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_3_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_3",
+      "capture_group": "exterior1",
+      "sha256": "b117c29bf6a58be530d031c15c749d9707d8ab73b36f824e1588ec27485eec4e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_3_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_3",
+      "capture_group": "exterior1",
+      "sha256": "66c0682bc078574f0620f6925f89dd72cf509081fd6f619dc57ad862f0ca2cb0"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_4_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_4",
+      "capture_group": "exterior1",
+      "sha256": "49e81489b94d2b1947f02ec191a87fb89312a887182f5b4eaa481681de2d4254"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_4_amtc_015.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_4",
+      "capture_group": "exterior1",
+      "sha256": "d90bd2465914de8bded08b684dcaa6734d433a44bc4c2db5c58eddd21d72b09c"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_4_amtc_030.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_4",
+      "capture_group": "exterior1",
+      "sha256": "c1c84acf69c68c560c6187d4b6e7d85f80b659841e15bf9a8abfe28a3e708e35"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_4_amtc_045.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_4",
+      "capture_group": "exterior1",
+      "sha256": "de89f3cdd509f3cb68d8335495e55a9a8470a4227466a09f213325de29f84285"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_4_amtc_060.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_4",
+      "capture_group": "exterior1",
+      "sha256": "5d86e242021df920a3e1bb363b2759b9bc1bee248122768bbaf791714edc5444"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_4_amtc_075.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_4",
+      "capture_group": "exterior1",
+      "sha256": "fd529dc60d133f58ba3da17b529a7f0ce9e55ff0ea02e6143a83853a4a431164"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_4_amtc_090.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_4",
+      "capture_group": "exterior1",
+      "sha256": "d0372d6501a0caf159768c6633d26fa0e09abfbaf3cf51224e4d49c587eee8e1"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_4_amtc_105.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_4",
+      "capture_group": "exterior1",
+      "sha256": "eca4a7209dafaa71c39e7f8c854de20981590395a16c674a053e9f00f34c2b2c"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_5_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_5",
+      "capture_group": "exterior1",
+      "sha256": "fa6534660859a7625e7785338b4b2bc84c8917a6f748fb7f732821d920947f3e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_5_amtc_016.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_5",
+      "capture_group": "exterior1",
+      "sha256": "428320fbf39e7beb99f9b551114685dc615a2fa571afd9601d2098dc2f5ff878"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_5_amtc_033.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_5",
+      "capture_group": "exterior1",
+      "sha256": "759ea9c4e1919439ee1bc1226888fbfbaae435ef3592add98c000e05e56ec36b"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_5_amtc_049.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_5",
+      "capture_group": "exterior1",
+      "sha256": "e4b228bbf1747ae4b48442a88668f1529c7c9eecb8a13a75fa602a0c40700879"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_5_amtc_066.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_5",
+      "capture_group": "exterior1",
+      "sha256": "9bbb576de4a0c4d7c5458bbcca9abefdc627eb5c812917f1807b9f5c60994173"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_5_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_5",
+      "capture_group": "exterior1",
+      "sha256": "eced650c66990d47cf14a14ba4bf69c3f56ff16db840458e80a7e862abe569c5"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_5_amtc_099.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_5",
+      "capture_group": "exterior1",
+      "sha256": "0351f6ff36d6cf9103eaee5eb4088097a7d91a4e116e0dab128203291de300c1"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_5_amtc_116.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_5",
+      "capture_group": "exterior1",
+      "sha256": "96e1feecf710d1e84be8380d159223bd2fa97e674261d147f434aceefe014014"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_6_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_6",
+      "capture_group": "exterior1",
+      "sha256": "b02556530c209cd2558602da8fbe88e859f91ed3334e246126ae48b971f9851b"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_6_amtc_016.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_6",
+      "capture_group": "exterior1",
+      "sha256": "5efca118049a2ab1f78a25827973c679f1d6cc3debf0b72993b2e0e51896078a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_6_amtc_033.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_6",
+      "capture_group": "exterior1",
+      "sha256": "39560d6922dc6538abbc3e812947d2a2ec754769b7b5a9715bf75f56a8c553fa"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_6_amtc_050.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_6",
+      "capture_group": "exterior1",
+      "sha256": "cfb72e1b01245e871204084718cacb74b5312ca919b61b130cbe525dbb9cc46e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_6_amtc_067.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_6",
+      "capture_group": "exterior1",
+      "sha256": "f06ecefeb30f9362d062ec2ae1a6ec6920daf3aa5332b1191fd42dc774aebbb5"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_6_amtc_084.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_6",
+      "capture_group": "exterior1",
+      "sha256": "d3a17bc29c5f3040e395a56fb1d7bdd3924c312ef2a361438f5104479ac94ae0"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_6_amtc_101.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_6",
+      "capture_group": "exterior1",
+      "sha256": "dd871ee2926f72b7f10f9a10e88175404be45ba038b98ad72bfec0328bf9651b"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_6_amtc_118.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_6",
+      "capture_group": "exterior1",
+      "sha256": "51006e1023e532a2263d82a6ea43d6e0e5ece058eda702872fbf0d9a808de16f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_7_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_7",
+      "capture_group": "exterior1",
+      "sha256": "8cb1d70a981d03aa1315362c5514787fcc5225e9dfbdf381076426f2fc3fc1f0"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_7_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_7",
+      "capture_group": "exterior1",
+      "sha256": "bcb882f0152a7a31b510e26f10782f8a419a8d3834b6df5e792eefedb2cd938e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_7_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_7",
+      "capture_group": "exterior1",
+      "sha256": "fc37184f3f1014eec6323000c7ab037e48cb881e0c73316ddb3c111301569647"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_7_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_7",
+      "capture_group": "exterior1",
+      "sha256": "b2ca38fdbacf753233cb0c5c63163d68d9e62b6409829de08098e96cdf67aae3"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_7_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_7",
+      "capture_group": "exterior1",
+      "sha256": "e10a3d2bbeb450c2267cc421aa13ce128a38c90d8a3d2c2f4190e6599a91efe2"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_7_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_7",
+      "capture_group": "exterior1",
+      "sha256": "0cc6a190b3f1d7d395856dda9581fbc1b391bdd3fe38b77edcb38cb662d4a887"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_7_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_7",
+      "capture_group": "exterior1",
+      "sha256": "e644c74c93e9b7b674f5efe6f30a120e169bd2bb5569bbeb52026697dec5c775"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_7_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_7",
+      "capture_group": "exterior1",
+      "sha256": "d53288bcc54eb2e9ac85090b5907bfc0eaa6858bf1e0d287d05431a3acf697c3"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_8_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_8",
+      "capture_group": "exterior1",
+      "sha256": "ca35add20dcd43bca0b6c50c11d0ded59ff200fde6d3d1b512fd98aae558ec75"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_8_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_8",
+      "capture_group": "exterior1",
+      "sha256": "2694db7f91f654c2a13f30a4e9802ea12678669f51f422203aeaea1a44fb6fda"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_8_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_8",
+      "capture_group": "exterior1",
+      "sha256": "90ae117e409bb05093679ad15d8365c8a47f853db5710c0af789a5ea890114b4"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_8_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_8",
+      "capture_group": "exterior1",
+      "sha256": "11c6da48593d8050dc4f618879b4ce59ea27b0d61b8ac0a871b4fc61354074ab"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_8_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_8",
+      "capture_group": "exterior1",
+      "sha256": "ebfb2613f7b1bb495e549352c3e57b4c85c2e43f9a9b9ccc2d2c609697db5fdb"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_8_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_8",
+      "capture_group": "exterior1",
+      "sha256": "0c8abefaa3d4e15d2761c331c51b6a2f849314e16f743966bde3c894a413e255"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_8_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_8",
+      "capture_group": "exterior1",
+      "sha256": "8f4056e8975f6e6cfcc0ff026d627731e82dc17655c91a21c26a0eb1c22e503f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_8_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_8",
+      "capture_group": "exterior1",
+      "sha256": "9ac253a8a3ef9422056ca8eca815069a6fe4d70d3d89f38544518f2b3ee02e94"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_9_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_9",
+      "capture_group": "exterior1",
+      "sha256": "3d596874ae799463f5f536f531d32667010f8bbb529b9e518192658a03a01073"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_9_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_9",
+      "capture_group": "exterior1",
+      "sha256": "e00d15de6429d27c3950c523e01297e6c40d3f52b74bd261702831d50e75bdd5"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_9_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_9",
+      "capture_group": "exterior1",
+      "sha256": "b4b58443ee6d4db892177639e76ceb5c24685432ada4726ad57387f6ad515c57"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_9_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_9",
+      "capture_group": "exterior1",
+      "sha256": "a35ae37353094dbd444503f615c21d053cd3215c346666a01cc8869293822232"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_9_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_9",
+      "capture_group": "exterior1",
+      "sha256": "f19f4fe01acc15b86b44504a681323689eb97ec2a7f5200beee3bb3f431d805c"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_9_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_9",
+      "capture_group": "exterior1",
+      "sha256": "5e225366daeafa5d947ff2cd6d007a9bba1a51fa6c4e760110e1882bab24257a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_9_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_9",
+      "capture_group": "exterior1",
+      "sha256": "f3dd52c299896bd979c6906b27c3c73052afeab86d634558fdd75d4391f88955"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\exterior1_Area_9_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "exterior1/Area_9",
+      "capture_group": "exterior1",
+      "sha256": "2f33a35eaf020ec7f7dea307692b2538b2900d2e62c5c2c9941e16f82c95fce7"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_1_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_1",
+      "capture_group": "interior1",
+      "sha256": "c78326d6817f6420c7434a91425943a061b93888e8f06c40f64c9ad5c36abc95"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_1_amtc_026.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_1",
+      "capture_group": "interior1",
+      "sha256": "16bc0fbc35d9e0ba03a46daadddec876b4fbcc944fded8164c1e96d1eea1dcb5"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_1_amtc_053.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_1",
+      "capture_group": "interior1",
+      "sha256": "97ea8abe63a1c451eb102a2fbd45878051790351221c120509c7310a796c0ec5"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_1_amtc_080.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_1",
+      "capture_group": "interior1",
+      "sha256": "411bc07e55cbcd75bc42029caedfd3964b0e1a2f019dabf2ef71ed623af6351c"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_1_amtc_107.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_1",
+      "capture_group": "interior1",
+      "sha256": "e1e2542c23660a95e3083ed6aef7a6361ab42ce08fd1a08161ff3ad2e3fdab0e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_1_amtc_134.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_1",
+      "capture_group": "interior1",
+      "sha256": "15b96490daeadff48f7773f3e9812ca5791f213b13474aca2337197211e20060"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_1_amtc_161.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_1",
+      "capture_group": "interior1",
+      "sha256": "1ca3558f97940aaf9bf53b6f9d43ee43833ab8f55e12eab720285af366000977"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_1_amtc_188.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_1",
+      "capture_group": "interior1",
+      "sha256": "903119973141aa52853c6dbd341cde38fd7c7de63179ecf9103f69ffb4f1dfec"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_10_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_10",
+      "capture_group": "interior1",
+      "sha256": "14b3bb95fde564643283095ffef38dd0367993500898c834c7a895c5b40bab5b"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_10_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_10",
+      "capture_group": "interior1",
+      "sha256": "44a315fef44d3c249af537a03191d18f4b356259e0aa300dfa055fdaaeb734ff"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_10_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_10",
+      "capture_group": "interior1",
+      "sha256": "48ef5bf3771a2f1439f6b584a5eb23972f263bd5fe549f8910076059cdbaf6f3"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_10_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_10",
+      "capture_group": "interior1",
+      "sha256": "b3cd8425d1f039265a44046d9c347d56f29b8ab180a50a374abab81b85985c9a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_10_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_10",
+      "capture_group": "interior1",
+      "sha256": "406c6a971fa3e2a26c9ed9281c0e6f9dc676766878903ea74d7504dc28ce7c8c"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_10_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_10",
+      "capture_group": "interior1",
+      "sha256": "3224d4bf43b4687aee933810f25907dd798db968493aabbcafa36b5ffd65ba0b"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_10_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_10",
+      "capture_group": "interior1",
+      "sha256": "65aae29b1c1fdd5ec90898e68a0de6c89dbf8e968e60e78b0585dbffcad605d9"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_10_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_10",
+      "capture_group": "interior1",
+      "sha256": "b0a372a37b99ab7dfa6f9073f2162a64cd399017cf339413c2099ffee371f920"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_2_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_2",
+      "capture_group": "interior1",
+      "sha256": "517e1d703ffbc8048390b47a8462aa0760ae05b2b6c46f329b4155639de9b15a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_2_amtc_042.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_2",
+      "capture_group": "interior1",
+      "sha256": "c6b2e3d8aa35f393635aa699d3b3b14eecc0c64356fc7f9a9fdc960e3443d6bf"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_2_amtc_084.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_2",
+      "capture_group": "interior1",
+      "sha256": "6baa99ef4bca64b75be0f3599c76725ff98c094f2952a435d5b26401cf81de2e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_2_amtc_126.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_2",
+      "capture_group": "interior1",
+      "sha256": "771958004f1a53d1b26a03be00adaff7ffb36a81241f4eab572c5941566b050b"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_2_amtc_168.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_2",
+      "capture_group": "interior1",
+      "sha256": "a95a7c14e4112ceb5c79f4516afcc2023e055f5e85cccda10f3e4945163c0ac4"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_2_amtc_210.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_2",
+      "capture_group": "interior1",
+      "sha256": "562aec9eb4cbc710e6b4c6f760e7ec8f54da20307c13a32ba2d71e27d17f6617"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_2_amtc_252.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_2",
+      "capture_group": "interior1",
+      "sha256": "a792e94510c7c03ccd163d01ec0994435807b0021535ce4b1042ac60ffc9a02c"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_2_amtc_295.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_2",
+      "capture_group": "interior1",
+      "sha256": "d4f05aef9330e4c5a1069a9b3f1ee36275ab5ce5580dfd38035a4d303415e83f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_3_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_3",
+      "capture_group": "interior1",
+      "sha256": "8c0ec552bc7b4f5c774a09fbd4fa47fcbeae0974fb6117c68acf4274f66eaf90"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_3_amtc_023.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_3",
+      "capture_group": "interior1",
+      "sha256": "41677ed4bdbc9f4f95abb390f1648a607bca5e99c6edf749e7b07deadaa3fa29"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_3_amtc_047.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_3",
+      "capture_group": "interior1",
+      "sha256": "e9cfd2947380ea030aba37050327f2efe62e962893a7e95305347ec2cf094de4"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_3_amtc_071.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_3",
+      "capture_group": "interior1",
+      "sha256": "48155d4855948f87248469d054723979e9ee140038c77c3b27eb72666a83dd97"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_3_amtc_095.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_3",
+      "capture_group": "interior1",
+      "sha256": "eb7600c13294bea0c5a79d00298d6db86bd0901a9b808ebaaa07b2685a8a3c8c"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_3_amtc_119.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_3",
+      "capture_group": "interior1",
+      "sha256": "1b8bbc2e307c02a9a5aac65273d0099be25e2736cca7878c55a7a842ffb105bf"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_3_amtc_143.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_3",
+      "capture_group": "interior1",
+      "sha256": "4ccfd86eca9d754005bdcb01a006cdf02d1e3b27322686f3bbbc43cc5e114a2a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_3_amtc_167.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_3",
+      "capture_group": "interior1",
+      "sha256": "ad08839fca949bf4b7bcf343a7c09e6f25fddac2969622c8478e3d4e35a1cabc"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_4_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_4",
+      "capture_group": "interior1",
+      "sha256": "159db7e960522e93bb0b0e1f766668154a1295ca0e39bb48d6bb0d11f1f13284"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_4_amtc_029.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_4",
+      "capture_group": "interior1",
+      "sha256": "66d15be53d79e20cf76f0ba2c8ae95703b06233fbe2d56a5acc8cddeae370edf"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_4_amtc_058.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_4",
+      "capture_group": "interior1",
+      "sha256": "9c603bb7062aad3fde7176ffc71aa0944b34556c1f00bf0d716846914f860ad1"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_4_amtc_087.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_4",
+      "capture_group": "interior1",
+      "sha256": "3c8cf34489f9d65fbdbcb142508d4a21863eaee97c17cf122c7aa5da280273d5"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_4_amtc_116.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_4",
+      "capture_group": "interior1",
+      "sha256": "b1dc3476c77ddacec4135b72b732f97bc5646ca95aa8655b51f362791006f946"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_4_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_4",
+      "capture_group": "interior1",
+      "sha256": "b475b68a9cc4435e26429c73fd54f5c68f9de95238cc223dbf331952cc068efe"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_4_amtc_174.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_4",
+      "capture_group": "interior1",
+      "sha256": "2c019b37abd61a9e524d5c28003bf05e3617077fd1f3d7fd8c78af960f7e271d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_4_amtc_204.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_4",
+      "capture_group": "interior1",
+      "sha256": "e101c094d4755e8542497725e4d1ee9b60050c7e18c6e8741bcefea0bc0267f7"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_5_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_5",
+      "capture_group": "interior1",
+      "sha256": "48243ddc8025792c2cc12607a6cdf24044fe2065f8cd95e4af76304d7351e043"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_5_amtc_042.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_5",
+      "capture_group": "interior1",
+      "sha256": "9bebc286f95d1e7fd1a97c98a07dcc08c81b0390bb372fdf385dd9d56f083cf8"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_5_amtc_084.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_5",
+      "capture_group": "interior1",
+      "sha256": "b72710ff4c77ebcddb0af76fd983dc0c0ba2606b5825faf7e58dd61bed03b6cf"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_5_amtc_126.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_5",
+      "capture_group": "interior1",
+      "sha256": "78e4eedce07a3feff6af20fc8dea071bcd215add60a3f324c354e6a143688ed3"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_5_amtc_168.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_5",
+      "capture_group": "interior1",
+      "sha256": "578a9be916ef25a13d8474a3ebaf37a89a61698beecf1bb8738f1c7dd4a15e37"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_5_amtc_210.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_5",
+      "capture_group": "interior1",
+      "sha256": "98bb6366fc28466d163bf6f08186f0750c3053b1efb3abbd8ef1ba099260ece1"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_5_amtc_252.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_5",
+      "capture_group": "interior1",
+      "sha256": "7be57e637d1b09bc3b91647a326ab429def9746e986b560e90b08be944b9574f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_5_amtc_295.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_5",
+      "capture_group": "interior1",
+      "sha256": "8642a85916f1e9e761e0e10ca90613cc796651aafaedd8e90f086ab39e6c85b3"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_6_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_6",
+      "capture_group": "interior1",
+      "sha256": "3157b6fcd5d82868d1dbe624151189e397e673c4360ca54993135afb0b1f3198"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_6_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_6",
+      "capture_group": "interior1",
+      "sha256": "6294a22358fa855f0f9bf8c42f99c5cfc1e1962fe682db234e63d9bbadacc863"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_6_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_6",
+      "capture_group": "interior1",
+      "sha256": "0c6cd557b4ce2dd5be94e4f9a064364f17b5f5e34f7f0021d1dd003f0965046a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_6_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_6",
+      "capture_group": "interior1",
+      "sha256": "ab64c6b2e23d80fba88189fbee088c819aa1df2f5f67ede14a116e55b0d2f920"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_6_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_6",
+      "capture_group": "interior1",
+      "sha256": "ea7bb5fc2f46da68a3ebf714c9dcb117dcb21d9930bd3a1a08c50023d2569f8b"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_6_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_6",
+      "capture_group": "interior1",
+      "sha256": "9c89a979b89a1960b2334054e41eba8e87674834f4136a4ed7b19afbe8c79058"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_6_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_6",
+      "capture_group": "interior1",
+      "sha256": "b1dbd0246eaba1fff07f3c6bb1af1cb7353839d1e04a7965c182714d803e5bc0"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_6_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_6",
+      "capture_group": "interior1",
+      "sha256": "c54afcab460dca2a852fdcce49ef1be43385648555ab0a7bc02dceb3c8817d5d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_7_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_7",
+      "capture_group": "interior1",
+      "sha256": "6a6b20420bb64f0b4a12fa4cc42a9561f612545917b9dc8ee5b133857e2378b7"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_7_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_7",
+      "capture_group": "interior1",
+      "sha256": "d98307ccb1c507690a59a274831548c7eb1778fa0082db5f8dc0540628160a08"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_7_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_7",
+      "capture_group": "interior1",
+      "sha256": "c2bd8172143950891efbbfa5ed4cd9fb1a74256e3ae4f95f5839fd4067aa3e45"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_7_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_7",
+      "capture_group": "interior1",
+      "sha256": "575e50994d961b0030d2333a0f0ad0159838c113c3c65b360f6726c5498b6337"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_7_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_7",
+      "capture_group": "interior1",
+      "sha256": "6f3dd287a6c5849c0610446d5c1b4fbba836dd26050b81422f9337dca4a0aca0"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_7_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_7",
+      "capture_group": "interior1",
+      "sha256": "41ae2502cf5374052e0c370d062babd77d500ac732856cca4d55960b61f41108"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_7_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_7",
+      "capture_group": "interior1",
+      "sha256": "2a5eedaeff33e71507cd2cf6bc826c139dd4d187d22f7cabd4c6d3d9ca0dffb8"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_7_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_7",
+      "capture_group": "interior1",
+      "sha256": "0609f40520f96b15f78f45ee6035b871081069abb52572b9af8aa6aeadc7ce90"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_8_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_8",
+      "capture_group": "interior1",
+      "sha256": "e7c0f24e4a722b5293d880acd94006516a939a4faa076ddbb75ebc067758acd5"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_8_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_8",
+      "capture_group": "interior1",
+      "sha256": "37796e2807813ea16ea83f2c9bf2f3f3fbdd1627a1b05a46fe8ae6de62df52b7"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_8_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_8",
+      "capture_group": "interior1",
+      "sha256": "1c1e60518250d7e682f9e1b8f21453db2201d6236a9bc78df9ce0432a7cc7cfe"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_8_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_8",
+      "capture_group": "interior1",
+      "sha256": "002c72c51228b9d53860e0b5ba8ccaa6287704d13cf1df5930cd2826b8fb1412"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_8_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_8",
+      "capture_group": "interior1",
+      "sha256": "f81f31f0c3ed19c092cf3a54743121fd408f9f00eebc86bae11fa7b259d485f2"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_8_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_8",
+      "capture_group": "interior1",
+      "sha256": "d6222dfae09752018937d384564860acb2b5fb37973ef42e0c5d54a56272f48d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_8_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_8",
+      "capture_group": "interior1",
+      "sha256": "e0204326aa1fedb90ff882601c8fa060f4a35620d0cd7db20a5d4895108fb83e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_8_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_8",
+      "capture_group": "interior1",
+      "sha256": "9e4b8fd85f5fc2a18d0a600ffbae0c05be491bd8192e586291a598ccfc18e149"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_9_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_9",
+      "capture_group": "interior1",
+      "sha256": "cde5411504a91614b99605e34d61fe7d3337e55c9a7142fc435859f29f7644b1"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_9_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_9",
+      "capture_group": "interior1",
+      "sha256": "592fbb54c31f9db2e0e5fda09d488d39aa9c266f846e02852580964763f646b4"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_9_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_9",
+      "capture_group": "interior1",
+      "sha256": "27627ed0e39369597139a6a364fd5f0b95ca38f61632106b7c605e7aeea7fe98"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_9_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_9",
+      "capture_group": "interior1",
+      "sha256": "2ce1f5367c49887801fd35abbf3ae997c6f0ecaa11856817bc3d8774f1c2d6d8"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_9_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_9",
+      "capture_group": "interior1",
+      "sha256": "daa2fe4d59af988606810f00d777b127ff4e6dee5402985f3ab40127496efe60"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_9_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_9",
+      "capture_group": "interior1",
+      "sha256": "957c233f797621e5dd4577905a386c11164c5d6ac06741ab6efd0f548c61cf98"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_9_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_9",
+      "capture_group": "interior1",
+      "sha256": "7640cbf6466f8ab45acec1ef092f13a5d2a9b08c366e83d2309e158dafb2c601"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior1_Area_9_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior1/Area_9",
+      "capture_group": "interior1",
+      "sha256": "9a6479a809ae03bd4f6ed9e68314a99588528ba2292e39e2ff57deb4d98d7688"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_1_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_1",
+      "capture_group": "interior2",
+      "sha256": "96724ac05ae8a639e5ea74c1ce8bb1eb40d4d4642c6f66a9d56016de1feddfeb"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_1_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_1",
+      "capture_group": "interior2",
+      "sha256": "8b0de16724a7faa8944e783536318ca2a8baac25d464f1581dfe7f7fe94ce59a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_1_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_1",
+      "capture_group": "interior2",
+      "sha256": "5db5dce8d4bbdc7e01880dff04363cb55860000890b9c682fbb5cf4f5bd4adbc"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_1_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_1",
+      "capture_group": "interior2",
+      "sha256": "ad47cb96f103e6a965b6a34bf838d7ed834912e8999d298adeaab34495eaf6c8"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_1_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_1",
+      "capture_group": "interior2",
+      "sha256": "46fabd5c98cbb9f2da542b0f1c372c7514b21f5719a04aba5d5ca195f97fad77"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_1_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_1",
+      "capture_group": "interior2",
+      "sha256": "d52da2a113881edd2471bb9cdbb4c6516fee822b0fb3da7a55d6ca6fa7a073c6"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_1_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_1",
+      "capture_group": "interior2",
+      "sha256": "70c350fe90ed45df6a41951015e7d38a0ea7b06ed7db58524b040ec86677c4b3"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_1_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_1",
+      "capture_group": "interior2",
+      "sha256": "20f95508bef7aeec0dfa45b25585ce5417703d50b68145cc7ea55f1375ce8fd3"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_10_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_10",
+      "capture_group": "interior2",
+      "sha256": "ec383597292566d1ab7c55e7b242323251494b7557a55d2ef74745248a761188"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_10_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_10",
+      "capture_group": "interior2",
+      "sha256": "e8ee361e901c7fb0de88ca0c43a77b748310594112b6d6071a21da0f2f101b8a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_10_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_10",
+      "capture_group": "interior2",
+      "sha256": "e0a0d602cd5639867fd127dabb15b2f26df9e1200f6c83cae3c5d6ef4600e81f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_10_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_10",
+      "capture_group": "interior2",
+      "sha256": "63f37fca1473469934ba60a58d141fdbadd922ceff95c852bf2a751988b56b9a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_10_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_10",
+      "capture_group": "interior2",
+      "sha256": "e282396747b54f1698fd83f4c07719c6feca4cfa9b4fad4540d639618eccfcbb"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_10_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_10",
+      "capture_group": "interior2",
+      "sha256": "28a4964f7302949bd79ee4c46da800554f30d946607fcf87550d094ee51c6af4"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_10_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_10",
+      "capture_group": "interior2",
+      "sha256": "264c95b95bc0ccb1b2f9beaa1774fdd8043dfda28de1a7c1ed592bd0accf34ae"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_10_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_10",
+      "capture_group": "interior2",
+      "sha256": "acb5a70e118756cb085212121e429b9969a65beddeb2d49b61fc7e3ae2ea11be"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_11_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_11",
+      "capture_group": "interior2",
+      "sha256": "456ff2a429849d91d104e83c9e39e0a94e8b28e454d9ea7a5ea98e40ae3c3f87"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_11_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_11",
+      "capture_group": "interior2",
+      "sha256": "fb072330044721fc74d3d40eb66e7bb9663233a0ef812e8d393336270d46ed97"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_11_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_11",
+      "capture_group": "interior2",
+      "sha256": "cf6950b7d77c97dc30875636ce89683bbbcf67961819106ea088b4d3e52bcdb5"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_11_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_11",
+      "capture_group": "interior2",
+      "sha256": "7697ce4015a82cc76411cbe5e0722ebb09c47b69f10563c287f1c4e9499a9f8d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_11_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_11",
+      "capture_group": "interior2",
+      "sha256": "d0ffa3524778a218147bd8b3d930785580d220ca4bb3a79b5a7b9cbc7aff7a17"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_11_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_11",
+      "capture_group": "interior2",
+      "sha256": "e2a1506cc7d6b3caf77feb40d6d4c7bc5d31597856ab4d42396b6e8789509056"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_11_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_11",
+      "capture_group": "interior2",
+      "sha256": "77ff366f778f7a6943fe26df51eaf1731e2de7bef4b0d6a77a869c9632a7a160"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_11_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_11",
+      "capture_group": "interior2",
+      "sha256": "2cfa8a47a94630985e29c178ed9d06713312bab623708c3890b084f4c03734b2"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_12_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_12",
+      "capture_group": "interior2",
+      "sha256": "c4eebb9805a447c0ca011e926537f222099f7a5155dfb3da1b9a4316daa1236d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_12_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_12",
+      "capture_group": "interior2",
+      "sha256": "530f2c475aed12e107dbb63d6d2c534cafa88e0c743e9e5ae783ec759dca1c47"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_12_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_12",
+      "capture_group": "interior2",
+      "sha256": "1e6c606eaf64c7b610f784124cdd538a91264e57518da83b38471280840ea8b8"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_12_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_12",
+      "capture_group": "interior2",
+      "sha256": "f0d5f473171800a7a74c84b8e0104d5287163909715541688ba462d4de8ff5db"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_12_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_12",
+      "capture_group": "interior2",
+      "sha256": "73f9e16303cef45e1a80a033acd9b3eaac6c1244d7004df67e1fd916ebd21bc8"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_12_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_12",
+      "capture_group": "interior2",
+      "sha256": "5246ae0f96fdb9a66a52682de6db5fbead96b9ec74d22b2778ef242f8043327f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_12_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_12",
+      "capture_group": "interior2",
+      "sha256": "47432a81342b1f2752bd8fc584765399fc64530f893e442de634d71e36a25012"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_12_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_12",
+      "capture_group": "interior2",
+      "sha256": "b8ba04e8d4e19975217f281b1da84dcb06f714539881d0739430095a954e5060"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_2_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_2",
+      "capture_group": "interior2",
+      "sha256": "1775f0402ca8862f0a1ddb4181c700fee311bc46010d78c87a78ebfed9919d9e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_2_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_2",
+      "capture_group": "interior2",
+      "sha256": "26025a741d43088c3c32c6df2d67f3a396fb170876f8517749dd37b262635c6d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_2_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_2",
+      "capture_group": "interior2",
+      "sha256": "e9bbf6f9211dc3134241c9475ad7f0027dca40d986acff0673f2d55341dab70e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_2_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_2",
+      "capture_group": "interior2",
+      "sha256": "0910af5baab3daf33a99d8b98496106825b5f1f59a8f30bf04afb87a2de3d8b7"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_2_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_2",
+      "capture_group": "interior2",
+      "sha256": "d3d4f089513f962d7c25ecefadc445ae153c0173764e54adb85a3aebee642e4e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_2_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_2",
+      "capture_group": "interior2",
+      "sha256": "40ada403104dfe50dbd722b9e740f033732d6dc54a04ed0e41fa1bbe7c79d540"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_2_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_2",
+      "capture_group": "interior2",
+      "sha256": "50cd46aec28fbcf88bde2a5285996d17d7f40b791d18c5f98684e46ff401b41d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_2_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_2",
+      "capture_group": "interior2",
+      "sha256": "33dbd2ab526910f8adbfd845d04245ba8a5c8f73bb38dba4dbe717c2bcd3cca8"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_3_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_3",
+      "capture_group": "interior2",
+      "sha256": "7baffa3fb762247d42ba7c51b96ac9f002027333a78f5a763db2d645ef4d8ba6"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_3_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_3",
+      "capture_group": "interior2",
+      "sha256": "baeb673108e24dbdb1f393a5363ec86ca3ff418b1a402029aecaad3f12a36f54"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_3_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_3",
+      "capture_group": "interior2",
+      "sha256": "04bb6200393db0532c84b078243cd375f46f581982eb6a1ec776094e76960b11"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_3_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_3",
+      "capture_group": "interior2",
+      "sha256": "93753f6f3e35ae423973114cf632c4f25f59b7cf7b5ac4bce3b8dc4a1afd1624"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_3_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_3",
+      "capture_group": "interior2",
+      "sha256": "1e222386e3234509d46aaf9c81980d726184639203402698a5d644e64e610e69"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_3_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_3",
+      "capture_group": "interior2",
+      "sha256": "f4073b7a47231816d74a023bd51fe9e53a129ef72fc092807ca23d3dd6304bec"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_3_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_3",
+      "capture_group": "interior2",
+      "sha256": "976fefad1a66877d05ed2e811a7bfe8e1b4d2bbc90c13846d697d7e02a4ab0c0"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_3_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_3",
+      "capture_group": "interior2",
+      "sha256": "600a89a57cfbbd584cc1d59eab1eac60a8662ca1464c17de7419d7a7d44c5644"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_4_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_4",
+      "capture_group": "interior2",
+      "sha256": "8e27215ee5a1dd794a27d00ff231ecff86e55b2631ec9cd2836bc8b8c3c857a8"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_4_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_4",
+      "capture_group": "interior2",
+      "sha256": "278de75dbca453c39cac21bd5e02defbd2a26cb3fa7bfd958fe0b6ebd0d7a7ae"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_4_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_4",
+      "capture_group": "interior2",
+      "sha256": "d4d390718305a1c1688b5d3e0e2a7d92381791ed3cdea1db199ede17656e434d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_4_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_4",
+      "capture_group": "interior2",
+      "sha256": "28f6dee058b73f93df57860a85a0791fb4ff3537ad64af7b222bcfb7b0cf9005"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_4_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_4",
+      "capture_group": "interior2",
+      "sha256": "1fbd17ad56861832f673c3f9e174ed12a8ccd80cda6a0d33adf6d2304cdd636c"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_4_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_4",
+      "capture_group": "interior2",
+      "sha256": "f2cb95793ec9b633023b052cfa6bd052b7cb2a3a60e375dafb8636355965e846"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_4_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_4",
+      "capture_group": "interior2",
+      "sha256": "1f8d9892c4067c898cd1c6b8ea1039360b99e48096d1e01b57ddccf32e943c14"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_4_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_4",
+      "capture_group": "interior2",
+      "sha256": "10bd47bad62f24f113089227fd1b72a2f647c2aec942a0b4adc98d54831d0ef0"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_5_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_5",
+      "capture_group": "interior2",
+      "sha256": "21621223b9a54e385e2a4abe1b8b69ee0ce1132dc0362cd815424835273c31ea"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_5_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_5",
+      "capture_group": "interior2",
+      "sha256": "e566e1e486f6f708763c26abd328751fa61ed0e60e6d18a4c40806aa327f88ee"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_5_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_5",
+      "capture_group": "interior2",
+      "sha256": "d0f54ea1219f26cf3ff39068e7605135e063301e9565774cd9195d0dc0f93e41"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_5_amtc_061.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_5",
+      "capture_group": "interior2",
+      "sha256": "091f69a50a2b42aecc3f4077e1e1b51ea3e1166b799887ecf750b7cfcfc687df"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_5_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_5",
+      "capture_group": "interior2",
+      "sha256": "926d0912ec262bab0abef7ea51da30b331dc583b15edb838bf489e979a8c8b04"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_5_amtc_102.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_5",
+      "capture_group": "interior2",
+      "sha256": "0a632bc8937adeff562bd986dabbd71823738db8cc30b340e41f5d5c27338a0f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_5_amtc_123.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_5",
+      "capture_group": "interior2",
+      "sha256": "ea5d0ea13e6f27f7b246fc27aab3066ec18c2958baeb32f129ac8b810a4bed17"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_5_amtc_144.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_5",
+      "capture_group": "interior2",
+      "sha256": "8b02ab6f03e1b3b1fcdf3bc94de418719026287a97761c9d1dcb7263e494b907"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_6_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_6",
+      "capture_group": "interior2",
+      "sha256": "6669c5d2e1abee7fa45ed6093ae526cfec79f0d964ca95b623cc73ae72fa71e2"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_6_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_6",
+      "capture_group": "interior2",
+      "sha256": "3ccbc9c91ecfbec1b077f63bfebf999d1903316ae1166e090a3e1c6dfcafed8a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_6_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_6",
+      "capture_group": "interior2",
+      "sha256": "16b16326e96df679c50377624cdf0d20dd11b7026ce2aaf4d30a71106d6606b1"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_6_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_6",
+      "capture_group": "interior2",
+      "sha256": "759936ac5e2657eeba3999a9656d006174e3e2fc8ab2f730f21d2488c5bb7851"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_6_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_6",
+      "capture_group": "interior2",
+      "sha256": "ba7353a274467644052ef518407d68bf0cd0ee128f9656e3b2b63178f95c2951"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_6_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_6",
+      "capture_group": "interior2",
+      "sha256": "e51a874156e995ebad9e6866d3ad9f391d0cceeafbd2ab0d6ac79cf43441908d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_6_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_6",
+      "capture_group": "interior2",
+      "sha256": "cf39fbb34eddbb5cfa617d9a5a398953b2b5e292067c760f9ce87d9eed5b3a21"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_6_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_6",
+      "capture_group": "interior2",
+      "sha256": "b389c6873089951c10d293022308754ba61f147abcf9667103e70e2e257d6959"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_7_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_7",
+      "capture_group": "interior2",
+      "sha256": "28767e76122790ead30645cb4a4aefcf5e687625e60f076e1bdea48d561ac207"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_7_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_7",
+      "capture_group": "interior2",
+      "sha256": "3e058372d50b7ddaeff0defcde9078269548be0ba635cdb9c98a7b339efaa895"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_7_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_7",
+      "capture_group": "interior2",
+      "sha256": "7ee2ba3db5b3be55f9db08ea2cfb450f36d84b7ab09404ddf4adc660d204bea7"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_7_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_7",
+      "capture_group": "interior2",
+      "sha256": "af5127c9c73a8c48e53c9d7ab1ebfb136a959ced961446834b20b2714aba4185"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_7_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_7",
+      "capture_group": "interior2",
+      "sha256": "27182a8e6c1ff840e5fd2f61d07c5646deb2e835eb39dee30db0d4f9f2646a0b"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_7_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_7",
+      "capture_group": "interior2",
+      "sha256": "0e4e303e36a3e8ec5e47c95e03235f9207a1716eabb6d97d355e8f2779e6939d"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_7_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_7",
+      "capture_group": "interior2",
+      "sha256": "6500eb1b1a6b9423f4989a394e064b934d11a032961c7459c8fc8e6f75bd09df"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_7_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_7",
+      "capture_group": "interior2",
+      "sha256": "51c0b0af422d391e8efe3c4a2fd59cbd4272aa4b1aefe69621aa982bd3390f89"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_8_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_8",
+      "capture_group": "interior2",
+      "sha256": "c63a2acfca22ce80e73b8009c70aaef30fbe2e8f9992138b86c578e50d421884"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_8_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_8",
+      "capture_group": "interior2",
+      "sha256": "0b7edfec9cea12f4fb65b78319f353d6bf65cceb3196619ee78e3be49229b276"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_8_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_8",
+      "capture_group": "interior2",
+      "sha256": "04469fc5e09869c8c42e279d4c5bc5ba57f6fa9a32514596823d6abbcf40030c"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_8_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_8",
+      "capture_group": "interior2",
+      "sha256": "8f1a55939386a6beb75aaa1c5e03c1bb6b261606efd7b29b983a2cf97c353e10"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_8_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_8",
+      "capture_group": "interior2",
+      "sha256": "11a2f668cb4ddc72192c9b2f587dfb3a7b0b8e5dafc70cdda58da7cd51c08e5b"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_8_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_8",
+      "capture_group": "interior2",
+      "sha256": "c2f4172f251ce06e2ab2c6bd1d17d756632412365aad0f3b120c9a099f5cdb6f"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_8_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_8",
+      "capture_group": "interior2",
+      "sha256": "6f8f3f909c913f3042a48842b896510af7d933ab46db6bb5dc2a017321e7dc11"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_8_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_8",
+      "capture_group": "interior2",
+      "sha256": "4e45cce4b0ea4cd1a542ea3b1ae9f5f4ef103ce907154e07899b059ee8010c1e"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_9_amtc_000.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_9",
+      "capture_group": "interior2",
+      "sha256": "b400df15a01d1224ac263179a49f5b890c6d9ea4fb94cb04ff6d9379c724d4e0"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_9_amtc_020.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_9",
+      "capture_group": "interior2",
+      "sha256": "6b7f0b0acb8dbc67b6c41d1cb8882fceeba92c82949ca16cd19d2938c8961dd4"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_9_amtc_041.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_9",
+      "capture_group": "interior2",
+      "sha256": "0259db07eec2cd0daef92fd1c02c01bda157c93ffd08e628fbceba193f7ddaaa"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_9_amtc_062.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_9",
+      "capture_group": "interior2",
+      "sha256": "9ff5d25caa99d2ecc25dd788609aeb810439e383e8405020107e0239c7429bd4"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_9_amtc_082.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_9",
+      "capture_group": "interior2",
+      "sha256": "9d3a183fb92d443b31353fb4f57b7c2fcee3fa7b5adf67f1ba79d7ec8d66f2d2"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_9_amtc_103.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_9",
+      "capture_group": "interior2",
+      "sha256": "92c9e572f6866f5b1a24ec59f5071b638fc09e33276af7198e0865c44cbbec5a"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_9_amtc_124.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_9",
+      "capture_group": "interior2",
+      "sha256": "f837900d3fe8d97fc9fe00abaa6dcc0b799869b2255282efda47c6da437656d0"
+    },
+    {
+      "path": "E:\\NeuralMap\\datasets\\converted\\candidate_search_v1\\uchile_calibration_v2\\interior2_Area_9_amtc_145.npz",
+      "dataset": "UCHILE",
+      "group": "interior2/Area_9",
+      "capture_group": "interior2",
+      "sha256": "605bb57be32abc07b1ce4922be188958f3de56415b8a1d9032f919d41b8e4114"
+    }
+  ],
+  "heldout_opened": false,
+  "training": false
+}

@@ -1,0 +1,12 @@
+<fieldset id="pattern-controls" class="controls" hidden><legend>반복 모양 원인 비교 · v7</legend>
+<label>검출 방식 <select id="receiver-mode"><option value="adaptive">광자 수 변동 · 적응 문턱</option><option value="legacy">이전 고정 문턱 · 비교용</option></select></label>
+<label id="legacy-source-label"><input id="pattern-legacy" type="checkbox">이전 원형 먼지 발생원 · 비교용</label>
+<p class="muted">발생원과 검출 방식을 하나씩 바꿔 비교하세요. 평평한 지면의 스캔 원호는 실제 빔 배열에서도 생깁니다. 입자 이동 화면과 라이다 관측 화면은 서로 다른 표현입니다. 기본 먼지 설정에서는 산란점이 0일 수도 있습니다. 반환점 감소만으로 개선 성공으로 판정하지 않습니다.</p></fieldset>
+<fieldset id="solar-controls" class="controls" hidden><legend>햇빛 · 실측 현상을 참고한 통계 후보</legend>
+<label><input id="sun-enabled" type="checkbox" checked>햇빛 효과 켜기</label>
+<label>태양 방위 <input id="sunAz" type="range" min="-180" max="180" step="1" value="40"><output id="sunAz-out">40</output>°</label>
+<label>태양 고도 <input id="sunEl" type="range" min="-10" max="80" step="1" value="10"><output id="sunEl-out">10</output>°</label>
+<label>각도 폭 가정 <input id="sunWidth" type="range" min=".5" max="8" step=".5" value="2"><output id="sunWidth-out">2</output>°</label>
+<label>중심 방향 오류 확률 가정 <input id="sunProbability" type="range" min="0" max="1" step=".005" value=".05"><output id="sunProbability-out">.05</output></label>
+<button id="sun-soft-preset" type="button">약한 효과 · 임시 설정</button><button id="sun-v10-preset" type="button">이전 60% 설정 비교</button><p id="solar-stats"></p><p class="warn">태양 방향과 전 거리 가짜 반환의 원리를 검토합니다. 각도 폭·발생률은 실측 적합값이 아니며 Ouster 교정 모델이 아닙니다. 기본 중심 확률 5%는 약한 효과를 보기 위한 임시 가정이며 실제 빈도가 아닙니다. 직사광 포화·반사광·플레어는 미구현입니다.</p>
+<span hidden><select id="solar-mode"><option value="empirical">statistical review</option></select><input id="sunIrradiance" value=".8"><output id="sunIrradiance-out"></output><canvas id="solar-map" width="720" height="220"></canvas></span></fieldset>

@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "revision": 18,
+  "modes_ready": ["dust", "rain", "snow", "fog", "sun", "general", "range"],
+  "rain_jitter": {"mean": 5, "std": 0.25, "seed73017": 4.695549820416187, "seed73018": 5.249341982787666},
+  "snow_jitter": {"mean": 3, "std": 0.15, "seed73018": 2.745628163697066},
+  "fog_jitter": {"mean": 500, "std": 25, "seed73018": 480.7653490094344},
+  "fog_jitter_off": {"mean": 500, "std": 0, "value": 500},
+  "asset_preview_checked": ["truck", "electricity-pole", "construction-cone", "shipping-container-a"],
+  "asset_preview_console_errors": [],
+  "simulator_console_errors": [],
+  "first_tab_explanatory_paragraphs": 0,
+  "particle_and_geometry_controls_collapsed": true,
+  "final": {"scene": "construction_v1", "seed": 73031, "kind": "dust", "time": 3.25, "view": "world", "surface": 73175, "surface_range_rms_m": 0.059993539972125205, "weather_strength_random": false},
+  "portable_browser_execution": "not repeated; local browser rendering tested"
+}

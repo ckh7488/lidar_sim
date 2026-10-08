@@ -1,0 +1,456 @@
+{
+  "version": 6,
+  "authority": "User rejected the density of fog and questioned solar density; requested weaker fog and offered actual Wireshark data. User confirmed whole lidar rotates on an external motor at 36 RPM. These are provisional review settings, not calibration or training approval.",
+  "production_generators": [],
+  "review_generators": [
+    "radial_gaussian_assumption",
+    "rotating_axis_angular_error_hypothesis",
+    "full_range_rain_beam_volume_candidate",
+    "full_range_snow_beam_volume_candidate",
+    "local_dust_transport_candidate",
+    "conditional_fog_photon_arrival_candidate",
+    "solar_direction_false_range_candidate",
+    "boundary_mixing_correction_candidate",
+    "weak_signal_uncertainty_candidate"
+  ],
+  "unsupported": [
+    "sensor_calibrated_sunlight_failure",
+    "direct_sun_saturation_and_flare",
+    "spray",
+    "unknown_cause_aerial_outliers",
+    "glass_mirror",
+    "lidar_crosstalk"
+  ],
+  "dust": {
+    "status": "new_lagrangian_transport_review_candidate_uncalibrated",
+    "uses_source_coordinates": false,
+    "uses_copied_patches": false,
+    "fitted_physical_parameters": false,
+    "empirical_descriptor_reference_frames": 356,
+    "limitations": [
+      "Source shape, flow and radiometry remain assumptions, not empirical fits",
+      "10 seeded solenoidal Fourier components plus anisotropic lift and ground damping, not obstacle-aware CFD",
+      "3..30 micrometre mineral dust; low-Re Stokes approximation, no coarse dust/resuspension",
+      "0.25m extinction grid and 0.125m integration; Qext=2; relative backscatter .12 uncalibrated",
+      "0.25m independent detection windows, not pulse convolution or multi-echo",
+      "Default 0.20g/s may produce zero dust returns; lower count is not validation",
+      "Instantaneous full scan, static actors; within-scan motion distortion omitted"
+    ],
+    "active_generated_points": "computed from mass transport and sensor proxy, not particle count",
+    "replacement_generator": "scripts/noise_lab_motion_v6.js",
+    "old_code_retained_for_failure_audit": true,
+    "active_core_rejects_dust_parameter": true,
+    "archive": "scripts/noise_lab_core_before_feedback_v5.js",
+    "source_model": "scene-and-seed varied noncircular ground disturbance; variable length, width, curvature and lift; geometry-following release",
+    "default_receiver": "independent Poisson photon windows; adaptive threshold",
+    "spatial_domain": "adaptive 0.25m grid around moving plume; former origin-centered box removed",
+    "source_xy_review_bounds_m": [
+      -95,
+      95
+    ],
+    "default_return_warning": "Default 0.20g/s may produce zero detected returns. World particles remain viewable; no point quota is forced."
+  },
+  "training": false,
+  "unsupported_generated_points": 0,
+  "mirror_glass": "preserve_pending_user_policy",
+  "legacy_spherical_dust": "retired",
+  "legacy_patch_placement": "historical_review_only_not_current_method",
+  "source_label_policy": {
+    "preserve_original_labels": true,
+    "labels_are_not_automatic_removal_truth": true,
+    "aerial_class7_accuracy": "unverified",
+    "aerial_class7_cause": "unknown",
+    "spatial_crop_is_not_noise_shape": true,
+    "unverified_labels_for_generation_or_training": false
+  },
+  "range_error": {
+    "application": "post-detection on all surface and candidate scattering returns",
+    "ui_default_enabled": true,
+    "ui_default_sigma_m": 0.06,
+    "ui_default_slope_m_per_m": 0,
+    "formula": "sigma(r)=sqrt(sigma0^2+(k*r)^2)",
+    "field_calibrated": false,
+    "minimum_observed_range_m": 0.3,
+    "preserve_labels_and_return_selection": true,
+    "beam_and_frame_specific_seeded_randomness": true,
+    "no_angular_noise_or_channel_bias": true,
+    "default_basis": "User confirmed the previous simulation defaults on 2026-10-07; not estimated hardware error.",
+    "exceptions": [
+      "sunlight: apparent timing ranges, no additional radial Gaussian layer",
+      "weak signal: own signal-dependent range error; no duplicate 60mm layer",
+      "edge mixing: pulse mixing only"
+    ]
+  },
+  "scan_geometry": {
+    "default": "live",
+    "profiles": [
+      "live",
+      "ideal",
+      "os1_center",
+      "os1_offset",
+      "os1_terrain"
+    ],
+    "channels": 128,
+    "columns": 1024,
+    "optical_radius_m": 0.016721,
+    "optical_origin_height_above_sensor_base_m": 0.038195,
+    "beam_source": "already-open public OS-1-128 metadata, official Ouster SDK 0.15.0",
+    "offset_ablation_keeps_same_beam_angles": true,
+    "fixed_offset_does_not_break_ideal_planar_rings": true,
+    "terrain_and_mount_pose": "uncalibrated scene-specific assumptions, raycast with original asset meshes",
+    "material_and_detection": "uncalibrated rho(x,y)*abs(normal dot ray)/range^2 threshold",
+    "mechanical_wobble": {
+      "status": "uncalibrated hypothesis",
+      "default_amplitude_deg": null,
+      "amplitude_range_deg": [
+        0,
+        0.7
+      ],
+      "cycles_per_revolution": [
+        1,
+        8
+      ],
+      "phase_range_deg": [
+        0,
+        360
+      ],
+      "pitch": "A*sin(cycles*encoder_angle+phase)",
+      "roll": "A*cos(cycles*encoder_angle+phase)",
+      "actual_rays": "mount rotation times wobble rotation times calibrated beam",
+      "default_reconstruction": "nominal ray, uncorrected wobble",
+      "optional_reconstruction": "actual direction known exactly, same physical returns",
+      "range_perturbation": "separate post-detection radial layer",
+      "numeric_range_is_hardware_tolerance": false,
+      "training": false,
+      "default": "seeded uniform 0..0.7 degrees"
+    },
+    "matched_to_displayed_dust_sensor": false,
+    "training_approved": false,
+    "terrain_rms_range_m": [
+      0,
+      0.005
+    ],
+    "pitch_range_deg": [
+      -0.6,
+      0.6
+    ],
+    "roll_range_deg": [
+      -0.6,
+      0.6
+    ],
+    "live_recast": true,
+    "ray_engine": "three-mesh-bvh 0.7.6",
+    "optical_offset_toggle": "physical optical origin on/off ablation; not random jitter"
+  },
+  "revision": "confirmed-observation-defaults-v16",
+  "geometry_randomization": {
+    "terrain_std_cm": [
+      0,
+      0.5
+    ],
+    "pitch_deg": [
+      -0.6,
+      0.6
+    ],
+    "roll_deg": [
+      -0.6,
+      0.6
+    ],
+    "wobble_amplitude_deg": [
+      0,
+      0.7
+    ],
+    "distribution": "independent uniform draws, rounded to UI step .001",
+    "wobble_cycles": 1,
+    "wobble_phase_deg": [
+      0,
+      359
+    ],
+    "keys": [
+      "scene_id",
+      "seed"
+    ],
+    "same_across_noise_categories": "true for same scene; explicit auto-selection from indoor to outdoor changes scene",
+    "same_across_time": true,
+    "terrain_interpretation": "standard deviation, explicitly confirmed by user, not maximum height",
+    "field_calibrated": false,
+    "manual_knobs_disable_automatic_sampling": true
+  },
+  "weather_candidates": {
+    "rain_snow": {
+      "model": "marked Poisson beam-volume intersections with particle size and disk overlap",
+      "range_support_m": [
+        0.5,
+        100
+      ],
+      "first_surface_occlusion": true,
+      "hard_34m_clip": false,
+      "rain_diameters_mm": [
+        1.5,
+        6
+      ],
+      "snow_diameters_mm": [
+        1,
+        8
+      ],
+      "roof_height_grid_m": 0.5,
+      "roof_check_scope": "candidate height below 20m; roofs above that are an unresolved approximation",
+      "return_selection": "uncalibrated photon counts and strongest threshold-crossing candidate",
+      "temporal_coherence": false,
+      "world_display": "separate fixed-count moving sample; not one-to-one with observed candidates",
+      "calibrated": false,
+      "training": false
+    },
+    "fog": {
+      "model": "single scatter attenuation/pulse followed by conditional photon-arrival surrogate",
+      "range_support_m": [
+        0.3,
+        100
+      ],
+      "first_surface_occlusion": true,
+      "backscatter_default": true,
+      "receiver_not_ouster": true,
+      "calibrated": false,
+      "training": false,
+      "default_visibility_m": 500,
+      "default_scatter_response": 0.0005011872336272725
+    }
+  },
+  "motion": {
+    "domain_m": {
+      "precipitation_observation_range": [
+        0.5,
+        100
+      ],
+      "precipitation_display_box": [
+        -120,
+        120,
+        0,
+        110
+      ],
+      "dust_adaptive_grid": true
+    },
+    "ui_default_view": "lidar",
+    "world_view": "representative fixed particle samples and motion glyphs; never noise truth",
+    "time_s": [
+      0,
+      8
+    ],
+    "playback": "0.25 simulated seconds per completed frame; not guaranteed real time",
+    "precipitation_terminal_balance": true,
+    "dust_gravity_drag": true,
+    "surface_collisions": "dust mesh segments; precipitation overhead height approximation",
+    "calibrated": false,
+    "training": false,
+    "old_gaussian_disabled": true,
+    "dust_flow_seeded": true,
+    "precipitation_observations_temporally_coherent": false,
+    "world_display_temporally_coherent": true,
+    "world_display_particle_count": "fixed illustrative sample, not density-proportional"
+  },
+  "solar": {
+    "default": "solar-direction statistical phantom-range candidate",
+    "range_support_m": [
+      0.3,
+      100
+    ],
+    "default_azimuth_deg": 40,
+    "default_elevation_deg": 10,
+    "default_angular_sigma_deg": 2,
+    "default_peak_probability": 0.05,
+    "angular_distribution": "Gaussian review assumption, not empirical fit",
+    "range_distribution": "uniform apparent ranges, inspired by Velodyne observations in Linnhoff et al. 2022",
+    "direct_sun_occlusion": true,
+    "apparent_ranges_can_exceed_surface": true,
+    "empirical_scope": "OS1-32 had no measured solar false detections in the cited experiment, not a guarantee for all Ouster sensors/conditions",
+    "paired_raw_sun_calibration_data_acquired": false,
+    "previous_model": "v7 radiometry and zero-generation reference retained in historical evidence",
+    "omitted": [
+      "hardware saturation",
+      "optical flare",
+      "reflected sunlight",
+      "proprietary rejection electronics",
+      "multi-echo"
+    ],
+    "field_calibrated": false,
+    "training": false,
+    "default_basis": "weak-effect review assumption, not measured frequency; prior .6 kept as comparison button"
+  },
+  "pattern_review": {
+    "old_source_and_old_receiver_independent_ablation": true,
+    "preserve_real_scan_arcs": true,
+    "all_roundness_removed_claim": false,
+    "morphology_empirically_validated": false,
+    "legacy_circular_source_ui": "hidden from active review; code retained for audit"
+  },
+  "atmosphere_review": {
+    "fog": {
+      "default": "weak review preset: 500m visibility and diffuse-return response 10^-3.3",
+      "backscatter_status": "new statistical surrogate; training unapproved",
+      "reason": "The previous argmax shell is replaced by photon-weighted sampling, not target-sensor calibration. Lower shell concentration alone does not validate the model.",
+      "model": "independent single-scatter path integral, optical overlap, cos-squared finite pulse and Poisson signal photons",
+      "spatial_variation": "optional shared low-frequency extinction hypothesis, not a fitted fog field",
+      "finite_step_m": 0.25,
+      "shell_diagnostic": "largest sliding 1m interval; descriptive only, not a realism acceptance threshold",
+      "omitted": [
+        "multiple scattering",
+        "sensor proprietary fog rejection",
+        "window wetting",
+        "wavelength-dependent fog calibration",
+        "empty region reconstruction ground truth"
+      ],
+      "training": false,
+      "previous_argmax_status": "rejected for training; archived",
+      "diffuse_return_response_default": 0.0005011872336272725,
+      "diffuse_return_response_basis": "Uncalibrated relative response of broad fog signal before detection. Not actual detection probability or measured optical coefficient.",
+      "prior_v10_setting": {
+        "visibility_m": 100,
+        "scatter_response": 1
+      }
+    },
+    "edge": {
+      "status": "visual review and correction candidate only",
+      "method": "13 subrays at depth boundaries; weighted Gaussian pulse sum and global-seeded peak search",
+      "marking": "yellow for center-ray range change above .05m; not removal truth",
+      "limits": [
+        "neighbor-based candidate gate can miss thin structures",
+        "finite subray sampling",
+        "generic pulse and beam parameters",
+        "no Ouster mixed-echo calibration"
+      ],
+      "training": false
+    },
+    "weak": {
+      "status": "surface-uncertainty review, not deletion noise",
+      "range_sigma": "sqrt(0.01^2+0.255^2/mu) m; uncalibrated 4ns-pulse assumption",
+      "signal": "mu = reference photons * response/.25 * (20/r)^2",
+      "miss": "observed photon count below 4",
+      "surface_labels_preserved": true,
+      "extra_60mm_layer_disabled": true,
+      "training": false
+    }
+  },
+  "explicit_exclusions": [
+    {
+      "cause": "unknown aerial Class 7",
+      "status": "do not synthesize",
+      "reason": "Cause and label accuracy unverified; copying its shape may teach deletion of real structures."
+    },
+    {
+      "cause": "arbitrary XYZ Gaussian outliers",
+      "status": "excluded from realistic training",
+      "reason": "Unfounded locations and frequency create isolated-point shortcuts or ambiguous labels; only a separately named stress test could use them."
+    },
+    {
+      "cause": "previous v8 argmax fog backscatter",
+      "status": "training rejected; historical record",
+      "reason": "Near-range shell and no sensor calibration. v10 is a distinct uncalibrated candidate, not an approved replacement."
+    },
+    {
+      "cause": "weak-signal and mixed-edge returns",
+      "status": "not automatic removal labels",
+      "reason": "Real surface information can be uncertain or biased; blanket removal harms boundaries and small objects."
+    },
+    {
+      "cause": "crosstalk, direct-sun saturation, optical flare",
+      "status": "unsupported",
+      "reason": "Timing, relative illumination and proprietary receiver behavior not measured."
+    },
+    {
+      "cause": "glass and mirror",
+      "status": "preserve",
+      "reason": "User removal policy remains pending."
+    }
+  ],
+  "external_rotation": {
+    "user_confirmed": true,
+    "mode": "whole sensor on external motor",
+    "rpm": 36,
+    "degrees_per_second": 216,
+    "period_seconds": 1.6666666666666667,
+    "intra_scan_change": "216 / scan_hz degrees, assuming constant rotation",
+    "simulator_implemented": false,
+    "analysis_requirement": "sensor per-column timestamps and time-aligned motor angle/axis/mount transform; clock mapping matters"
+  },
+  "crane_measured_review": {
+    "source": "E:\\NOCOL\\Nocol_SSM\\문제 로그\\260904_Y_JIB1\\pcap데이터\\#2 26.09.04.pcapng",
+    "fault_state": true,
+    "labels_created": false,
+    "model_calibrated": false,
+    "report": "crane_noise_review_v1.html",
+    "data_received": true,
+    "reserved_unopened_log_count": 8,
+    "read_only_source": true
+  },
+  "spatial_density_diagnostic": {
+    "scope": "Educational comparison only: uniform Cartesian volume, uniform apparent range, and a toy distance selection applied to the same volume sample",
+    "physical_generator_changed": false,
+    "receiver_calibrated": false,
+    "current_generator": "weak-review-defaults-v11",
+    "do_not_train_center_bias": true
+  },
+  "dust_feedback_v15": {
+    "source_key": "scene ID + user seed",
+    "source_length_m": [
+      1.4,
+      3.4
+    ],
+    "source_width_scale_m": [
+      0.16,
+      0.4
+    ],
+    "source_geometry_and_lift_varied": true,
+    "default_flux_g_per_s": 0.2,
+    "previous_default_flux_g_per_s": 0.25,
+    "display_fraction": "min(1,flux/0.25), stable parcel-ID subsample",
+    "optics_use_all_parcels": true,
+    "source_distribution_measured": false,
+    "field_calibrated": false,
+    "training": false
+  },
+  "confirmed_observation_defaults_v16": {
+    "revision": "confirmed-observation-defaults-v16",
+    "confirmed_date": "2026-10-07",
+    "basis": "User confirmed the previously agreed review parameters; not measured sensor calibration or training authorization.",
+    "geometry_random_enabled": true,
+    "scan_profile": "live",
+    "terrain_std_cm": [
+      0,
+      0.5
+    ],
+    "pitch_deg": [
+      -0.6,
+      0.6
+    ],
+    "roll_deg": [
+      -0.6,
+      0.6
+    ],
+    "wobble_amplitude_deg": [
+      0,
+      0.7
+    ],
+    "wobble_cycles": 1,
+    "wobble_phase_deg": [
+      0,
+      359
+    ],
+    "optical_offset": true,
+    "compensate_wobble": false,
+    "range_enabled": true,
+    "radial_sigma_m": 0.06,
+    "radial_slope_m_per_m": 0,
+    "formula": "sigma(r)=sqrt(0.06^2+(0*r)^2); Gaussian error along the beam after return selection",
+    "terrain_bound_meaning": "standard deviation, not an absolute height limit",
+    "seed_scope": "scene ID and user seed, unchanged by weather category or time",
+    "world_background": "exact detected surface XYZ shared with lidar view, including range error and uncompensated angular reconstruction",
+    "world_particles": "physical transport illustrations, not sensor observations; no radial measurement error added to these particle positions",
+    "exceptions": [
+      "Sun phantom ranges keep their dedicated timing-range model",
+      "Weak-signal mode uses its own signal-dependent range error without an extra 60mm layer",
+      "Edge mixing keeps its pulse-mixing model"
+    ],
+    "field_calibrated": false,
+    "training_authorized": false
+  }
+}

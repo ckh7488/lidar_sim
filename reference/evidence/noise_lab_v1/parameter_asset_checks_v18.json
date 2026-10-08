@@ -1,0 +1,158 @@
+{
+  "revision": 18,
+  "status": "pass",
+  "training": false,
+  "checks": [
+    "5000 geometry samples unchanged by centralized parameter registry",
+    {
+      "parameter": "rainRate",
+      "n": 20000,
+      "expectedMean": 5,
+      "observedMean": 5.000760060379207,
+      "expectedStd": 0.25,
+      "observedStd": 0.24988750496126874,
+      "timeStable": true,
+      "offPreservesMean": true
+    },
+    {
+      "parameter": "snowN",
+      "n": 20000,
+      "expectedMean": 3,
+      "observedMean": 2.9995647789762527,
+      "expectedStd": 0.15000000000000002,
+      "observedStd": 0.14986620392423403,
+      "timeStable": true,
+      "offPreservesMean": true
+    },
+    {
+      "parameter": "fogVisibility",
+      "n": 20000,
+      "expectedMean": 500,
+      "observedMean": 499.8753818527455,
+      "expectedStd": 25,
+      "observedStd": 25.09492242089357,
+      "timeStable": true,
+      "offPreservesMean": true
+    }
+  ],
+  "spatial": [
+    {
+      "weather": "rain",
+      "sameSeedReproduces": true,
+      "newSeedChangesPositions": true,
+      "timeChangesPositions": true,
+      "candidateRangeBins": [
+        1125,
+        6712,
+        17529,
+        33277,
+        54546
+      ],
+      "worldParticles": 5507
+    },
+    {
+      "weather": "snow",
+      "sameSeedReproduces": true,
+      "newSeedChangesPositions": true,
+      "timeChangesPositions": true,
+      "candidateRangeBins": [
+        113,
+        605,
+        1622,
+        2996,
+        4876
+      ],
+      "worldParticles": 4090
+    },
+    {
+      "weather": "fog",
+      "sameSeedReproduces": true,
+      "newSeedChangesScatterPositions": true,
+      "scatterCount": 4,
+      "timeAnimation": false
+    }
+  ],
+  "scenes": [
+    {
+      "scene": "construction_v1",
+      "added": 15,
+      "originalVerticesAndFacesPreserved": true,
+      "changedRays": 2487,
+      "closerNewReturns": 2467,
+      "newSurfaceCount": 73854,
+      "castMs": 2604.4839
+    },
+    {
+      "scene": "crane_yard_v1",
+      "added": 15,
+      "originalVerticesAndFacesPreserved": true,
+      "changedRays": 2075,
+      "closerNewReturns": 1965,
+      "newSurfaceCount": 72564,
+      "castMs": 2878.4449000000004
+    },
+    {
+      "scene": "apartment_v1",
+      "added": 8,
+      "originalVerticesAndFacesPreserved": true,
+      "changedRays": 1871,
+      "closerNewReturns": 1812,
+      "newSurfaceCount": 85096,
+      "castMs": 2854.2903000000006
+    },
+    {
+      "scene": "construction_v2",
+      "added": 15,
+      "originalVerticesAndFacesPreserved": true,
+      "changedRays": 2519,
+      "closerNewReturns": 2340,
+      "newSurfaceCount": 74366,
+      "castMs": 2812.8185999999987
+    },
+    {
+      "scene": "crane_yard_v2",
+      "added": 15,
+      "originalVerticesAndFacesPreserved": true,
+      "changedRays": 1684,
+      "closerNewReturns": 1684,
+      "newSurfaceCount": 73222,
+      "castMs": 3109.152900000001
+    },
+    {
+      "scene": "apartment_v2",
+      "added": 8,
+      "originalVerticesAndFacesPreserved": true,
+      "changedRays": 1845,
+      "closerNewReturns": 1619,
+      "newSurfaceCount": 84419,
+      "castMs": 2963.959999999999
+    },
+    {
+      "scene": "construction_v3",
+      "added": 15,
+      "originalVerticesAndFacesPreserved": true,
+      "changedRays": 3692,
+      "closerNewReturns": 3651,
+      "newSurfaceCount": 76685,
+      "castMs": 2727.347600000001
+    },
+    {
+      "scene": "crane_yard_v3",
+      "added": 15,
+      "originalVerticesAndFacesPreserved": true,
+      "changedRays": 3621,
+      "closerNewReturns": 3621,
+      "newSurfaceCount": 74834,
+      "castMs": 3088.0534000000043
+    },
+    {
+      "scene": "apartment_v3",
+      "added": 8,
+      "originalVerticesAndFacesPreserved": true,
+      "changedRays": 1964,
+      "closerNewReturns": 1964,
+      "newSurfaceCount": 86636,
+      "castMs": 3134.1633
+    }
+  ]
+}

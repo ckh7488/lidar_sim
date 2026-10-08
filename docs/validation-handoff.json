@@ -1,0 +1,142 @@
+{
+  "passed": true,
+  "created": "2026-10-08T07:59:39.228Z",
+  "node": "v20.18.1",
+  "geometry_samples": 3000,
+  "weather_samples_per_kind": 5000,
+  "modes": [
+    {
+      "kind": "dust",
+      "points": 73175,
+      "surface": 73175,
+      "noise": 0,
+      "hash": "f03982f234136b2dd588aeba5441e2c3d2e4dff6f7a81ce0e58866dd1900c968"
+    },
+    {
+      "kind": "rain",
+      "points": 75540,
+      "surface": 72838,
+      "noise": 2702,
+      "hash": "207e460b40d574a0989e1372885609e3ff397e0d068c0ac27b8a065b3ee3b084"
+    },
+    {
+      "kind": "snow",
+      "points": 76555,
+      "surface": 72613,
+      "noise": 3942,
+      "hash": "84196557af11ec972507dd793bf154c541c26a2bb9a4b47d54f0315afc9135ba"
+    },
+    {
+      "kind": "fog",
+      "points": 74192,
+      "surface": 73453,
+      "noise": 739,
+      "hash": "0065c5ef39ee39d10ffad147a08c33cdd2abe43a77b35b67f3eeafd651cdd0e5"
+    },
+    {
+      "kind": "sun",
+      "points": 73869,
+      "surface": 73854,
+      "noise": 15,
+      "hash": "8906efa13b1f855ccdfc84e10959b5d002e2e94ce3d0a7d9923a983be3b6f3a2"
+    },
+    {
+      "kind": "range",
+      "points": 73117,
+      "surface": 73117,
+      "noise": 0,
+      "hash": "8ebb172710f4b78f11e85fd7c4b7bc880e8ec01dde36e72ea1ad02e7cf6a1409"
+    },
+    {
+      "kind": "general",
+      "mode": "weak",
+      "points": 69748,
+      "surface": 69748,
+      "noise": 0,
+      "hash": "ea345b35983bf25616a449dca30b2e4e5ea5a2f9c638e605b695a743bf8e975a"
+    },
+    {
+      "kind": "general",
+      "mode": "edge",
+      "points": 73005,
+      "surface": 73005,
+      "noise": 0,
+      "hash": "d8eda35e24cad105eac22b84a068812dc60c26422d586f07462da4c9ffb26f8b"
+    }
+  ],
+  "same_seed_exact": true,
+  "new_seed_changes": true,
+  "world_surface_preserved": true,
+  "field_calibrated": false,
+  "training_approved": false,
+  "package_checks": {
+    "build_inputs": 202,
+    "scenes": 24,
+    "measured_examples": 36,
+    "broken_local_links": 0,
+    "worker_lifecycle_cases": 10,
+    "source_files_changed_during_snapshot": 0,
+    "occupied_port_rejected": true
+  },
+  "platform": {
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.12.6",
+    "browser": "Codex in-app Chromium"
+  },
+  "browser": {
+    "modes": [
+      {
+        "kind": "dust",
+        "time": 3.25,
+        "surface": 73175,
+        "noise": 0
+      },
+      {
+        "kind": "rain",
+        "time": 3.25,
+        "surface": 72838,
+        "noise": 2702
+      },
+      {
+        "kind": "snow",
+        "time": 3.25,
+        "surface": 72613,
+        "noise": 3942
+      },
+      {
+        "kind": "fog",
+        "time": 0,
+        "surface": 73453,
+        "noise": 739
+      },
+      {
+        "kind": "sun",
+        "time": 0,
+        "surface": 73854,
+        "noise": 8
+      },
+      {
+        "kind": "range",
+        "time": 0,
+        "surface": 73117,
+        "noise": 0
+      },
+      {
+        "kind": "general-edge",
+        "time": 0,
+        "surface": 73005,
+        "noise": 0
+      }
+    ],
+    "seed": 73031,
+    "scene": "construction_v1",
+    "confirmed_tab_roundtrip": true,
+    "console_errors": [],
+    "sun_time_zero_cli_match": true,
+    "additional_scenes": [
+      "crane_yard_v2",
+      "apartment_v3"
+    ],
+    "rapid_switch_final_selection_correct": true
+  }
+}

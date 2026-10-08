@@ -1,0 +1,908 @@
+{
+  "scope": "Nine metadata-selected, size-conditioned aerial calibration/demo tiles. Not a benchmark, prevalence survey, dust/sunlight label set, or a ground-LiDAR simulator calibration.",
+  "rows": [
+    {
+      "id": "CA05USGSB4_1",
+      "dataset": "CA05USGSB4",
+      "key": "CA05USGSB4/ot_b4_216000_3942000.laz",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/CA05USGSB4/ot_b4_216000_3942000.laz",
+      "sha256": "7cd363491207073c97db62a660abdaad6629b9361f88b87b22417bcb4ec4a7f5",
+      "bytes": 5682120,
+      "split": "calibration_demo_only",
+      "points": 2339900,
+      "noise_points": 2,
+      "noise_fraction": 8.547373819393992e-07,
+      "classes": {
+        "1": 1834,
+        "2": 1212079,
+        "3": 972687,
+        "5": 152967,
+        "6": 331,
+        "7": 2
+      },
+      "bounds": [
+        [
+          216000.0,
+          3942000.0,
+          497.67
+        ],
+        [
+          217173.7,
+          3943410.35,
+          617.07
+        ]
+      ],
+      "las_version": "1.2",
+      "point_format": 1,
+      "dimensions": [
+        "X",
+        "Y",
+        "Z",
+        "intensity",
+        "return_number",
+        "number_of_returns",
+        "scan_direction_flag",
+        "edge_of_flight_line",
+        "classification",
+        "synthetic",
+        "key_point",
+        "withheld",
+        "scan_angle_rank",
+        "user_data",
+        "point_source_id",
+        "gps_time"
+      ],
+      "noise_intensity_q10_50_90": [
+        12.5,
+        18.5,
+        24.5
+      ],
+      "other_intensity_q10_50_90": [
+        60.0,
+        82.0,
+        130.0
+      ],
+      "noise_return_numbers": {
+        "0": 2
+      },
+      "ground_reference": "Nearest class-2 point in XY within 2 m. Local-height proxy, not a reconstructed clean surface.",
+      "noise_ground_xy_q10_50_90": [
+        2.1746706370559474,
+        2.263591283364,
+        2.352511929672053
+      ],
+      "noise_with_ground_within_2m": 0,
+      "noise_dz_near_ground_q10_50_90": null,
+      "noise_below_ground_fraction_valid": null,
+      "noise_mean8nn_q10_50_90": [
+        2.499376718633001,
+        2.549433915636501,
+        2.599491112640001
+      ],
+      "other_mean8nn_q10_50_90": [
+        0.4890442301863622,
+        0.6178080571441507,
+        1.0058630335605376
+      ],
+      "viewer_views": [
+        {
+          "name": "\ud0c0\uc77c \uc804\uccb4",
+          "n": 80002,
+          "noise": 2
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 1",
+          "n": 3922,
+          "noise": 2
+        }
+      ]
+    },
+    {
+      "id": "CA05USGSB4_2",
+      "dataset": "CA05USGSB4",
+      "key": "CA05USGSB4/ot_b4_552000_3692000.laz",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/CA05USGSB4/ot_b4_552000_3692000.laz",
+      "sha256": "8867b21527d410c2227085616f027b70f88c319bf9f42438860a595607258a46",
+      "bytes": 6892131,
+      "split": "calibration_demo_only",
+      "points": 2295380,
+      "noise_points": 74,
+      "noise_fraction": 3.2238670721187776e-05,
+      "classes": {
+        "1": 4115,
+        "2": 922076,
+        "3": 713556,
+        "5": 639405,
+        "6": 16154,
+        "7": 74
+      },
+      "bounds": [
+        [
+          552694.6799999999,
+          3692882.3,
+          352.32
+        ],
+        [
+          553999.99,
+          3693999.99,
+          647.0500000000001
+        ]
+      ],
+      "las_version": "1.2",
+      "point_format": 1,
+      "dimensions": [
+        "X",
+        "Y",
+        "Z",
+        "intensity",
+        "return_number",
+        "number_of_returns",
+        "scan_direction_flag",
+        "edge_of_flight_line",
+        "classification",
+        "synthetic",
+        "key_point",
+        "withheld",
+        "scan_angle_rank",
+        "user_data",
+        "point_source_id",
+        "gps_time"
+      ],
+      "noise_intensity_q10_50_90": [
+        19.0,
+        29.0,
+        52.0
+      ],
+      "other_intensity_q10_50_90": [
+        50.0,
+        68.0,
+        101.0
+      ],
+      "noise_return_numbers": {
+        "0": 74
+      },
+      "ground_reference": "Nearest class-2 point in XY within 2 m. Local-height proxy, not a reconstructed clean surface.",
+      "noise_ground_xy_q10_50_90": [
+        0.24831185777176681,
+        0.478696120186361,
+        0.840386230570933
+      ],
+      "noise_with_ground_within_2m": 74,
+      "noise_dz_near_ground_q10_50_90": [
+        2.132999999999993,
+        2.549999999999983,
+        3.2549999999999955
+      ],
+      "noise_below_ground_fraction_valid": 0.0,
+      "noise_mean8nn_q10_50_90": [
+        2.159023704139869,
+        2.4090649839596097,
+        3.040064899242224
+      ],
+      "other_mean8nn_q10_50_90": [
+        0.5641590741956686,
+        0.7030114224317978,
+        0.9836869952293547
+      ],
+      "viewer_views": [
+        {
+          "name": "\ud0c0\uc77c \uc804\uccb4",
+          "n": 80074,
+          "noise": 74
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 1",
+          "n": 11743,
+          "noise": 2
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 2",
+          "n": 5899,
+          "noise": 1
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 3",
+          "n": 5201,
+          "noise": 1
+        }
+      ]
+    },
+    {
+      "id": "CA05USGSB4_3",
+      "dataset": "CA05USGSB4",
+      "key": "CA05USGSB4/ot_b4_198000_3962000.laz",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/CA05USGSB4/ot_b4_198000_3962000.laz",
+      "sha256": "af1965736ba488fc2195e3fed19fd150069c134b6c424b1906a478161f4b0f26",
+      "bytes": 8196876,
+      "split": "calibration_demo_only",
+      "points": 3537645,
+      "noise_points": 480,
+      "noise_fraction": 0.00013568348435187815,
+      "classes": {
+        "1": 1117,
+        "2": 1443860,
+        "3": 2019306,
+        "5": 72882,
+        "7": 480
+      },
+      "bounds": [
+        [
+          199027.02,
+          3962118.35,
+          314.76
+        ],
+        [
+          199999.99,
+          3963999.99,
+          375.78000000000003
+        ]
+      ],
+      "las_version": "1.2",
+      "point_format": 1,
+      "dimensions": [
+        "X",
+        "Y",
+        "Z",
+        "intensity",
+        "return_number",
+        "number_of_returns",
+        "scan_direction_flag",
+        "edge_of_flight_line",
+        "classification",
+        "synthetic",
+        "key_point",
+        "withheld",
+        "scan_angle_rank",
+        "user_data",
+        "point_source_id",
+        "gps_time"
+      ],
+      "noise_intensity_q10_50_90": [
+        14.0,
+        47.5,
+        95.0
+      ],
+      "other_intensity_q10_50_90": [
+        67.0,
+        93.0,
+        130.0
+      ],
+      "noise_return_numbers": {
+        "0": 480
+      },
+      "ground_reference": "Nearest class-2 point in XY within 2 m. Local-height proxy, not a reconstructed clean surface.",
+      "noise_ground_xy_q10_50_90": [
+        0.2211552047770926,
+        0.42130742160622253,
+        0.9153537460723546
+      ],
+      "noise_with_ground_within_2m": 476,
+      "noise_dz_near_ground_q10_50_90": [
+        2.6500000000000057,
+        5.404999999999973,
+        9.490000000000009
+      ],
+      "noise_below_ground_fraction_valid": 0.0,
+      "noise_mean8nn_q10_50_90": [
+        2.4577674221910413,
+        2.937179416269065,
+        3.645925080577984
+      ],
+      "other_mean8nn_q10_50_90": [
+        0.41554473350515514,
+        0.5386160223595746,
+        0.936723780746539
+      ],
+      "viewer_views": [
+        {
+          "name": "\ud0c0\uc77c \uc804\uccb4",
+          "n": 80480,
+          "noise": 480
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 1",
+          "n": 5048,
+          "noise": 6
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 2",
+          "n": 2593,
+          "noise": 16
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 3",
+          "n": 5263,
+          "noise": 18
+        }
+      ]
+    },
+    {
+      "id": "CRB_10_Jul_1",
+      "dataset": "CRB_10_Jul",
+      "key": "CRB_10_Jul/ot_CRB2_451500_4409000.las",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/CRB_10_Jul/ot_CRB2_451500_4409000.las",
+      "sha256": "9761610835defb951df0043087e003e30a05ff3a02264babd0edc79f78d984f7",
+      "bytes": 55922752,
+      "split": "calibration_demo_only",
+      "points": 1997188,
+      "noise_points": 2100,
+      "noise_fraction": 0.0010514783786003121,
+      "classes": {
+        "1": 1795884,
+        "2": 198909,
+        "7": 2100,
+        "8": 295
+      },
+      "bounds": [
+        [
+          451500.0,
+          4409000.0,
+          60.84
+        ],
+        [
+          451999.99,
+          4409499.99,
+          186.13
+        ]
+      ],
+      "las_version": "1.0",
+      "point_format": 1,
+      "dimensions": [
+        "X",
+        "Y",
+        "Z",
+        "intensity",
+        "return_number",
+        "number_of_returns",
+        "scan_direction_flag",
+        "edge_of_flight_line",
+        "classification",
+        "synthetic",
+        "key_point",
+        "withheld",
+        "scan_angle_rank",
+        "user_data",
+        "point_source_id",
+        "gps_time"
+      ],
+      "noise_intensity_q10_50_90": [
+        6.0,
+        12.0,
+        63.0
+      ],
+      "other_intensity_q10_50_90": [
+        12.0,
+        72.0,
+        120.0
+      ],
+      "noise_return_numbers": {
+        "1": 166,
+        "2": 627,
+        "3": 916,
+        "4": 391
+      },
+      "ground_reference": "Nearest class-2 point in XY within 2 m. Local-height proxy, not a reconstructed clean surface.",
+      "noise_ground_xy_q10_50_90": [
+        0.7896624978746308,
+        2.740583817064022,
+        4.921951696508861
+      ],
+      "noise_with_ground_within_2m": 666,
+      "noise_dz_near_ground_q10_50_90": [
+        -0.3400000000000034,
+        -0.020000000000010232,
+        0.3850000000000051
+      ],
+      "noise_below_ground_fraction_valid": 0.536036036036036,
+      "noise_mean8nn_q10_50_90": [
+        1.114583521436875,
+        2.6876127103091383,
+        4.068687362535086
+      ],
+      "other_mean8nn_q10_50_90": [
+        0.42061134677992806,
+        0.6622834828201805,
+        1.1825749661535967
+      ],
+      "viewer_views": [
+        {
+          "name": "\ud0c0\uc77c \uc804\uccb4",
+          "n": 82100,
+          "noise": 2100
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 1",
+          "n": 16543,
+          "noise": 37
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 2",
+          "n": 17612,
+          "noise": 57
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 3",
+          "n": 30014,
+          "noise": 14
+        }
+      ]
+    },
+    {
+      "id": "CRB_10_Jul_2",
+      "dataset": "CRB_10_Jul",
+      "key": "CRB_10_Jul/ot_CRB2_450000_4409000.las",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/CRB_10_Jul/ot_CRB2_450000_4409000.las",
+      "sha256": "74fe93a5a6df2a8c365af8c3b713ee168b87954b2556ffb90aa3c9d40a59df3f",
+      "bytes": 75169280,
+      "split": "calibration_demo_only",
+      "points": 2684564,
+      "noise_points": 777,
+      "noise_fraction": 0.00028943247395107733,
+      "classes": {
+        "1": 1637066,
+        "2": 1046711,
+        "7": 777,
+        "8": 10
+      },
+      "bounds": [
+        [
+          450000.0,
+          4409000.0,
+          47.27
+        ],
+        [
+          450499.99,
+          4409499.99,
+          142.98
+        ]
+      ],
+      "las_version": "1.0",
+      "point_format": 1,
+      "dimensions": [
+        "X",
+        "Y",
+        "Z",
+        "intensity",
+        "return_number",
+        "number_of_returns",
+        "scan_direction_flag",
+        "edge_of_flight_line",
+        "classification",
+        "synthetic",
+        "key_point",
+        "withheld",
+        "scan_angle_rank",
+        "user_data",
+        "point_source_id",
+        "gps_time"
+      ],
+      "noise_intensity_q10_50_90": [
+        7.0,
+        51.0,
+        130.39999999999998
+      ],
+      "other_intensity_q10_50_90": [
+        49.0,
+        101.0,
+        134.0
+      ],
+      "noise_return_numbers": {
+        "1": 387,
+        "2": 208,
+        "3": 152,
+        "4": 30
+      },
+      "ground_reference": "Nearest class-2 point in XY within 2 m. Local-height proxy, not a reconstructed clean surface.",
+      "noise_ground_xy_q10_50_90": [
+        0.2527447634337427,
+        0.9693296653763025,
+        3.8839052348789482
+      ],
+      "noise_with_ground_within_2m": 495,
+      "noise_dz_near_ground_q10_50_90": [
+        -0.35600000000000015,
+        -0.12000000000000455,
+        -0.030000000000001137
+      ],
+      "noise_below_ground_fraction_valid": 0.9252525252525252,
+      "noise_mean8nn_q10_50_90": [
+        0.38908871087298347,
+        0.7770738196084918,
+        2.787162811525803
+      ],
+      "other_mean8nn_q10_50_90": [
+        0.3212977431229978,
+        0.4255164657610728,
+        0.6502094025567015
+      ],
+      "viewer_views": [
+        {
+          "name": "\ud0c0\uc77c \uc804\uccb4",
+          "n": 80777,
+          "noise": 777
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 1",
+          "n": 26404,
+          "noise": 21
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 2",
+          "n": 26705,
+          "noise": 9
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 3",
+          "n": 30014,
+          "noise": 14
+        }
+      ]
+    },
+    {
+      "id": "CRB_10_Jul_3",
+      "dataset": "CRB_10_Jul",
+      "key": "CRB_10_Jul/ot_CRB2_434000_4417500.las",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/CRB_10_Jul/ot_CRB2_434000_4417500.las",
+      "sha256": "71c213552007217202a98943c5ce8ffa66cb759f4d856704b2097057d3ccf686",
+      "bytes": 67857864,
+      "split": "calibration_demo_only",
+      "points": 2423442,
+      "noise_points": 165,
+      "noise_fraction": 6.808497995825772e-05,
+      "classes": {
+        "1": 791740,
+        "2": 1631537,
+        "7": 165
+      },
+      "bounds": [
+        [
+          434000.0,
+          4417500.0,
+          120.5
+        ],
+        [
+          434499.99,
+          4417999.99,
+          168.36
+        ]
+      ],
+      "las_version": "1.0",
+      "point_format": 1,
+      "dimensions": [
+        "X",
+        "Y",
+        "Z",
+        "intensity",
+        "return_number",
+        "number_of_returns",
+        "scan_direction_flag",
+        "edge_of_flight_line",
+        "classification",
+        "synthetic",
+        "key_point",
+        "withheld",
+        "scan_angle_rank",
+        "user_data",
+        "point_source_id",
+        "gps_time"
+      ],
+      "noise_intensity_q10_50_90": [
+        6.0,
+        18.0,
+        108.39999999999998
+      ],
+      "other_intensity_q10_50_90": [
+        89.0,
+        108.0,
+        122.0
+      ],
+      "noise_return_numbers": {
+        "1": 51,
+        "2": 70,
+        "3": 35,
+        "4": 9
+      },
+      "ground_reference": "Nearest class-2 point in XY within 2 m. Local-height proxy, not a reconstructed clean surface.",
+      "noise_ground_xy_q10_50_90": [
+        0.24754700759803422,
+        0.5412947443033961,
+        2.8181920838668875
+      ],
+      "noise_with_ground_within_2m": 123,
+      "noise_dz_near_ground_q10_50_90": [
+        -0.2600000000000193,
+        -0.12000000000000455,
+        0.020000000000010232
+      ],
+      "noise_below_ground_fraction_valid": 0.8699186991869918,
+      "noise_mean8nn_q10_50_90": [
+        0.37366216351433224,
+        0.7593292187879384,
+        3.0817977806810277
+      ],
+      "other_mean8nn_q10_50_90": [
+        0.3118910037389132,
+        0.38505502239313033,
+        0.488599512585031
+      ],
+      "viewer_views": [
+        {
+          "name": "\ud0c0\uc77c \uc804\uccb4",
+          "n": 80165,
+          "noise": 165
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 1",
+          "n": 30017,
+          "noise": 17
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 2",
+          "n": 25060,
+          "noise": 2
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 3",
+          "n": 30013,
+          "noise": 13
+        }
+      ]
+    },
+    {
+      "id": "UT18_Dennison_1",
+      "dataset": "UT18_Dennison",
+      "key": "UT18_Dennison/582000_4151500.laz",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/UT18_Dennison/582000_4151500.laz",
+      "sha256": "4e1db5026bf10c47a57b08ec98d58296d69384a861d08c2062b1fc5f298ef8f1",
+      "bytes": 1164123,
+      "split": "calibration_demo_only",
+      "points": 323323,
+      "noise_points": 0,
+      "noise_fraction": 0.0,
+      "classes": {
+        "1": 12,
+        "2": 256311,
+        "3": 53295,
+        "4": 13705
+      },
+      "bounds": [
+        [
+          582000.0,
+          4151718.52,
+          1769.8400000000001
+        ],
+        [
+          582293.2000000001,
+          4151999.99,
+          1787.65
+        ]
+      ],
+      "las_version": "1.2",
+      "point_format": 3,
+      "dimensions": [
+        "X",
+        "Y",
+        "Z",
+        "intensity",
+        "return_number",
+        "number_of_returns",
+        "scan_direction_flag",
+        "edge_of_flight_line",
+        "classification",
+        "synthetic",
+        "key_point",
+        "withheld",
+        "scan_angle_rank",
+        "user_data",
+        "point_source_id",
+        "gps_time",
+        "red",
+        "green",
+        "blue"
+      ],
+      "noise_intensity_q10_50_90": null,
+      "other_intensity_q10_50_90": [
+        128.0,
+        528.0,
+        976.0
+      ],
+      "noise_return_numbers": {},
+      "noise_mean8nn_q10_50_90": null,
+      "other_mean8nn_q10_50_90": [
+        0.3125518586756974,
+        0.4352564635340277,
+        0.62633430330468
+      ],
+      "viewer_views": [
+        {
+          "name": "\ud0c0\uc77c \uc804\uccb4",
+          "n": 80000,
+          "noise": 0
+        }
+      ]
+    },
+    {
+      "id": "UT18_Dennison_2",
+      "dataset": "UT18_Dennison",
+      "key": "UT18_Dennison/597000_4163500.laz",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/UT18_Dennison/597000_4163500.laz",
+      "sha256": "f7e9ef774b37556f71ad149128948df2832a9e6a92719c6578c7322f1b9556e3",
+      "bytes": 27821651,
+      "split": "calibration_demo_only",
+      "points": 6399821,
+      "noise_points": 1,
+      "noise_fraction": 1.5625437023941763e-07,
+      "classes": {
+        "1": 71,
+        "2": 3714306,
+        "3": 1455510,
+        "4": 1227916,
+        "5": 2017,
+        "7": 1
+      },
+      "bounds": [
+        [
+          597000.0,
+          4163500.0,
+          2142.83
+        ],
+        [
+          597499.99,
+          4163999.99,
+          2213.85
+        ]
+      ],
+      "las_version": "1.2",
+      "point_format": 3,
+      "dimensions": [
+        "X",
+        "Y",
+        "Z",
+        "intensity",
+        "return_number",
+        "number_of_returns",
+        "scan_direction_flag",
+        "edge_of_flight_line",
+        "classification",
+        "synthetic",
+        "key_point",
+        "withheld",
+        "scan_angle_rank",
+        "user_data",
+        "point_source_id",
+        "gps_time",
+        "red",
+        "green",
+        "blue"
+      ],
+      "noise_intensity_q10_50_90": [
+        144.0,
+        144.0,
+        144.0
+      ],
+      "other_intensity_q10_50_90": [
+        96.0,
+        304.0,
+        848.0
+      ],
+      "noise_return_numbers": {
+        "1": 1
+      },
+      "ground_reference": "Nearest class-2 point in XY within 2 m. Local-height proxy, not a reconstructed clean surface.",
+      "noise_ground_xy_q10_50_90": [
+        0.060827625359632334,
+        0.060827625359632334,
+        0.060827625359632334
+      ],
+      "noise_with_ground_within_2m": 1,
+      "noise_dz_near_ground_q10_50_90": [
+        32.31999999999971,
+        32.31999999999971,
+        32.31999999999971
+      ],
+      "noise_below_ground_fraction_valid": 0.0,
+      "noise_mean8nn_q10_50_90": [
+        27.67141546283607,
+        27.67141546283607,
+        27.67141546283607
+      ],
+      "other_mean8nn_q10_50_90": [
+        0.22667142793789724,
+        0.3134118328930447,
+        0.46115420003003477
+      ],
+      "viewer_views": [
+        {
+          "name": "\ud0c0\uc77c \uc804\uccb4",
+          "n": 80001,
+          "noise": 1
+        },
+        {
+          "name": "\uc774\uc0c1\uc810 \uc8fc\ubcc0 1",
+          "n": 30001,
+          "noise": 1
+        }
+      ]
+    },
+    {
+      "id": "UT18_Dennison_3",
+      "dataset": "UT18_Dennison",
+      "key": "UT18_Dennison/582000_4180500.laz",
+      "url": "https://opentopography.s3.sdsc.edu/pc-bulk/UT18_Dennison/582000_4180500.laz",
+      "sha256": "af18432683f27f53277b7a7539396824a3e2e8fe98bfdb68f375986b62d05e55",
+      "bytes": 10020855,
+      "split": "calibration_demo_only",
+      "points": 2323254,
+      "noise_points": 0,
+      "noise_fraction": 0.0,
+      "classes": {
+        "1": 62,
+        "2": 1177511,
+        "3": 721961,
+        "4": 423720
+      },
+      "bounds": [
+        [
+          582000.0,
+          4180500.0,
+          2228.32
+        ],
+        [
+          582499.99,
+          4180855.04,
+          2314.16
+        ]
+      ],
+      "las_version": "1.2",
+      "point_format": 3,
+      "dimensions": [
+        "X",
+        "Y",
+        "Z",
+        "intensity",
+        "return_number",
+        "number_of_returns",
+        "scan_direction_flag",
+        "edge_of_flight_line",
+        "classification",
+        "synthetic",
+        "key_point",
+        "withheld",
+        "scan_angle_rank",
+        "user_data",
+        "point_source_id",
+        "gps_time",
+        "red",
+        "green",
+        "blue"
+      ],
+      "noise_intensity_q10_50_90": null,
+      "other_intensity_q10_50_90": [
+        80.0,
+        320.0,
+        832.0
+      ],
+      "noise_return_numbers": {},
+      "noise_mean8nn_q10_50_90": null,
+      "other_mean8nn_q10_50_90": [
+        0.2564506499745906,
+        0.3787988648895283,
+        0.6178090871473201
+      ],
+      "viewer_views": [
+        {
+          "name": "\ud0c0\uc77c \uc804\uccb4",
+          "n": 80000,
+          "noise": 0
+        }
+      ]
+    }
+  ],
+  "total_points": 24324517,
+  "total_noise": 3599,
+  "preserved_source_files": true,
+  "classification7_preserved": true,
+  "xyz_max_allowed_roundtrip_error_m": 0.002,
+  "new_training": false,
+  "heldout_opened": false
+}

@@ -1,0 +1,18 @@
+<fieldset class="controls" id="atmosphere-controls" hidden><legend>원인별 검토</legend>
+<label><input id="review-enabled" type="checkbox" checked>선택한 효과 켜기</label>
+<label id="general-mode-label">표면 변화 종류 <select id="general-mode"><option value="edge">경계에서 섞이는 거리 · 보정 후보</option><option value="weak">약한 신호 · 표면 오차와 누락</option></select></label>
+<span id="fog-knobs" class="controls">
+<label>가시거리 가정 <input id="fogVisibility" type="range" min="20" max="2000" step="10" value="500"><output id="fogVisibility-out">500</output>m</label>
+<label>안개 반환 민감도 가정 <input id="fogScatterLog" type="range" min="-5" max="0" step=".1" value="-3.3"><output id="fogScatterLog-out"></output></label><button id="fog-soft-preset" type="button">약한 효과 · 임시 설정</button><button id="fog-v10-preset" type="button">이전 과밀 설정 비교</button><label><input id="fogBackscatter" type="checkbox" checked>안개 산란 켜기 · 검토 후보</label>
+<label>농도 불균일 가정 <input id="fogVariation" type="range" min="0" max=".8" step=".1" value="0"><output id="fogVariation-out">0</output></label>
+<details><summary>수광기·안개 가정 노브</summary><div class="controls">
+<label hidden>소광/후방산란 비 <input id="fogRatio" type="range" min="20" max="100" step="5" value="65"><output id="fogRatio-out">65</output>sr</label>
+<label>펄스 반치폭 <input id="fogPulse" type="range" min="4" max="20" step="2" value="20"><output id="fogPulse-out">20</output>ns</label>
+<label>광학 겹침 시작 <input id="fogNear" type="number" min="0" max="3" step=".1" value=".9">m</label>
+<label>광학 겹침 완료 <input id="fogFull" type="number" min=".1" max="5" step=".1" value="1.5">m</label>
+</div></details></span>
+<span id="edge-knobs" class="controls"><label>빔 반발산각 <input id="edgeBeam" type="range" min="0" max="3" step=".25" value="1"><output id="edgeBeam-out">1</output>mrad</label><label>펄스 반치폭 <input id="edgePulse" type="range" min="2" max="20" step="2" value="4"><output id="edgePulse-out">4</output>ns</label></span>
+<span id="weak-knobs" class="controls"><label>20m·반응 0.25의 신호량 가정 <input id="weakPhotons" type="range" min="20" max="500" step="20" value="100"><output id="weakPhotons-out">100</output>광자</label></span>
+<p id="atmosphere-note"></p><p id="atmosphere-stats"></p><p class="warn" id="atmosphere-decision"></p>
+<details id="wave-details"><summary>한 광선의 반환 신호 · 혼합 원리</summary><canvas id="review-wave" width="700" height="200" style="max-width:100%;background:#0b1923"></canvas><p id="wave-caption" class="muted"></p></details>
+</fieldset>

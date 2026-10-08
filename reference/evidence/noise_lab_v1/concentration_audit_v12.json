@@ -1,0 +1,144 @@
+{
+  "scene": "construction_v1",
+  "seed": 73017,
+  "time_s": 3,
+  "model": "weak-review-defaults-v11",
+  "calibrated": false,
+  "training": false,
+  "cases": [
+    {
+      "kind": "rain",
+      "returns": 2861,
+      "range_bins": [
+        2861,
+        0,
+        0,
+        0,
+        0
+      ],
+      "candidate_bins": [
+        29836,
+        142097,
+        359834,
+        674351,
+        1087716
+      ],
+      "world_display_points": 5367,
+      "near20_pct": 100,
+      "surface": 69626
+    },
+    {
+      "kind": "snow",
+      "returns": 4184,
+      "range_bins": [
+        1853,
+        2209,
+        119,
+        3,
+        0
+      ],
+      "candidate_bins": [
+        2965,
+        13081,
+        32319,
+        60428,
+        97885
+      ],
+      "world_display_points": 4081,
+      "near20_pct": 44.28776290630975,
+      "surface": 69368
+    },
+    {
+      "kind": "fog",
+      "returns": 802,
+      "range_bins": [
+        773,
+        24,
+        4,
+        1,
+        0
+      ],
+      "candidate_bins": null,
+      "world_display_points": 0,
+      "near20_pct": 96.38403990024938,
+      "surface": 70359
+    },
+    {
+      "kind": "sun",
+      "returns": 5,
+      "range_bins": [
+        2,
+        1,
+        1,
+        0,
+        1
+      ],
+      "candidate_bins": null,
+      "world_display_points": 0,
+      "near20_pct": 40,
+      "surface": 70869
+    },
+    {
+      "kind": "dust",
+      "returns": 0,
+      "range_bins": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "candidate_bins": null,
+      "world_display_points": 2232,
+      "near20_pct": null,
+      "surface": 70021
+    }
+  ],
+  "assumption": "Same construction demo; current production generators, not a field fit",
+  "fog_open_path": {
+    "returns": 1210,
+    "range_bins": [
+      1157,
+      43,
+      7,
+      2,
+      1
+    ],
+    "near20_pct": 95.6198347107438,
+    "meaning": "Uniform fog density, no occluding surface; distribution still depends on uncalibrated receiver"
+  },
+  "uniformity_control": {
+    "n": 100000,
+    "volume_uniform": [
+      758,
+      5557,
+      15157,
+      29601,
+      48927
+    ],
+    "range_uniform": [
+      19390,
+      20264,
+      20076,
+      20110,
+      20160
+    ],
+    "expected_volume_fractions": [
+      0.0079998759999845,
+      0.05600000700000087,
+      0.15200001900000237,
+      0.2960000370000046,
+      0.48800006100000765
+    ],
+    "expected_range_fractions": [
+      0.19597989949748743,
+      0.20100502512562815,
+      0.20100502512562815,
+      0.20100502512562815,
+      0.20100502512562815
+    ],
+    "passed": true,
+    "initial_check_correction": "The first bin starts at 0.5m, not 0m; corrected the analytical expectation from .2 to 19.5/99.5, with a six-sigma binomial tolerance",
+    "meaning": "Uniform radius is not uniform Cartesian volume; full fixed solid angle, .5 to 100m"
+  }
+}
