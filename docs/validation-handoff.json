@@ -137,6 +137,17 @@
       "crane_yard_v2",
       "apartment_v3"
     ],
-    "rapid_switch_final_selection_correct": true
+    "rapid_switch_final_selection_correct": true,
+    "crane_measured_view_loaded_points": 149884,
+    "asset_preview_loaded": true
+  },
+  "remote_clean_clone": {
+    "source_commit": "1daea176b99ec4fd784dbc2b4350e615d5e35fa7",
+    "build": true,
+    "verify": true,
+    "worker_lifecycle": true,
+    "range_points": 73117,
+    "range_xyz_labels_sha256": "8ebb172710f4b78f11e85fd7c4b7bc880e8ec01dde36e72ea1ad02e7cf6a1409",
+    "working_tree_clean_after_commands": true
   }
 }
