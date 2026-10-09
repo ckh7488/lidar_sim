@@ -65,9 +65,13 @@ scene_v24는 동봉된 공개 에셋과 절차적 가구를 같은 좌표계로 
 
 freepose_v24는 네 직선 구간에 5차 easing을 적용합니다. 센서 반경 0.3m가 지나가는 전체 선분을 AABB로 보수적으로 감싸 삼각형 교차를 검사합니다. 몸체는 회전해도 이 구 안에 있다고 가정합니다. 자세 적용은 `Rz(yaw) * Ry(pitch) * Rx(roll)` 이후 별도 설치 오차, 축 흔들림 순서입니다. 경로 worldZ는 직접 보간하며 height는 실제 지형에 대한 높이입니다.
 
-경로 후보 높이는 실내 0.8..2.2m / 야외 0.8..6m, pitch·roll은 ±25°입니다. 10초 네 구간에서 최고 이동속도는 3m/s 아래이며 yaw 90°/s, pitch·roll 40°/s 이하로 제한합니다. 여유 없는 후보는 거절하므로 최종 분포는 정확한 균등분포가 아닙니다. 드론/차량의 동역학, 다층 경로 탐색, 스캔 내부 시간차는 구현하지 않습니다.
+경로 후보 높이는 실내 0.8..2.2m / 야외 0.8..6m, pitch·roll은 ±25°입니다. 10초 네 구간에서 최고 이동속도는 3m/s 아래이며 yaw 90°/s, pitch·roll 40°/s 이하로 제한합니다. 여유 없는 후보는 거절하므로 최종 분포는 정확한 균등분포가 아닙니다. 드론/차량의 동역학과 다층 경로 탐색은 구현하지 않습니다. v27부터 스캔 내부 센서 이동은 별도 스큐 옵션으로 구현합니다.
 
 
 ## OS1-32 및 개체별 고정 빔 각도 (v25)
 
 [설계·분포·API·검사](beam-variation-v25.md)를 읽으세요. 웹은 OS1-32 U와 각도 변동이 기본이고, 기존 CLI/API는 호환을 위해 OS1-128·추가 변동 끔을 유지합니다. CLI/API에서는 sensor와 beamUnit을 명시합니다. src/noise_lab_beam_unit_v25.js가 단일 분포/추출 구현이며 전체 시퀀스·장면·날씨에 동일한 sensor-unit을 유지합니다. tests/beam-unit-v25.cjs로 광선과 내보내기를 확인합니다.
+
+## Motion skew (v27)
+
+Read [motion-skew-v27.md](motion-skew-v27.md). `motionSkew:{enabled:false,scanHz:10}` is the default for every entry point. OFF must preserve existing XYZ/label hashes. ON casts each raw measurement column from its acquisition pose but reconstructs at the reference pose, so it must not silently deskew. Preserve per-return Float64 `timeOffsets`, reference-time metadata, endpoint pose hold, and the explicit frozen-within-scan weather limitation. Scan frequency is independent of export FPS. Run `node tests/motion-skew-v27.cjs` and `node tests/skew-interface-v27.cjs` after changing this mechanism. No IMU or external rotor is implied.

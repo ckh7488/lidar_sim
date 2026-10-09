@@ -5,7 +5,9 @@ const {createSimulator,ROOT}=require('./runtime.cjs'),{summary,writeFrame}=requi
 const DIST=path.join(ROOT,'dist'),policy=require('../configs/review_demo_v23.json');
 const controlRules={dustFlux:[0,2],dustSize:[5,25],motionEddy:[0,1.5],rainRate:[1,20],snowN:[1,10],fogVisibility:[50,2000],fogVariation:[0,.8],fogScatterLog:[-5,0],motionWind:[0,6],motionAngle:[-180,180],sunAz:[-180,180],sunEl:[-10,80],sunWidth:[.5,8],sunProbability:[0,1],weakPhotons:[20,500],radialSigma:[0,.15],radialSlope:[0,5]};
 const BeamUnit=require('../src/noise_lab_beam_unit_v25.js'),{builtins:sensors}=require('./sensor-profile.cjs');
+const ScanTiming=require('../src/noise_lab_scan_timing_v27.js');
 function validate(body,index){
+ const motionSkew=ScanTiming.settings(body.motionSkew);
  const sensor=body.sensor??'os1-128',beamUnit=BeamUnit.settings(body.beamUnit);if(typeof sensor!=='string'||!Object.hasOwn(sensors,sensor))throw Error('알 수 없는 센서입니다.');
  const {scene,generator,seed,pose='random',mode='frame',time=3,fps=1,controls={},edgeMixing=false,randomScene=true}=body;
  if(!index.scenes.some(s=>s.id===scene))throw Error('알 수 없는 장소입니다.');
@@ -17,7 +19,7 @@ function validate(body,index){
  if(typeof randomScene!=='boolean'||typeof edgeMixing!=='boolean'||typeof controls!=='object'||!controls||Array.isArray(controls))throw Error('설정 형식이 올바르지 않습니다.');
  const clean={};for(const [k,v] of Object.entries(controls)){const range=controlRules[k];if(!range||typeof v!=='number'||!Number.isFinite(v)||v<range[0]||v>range[1])throw Error('허용되지 않은 설정: '+k);clean[k]=v;}
  const kind=['edge','weak'].includes(generator)?'general':generator;if(kind==='general')clean['general-mode']=generator;
- return {request:{sensor,beamUnit,scene,generator,seed,pose,mode,time,fps,controls,edgeMixing,randomScene},options:{sensor,beamUnit,scene,kind,seed,pose,scenario:"random-v24",randomScene,sequence:true,controls:clean,edgeMixing},times:mode==='sequence'?Array.from({length:10*fps+1},(_,i)=>i/fps):[time]};
+ return {request:{motionSkew,sensor,beamUnit,scene,generator,seed,pose,mode,time,fps,controls,edgeMixing,randomScene},options:{motionSkew,sensor,beamUnit,scene,kind,seed,pose,scenario:"random-v24",randomScene,sequence:true,controls:clean,edgeMixing},times:mode==='sequence'?Array.from({length:10*fps+1},(_,i)=>i/fps):[time]};
 }
 function createReviewServer({port=18769,outputRoot=path.join(ROOT,'outputs','review-demo')}={}){
  if(!fs.existsSync(path.join(DIST,'review_demo.html')))throw Error('먼저 python tools/build.py를 실행하세요.');

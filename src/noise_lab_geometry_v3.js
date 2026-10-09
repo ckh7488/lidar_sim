@@ -12,7 +12,7 @@ function engine(raw,beam){
     objectBVH=new MeshBVHLib.MeshBVH(objectGeometry,{maxLeafTris:8}),groundBVH=new MeshBVHLib.MeshBVH(groundGeometry,{maxLeafTris:8});
   let terrainCm=-1;
   function ground(cm){if(cm===terrainCm)return;const p=groundGeometry.attributes.position.array,z=raw.terrain.vertices,scale=cm/100/raw.terrain.base_std_m;for(let k=2;k<p.length;k+=3)p[k]=z[k]*scale;groundGeometry.attributes.position.needsUpdate=true;groundBVH.refit();terrainCm=cm}
-  async function cast(c,yieldStep){
+  async function cast(c,yieldStep,poseAt){
     const start=performance.now();ground(c.terrainCm);
     const pose=c.sensorPose||{id:'legacy',legacy:true,x:0,y:0,height:1.65,yawDeg:0};
     if(![pose.x,pose.y,pose.height,pose.yawDeg].every(Number.isFinite))throw Error('Invalid sensor pose');
@@ -22,23 +22,35 @@ function engine(raw,beam){
     if(!sensor.every(Number.isFinite))throw Error('Invalid sensor world position');
     if(pose.motion6dof?!bodyFree(sensor,.3):!pose.legacy&&!placementFree(pose.x,pose.y,.35,.08,Math.max(2.4,pose.height+.3)))throw Error('Sensor placement intersects scene geometry');
     const bodyRotation=product(yawRotation(pose.yawDeg),rotation(pose.pitchDeg||0,pose.rollDeg||0));
-    const n=beam.h*beam.w,dirs=new Float32Array(3*n),origins=new Float32Array(3*n),nominalDirs=new Float32Array(3*n),nominalOrigins=new Float32Array(3*n),ranges=new Float32Array(n),response=new Float32Array(n),isGround=new Uint8Array(n),mount=product(bodyRotation,rotation(c.pitchDeg,c.rollDeg)),rotations=[];
+    const scanTiming=NoiseLabScanTiming.describe(c.motionSkew,beam.w,c.scanTime??c.sequence?.time??0,!!c.sequence?.enabled);
+    const n=beam.h*beam.w,dirs=new Float32Array(3*n),origins=new Float32Array(3*n),nominalDirs=new Float32Array(3*n),nominalOrigins=new Float32Array(3*n),ranges=new Float32Array(n),response=new Float32Array(n),isGround=new Uint8Array(n),mount=product(bodyRotation,rotation(c.pitchDeg,c.rollDeg)),rotations=[],referenceRotations=[],columnSensors=[],timeOffsets=new Float64Array(n);
     const localOrigins=c.opticalOffset?beam.offsets:null,zero=[0,0,beam.center_origin_m[2]];
-    for(let col=0;col<beam.w;col++){const theta=-col*2*Math.PI/beam.w,phase=c.wobbleCycles*theta+c.wobblePhase*rad;rotations.push(product(mount,rotation(c.wobbleDeg*Math.sin(phase),c.wobbleDeg*Math.cos(phase))))}
+    for(let col=0;col<beam.w;col++){
+      const theta=-col*2*Math.PI/beam.w,phase=c.wobbleCycles*theta+c.wobblePhase*rad,wobble=rotation(c.wobbleDeg*Math.sin(phase),c.wobbleDeg*Math.cos(phase));
+      const reference=product(mount,wobble);referenceRotations.push(reference);
+      if(scanTiming.enabled&&poseAt){
+        const p=poseAt(NoiseLabScanTiming.poseTime(scanTiming.referenceTimeS+NoiseLabScanTiming.offset(scanTiming,col))),z=p.motion6dof?p.worldZ:terrainHeight(p.x,p.y)+p.height;
+        columnSensors.push([p.x,p.y,z]);
+        const m=product(product(yawRotation(p.yawDeg),rotation(p.pitchDeg||0,p.rollDeg||0)),rotation(c.pitchDeg,c.rollDeg));
+        rotations.push(product(m,wobble));
+      }else{columnSensors.push(sensor);rotations.push(reference);}
+    }
     const normals=new Float32Array(3*n),albedo=new Float32Array(n);let groundHits=0,clean=0;const ray=new THREE.Ray(),phase=(raw.seed%101)*.11;
     for(let i=0;i<n;i++){
       if(yieldStep&&i%4096===0&&await yieldStep(i,n)===false)return null;
       const k=3*i,col=i%beam.w,m=rotations[col],lo=localOrigins||zero,oi=localOrigins?col*3:0;
-      transform(m,beam.dirs,k,dirs,k);transform(m,lo,oi,origins,k);for(let a=0;a<3;a++)origins[k+a]+=sensor[a];
-      transform(mount,beam.dirs,k,nominalDirs,k);transform(mount,lo,oi,nominalOrigins,k);for(let a=0;a<3;a++)nominalOrigins[k+a]+=sensor[a];
+      transform(m,beam.dirs,k,dirs,k);transform(m,lo,oi,origins,k);for(let a=0;a<3;a++)origins[k+a]+=columnSensors[col][a];
+      timeOffsets[i]=NoiseLabScanTiming.offset(scanTiming,col);
+      const reportedMount=c.wobbleDeg>0&&!c.compensateWobble?mount:referenceRotations[col];
+      transform(reportedMount,beam.dirs,k,nominalDirs,k);transform(reportedMount,lo,oi,nominalOrigins,k);for(let a=0;a<3;a++)nominalOrigins[k+a]+=sensor[a];
       ray.origin.fromArray(origins,k);ray.direction.fromArray(dirs,k);
       let hit=objectBVH.raycastFirst(ray,THREE.DoubleSide,.3,100),g=groundBVH.raycastFirst(ray,THREE.DoubleSide,.3,hit?hit.distance:100),rho;
       if(g&&(!hit||g.distance<hit.distance)){hit=g;rho=.24;isGround[i]=1;groundHits++}else if(hit)rho=raw.rho[hit.face.a];
       if(hit&&hit.distance<100){clean++;ranges[i]=hit.distance;const x=hit.point,inc=Math.abs(hit.face.normal.dot(ray.direction)),gain=Math.exp(.24*Math.sin(.81*x.x+.31*x.y+phase)+.17*Math.sin(1.7*x.y-.44*x.x));albedo[i]=Math.max(.06,Math.min(.7,rho*gain));response[i]=albedo[i]*inc;const sign=hit.face.normal.dot(ray.direction)>0?-1:1;for(let a=0;a<3;a++)normals[k+a]=hit.face.normal.getComponent(a)*sign}
     }
-    const input={width:beam.w,height:beam.h,sensor,ranges,response,albedo,normals,ground:isGround,directions:dirs,origins};
-    if(c.wobbleDeg>0&&!c.compensateWobble){input.reportedDirections=nominalDirs;input.reportedOrigins=nominalOrigins}
-    return {input,summary:{config:{...c},sensor,sensorPose:{...pose,world:sensor,height:sensor[2]-floor,bodyRotation:Array.from(bodyRotation),groundZ:floor},clean,groundHits,rays:n,castMs:performance.now()-start,wobbleCalibrated:false,fieldValidated:false,reportedUsing:c.wobbleDeg>0&&!c.compensateWobble?'nominal direction, uncorrected angular error':'actual ray direction'}};
+    const input={width:beam.w,height:beam.h,sensor,ranges,response,albedo,normals,ground:isGround,directions:dirs,origins,timeOffsets};
+    if(scanTiming.enabled||(c.wobbleDeg>0&&!c.compensateWobble)){input.reportedDirections=nominalDirs;input.reportedOrigins=nominalOrigins}
+    return {input,summary:{scanTiming,config:{...c},sensor,sensorPose:{...pose,world:sensor,height:sensor[2]-floor,bodyRotation:Array.from(bodyRotation),groundZ:floor},clean,groundHits,rays:n,castMs:performance.now()-start,wobbleCalibrated:false,fieldValidated:false,reportedUsing:scanTiming.enabled?'reference pose, uncorrected motion skew':c.wobbleDeg>0&&!c.compensateWobble?'nominal direction, uncorrected angular error':'actual ray direction'}};
   }
   const motionRay=new THREE.Ray(),motionEnd=new THREE.Vector3();
   function blocked(a,b){motionRay.origin.fromArray(a);motionEnd.fromArray(b);motionRay.direction.copy(motionEnd).sub(motionRay.origin);const distance=motionRay.direction.length();if(distance<1e-7)return false;motionRay.direction.multiplyScalar(1/distance);return !!(objectBVH.raycastFirst(motionRay,THREE.DoubleSide,1e-5,distance)||groundBVH.raycastFirst(motionRay,THREE.DoubleSide,1e-5,distance));}

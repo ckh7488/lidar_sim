@@ -26,7 +26,7 @@ onmessage=async e=>{
    sequencePlan=sequenceCache.plan;
    if(config.sequence.enabled||config.sequence.randomStart)castConfig={...config,sensorPose:sequenceCache.model.at(sequencePlan,config.sequence.enabled?config.sequence.time:0)};
   }
-  const value=await engine.cast(castConfig,async()=>{await new Promise(r=>setTimeout(r,0));return id===newest});
-  if(value&&id===newest){value.summary.sensorProfile=sensorProfile;value.summary.sequencePlan=sequencePlan;value.summary.sceneLayout=layout;value.summary.routePreview=config.sequence?.enabled?sequenceCache.preview:[];const transfers=Object.values(value.input).filter(x=>ArrayBuffer.isView(x)).map(x=>x.buffer);postMessage({id,...value},transfers);}
+  const value=await engine.cast(castConfig,async()=>{await new Promise(r=>setTimeout(r,0));return id===newest},config.sequence?.enabled?(t=>sequenceCache.model.at(sequencePlan,t)):null);
+  if(value&&id===newest){value.summary.sensorProfile=sensorProfile;value.summary.sequencePlan=sequencePlan&&{...sequencePlan,scanTiming:config.motionSkew?.enabled?'column acquisition; uncorrected sensor motion; endpoint pose hold':'instantaneous scan; no within-scan motion distortion'};value.summary.sceneLayout=layout;value.summary.routePreview=config.sequence?.enabled?sequenceCache.preview:[];const transfers=Object.values(value.input).filter(x=>ArrayBuffer.isView(x)).map(x=>x.buffer);postMessage({id,...value},transfers);}
  }catch(error){if(id===newest)postMessage({id,error:String(error.stack||error)})}
 };

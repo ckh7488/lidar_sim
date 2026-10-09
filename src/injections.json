@@ -44,5 +44,6 @@
   "__SCENE_V24__": "src/noise_lab_scene_v24.js",
   "__FREEPOSE_V24__": "src/noise_lab_freepose_v24.js",
   "__PROP_ASSETS_V24__": "data/noise_lab_v1/asset_models_v18.json",
-  "__BEAM_UNIT_V25__": "src/noise_lab_beam_unit_v25.js"
+  "__BEAM_UNIT_V25__": "src/noise_lab_beam_unit_v25.js",
+  "__SCAN_TIMING_V27__": "src/noise_lab_scan_timing_v27.js"
 }

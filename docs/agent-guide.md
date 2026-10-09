@@ -173,3 +173,7 @@ node tools/benchmark.cjs --frames 20 --kinds range,rain,snow,fog,dust,sun,genera
 ## OS1-32 및 개체별 고정 빔 각도 (v25)
 
 [설계·분포·API·검사](beam-variation-v25.md)를 읽으세요. 웹은 OS1-32 U와 각도 변동이 기본이고, 기존 CLI/API는 호환을 위해 OS1-128·추가 변동 끔을 유지합니다. CLI/API에서는 sensor와 beamUnit을 명시합니다. src/noise_lab_beam_unit_v25.js가 단일 분포/추출 구현이며 전체 시퀀스·장면·날씨에 동일한 sensor-unit을 유지합니다. tests/beam-unit-v25.cjs로 광선과 내보내기를 확인합니다.
+
+## Motion skew (v27)
+
+Read [motion-skew-v27.md](motion-skew-v27.md). `motionSkew:{enabled:false,scanHz:10}` is the default for every entry point. OFF must preserve existing XYZ/label hashes. ON casts each raw measurement column from its acquisition pose but reconstructs at the reference pose, so it must not silently deskew. Preserve per-return Float64 `timeOffsets`, reference-time metadata, endpoint pose hold, and the explicit frozen-within-scan weather limitation. Scan frequency is independent of export FPS. Run `node tests/motion-skew-v27.cjs` and `node tests/skew-interface-v27.cjs` after changing this mechanism. No IMU or external rotor is implied.

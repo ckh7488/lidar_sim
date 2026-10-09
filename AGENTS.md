@@ -73,3 +73,7 @@ Rebuild after edits. Verify the changed mechanism and its meaningful invariants,
 ## 100-condition audit (v26)
 
 `tests/audit-100-v26.cjs` generates 100 ten-second conditions at 1 Hz plus one 5-second coordinate/label replay each. `tests/audit-saved-v26.cjs <output-folder>` independently re-reads all saved arrays. `tools/audit-review-server.cjs <output-folder>` serves them on localhost:18773 through the existing viewer. Numeric passes never imply visual inspection or field validation; retain the explicit visual-review record and the dust detection-frequency caveat in docs/audit-v26.md. Do not commit generated LSF files.
+
+## Motion skew (v27)
+
+Read [motion-skew-v27.md](docs/motion-skew-v27.md). `motionSkew:{enabled:false,scanHz:10}` is the default for every entry point. OFF must preserve existing XYZ/label hashes. ON casts each raw measurement column from its acquisition pose but reconstructs at the reference pose, so it must not silently deskew. Preserve per-return Float64 `timeOffsets`, reference-time metadata, endpoint pose hold, and the explicit frozen-within-scan weather limitation. Scan frequency is independent of export FPS. Run `node tests/motion-skew-v27.cjs` and `node tests/skew-interface-v27.cjs` after changing this mechanism. No IMU or external rotor is implied.

@@ -73,6 +73,7 @@ def build(portable=False):
     (out/'scene_asset_review_v18.html').write_text(preview, encoding='utf-8')
     shutil.copyfile(ROOT/'src/review_demo.html', out/'review_demo.html')
     shutil.copyfile(ROOT/'src/noise_lab_beam_unit_v25.js', out/'assets/beam-unit-v25.js')
+    shutil.copyfile(ROOT/'src/noise_lab_scan_timing_v27.js', out/'assets/scan-timing-v27.js')
     shutil.copyfile(ROOT/'src/noise_lab_scene_v24.js', out/'assets/scene-v24.js')
     (out/'assets/prop-assets-v24.js').write_text('window.NoiseLabPropAssets='+ (ROOT/'data/noise_lab_v1/asset_models_v18.json').read_text(encoding='utf-8')+';', encoding='utf-8')
     for source, target in [('review_demo.css', 'review-demo.css'), ('review_demo_viewer.js', 'review-demo-viewer.js'), ('review_demo.js', 'review-demo.js')]:

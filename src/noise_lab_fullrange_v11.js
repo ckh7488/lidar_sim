@@ -65,13 +65,15 @@ function fog(input,cfg,P,F){
 }
 function sunlight(input,cfg,P,F,blocked){
  const n=input.ranges.length,ranges=input.ranges.slice(),labels=new Uint8Array(n),powers=new Float32Array(n),errors=new Float32Array(n),az=(cfg.sunAz??40)*PI/180,el=(cfg.sunEl??10)*PI/180,width=(cfg.sunWidth??2)*PI/180,strength=cfg.sunProbability??.05,sun=[Math.cos(el)*Math.cos(az),Math.cos(el)*Math.sin(az),Math.sin(el)],sensor=input.sensor;
- const clear=el>0&&!blocked(sensor,sensor.map((x,a)=>x+1000*sun[a])),enabled=cfg.sunEnabled!==false,hist=[0,0,0,0,0];let expected=0,noise=0,affected=0;
+ const clear=el>0&&!blocked(sensor,sensor.map((x,a)=>x+1000*sun[a])),enabled=cfg.sunEnabled!==false,hist=[0,0,0,0,0];let expected=0,noise=0,affected=0;const columnClear=new Map();
  for(let i=0;i<n;i++){
-  const k=i*3,d=input.directions,angle=Math.acos(clamp(d[k]*sun[0]+d[k+1]*sun[1]+d[k+2]*sun[2],-1,1)),prob=enabled&&clear?strength*Math.exp(-.5*(angle/width)**2):0;expected+=prob;if(prob>1e-4)affected++;
+  let visible=clear;
+  if(cfg.scanTiming?.enabled&&cfg.scanTiming.sensorMoving){const col=i%input.width;if(!columnClear.has(col)){const o=Array.from(input.origins.subarray(3*i,3*i+3));columnClear.set(col,el>0&&!blocked(o,o.map((x,a)=>x+1000*sun[a])));}visible=columnClear.get(col);}
+  const k=i*3,d=input.directions,angle=Math.acos(clamp(d[k]*sun[0]+d[k+1]*sun[1]+d[k+2]*sun[2],-1,1)),prob=enabled&&visible?strength*Math.exp(-.5*(angle/width)**2):0;expected+=prob;if(prob>1e-4)affected++;
   const rand=rng((cfg.seed>>>0)^Math.imul(i+1,0x38a3fe91)^Math.imul(Math.round((cfg.time||0)*1000)+1,0x85ebca6b));
   if(rand()<prob){ranges[i]=.3+(MAX-.3)*rand();labels[i]=1;powers[i]=1;noise++;hist[bin(ranges[i])]++;}
  }
- const q={kind:'sun',enabled,clearSunPath:clear,expectedFalseReturns:expected,affectedRays:affected,falseReturns:noise,rangeHistogram:hist,rangeSupport:[.3,MAX],angularSigmaDeg:width*180/PI,peakProbability:strength,source:'Linnhoff et al. 2022: solar-direction artifacts and full-range uniform Velodyne observations',assumptions:'Gaussian angular envelope and peak probability are review knobs; not measured fit. Single-return replacement.',apparentRangesCanExceedSurface:true,trainingEligible:false,fieldCalibrated:false};
+ const q={kind:'sun',enabled,clearSunPath:columnClear.size?Array.from(columnClear.values()).some(Boolean):clear,clearColumns:columnClear.size?Array.from(columnClear.values()).filter(Boolean).length:null,expectedFalseReturns:expected,affectedRays:affected,falseReturns:noise,rangeHistogram:hist,rangeSupport:[.3,MAX],angularSigmaDeg:width*180/PI,peakProbability:strength,source:'Linnhoff et al. 2022: solar-direction artifacts and full-range uniform Velodyne observations',assumptions:'Gaussian angular envelope and peak probability are review knobs; not measured fit. Single-return replacement.',apparentRangesCanExceedSurface:true,trainingEligible:false,fieldCalibrated:false};
  return F.reproject(input,cfg,ranges,labels,powers,errors,q);
 }
 root.NoiseLabFullRange={kernelIntegral,sampleRange,precipitation,fog,sunlight};if(typeof module!=='undefined')module.exports=root.NoiseLabFullRange;

@@ -8,6 +8,7 @@ const Parameters=require('../src/noise_lab_parameters_v18.js');
 const Random=require('../src/noise_lab_random_v4.js');
 const Poses=require('../src/noise_lab_poses_v19.js');
 const Sequence=require('../src/noise_lab_sequence_v21.js');
+const ScanTiming=require('../src/noise_lab_scan_timing_v27.js');
 const BeamUnit=require('../src/noise_lab_beam_unit_v25.js'),SensorProfile=require('./sensor-profile.cjs');
 function createSimulator(hooks={}){
   if(!fs.existsSync(path.join(ROOT,'dist/index.html')))throw Error('Run python tools/build.py first');
@@ -73,6 +74,7 @@ function createSimulator(hooks={}){
     controls['sim-scene'].value=scene;controls.seed.value=seed;controls.time.value=controls['motion-time'].value=controls['sequence-time'].value=time;
     controls['sequence-enabled'].checked=options.sequence!==false;controls['dust-auto'].checked=options.dustPlacement!=='manual';controls['dust-emission-s'].value=options.dustEmissionS??10;
     const geometry={sceneVariation:{enabled:modern&&options.randomScene!==false},...Random.sample(seed,scene,index.parameter_distributions_v18.parameters),...(options.geometry||{}),sensorPose:Poses.choose(index.sensor_positions_v19,scene,seed,poseChoice==='random'?'auto':poseChoice)};
+    geometry.scanTime=time;geometry.motionSkew=ScanTiming.settings(options.motionSkew);
     delete geometry.sequence;
     if(modern||controls['sequence-enabled'].checked||controls['dust-auto'].checked)geometry.sequence={scene,seed,time,enabled:controls['sequence-enabled'].checked,sourceBounds:index.sensor_positions_v19.scenes[scene].sampling_bounds_xy,anchors:index.sensor_positions_v19.scenes[scene].positions,mode:modern?'free6dof':'ground',randomStart:poseChoice==='random'};
     if(options.sensorMetadata&&options.sensor)throw Error('Use sensor or sensorMetadata, not both');
