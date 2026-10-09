@@ -6,6 +6,7 @@ const read=p=>fs.readFileSync(path.join(ROOT,p),'utf8');
 const json=p=>JSON.parse(read(p));
 const Parameters=require('../src/noise_lab_parameters_v18.js');
 const Random=require('../src/noise_lab_random_v4.js');
+const Poses=require('../src/noise_lab_poses_v19.js');
 function createSimulator(){
   if(!fs.existsSync(path.join(ROOT,'dist/index.html')))throw Error('Run python tools/build.py first');
   const html=read('dist/index.html'), index=json('dist/assets/noise_lab_v1/index.json');
@@ -55,11 +56,11 @@ function createSimulator(){
     // Scene/seed/time are explicit API arguments, not overridable through generic controls.
     controls['sim-scene'].value=scene;controls.seed.value=seed;controls.time.value=controls['motion-time'].value=time;
     vm.runInContext('this.resultConfig=cfg()',ctx);
-    const config=ctx.resultConfig,geometry={...Random.sample(seed,scene,index.parameter_distributions_v18.parameters),...(options.geometry||{})};
+    const config=ctx.resultConfig,geometry={...Random.sample(seed,scene,index.parameter_distributions_v18.parameters),...(options.geometry||{}),sensorPose:Poses.choose(index.sensor_positions_v19,scene,seed,options.pose??'auto')};
     const raw=json('data/noise_lab_v1/'+index.geometry_knobs_v3.scenes.find(s=>s.scene===scene).id+'.json'),beam=json('data/noise_lab_v1/beam_profiles_v2.json');
     const geometryResult=await cast({id:++id,raw,beam,config:geometry});
     const result=(await simulate({id:++id,input:geometryResult.input,config,raw,beam,terrainCm:geometry.terrainCm})).result;
-    return {scene,kind,seed,time,config,geometry,geometrySummary:geometryResult.summary,result};
+    return {scene,kind,seed,time,config,geometry,sensorPose:geometryResult.summary.sensorPose,geometrySummary:geometryResult.summary,result};
   }
   return {run,index}; // Calls must be awaited sequentially; workers keep a geometry cache.
 }

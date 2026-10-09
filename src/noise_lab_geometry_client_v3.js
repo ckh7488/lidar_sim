@@ -2,13 +2,13 @@ const geometryIds=['terrainCm','pitchDeg','rollDeg','wobbleDeg','wobbleCycles','
 const geometryURL=URL.createObjectURL(new Blob([$('three-runtime').textContent,$('geometry-worker').textContent],{type:'text/javascript'}));
 const geometryWorker=new LatestTaskWorker(geometryURL,handleGeometry,e=>{geoPending='';viewFailure('형상 계산',e);});
 let geoJob=0,geoPending='',lastKnobScene='',geometryTimer,randomGeometryKey='';
-function geometryConfig(){const c={};for(const k of geometryIds)c[k]=$(k).type==='checkbox'?$(k).checked:+$(k).value;return c}
+function geometryConfig(){const c={};for(const k of geometryIds)c[k]=$(k).type==='checkbox'?$(k).checked:+$(k).value;c.sensorPose=NoiseLabPoses.choose(D.sensor_positions_v19,$('sim-scene').value,+$('seed').value,$('sensor-pose').value);return c}
 function geometryKey(){return JSON.stringify([$('sim-scene').value,geometryConfig()])}
 function resetGeometryKnobs(id){const c=NoiseLabRandom.sample(+$('seed').value,id,D.parameter_distributions_v18.parameters);for(const k of geometryIds){if($(k).type==='checkbox')$(k).checked=c[k];else $(k).value=c[k]}randomGeometryKey=id+':'+$('seed').value;updateKnobLabels()}
 function syncGeometryRandom(){if($('geometry-random').checked&&randomGeometryKey!==$('sim-scene').value+':'+$('seed').value)resetGeometryKnobs($('sim-scene').value)}
 function updateKnobLabels(){for(const k of geometryIds)if($(k+'-out'))$(k+'-out').textContent=$(k).value;const a=+$('wobbleDeg').value;$('wobble-note').textContent='축 흔들림 '+a.toFixed(3)+'°: 20m에서 약 '+(20*Math.tan(a*Math.PI/180)*100).toFixed(2)+'cm의 옆방향 차이에 해당합니다. 사용자 지정 실험 범위이며 장비의 실제 진동값이 아닙니다.'}
 function setGeometryEnabled(){const live=$('scan-mode').value==='live';for(const k of geometryIds)$(k).disabled=!live;for(const k of ['range-enabled','radialSigma','radialSlope'])$(k).disabled=!activeCategory();$('surface-response').disabled=!activeCategory()||$('scan-mode').value==='ideal';}
-function liveGeometrySummary(){const g=simData.scanGeometry,c=g?.config||geometryConfig();$('scan-summary').textContent='OS1 128×1,024 빔 · 원점 반경 '+(c.opticalOffset?'16.721':'0')+'mm · 지면 σ '+c.terrainCm+'cm · 앞뒤 '+c.pitchDeg+'° / 좌우 '+c.rollDeg+'° · 축 진폭 '+c.wobbleDeg+'°'+(g.castMs?' · 전체 광선 계산 '+(g.castMs/1000).toFixed(2)+'초':'')+'. 지형·각도 오차는 가정이며 왼쪽 실측 센서의 교정값이 아닙니다.';}
+function liveGeometrySummary(){const g=simData.scanGeometry,c=g?.config||geometryConfig();sensorPoseSummary();$('scan-summary').textContent='OS1 128×1,024 빔 · 원점 반경 '+(c.opticalOffset?'16.721':'0')+'mm · 지면 σ '+c.terrainCm+'cm · 앞뒤 '+c.pitchDeg+'° / 좌우 '+c.rollDeg+'° · 축 진폭 '+c.wobbleDeg+'°'+(g.castMs?' · 전체 광선 계산 '+(g.castMs/1000).toFixed(2)+'초':'')+'. 지형·각도 오차는 가정이며 왼쪽 실측 센서의 교정값이 아닙니다.';}
 function requestGeometry(){const key=geometryKey();if(geoPending===key)return;geoPending=key;const id=++geoJob;++job;right.host.dataset.ready='false';$('sim-overlay').textContent='새 지면·각도로 전체 광선 재계산 중…';geometryWorker.run({id,raw:simData.liveRaw,beam:simData.liveBeam,config:geometryConfig()})}
 function handleGeometry(e){if(e.data.id!==geoJob||!simData||simData.scanProfile!=='live')return;const key=geoPending;geoPending='';if(key!==geometryKey()){generate();return;}if(e.data.error){viewFailure('형상 계산',e.data.error);return;}simData.scanInput=e.data.input;simData.geometryKey=key;simData.scanGeometry={profile:'live',...e.data.summary,geometry_asset_sha256:D.geometry_knobs_v3.scenes.find(s=>s.scene===simData.id).sha256,beam_profile_sha256:D.beam_profile_sha256};liveGeometrySummary();generate();};
 for(const k of geometryIds)$(k).oninput=()=>{$('geometry-random').checked=false;updateKnobLabels();clearTimeout(geometryTimer);++job;right.host.dataset.ready='false';geometryTimer=setTimeout(generate,220)};
@@ -23,4 +23,17 @@ function observationSummary(){
   $('observation-active').textContent='현재 적용: '+geometry+' · 거리 오차 '+(q.enabled?'표면 RMS '+(q.surface.rms*1000).toFixed(1)+'mm':'끔')+' · '+($('geometry-random').checked?'확정 범위에서 시드별 추출':'직접 조절 중');
   $('observation-active').dataset.profile=D.confirmed_observation_defaults_v16.revision;
 }
+function sensorPoseSummary(){
+ if(!simData)return;
+ if(simData.scanProfile==='live'&&!simData.scanGeometry?.sensorPose){$('sensor-pose-summary').textContent='선택 위치 계산 중…';return;}
+ const p=simData.scanGeometry?.sensorPose,s=p?.world||simData.scanInput?.sensor||simData.sensor;
+ if(!s)return;
+ const label=p&&!p.legacy?'위치 '+(p.index+1)+'/40':'이전 고정 원점';
+ $('sensor-pose-summary').textContent=label+' · XYZ '+Array.from(s,v=>v.toFixed(2)).join(', ')+'m'+(p?' · 방향 '+p.yawDeg.toFixed(1)+'°':'');
+ Object.assign(right.host.dataset,{sensorPose:p?.id||'legacy',sensorXYZ:JSON.stringify(Array.from(s)),sensorYaw:String(p?.yawDeg||0)});
+}
+for(let i=0;i<40;i++)$('sensor-pose').add(new Option('위치 '+(i+1)+' / 40',String(i)));
+function changeSensorPose(){motionPause();$('scan-mode').value='live';right.host.dataset.focused='';loadScene();}
+$('sensor-pose').onchange=changeSensorPose;
+$('next-pose').onclick=()=>{const p=NoiseLabPoses.choose(D.sensor_positions_v19,$('sim-scene').value,+$('seed').value,$('sensor-pose').value);$('sensor-pose').value=String(((p.index??-1)+1)%40);changeSensorPose();};
 updateKnobLabels();

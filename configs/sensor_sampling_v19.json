@@ -1,0 +1,41 @@
+{
+  "revision": 19,
+  "count_per_scene": 40,
+  "catalog_seed": 190940,
+  "height_above_ground_m": [
+    1.2,
+    2.1
+  ],
+  "yaw_deg": [
+    0,
+    360
+  ],
+  "clearance_half_width_m": 0.35,
+  "clearance_bottom_m": 0.08,
+  "clearance_top_m": 2.4,
+  "indoor_grid_m": 0.5,
+  "outdoor_grid_m": 1.0,
+  "indoor_min_separation_m": 1.0,
+  "outdoor_min_separation_m": 3.0,
+  "outdoor_asset_margin_m": 5,
+  "method": "Reachable free grid from the historical origin; conservative swept box collision checks; jittered, spatially spread random selection without replacement.",
+  "height_distribution": "uniform installation-height assumption, not sensor error or measured hardware tolerance",
+  "scene_split_rule": "Different positions in one scene are correlated viewpoints, not independent train/test environments. Split by scene family/source before assigning viewpoints.",
+  "field_calibrated": false,
+  "training_approved": false,
+  "corridor_floor_rectangles_xy": [
+    [
+      -12,
+      -3,
+      12,
+      3
+    ],
+    [
+      2,
+      -11,
+      12,
+      3
+    ]
+  ],
+  "corridor_floor_provenance": "L-shaped wall layout in scene_geometry_v2.py; clipped to the terrain boundary. Mesh collision checks apply to each variant."
+}

@@ -1,0 +1,421 @@
+{
+  "revision": 19,
+  "pose_validation": {
+    "passed": true,
+    "created": "2026-10-09T06:17:34.908Z",
+    "node": "v20.18.1",
+    "total_positions": 960,
+    "full_rays_per_production_scan": 131072,
+    "checked_rays_per_pose": 2048,
+    "terrain_endpoints_cm": [
+      0,
+      0.5
+    ],
+    "same_pose_exact": true,
+    "unique_range_scans": true,
+    "collision_rejected": true,
+    "yaw_checked": true,
+    "scenes": [
+      {
+        "scene": "room_v1",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 1248,
+        "hitsMax": 2042
+      },
+      {
+        "scene": "corridor_v1",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 862,
+        "hitsMax": 1768
+      },
+      {
+        "scene": "warehouse_v1",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 1808,
+        "hitsMax": 2048
+      },
+      {
+        "scene": "construction_v1",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 783,
+        "hitsMax": 1253
+      },
+      {
+        "scene": "department_store_v1",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 1676,
+        "hitsMax": 2048
+      },
+      {
+        "scene": "crane_yard_v1",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 921,
+        "hitsMax": 1512
+      },
+      {
+        "scene": "underground_parking_v1",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 1425,
+        "hitsMax": 2048
+      },
+      {
+        "scene": "apartment_v1",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 980,
+        "hitsMax": 1528
+      },
+      {
+        "scene": "room_v2",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 1669,
+        "hitsMax": 2048
+      },
+      {
+        "scene": "corridor_v2",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 899,
+        "hitsMax": 1786
+      },
+      {
+        "scene": "warehouse_v2",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 1459,
+        "hitsMax": 2048
+      },
+      {
+        "scene": "construction_v2",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 534,
+        "hitsMax": 1388
+      },
+      {
+        "scene": "department_store_v2",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 1554,
+        "hitsMax": 2048
+      },
+      {
+        "scene": "crane_yard_v2",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 928,
+        "hitsMax": 1329
+      },
+      {
+        "scene": "underground_parking_v2",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 1573,
+        "hitsMax": 2048
+      },
+      {
+        "scene": "apartment_v2",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 946,
+        "hitsMax": 1490
+      },
+      {
+        "scene": "room_v3",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 1377,
+        "hitsMax": 2035
+      },
+      {
+        "scene": "corridor_v3",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 779,
+        "hitsMax": 1793
+      },
+      {
+        "scene": "warehouse_v3",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 1861,
+        "hitsMax": 2048
+      },
+      {
+        "scene": "construction_v3",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 696,
+        "hitsMax": 1618
+      },
+      {
+        "scene": "department_store_v3",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 1690,
+        "hitsMax": 2048
+      },
+      {
+        "scene": "crane_yard_v3",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 920,
+        "hitsMax": 1372
+      },
+      {
+        "scene": "underground_parking_v3",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 1535,
+        "hitsMax": 2048
+      },
+      {
+        "scene": "apartment_v3",
+        "positions": 40,
+        "reduced_rays": 2048,
+        "unique_range_scans": 40,
+        "hitsMin": 955,
+        "hitsMax": 1544
+      }
+    ]
+  },
+  "full_scan_integration": {
+    "passed": true,
+    "created": "2026-10-09T06:20:52.481Z",
+    "node": "v20.18.1",
+    "geometry_samples": 3000,
+    "weather_samples_per_kind": 5000,
+    "modes": [
+      {
+        "kind": "dust",
+        "pose": {
+          "x": 29.194797,
+          "y": -31.991156,
+          "height": 1.200621,
+          "yawDeg": 260.788184,
+          "index": 11,
+          "id": "construction_v1:11",
+          "catalogSeed": 190940,
+          "world": [
+            29.194797,
+            -31.991156,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "points": 70353,
+        "surface": 70353,
+        "noise": 0,
+        "hash": "c57ce377d9853a7d0016cc1017daa644e9d436514d076bfbfe683194d00e1fc5"
+      },
+      {
+        "kind": "rain",
+        "pose": {
+          "x": 29.194797,
+          "y": -31.991156,
+          "height": 1.200621,
+          "yawDeg": 260.788184,
+          "index": 11,
+          "id": "construction_v1:11",
+          "catalogSeed": 190940,
+          "world": [
+            29.194797,
+            -31.991156,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "points": 72877,
+        "surface": 70065,
+        "noise": 2812,
+        "hash": "b32b26ad69afebf61940d3f9c97d8aa1105f227e9584ae53104a1d3b849ba922"
+      },
+      {
+        "kind": "snow",
+        "pose": {
+          "x": 29.194797,
+          "y": -31.991156,
+          "height": 1.200621,
+          "yawDeg": 260.788184,
+          "index": 11,
+          "id": "construction_v1:11",
+          "catalogSeed": 190940,
+          "world": [
+            29.194797,
+            -31.991156,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "points": 73995,
+        "surface": 69854,
+        "noise": 4141,
+        "hash": "5aeebfd0e6bf5613e0b54a11967d8a42f734e04b1be4ee75e39177baa1916f3a"
+      },
+      {
+        "kind": "fog",
+        "pose": {
+          "x": 29.194797,
+          "y": -31.991156,
+          "height": 1.200621,
+          "yawDeg": 260.788184,
+          "index": 11,
+          "id": "construction_v1:11",
+          "catalogSeed": 190940,
+          "world": [
+            29.194797,
+            -31.991156,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "points": 71281,
+        "surface": 70557,
+        "noise": 724,
+        "hash": "7e3faeb7b2b1112a7131ba58d0a3c87efca0e92840b790709b4aed3c619f87a6"
+      },
+      {
+        "kind": "sun",
+        "pose": {
+          "x": 29.194797,
+          "y": -31.991156,
+          "height": 1.200621,
+          "yawDeg": 260.788184,
+          "index": 11,
+          "id": "construction_v1:11",
+          "catalogSeed": 190940,
+          "world": [
+            29.194797,
+            -31.991156,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "points": 70990,
+        "surface": 70986,
+        "noise": 4,
+        "hash": "294d36df6802d61aaf3047c812c23791ae76363b1045572136f9293c4dca33fc"
+      },
+      {
+        "kind": "range",
+        "pose": {
+          "x": 29.194797,
+          "y": -31.991156,
+          "height": 1.200621,
+          "yawDeg": 260.788184,
+          "index": 11,
+          "id": "construction_v1:11",
+          "catalogSeed": 190940,
+          "world": [
+            29.194797,
+            -31.991156,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "points": 70342,
+        "surface": 70342,
+        "noise": 0,
+        "hash": "d7cf693a5a7ae3ecd5e5329acceb828d98ea183efeb5a3c86f277899be878181"
+      },
+      {
+        "kind": "general",
+        "mode": "weak",
+        "pose": {
+          "x": 29.194797,
+          "y": -31.991156,
+          "height": 1.200621,
+          "yawDeg": 260.788184,
+          "index": 11,
+          "id": "construction_v1:11",
+          "catalogSeed": 190940,
+          "world": [
+            29.194797,
+            -31.991156,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "points": 65993,
+        "surface": 65993,
+        "noise": 0,
+        "hash": "03b431c1c94633ad8d842b4748b36ec24868fd8fe05642ca35475db576d49312"
+      },
+      {
+        "kind": "general",
+        "mode": "edge",
+        "pose": {
+          "x": 29.194797,
+          "y": -31.991156,
+          "height": 1.200621,
+          "yawDeg": 260.788184,
+          "index": 11,
+          "id": "construction_v1:11",
+          "catalogSeed": 190940,
+          "world": [
+            29.194797,
+            -31.991156,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "points": 69665,
+        "surface": 69665,
+        "noise": 0,
+        "hash": "d0f817d9c812ac251aaabb36001f74fc91e8e56091694c1340a8337d84bc32e1"
+      }
+    ],
+    "same_seed_exact": true,
+    "new_seed_changes": true,
+    "world_surface_preserved": true,
+    "precipitation_display_follows_sensor": true,
+    "legacy_range_hash_preserved": true,
+    "manual_pose_holds_across_seeds": true,
+    "field_calibrated": false,
+    "training_approved": false
+  },
+  "browser": {
+    "passed": true,
+    "checks": [
+      "auto seed 73017 -> 73018 changed construction_v1:37 -> :38",
+      "manual position 39 held XY/height across seeds 73018 -> 73019",
+      "next position wrapped 39 -> 0",
+      "rapid mode/scene/pose change completed at corridor_v2:39",
+      "legacy restored [0,0,1.65]",
+      "confirmed tab and return retained functional display",
+      "auto restored corridor_v2:35"
+    ],
+    "console_errors": 0
+  }
+}

@@ -34,6 +34,14 @@ def build(portable=False):
     for source, dest in [('data/noise_lab_v1', 'assets/noise_lab_v1'), ('reference', '.'), ('vendor', 'assets'), ('configs', '.')]:
         shutil.copytree(ROOT/source, out/dest, dirs_exist_ok=True)
     index = json.loads((ROOT/'data/noise_lab_v1/index.json').read_text(encoding='utf-8'))
+    poses = json.loads((ROOT/'data/noise_lab_v1/sensor_positions_v19.json').read_text(encoding='utf-8'))
+    if poses['config_sha256'] != digest(ROOT/'configs/sensor_sampling_v19.json'):
+        raise ValueError('Sensor sampling config changed. Run node tools/generate-sensor-poses.cjs')
+    for row in index['geometry_knobs_v3']['scenes']:
+        p = poses['scenes'][row['scene']]
+        if len(p['positions']) != 40 or p['geometry_id'] != row['id'] or p['geometry_sha256'] != digest(ROOT/'data/noise_lab_v1'/(row['id']+'.json')):
+            raise ValueError('Stale sensor positions for '+row['scene'])
+    index['sensor_positions_v19'] = poses
     for key, filename in [('parameter_distributions_v18', 'parameter_distributions_v18.json'), ('confirmed_observation_defaults_v16', 'confirmed_observation_defaults_v16.json'), ('policy', 'noise_library_policy_v6.json')]:
         index[key] = json.loads((ROOT/'configs'/filename).read_text(encoding='utf-8'))
     modules = {'model': 'core_v1', 'geometry_model': 'geometry_v3', 'geometry_random': 'random_v4', 'weather_model': 'weather_v4', 'motion_model': 'motion_v6', 'receiver_model': 'receiver_v7', 'solar_model': 'solar_v7', 'atmosphere_model': 'atmosphere_v8', 'fullrange_model': 'fullrange_v11'}
