@@ -7,12 +7,12 @@ const bin=r=>Math.min(4,Math.floor(r/20));
 function kernelIntegral(lo,hi,a,b=.001){return PI*((a+b*hi)**3-(a+b*lo)**3)/(3*b);}
 function sampleRange(lo,hi,a,rand,b=.001){return (Math.cbrt((a+b*lo)**3+rand()*((a+b*hi)**3-(a+b*lo)**3))-a)/b;}
 function pack(rows,n){const offsets=new Uint32Array(n+1),ranges=[],powers=[];for(let i=0;i<n;i++){for(const v of rows.get(i)||[])ranges.push(v[0]),powers.push(v[1]);offsets[i+1]=ranges.length;}return {offsets,ranges:new Float32Array(ranges),powers:new Float32Array(powers)};}
-function worldWeather(c,blocked,M,sensor){
+function worldWeather(c,blocked,M,sensor,anchor=sensor){
  const rand=rng(c.seed^0x282fea7),p=[],v=[],ids=[],N=c.mode==='rain'?16000:12000,side=240,top=110;
  const lambda=4.1*c.rainRate**(-.21),lo=Math.exp(-lambda*1.5),hi=Math.exp(-lambda*6),wrap=x=>((x%side)+side)%side-side/2;
  for(let i=0;i<N;i++){
   const x0=side*(rand()-.5),y0=side*(rand()-.5),z0=top*rand(),mm=c.mode==='rain'?-Math.log(lo-rand()*(lo-hi))/lambda:1+7*rand()**2,speed=c.mode==='rain'?M.rainSpeed(mm):.4+1.1*rand(),phase=rand()*2*PI,amp=c.mode==='snow'?.22:0;
-  const vx=c.wind*Math.cos(c.angle),vy=c.wind*Math.sin(c.angle),x=sensor[0]+wrap(x0+vx*c.time+side/2)+amp*Math.sin(1.4*c.time+phase),y=sensor[1]+wrap(y0+vy*c.time+side/2)+amp*Math.cos(1.12*c.time+phase),z=((z0-speed*c.time)%top+top)%top;
+  const vx=c.wind*Math.cos(c.angle),vy=c.wind*Math.sin(c.angle),x=anchor[0]+wrap(x0+vx*c.time+side/2)+amp*Math.sin(1.4*c.time+phase),y=anchor[1]+wrap(y0+vy*c.time+side/2)+amp*Math.cos(1.12*c.time+phase),z=((z0-speed*c.time)%top+top)%top;
   if(Math.hypot(x-sensor[0],y-sensor[1],z-sensor[2])>MAX)continue;
   if(z<20&&blocked([x,y,120],[x,y,z]))continue;
   p.push(x,y,z);v.push(vx,vy,-speed);ids.push(i);
@@ -39,7 +39,7 @@ function precipitation(input,cfg,blocked,overlap,P,M){
    if(!rows.has(i))rows.set(i,[]);rows.get(i).push([s,powerHere]);if(powerHere>power[i]){power[i]=powerHere;range[i]=s;}
   }
  }
- const world=worldWeather(c,blocked,M,input.sensor);
+ const world=worldWeather(c,blocked,M,input.sensor,cfg.weatherAnchor||input.sensor);
  return {power,range,tau,...world,candidates:pack(rows,n),config:c,stats:{intersections,particles:Math.round(concentration*4/3*PI*MAX**3),displayed:world.worldIds.length,concentration,proposals,sheltered,rangeHistogram:hist,rangeSupport:[MIN,MAX],fullRange:true,temporalCoherence:false,worldMotionCoherent:true,observationModel:'marked Poisson beam-volume sampling; independent scans, not tracked world particles',displayModel:'fixed illustrative moving sample, not proportional particle count',roofApproximationM:.5,gravity:9.80665,terminalBalance:true,simulationMs:performance.now()-start,fieldCalibrated:false,scanTiming:'instantaneous scan; per-beam samples regenerated at each time',diameterRangeMm:c.mode==='rain'?[1.5,6]:[1,8]}};
 }
 function fog(input,cfg,P,F){
@@ -49,7 +49,7 @@ function fog(input,cfg,P,F){
  for(let i=0;i<n;i++){
   const r=input.ranges[i],limit=r>0?r:MAX,k=i*3,o=input.origins?input.origins.subarray(k,k+3):input.sensor,d=input.directions.subarray(k,k+3),response=cfg.surfaceModel&&input.response?input.response[i]:.35,key=r+'/'+response;
   let w=cache.get(key);if(!w){w=F.fogWave(r,response,c,F.field(c,o,d));if(!c.variation&&cache.size<4096)cache.set(key,w);}
-  const rand=rng(c.seed^Math.imul(i+1,0x9e3779b1)),mass=[],dr=w.dr;let total=0,softTotal=0;
+  const rand=rng((cfg.observationSeed??c.seed)^Math.imul(i+1,0x9e3779b1)),mass=[],dr=w.dr;let total=0,softTotal=0;
   // A conditional photon-arrival surrogate replaces the all-rays argmax shell.
   for(let j=0;j<w.soft.length;j++){const lo=Math.max(.3,j*dr),hi=Math.min(limit,(j+1)*dr),v=hi>lo?scatterResponse*w.soft[j]*(hi-lo)/dr:0;mass.push(v);softTotal+=v;if(v>0)support[bin((lo+hi)/2)]++;}
   const hardTotal=r>0?w.solid.reduce((a,b)=>a+b,0):0;total=softTotal+hardTotal;
@@ -57,7 +57,7 @@ function fog(input,cfg,P,F){
   let selected=r,lab=0,selectedPower=hardTotal;
   if(rand()*total<softTotal){let u=rand()*softTotal;for(let j=0;j<mass.length;j++){u-=mass[j];if(u<=0&&mass[j]>0){selected=Math.max(.3,j*dr)+rand()*(Math.min(limit,(j+1)*dr)-Math.max(.3,j*dr));selectedPower=mass[j];break;}}lab=1;scatter++;hist[bin(selected)]++;}
   ranges[i]=selected;labels[i]=lab;powers[i]=selectedPower;
-  const er=rng(c.seed^Math.imul(i+1,0x6c8e9cf5));errors[i]=Math.sqrt(-2*Math.log(Math.max(1e-12,er())))*Math.cos(2*PI*er())*Math.hypot(cfg.radialSigma||0,(cfg.radialSlope||0)*selected);
+  const er=rng((cfg.observationSeed??c.seed)^Math.imul(i+1,0x6c8e9cf5));errors[i]=Math.sqrt(-2*Math.log(Math.max(1e-12,er())))*Math.cos(2*PI*er())*Math.hypot(cfg.radialSigma||0,(cfg.radialSlope||0)*selected);
  }
  const q={kind:'fog',enabled:true,config:c,alpha:Math.log(20)/c.visibility,scatteringRays:scatter,ambiguous:0,fullRange:true,rangeSupport:[.3,MAX],rangeHistogram:hist,positiveSupportBins:support,scatterResponse,scatterResponseBasis:'Temporary receiver-response assumption, not measured probability or fitted optical coefficient',model:'conditional detected-photon arrival surrogate with uncalibrated diffuse-return response',trainingEligible:false,fieldCalibrated:false,reason:'Not strongest-return Ouster electronics. Photon-weighted range support, no forced shell or equal-range quota.'};
  const r=F.reproject(input,cfg,ranges,labels,powers,errors,q);q.shellFraction=r.rangeShellFraction;q.shellWarning=false;return r;

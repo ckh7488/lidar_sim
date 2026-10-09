@@ -1,0 +1,614 @@
+{
+  "revision": 21,
+  "created": "2026-10-09T07:12:30.643454+00:00",
+  "passed": true,
+  "node": "v20.18.1",
+  "python": "3.12",
+  "build": {
+    "passed": true,
+    "inputs": 208,
+    "scenes": 24,
+    "measured_examples": 36,
+    "broken_local_links": 0
+  },
+  "paths": {
+    "passed": true,
+    "created": "2026-10-09T06:58:25.665Z",
+    "paths": 1920,
+    "framePoses": 193920,
+    "maxSpeedMps": 1.3731895338216995,
+    "maxYawRateDegS": 29.95305836991257,
+    "scenes": [
+      {
+        "scene": "room_v1",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "corridor_v1",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "warehouse_v1",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "construction_v1",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "department_store_v1",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "crane_yard_v1",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "underground_parking_v1",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "apartment_v1",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "room_v2",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "corridor_v2",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "warehouse_v2",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "construction_v2",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "department_store_v2",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "crane_yard_v2",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "underground_parking_v2",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "apartment_v2",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "room_v3",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "corridor_v3",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "warehouse_v3",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "construction_v3",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "department_store_v3",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "crane_yard_v3",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "underground_parking_v3",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      },
+      {
+        "scene": "apartment_v3",
+        "starts": 40,
+        "terrainCm": [
+          0,
+          0.5
+        ]
+      }
+    ],
+    "sameSeedExact": true,
+    "newSeedChangesSource": true,
+    "sweptCollisionChecks": true,
+    "fieldCalibrated": false,
+    "trainingApproved": false
+  },
+  "frames": {
+    "passed": true,
+    "created": "2026-10-09T07:11:03.886Z",
+    "rows": [
+      {
+        "kind": "dust",
+        "time": 3,
+        "pose": {
+          "x": 27.823472374750164,
+          "y": -31.956278590389104,
+          "height": 1.200621,
+          "yawDeg": 297.3872943999927,
+          "index": 11,
+          "id": "construction_v1:73031:construction_v1:11@3",
+          "catalogSeed": 190940,
+          "legacy": false,
+          "sequenceId": "construction_v1:73031:construction_v1:11",
+          "time": 3,
+          "world": [
+            27.823472374750164,
+            -31.956278590389104,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "source": [
+          -5.418465216854273,
+          -4.405227140207309
+        ],
+        "points": 71199,
+        "hash": "4a0f0fe6fb0d4adbf6d5b2b8e8b9d24b6b95bdc49f831b4bfbb5a25f1d00b139",
+        "world": 1275
+      },
+      {
+        "kind": "dust",
+        "time": 3.1,
+        "pose": {
+          "x": 27.821050459710506,
+          "y": -31.955237652874338,
+          "height": 1.200621,
+          "yawDeg": 297.35867446867667,
+          "index": 11,
+          "id": "construction_v1:73031:construction_v1:11@3.1",
+          "catalogSeed": 190940,
+          "legacy": false,
+          "sequenceId": "construction_v1:73031:construction_v1:11",
+          "time": 3.1,
+          "world": [
+            27.821050459710506,
+            -31.955237652874338,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "source": [
+          -5.418465216854273,
+          -4.405227140207309
+        ],
+        "points": 71190,
+        "hash": "d202fa73b896a474b8fbf66db53063895164110b784aaf9057e24ebca60355d6",
+        "world": 1313
+      },
+      {
+        "kind": "dust",
+        "time": 10,
+        "pose": {
+          "x": 25.741209412439417,
+          "y": -33.49874659628708,
+          "height": 1.200621,
+          "yawDeg": 323.2666778077228,
+          "index": 11,
+          "id": "construction_v1:73031:construction_v1:11@10",
+          "catalogSeed": 190940,
+          "legacy": false,
+          "sequenceId": "construction_v1:73031:construction_v1:11",
+          "time": 10,
+          "world": [
+            25.741209412439417,
+            -33.49874659628708,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "source": [
+          -5.418465216854273,
+          -4.405227140207309
+        ],
+        "points": 71041,
+        "hash": "447cf76b2576a3f59a7b347c74f47084f593f2f6e2fe9b8d6449a5f4c362994f",
+        "world": 4039
+      },
+      {
+        "kind": "dust",
+        "time": 3,
+        "pose": {
+          "x": 27.823472374750164,
+          "y": -31.956278590389104,
+          "height": 1.200621,
+          "yawDeg": 297.3872943999927,
+          "index": 11,
+          "id": "construction_v1:73031:construction_v1:11@3",
+          "catalogSeed": 190940,
+          "legacy": false,
+          "sequenceId": "construction_v1:73031:construction_v1:11",
+          "time": 3,
+          "world": [
+            27.823472374750164,
+            -31.956278590389104,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "source": [
+          -5.418465216854273,
+          -4.405227140207309
+        ],
+        "points": 71199,
+        "hash": "4a0f0fe6fb0d4adbf6d5b2b8e8b9d24b6b95bdc49f831b4bfbb5a25f1d00b139",
+        "world": 1275
+      },
+      {
+        "kind": "range",
+        "time": 3,
+        "pose": {
+          "x": 31.094373666833498,
+          "y": -31.91708190214369,
+          "height": 1.200621,
+          "yawDeg": 277.6022677162959,
+          "index": 11,
+          "id": "construction_v1:73071:construction_v1:11@3",
+          "catalogSeed": 190940,
+          "legacy": false,
+          "sequenceId": "construction_v1:73071:construction_v1:11",
+          "time": 3,
+          "world": [
+            31.094373666833498,
+            -31.91708190214369,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "source": [
+          1.8397998148631416,
+          21.27145352094732
+        ],
+        "points": 69418,
+        "hash": "a896a1f316039e1963fb915279095ae786adc723114314d97107cdd709905fb4"
+      },
+      {
+        "kind": "rain",
+        "time": 3,
+        "pose": {
+          "x": 27.823472374750164,
+          "y": -31.956278590389104,
+          "height": 1.200621,
+          "yawDeg": 297.3872943999927,
+          "index": 11,
+          "id": "construction_v1:73031:construction_v1:11@3",
+          "catalogSeed": 190940,
+          "legacy": false,
+          "sequenceId": "construction_v1:73031:construction_v1:11",
+          "time": 3,
+          "world": [
+            27.823472374750164,
+            -31.956278590389104,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "source": [
+          -5.418465216854273,
+          -4.405227140207309
+        ],
+        "points": 73090,
+        "hash": "4d65370e3dddab8e0e8c10f864cc58f14ec3f80b7714de4f03797d36bfb94b8b",
+        "world": 5459
+      },
+      {
+        "kind": "rain",
+        "time": 3,
+        "pose": {
+          "x": 29.194797,
+          "y": -31.991156,
+          "height": 1.200621,
+          "yawDeg": 260.788184,
+          "index": 11,
+          "id": "construction_v1:11",
+          "catalogSeed": 190940,
+          "world": [
+            29.194797,
+            -31.991156,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "points": 72515,
+        "hash": "37338435ec3287b2a9f66d0d429ecf8bde3b7ac2ba2bb58657a6f06265d6ec50",
+        "world": 5449
+      },
+      {
+        "kind": "fog",
+        "time": 10,
+        "pose": {
+          "x": 25.741209412439417,
+          "y": -33.49874659628708,
+          "height": 1.200621,
+          "yawDeg": 323.2666778077228,
+          "index": 11,
+          "id": "construction_v1:73031:construction_v1:11@10",
+          "catalogSeed": 190940,
+          "legacy": false,
+          "sequenceId": "construction_v1:73031:construction_v1:11",
+          "time": 10,
+          "world": [
+            25.741209412439417,
+            -33.49874659628708,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "source": [
+          -5.418465216854273,
+          -4.405227140207309
+        ],
+        "points": 71928,
+        "hash": "7633643a4e05db99f6e59bee6fe52b906c0272ece88b0d3bc64518fc47f4e8a2"
+      },
+      {
+        "kind": "general",
+        "time": 10,
+        "pose": {
+          "x": 25.741209412439417,
+          "y": -33.49874659628708,
+          "height": 1.200621,
+          "yawDeg": 323.2666778077228,
+          "index": 11,
+          "id": "construction_v1:73031:construction_v1:11@10",
+          "catalogSeed": 190940,
+          "legacy": false,
+          "sequenceId": "construction_v1:73031:construction_v1:11",
+          "time": 10,
+          "world": [
+            25.741209412439417,
+            -33.49874659628708,
+            1.200621
+          ],
+          "groundZ": 0
+        },
+        "source": [
+          -5.418465216854273,
+          -4.405227140207309
+        ],
+        "points": 66735,
+        "hash": "0886c9a070e38b9956ec3c4a0fce914777198020fc84554a3d2fde24c5348d64"
+      }
+    ],
+    "dustCommonIds": 1248,
+    "dustMovingIds": 1248,
+    "maxDustDisplacementInPoint1S": 0.17397726260984017,
+    "worldWeatherAnchoredIds": 5398,
+    "replayIndependentOfRequestOrder": true,
+    "framesRecast": true,
+    "fieldCalibrated": false,
+    "trainingApproved": false
+  },
+  "export": {
+    "passed": true,
+    "created": "2026-10-09T07:05:39.959Z",
+    "frames": 101,
+    "raysPerFrame": 131072,
+    "durationS": 10,
+    "fps": 10,
+    "endpointInclusive": true,
+    "uniqueCoordinateLabelHashes": 101,
+    "compressedBytes": 616015554,
+    "elapsedS": 291.7709476,
+    "existingOutputProtected": true,
+    "jsonRoundtripFrames": [
+      0,
+      1,
+      50,
+      100
+    ],
+    "folder": "outputs\\sequence-range-1791529247258",
+    "fieldCalibrated": false,
+    "trainingApproved": false
+  },
+  "static_v20_compatibility": [
+    {
+      "kind": "dust",
+      "mode": null,
+      "same": true,
+      "hash": "c57ce377d9853a7d0016cc1017daa644e9d436514d076bfbfe683194d00e1fc5"
+    },
+    {
+      "kind": "rain",
+      "mode": null,
+      "same": true,
+      "hash": "b32b26ad69afebf61940d3f9c97d8aa1105f227e9584ae53104a1d3b849ba922"
+    },
+    {
+      "kind": "snow",
+      "mode": null,
+      "same": true,
+      "hash": "5aeebfd0e6bf5613e0b54a11967d8a42f734e04b1be4ee75e39177baa1916f3a"
+    },
+    {
+      "kind": "fog",
+      "mode": null,
+      "same": true,
+      "hash": "7e3faeb7b2b1112a7131ba58d0a3c87efca0e92840b790709b4aed3c619f87a6"
+    },
+    {
+      "kind": "sun",
+      "mode": null,
+      "same": true,
+      "hash": "294d36df6802d61aaf3047c812c23791ae76363b1045572136f9293c4dca33fc"
+    },
+    {
+      "kind": "range",
+      "mode": null,
+      "same": true,
+      "hash": "d7cf693a5a7ae3ecd5e5329acceb828d98ea183efeb5a3c86f277899be878181"
+    },
+    {
+      "kind": "general",
+      "mode": "weak",
+      "same": true,
+      "hash": "03b431c1c94633ad8d842b4748b36ec24868fd8fe05642ca35475db576d49312"
+    },
+    {
+      "kind": "general",
+      "mode": "edge",
+      "same": true,
+      "hash": "d0f817d9c812ac251aaabb36001f74fc91e8e56091694c1340a8337d84bc32e1"
+    }
+  ],
+  "channels_export": {
+    "passed": true,
+    "created": "2026-10-09T07:08:26.029Z",
+    "json_exports": [
+      {
+        "kind": "range",
+        "points": 71249,
+        "channels": true,
+        "referenceRays": 131072
+      },
+      {
+        "kind": "sun",
+        "points": 71894,
+        "channels": false,
+        "referenceRays": 131072
+      }
+    ],
+    "fog_disabled_has_surface_signal": true,
+    "files": "outputs\\channel-export-1791529694382"
+  },
+  "unit_checks": {
+    "worker_lifecycle_cases": 10,
+    "channels": true,
+    "fixed_geometry_fog_time_noise": true,
+    "zero_time_dust_empty": true
+  },
+  "browser": {
+    "uiRevision": 21,
+    "console_errors": 0,
+    "slider_0_to_10": true,
+    "play_pause": true,
+    "scene_change": "corridor_v2",
+    "confirmed_tab_roundtrip": true,
+    "seed73017_start_xyz": [
+      -43.227581,
+      -29.788452,
+      1.578705
+    ],
+    "seed73017_end_xyz": [
+      -45.39987066950949,
+      -27.67776972101283,
+      1.5793827467764536
+    ],
+    "seed73017_dust_xy": [
+      13.07341585088595,
+      -21.27839345919722
+    ],
+    "seed73018_dust_xy": [
+      15.09400093737095,
+      1.4907031943526334
+    ],
+    "dust_world_at_3_seconds": 1704
+  },
+  "scope": "All 960 starts checked at two terrain endpoints; one full-resolution 101-frame range sequence, selected full-resolution dust/rain/fog/weak frames. Not 960 complete weather sequences.",
+  "field_calibrated": false,
+  "training_approved": false
+}

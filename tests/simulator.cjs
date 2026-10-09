@@ -22,7 +22,7 @@ async function main(){
   const m=values.reduce((a,b)=>a+b)/values.length,std=Math.sqrt(values.reduce((a,b)=>a+(b-m)**2,0)/values.length);
   assert(Math.abs(m/mean-1)<.005);assert(Math.abs(std/mean-.05)<.003);
  }
- const base={scene:'construction_v1',seed:73031,time:3.25},configs=[
+ const base={scene:'construction_v1',seed:73031,time:3.25,sequence:false,dustPlacement:'manual',dustEmissionS:8},configs=[
   {kind:'dust'},{kind:'rain'},{kind:'snow'},{kind:'fog'},{kind:'sun'},{kind:'range'},
   {kind:'general',controls:{'general-mode':'weak'}},{kind:'general',controls:{'general-mode':'edge'}}
  ];

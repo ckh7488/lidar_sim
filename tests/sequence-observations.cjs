@@ -1,0 +1,11 @@
+'use strict';
+const assert=require('node:assert/strict');
+const F=require('../src/noise_lab_fullrange_v11.js'),A=require('../src/noise_lab_atmosphere_v8.js'),P=require('../src/noise_lab_receiver_v7.js'),S=require('../src/noise_lab_sequence_v21.js');
+const n=64,input={sensor:[0,0,1.65],ranges:new Float32Array(n).fill(10),response:new Float32Array(n).fill(.35),directions:new Float32Array(n*3)};
+for(let i=0;i<n;i++)input.directions[3*i]=1;
+const c={seed:42,time:1,radialSigma:.06,surfaceModel:true,fogBackscatter:false,fogVisibility:500,fogScatterResponse:0,observationSeed:S.hash(42,'frame:1000')};
+const a=F.fog(input,c,P,A),b=F.fog(input,{...c,time:2,observationSeed:S.hash(42,'frame:2000')},P,A),replay=F.fog(input,c,P,A);
+assert.deepEqual(a.rangeErrors,replay.rangeErrors);assert.notDeepEqual(a.rangeErrors,b.rangeErrors);assert.equal(a.labels.filter(v=>v===1).length,0);assert(a.rangeErrors.length>30);
+const M=require('../src/noise_lab_motion_v6.js'),zero=M.simulate(input,{seed:42,time:0,weather:'dust',dustEmissionS:10},()=>false);
+assert.equal(zero.stats.parcelsBorn,0);assert.equal(zero.world.length,0);assert(zero.power.every(v=>v===0));
+console.log(JSON.stringify({passed:true,fogRangeErrorChangesWithFrame:true,sameFrameExact:true,dustStartsEmpty:true,rays:n}));

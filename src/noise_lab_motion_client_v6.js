@@ -2,7 +2,7 @@ let motionPlaying=false,motionPlayTimer=null,motionLines=null;
 const motionIds=['motion-time','motionWind','motionAngle','motionEddy','rainRate','snowN','dustFlux','dustSize','motionX','motionY'];
 function motionActive(){return ['rain','snow','dust'].includes(category);}
 function motionConfig(){const c={motionEnabled:motionActive()};for(const id of motionIds)if(id!=='motion-time')c[id]=+$(id).value;return c;}
-function motionPause(){motionPlaying=false;clearTimeout(motionPlayTimer);$('motion-play').textContent='연속 재생';}
+function motionPause(){sequencePause();motionPlaying=false;clearTimeout(motionPlayTimer);$('motion-play').textContent='연속 재생';}
 function motionControls(){
   const active=motionActive();$('motion-controls').hidden=!active;$('dust-shape-note').hidden=category!=='dust';
   $('dust-random-location').hidden=category!=='dust';if(!active)return;
@@ -10,7 +10,7 @@ function motionControls(){
   for(const name of ['rain','snow','dust'])$('motion-'+name).hidden=category!==name;
   $('generated-title').textContent=($('motion-view').value==='world'?'공간 속 입자':'라이다 관측')+' · '+({rain:'비',snow:'눈',dust:'먼지'}[category]);
   $('mode-note').textContent=(!$('weather-enabled').checked?'날씨 효과가 꺼져 있습니다. ':'')+(weatherAutoMoved?'강수를 볼 수 있도록 야외 공사현장으로 전환했습니다. ':'')+'공간 속 입자와 센서에 찍힌 점은 다릅니다. 오른쪽 표시를 바꾸어 둘 다 확인하세요. 운동 화면의 주황 점은 제거 정답 라벨이 아닙니다. 실측과 생성은 다른 장소이며 센서 재현은 미검증입니다.';
-  $('motion-note').textContent=category==='rain'?'비: 관측 범위 100m까지 1.5~6mm 입자의 빔 교차를 통계적으로 계산합니다. 더 작은 빗방울의 개별 반환은 생략하고 평균 감쇠로만 근사합니다. 운동 예시는 넓은 공간에서 고정 수 표본과 0.04초 이동선을 표시하며 농도에 비례한 개수나 관측 정답이 아닙니다.':category==='snow'?'눈: 관측 범위 100m까지 분산된 입자를 가정하며, 운동 예시에서는 0.4~1.5m/s로 내려오며 흔들립니다. 크기·속도는 대표 가정이며 적설량 교정값이 아닙니다. 이동선은 0.25초 길이입니다.':'먼지: 한 발생원에서 8초간 방출합니다. 점 하나는 여러 미세 입자를 묶은 추적 표본이며, 라이다 반환점이 아닙니다. 중력·공기저항·바람·회오리·국소 상승류를 계산합니다. 굵은 먼지, 재비산과 장비 주변 유동은 미구현입니다.';
+  $('motion-note').textContent=category==='rain'?'비: 관측 범위 100m까지 1.5~6mm 입자의 빔 교차를 통계적으로 계산합니다. 더 작은 빗방울의 개별 반환은 생략하고 평균 감쇠로만 근사합니다. 운동 예시는 넓은 공간에서 고정 수 표본과 0.04초 이동선을 표시하며 농도에 비례한 개수나 관측 정답이 아닙니다.':category==='snow'?'눈: 관측 범위 100m까지 분산된 입자를 가정하며, 운동 예시에서는 0.4~1.5m/s로 내려오며 흔들립니다. 크기·속도는 대표 가정이며 적설량 교정값이 아닙니다. 이동선은 0.25초 길이입니다.':'먼지: 시퀀스별로 뽑은 한 발생원에서 10초간 방출합니다. 발생원은 세계 좌표에 머물고 입자들이 이동합니다. 점 하나는 여러 미세 입자를 묶은 추적 표본이며, 라이다 반환점이 아닙니다. 중력·공기저항·바람·회오리·국소 상승류를 계산합니다. 굵은 먼지, 재비산과 장비 주변 유동은 미구현입니다.';
 }
 function clearMotionLines(){if(motionLines){right.scene.remove(motionLines);motionLines.geometry.dispose();motionLines.material.dispose();motionLines=null;}}
 function renderSimulation(){
@@ -44,8 +44,8 @@ function motionFeatures(){
   $('feature-note').textContent='정지 화면 한 장으로 운동의 현실성을 판정하지 않습니다. 같은 시드에서 재생하고 공간 운동과 라이다 관측을 각각 검토해 주세요. 비·눈의 두 화면은 같은 개별 입자를 추적한 결과가 아닙니다. 전 스캔은 같은 순간으로 계산하며 회전 중 시간차는 아직 없습니다.';
 }
 function motionAfterResult(){if(motionActive()){motionControls();motionSummary();if(motionPlaying)motionPlayTimer=setTimeout(motionAdvance,100);}}
-function motionAdvance(){if(!motionActive())return motionPause();const t=+$('motion-time').value;if(t>=8)return motionPause();$('motion-time').value=Math.min(8,t+.25);generate();}
-$('motion-play').onclick=()=>{if(motionPlaying)motionPause();else{motionPlaying=true;$('motion-play').textContent='일시정지';if(+$('motion-time').value>=8)$('motion-time').value=0;if(right.host.dataset.ready==='true')motionAdvance();}};
+function motionAdvance(){if(!motionActive())return motionPause();const t=+$('motion-time').value;if(t>=10)return motionPause();$('motion-time').value=Math.min(10,t+.25);generate();}
+$('motion-play').onclick=()=>{if(motionPlaying)motionPause();else{motionPlaying=true;$('motion-play').textContent='일시정지';if(+$('motion-time').value>=10)$('motion-time').value=0;if(right.host.dataset.ready==='true')motionAdvance();}};
 $('motion-step').onclick=()=>{motionPause();motionAdvance();};
 $('motion-view').onchange=()=>{motionControls();if(right.host.dataset.ready==='true'&&result&&simData?.scanInput){renderSimulation();motionSummary();}else if(right.host.dataset.ready!=='error')viewBusy('계산 완료 후 선택한 보기로 표시합니다.');};
 for(const id of motionIds)$(id).oninput=()=>{motionPause();motionControls();clearTimeout(timer);++job;right.host.dataset.ready='false';timer=setTimeout(generate,220);};

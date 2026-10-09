@@ -2,7 +2,7 @@ const geometryIds=['terrainCm','pitchDeg','rollDeg','wobbleDeg','wobbleCycles','
 const geometryURL=URL.createObjectURL(new Blob([$('three-runtime').textContent,$('geometry-worker').textContent],{type:'text/javascript'}));
 const geometryWorker=new LatestTaskWorker(geometryURL,handleGeometry,e=>{geoPending='';viewFailure('형상 계산',e);});
 let geoJob=0,geoPending='',lastKnobScene='',geometryTimer,randomGeometryKey='';
-function geometryConfig(){const c={};for(const k of geometryIds)c[k]=$(k).type==='checkbox'?$(k).checked:+$(k).value;c.sensorPose=NoiseLabPoses.choose(D.sensor_positions_v19,$('sim-scene').value,+$('seed').value,$('sensor-pose').value);return c}
+function geometryConfig(){const c={};for(const k of geometryIds)c[k]=$(k).type==='checkbox'?$(k).checked:+$(k).value;c.sensorPose=NoiseLabPoses.choose(D.sensor_positions_v19,$('sim-scene').value,+$('seed').value,$('sensor-pose').value);if($('sequence-enabled').checked||$('dust-auto').checked)c.sequence={scene:$('sim-scene').value,seed:+$('seed').value>>>0,time:+$('sequence-time').value,enabled:$('sequence-enabled').checked,sourceBounds:D.sensor_positions_v19.scenes[$('sim-scene').value].sampling_bounds_xy};return c}
 function geometryKey(){return JSON.stringify([$('sim-scene').value,geometryConfig()])}
 function resetGeometryKnobs(id){const c=NoiseLabRandom.sample(+$('seed').value,id,D.parameter_distributions_v18.parameters);for(const k of geometryIds){if($(k).type==='checkbox')$(k).checked=c[k];else $(k).value=c[k]}randomGeometryKey=id+':'+$('seed').value;updateKnobLabels()}
 function syncGeometryRandom(){if($('geometry-random').checked&&randomGeometryKey!==$('sim-scene').value+':'+$('seed').value)resetGeometryKnobs($('sim-scene').value)}
@@ -28,7 +28,7 @@ function sensorPoseSummary(){
  if(simData.scanProfile==='live'&&!simData.scanGeometry?.sensorPose){$('sensor-pose-summary').textContent='선택 위치 계산 중…';return;}
  const p=simData.scanGeometry?.sensorPose,s=p?.world||simData.scanInput?.sensor||simData.sensor;
  if(!s)return;
- const label=p&&!p.legacy?'위치 '+(p.index+1)+'/40':'이전 고정 원점';
+ const label=p&&!p.legacy?(p.sequenceId?'이동 중 · 시작 ':'위치 ')+(p.index==null?'원점':(p.index+1)+'/40'):'이전 고정 원점';
  $('sensor-pose-summary').textContent=label+' · XYZ '+Array.from(s,v=>v.toFixed(2)).join(', ')+'m'+(p?' · 방향 '+p.yawDeg.toFixed(1)+'°':'');
  Object.assign(right.host.dataset,{sensorPose:p?.id||'legacy',sensorXYZ:JSON.stringify(Array.from(s)),sensorYaw:String(p?.yawDeg||0)});
 }
