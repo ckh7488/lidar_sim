@@ -34,5 +34,6 @@
   "__BVH__": "vendor/three-mesh-bvh-0.7.6.umd.js",
   "__GEOMETRY_CORE__": "src/noise_lab_geometry_v3.js",
   "__GEOMETRY_WORKER__": "src/noise_lab_geometry_worker_v3.js",
-  "__POSES_V19__": "src/noise_lab_poses_v19.js"
+  "__POSES_V19__": "src/noise_lab_poses_v19.js",
+  "__CHANNELS_V20__": "src/noise_lab_channels_v20.js"
 }

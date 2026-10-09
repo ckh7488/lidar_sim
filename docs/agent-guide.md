@@ -41,9 +41,11 @@ CLI 기본 예시는 seed 73031 / 3.25초입니다. UI 처음 열기는 seed 730
 - 좌표: 미터 단위의 세계 XYZ, Z가 위쪽입니다. `xyz`는 `[x0,y0,z0,x1,y1,z1,...]`입니다.
 - `labels`: 0은 유지한 표면, 1은 합성 산란·가짜 반환, 2는 경계 등에서 달라진 불확실 표면입니다. 이 숫자를 곧바로 현장 제거 정답으로 쓰지 않습니다.
 - `rayIds`: 원래 광선 배열 인덱스입니다. 반환 누락이 있으므로 좌표 인덱스와 같지 않습니다.
-- `nominalRanges`, `rangeErrors`, `powers`: 반환별 거리/오차/모델 신호값입니다. `powers`를 실측 intensity 단위로 해석하지 않습니다.
+- `nominalRanges`, `rangeErrors`, `powers`: 반환별 거리/오차/기존 모드 고유 신호값입니다. powers의 단위는 모드에 따라 다릅니다. 햇빛 powers는 v20부터 전체 NaN/JSON null입니다. 과거의 0/1은 신호가 아닌 라벨 표식이었습니다.
+- `signalProxy`, `reflectivityProxy`: 반환점과 같은 길이/순서의 미교정 모델값입니다. 아래 채널 계약을 반드시 읽으세요.
+- `referenceScan.ranges`, `referenceScan.surfaceReflectance`: 전체 원래 빔 순서의 효과 전 거리와 재질 반사도 가정입니다. 이는 가려진 깨끗한 배경을 포함한 디버그 참조이며 학습 입력에 넣으면 안 됩니다.
 - `world`, `worldV`, `worldIds`: 운동 설명용 표본의 좌표·속도·ID입니다. 검출 반환과 별도 계층입니다.
-- 출력 `config`, `geometry`, `sensorPose`, `scene`, `seed`, `time`으로 조건을 보관합니다. schema 2의 `sensorPose.world`는 실제 세계 좌표이고 `height`는 지면 위 높이입니다. `stats`에는 모드별 진단이 들어가며 공통 필드 외에는 모드에 따라 다릅니다.
+- 출력 `config`, `geometry`, `sensorPose`, `scene`, `seed`, `time`으로 조건을 보관합니다. schema 3의 `sensorPose.world`는 실제 세계 좌표이고 `height`는 지면 위 높이입니다. `stats`에는 모드별 진단이 들어가며 공통 필드 외에는 모드에 따라 다릅니다.
 - `xyz_labels_sha256`는 Float32 좌표 바이트와 라벨 바이트의 해시입니다. 같은 실행 환경에서 재현을 확인하는 용도이며 모든 JS 엔진 간 비트 단위 동일성은 보장하지 않습니다.
 
 `tools/runtime.cjs`는 빌드한 HTML의 실제 두 worker 프로그램을 실행합니다. UI의 `cfg()`와 순수 설정 함수도 원문에서 읽습니다. 이 함수들을 여러 줄로 리팩터링하면 명시적 추출 검사가 실패하므로 runtime과 테스트를 함께 수정해야 합니다. 모델을 별도로 복사해 구현하지 마세요.
@@ -94,3 +96,25 @@ node tests/simulator.cjs
 생성기는 기존 원점과 연결된 빈 격자(실내 0.5m, 야외 1m)를 탐색하고, 격자 내 좌표를 흔들어 넓게 분산된 무작위 40곳을 고릅니다. 정확한 공간 균등분포가 아닙니다. 최소 수평 간격은 실내 1m, 야외 3m입니다. 연결된 바닥의 보수적 충돌 여유는 폭 0.7m, 지면 위 0.08~2.4m입니다. 닫힌 실내는 천장 아래, 천장 없는 ㄱ자 복도는 명시된 바닥 영역, 야외는 메시·지형 범위 안입니다. 높이는 균등 1.2~2.1m(평균 1.65m, std 0.259808m), yaw는 원형 균등 0~360°입니다. 이는 지상 설치 다양성 가정이며 크레인 고소 설치 분포는 아닙니다.
 
 먼지 발생원과 태양 방향은 세계 좌표에 고정됩니다. 멀리 이동하면 먼지가 가려지거나 100m 밖일 수 있으며, 생성점 0도 정상입니다. 비·눈의 운동 설명 표본은 현재 센서 주변 100m를 보여줍니다. 센서 관측은 실제 새 빔/원점에서 계산하며 이 설명 표본과 1:1이 아닙니다.
+
+
+## 신호·반사도 출력 계약 (v20, CLI schema 3)
+
+CLI `arrays.signalProxy`와 `arrays.reflectivityProxy`는 `arrays.xyz`의 점 순서에 대응합니다. JS API에서는 `frame.result.signalProxy`와 `frame.result.reflectivityProxy`입니다. 반사도 추정값은 다음 단순 거리 보상으로 만들며, 진짜 재질 반사도 또는 Ouster Reflectivity로 명명하지 않습니다.
+
+```text
+r_observed = nominalRanges + rangeErrors
+signalProxy = powers                         (대부분의 모드)
+signalProxy = powers / (1600 * weakPhotons)   (약한 신호 모드)
+reflectivityProxy = signalProxy * r_observed²
+```
+
+`powers`는 모델이 선택한 후보의 세기 또는 기대 광자 수입니다. 실제 센서의 측정 광자 수가 아닙니다. 약한 신호는 기존 기대 광자 수를 상대 신호 단위로 변환합니다. 안개는 파형 적분값이므로 다른 모드와 같은 척도가 아니며, `channels.crossModeCalibration=false`입니다. 입사각·감쇠를 역보정하지 않으며, 0~1 또는 0~255로 강제로 자르지 않습니다. `channels.reflectivityProxy.range`에서 실제 범위를 확인할 수 있습니다.
+
+햇빛은 반환 위치만 생성하는 현재 모델에 신호 세기 모형이 없습니다. 기존 powers=정상점 0/가짜점 1은 정답을 노출하는 표식이라 v20에서 전체 채널을 NaN으로 바꿨습니다. JSON은 null로 기록합니다. 이는 0 반사도나 강도 0 측정이 아닙니다. 모델 학습에 쓰려면 이런 미지원 채널을 데이터 전체에서 일관되게 제외하거나 실측 기반 신호 모델을 먼저 구현해야 합니다. 노이즈 점만 누락시키거나 null을 0으로 채우지 마세요.
+
+`referenceScan`은 point 배열과 길이가 다릅니다. CLI의 최상위 referenceScan, JS의 result.referenceScan에 있으며, 전체 131,072빔 기준 `ranges`, `surfaceReflectance`가 있습니다. 미교차 빔/재질 미제공 구버전 프로필의 반사도는 NaN/JSON null입니다. 이는 **노이즈가 없었을 때의 배경 재질**로, 먼지나 비 반환의 재질 값을 뜻하지 않습니다. 학습 feature로 쓰면 보이지 않는 배경 정보가 유출됩니다. 검토/디버그용으로만 분리 보관하세요.
+
+재질 반사도는 현재 메시의 rho와 고정된 공간 변화에서 계산한 가정값입니다. 관측 위치가 바뀌면 관측되는 재질과 입사각이 달라지지만 날씨 시드마다 재질 자체를 다시 무작위화하지는 않습니다. 실제 재질 분포/센서 감도/양자화 교정은 미구현입니다.
+
+공식 구분: [Ouster calibrated reflectivity](https://docs.ouster.com/sensor-docs/firmware/calibrated-reflectivity)는 측정 신호에 거리와 센서 감도 보정을 적용하는 채널입니다. 이 시뮬레이터의 거리² 보상만으로 해당 장비의 교정값을 재현했다고 간주하지 않습니다.

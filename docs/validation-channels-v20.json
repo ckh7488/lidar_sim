@@ -1,0 +1,502 @@
+{
+  "passed": true,
+  "created": "2026-10-09T06:32:46.381Z",
+  "node": "v20.18.1",
+  "geometry_samples": 3000,
+  "weather_samples_per_kind": 5000,
+  "modes": [
+    {
+      "kind": "dust",
+      "pose": {
+        "x": 29.194797,
+        "y": -31.991156,
+        "height": 1.200621,
+        "yawDeg": 260.788184,
+        "index": 11,
+        "id": "construction_v1:11",
+        "catalogSeed": 190940,
+        "world": [
+          29.194797,
+          -31.991156,
+          1.200621
+        ],
+        "groundZ": 0
+      },
+      "points": 70353,
+      "surface": 70353,
+      "noise": 0,
+      "hash": "c57ce377d9853a7d0016cc1017daa644e9d436514d076bfbfe683194d00e1fc5",
+      "channels": {
+        "revision": 20,
+        "pointCount": 70353,
+        "referenceRayCount": 131072,
+        "signalProxy": {
+          "available": true,
+          "units": "relative model units",
+          "source": "selected model power",
+          "observedPhotonCount": false
+        },
+        "reflectivityProxy": {
+          "available": true,
+          "formula": "signalProxy * measuredRange^2",
+          "measuredRange": "nominalRanges + rangeErrors",
+          "incidenceCorrected": false,
+          "atmosphericLossCorrected": false,
+          "ousterCalibrated": false,
+          "range": [
+            0.003198472550138831,
+            0.5284225940704346
+          ],
+          "finiteCount": 70353
+        },
+        "referenceScan": {
+          "role": "debug/reference only; never a sensor input feature",
+          "index": "original beam index; use rayIds only to inspect the clean background",
+          "surfaceReflectance": "scene albedo assumption before incidence and weather; not the reflectivity of an intervening particle"
+        },
+        "crossModeCalibration": false,
+        "fieldCalibrated": false,
+        "trainingApproved": false,
+        "limitation": "Signal is a model quantity, not device intensity. No Ouster sensitivity, quantization or reflectivity calibration is implemented."
+      }
+    },
+    {
+      "kind": "rain",
+      "pose": {
+        "x": 29.194797,
+        "y": -31.991156,
+        "height": 1.200621,
+        "yawDeg": 260.788184,
+        "index": 11,
+        "id": "construction_v1:11",
+        "catalogSeed": 190940,
+        "world": [
+          29.194797,
+          -31.991156,
+          1.200621
+        ],
+        "groundZ": 0
+      },
+      "points": 72877,
+      "surface": 70065,
+      "noise": 2812,
+      "hash": "b32b26ad69afebf61940d3f9c97d8aa1105f227e9584ae53104a1d3b849ba922",
+      "channels": {
+        "revision": 20,
+        "pointCount": 72877,
+        "referenceRayCount": 131072,
+        "signalProxy": {
+          "available": true,
+          "units": "relative model units",
+          "source": "selected model power",
+          "observedPhotonCount": false
+        },
+        "reflectivityProxy": {
+          "available": true,
+          "formula": "signalProxy * measuredRange^2",
+          "measuredRange": "nominalRanges + rangeErrors",
+          "incidenceCorrected": false,
+          "atmosphericLossCorrected": false,
+          "ousterCalibrated": false,
+          "range": [
+            2.2534156869369326e-06,
+            0.4764348566532135
+          ],
+          "finiteCount": 72877
+        },
+        "referenceScan": {
+          "role": "debug/reference only; never a sensor input feature",
+          "index": "original beam index; use rayIds only to inspect the clean background",
+          "surfaceReflectance": "scene albedo assumption before incidence and weather; not the reflectivity of an intervening particle"
+        },
+        "crossModeCalibration": false,
+        "fieldCalibrated": false,
+        "trainingApproved": false,
+        "limitation": "Signal is a model quantity, not device intensity. No Ouster sensitivity, quantization or reflectivity calibration is implemented."
+      }
+    },
+    {
+      "kind": "snow",
+      "pose": {
+        "x": 29.194797,
+        "y": -31.991156,
+        "height": 1.200621,
+        "yawDeg": 260.788184,
+        "index": 11,
+        "id": "construction_v1:11",
+        "catalogSeed": 190940,
+        "world": [
+          29.194797,
+          -31.991156,
+          1.200621
+        ],
+        "groundZ": 0
+      },
+      "points": 73995,
+      "surface": 69854,
+      "noise": 4141,
+      "hash": "5aeebfd0e6bf5613e0b54a11967d8a42f734e04b1be4ee75e39177baa1916f3a",
+      "channels": {
+        "revision": 20,
+        "pointCount": 73995,
+        "referenceRayCount": 131072,
+        "signalProxy": {
+          "available": true,
+          "units": "relative model units",
+          "source": "selected model power",
+          "observedPhotonCount": false
+        },
+        "reflectivityProxy": {
+          "available": true,
+          "formula": "signalProxy * measuredRange^2",
+          "measuredRange": "nominalRanges + rangeErrors",
+          "incidenceCorrected": false,
+          "atmosphericLossCorrected": false,
+          "ousterCalibrated": false,
+          "range": [
+            4.987256397726014e-05,
+            0.5608863234519958
+          ],
+          "finiteCount": 73995
+        },
+        "referenceScan": {
+          "role": "debug/reference only; never a sensor input feature",
+          "index": "original beam index; use rayIds only to inspect the clean background",
+          "surfaceReflectance": "scene albedo assumption before incidence and weather; not the reflectivity of an intervening particle"
+        },
+        "crossModeCalibration": false,
+        "fieldCalibrated": false,
+        "trainingApproved": false,
+        "limitation": "Signal is a model quantity, not device intensity. No Ouster sensitivity, quantization or reflectivity calibration is implemented."
+      }
+    },
+    {
+      "kind": "fog",
+      "pose": {
+        "x": 29.194797,
+        "y": -31.991156,
+        "height": 1.200621,
+        "yawDeg": 260.788184,
+        "index": 11,
+        "id": "construction_v1:11",
+        "catalogSeed": 190940,
+        "world": [
+          29.194797,
+          -31.991156,
+          1.200621
+        ],
+        "groundZ": 0
+      },
+      "points": 71281,
+      "surface": 70557,
+      "noise": 724,
+      "hash": "7e3faeb7b2b1112a7131ba58d0a3c87efca0e92840b790709b4aed3c619f87a6",
+      "channels": {
+        "revision": 20,
+        "pointCount": 71281,
+        "referenceRayCount": 131072,
+        "signalProxy": {
+          "available": true,
+          "units": "relative model units",
+          "source": "selected model power",
+          "observedPhotonCount": false
+        },
+        "reflectivityProxy": {
+          "available": true,
+          "formula": "signalProxy * measuredRange^2",
+          "measuredRange": "nominalRanges + rangeErrors",
+          "incidenceCorrected": false,
+          "atmosphericLossCorrected": false,
+          "ousterCalibrated": false,
+          "range": [
+            1.037000818548961e-09,
+            1.597042441368103
+          ],
+          "finiteCount": 71281
+        },
+        "referenceScan": {
+          "role": "debug/reference only; never a sensor input feature",
+          "index": "original beam index; use rayIds only to inspect the clean background",
+          "surfaceReflectance": "scene albedo assumption before incidence and weather; not the reflectivity of an intervening particle"
+        },
+        "crossModeCalibration": false,
+        "fieldCalibrated": false,
+        "trainingApproved": false,
+        "limitation": "Fog powers are waveform-integrated quantities. Their scale is not calibrated to other modes."
+      }
+    },
+    {
+      "kind": "sun",
+      "pose": {
+        "x": 29.194797,
+        "y": -31.991156,
+        "height": 1.200621,
+        "yawDeg": 260.788184,
+        "index": 11,
+        "id": "construction_v1:11",
+        "catalogSeed": 190940,
+        "world": [
+          29.194797,
+          -31.991156,
+          1.200621
+        ],
+        "groundZ": 0
+      },
+      "points": 70990,
+      "surface": 70986,
+      "noise": 4,
+      "hash": "294d36df6802d61aaf3047c812c23791ae76363b1045572136f9293c4dca33fc",
+      "channels": {
+        "revision": 20,
+        "pointCount": 70990,
+        "referenceRayCount": 131072,
+        "signalProxy": {
+          "available": false,
+          "units": "relative model units",
+          "source": "selected model power",
+          "observedPhotonCount": false
+        },
+        "reflectivityProxy": {
+          "available": false,
+          "formula": "signalProxy * measuredRange^2",
+          "measuredRange": "nominalRanges + rangeErrors",
+          "incidenceCorrected": false,
+          "atmosphericLossCorrected": false,
+          "ousterCalibrated": false,
+          "range": [
+            null,
+            null
+          ],
+          "finiteCount": 0
+        },
+        "referenceScan": {
+          "role": "debug/reference only; never a sensor input feature",
+          "index": "original beam index; use rayIds only to inspect the clean background",
+          "surfaceReflectance": "scene albedo assumption before incidence and weather; not the reflectivity of an intervening particle"
+        },
+        "crossModeCalibration": false,
+        "fieldCalibrated": false,
+        "trainingApproved": false,
+        "limitation": "Solar signal strength is not modeled. All signal/reflectivity/powers entries are NaN (JSON null)."
+      }
+    },
+    {
+      "kind": "range",
+      "pose": {
+        "x": 29.194797,
+        "y": -31.991156,
+        "height": 1.200621,
+        "yawDeg": 260.788184,
+        "index": 11,
+        "id": "construction_v1:11",
+        "catalogSeed": 190940,
+        "world": [
+          29.194797,
+          -31.991156,
+          1.200621
+        ],
+        "groundZ": 0
+      },
+      "points": 70342,
+      "surface": 70342,
+      "noise": 0,
+      "hash": "d7cf693a5a7ae3ecd5e5329acceb828d98ea183efeb5a3c86f277899be878181",
+      "channels": {
+        "revision": 20,
+        "pointCount": 70342,
+        "referenceRayCount": 131072,
+        "signalProxy": {
+          "available": true,
+          "units": "relative model units",
+          "source": "selected model power",
+          "observedPhotonCount": false
+        },
+        "reflectivityProxy": {
+          "available": true,
+          "formula": "signalProxy * measuredRange^2",
+          "measuredRange": "nominalRanges + rangeErrors",
+          "incidenceCorrected": false,
+          "atmosphericLossCorrected": false,
+          "ousterCalibrated": false,
+          "range": [
+            0.004417685326188803,
+            0.5284225940704346
+          ],
+          "finiteCount": 70342
+        },
+        "referenceScan": {
+          "role": "debug/reference only; never a sensor input feature",
+          "index": "original beam index; use rayIds only to inspect the clean background",
+          "surfaceReflectance": "scene albedo assumption before incidence and weather; not the reflectivity of an intervening particle"
+        },
+        "crossModeCalibration": false,
+        "fieldCalibrated": false,
+        "trainingApproved": false,
+        "limitation": "Signal is a model quantity, not device intensity. No Ouster sensitivity, quantization or reflectivity calibration is implemented."
+      }
+    },
+    {
+      "kind": "general",
+      "mode": "weak",
+      "pose": {
+        "x": 29.194797,
+        "y": -31.991156,
+        "height": 1.200621,
+        "yawDeg": 260.788184,
+        "index": 11,
+        "id": "construction_v1:11",
+        "catalogSeed": 190940,
+        "world": [
+          29.194797,
+          -31.991156,
+          1.200621
+        ],
+        "groundZ": 0
+      },
+      "points": 65993,
+      "surface": 65993,
+      "noise": 0,
+      "hash": "03b431c1c94633ad8d842b4748b36ec24868fd8fe05642ca35475db576d49312",
+      "channels": {
+        "revision": 20,
+        "pointCount": 65993,
+        "referenceRayCount": 131072,
+        "signalProxy": {
+          "available": true,
+          "units": "relative model units",
+          "source": "expected photons / (1600 * weakPhotons)",
+          "observedPhotonCount": false
+        },
+        "reflectivityProxy": {
+          "available": true,
+          "formula": "signalProxy * measuredRange^2",
+          "measuredRange": "nominalRanges + rangeErrors",
+          "incidenceCorrected": false,
+          "atmosphericLossCorrected": false,
+          "ousterCalibrated": false,
+          "range": [
+            0.006329608615487814,
+            0.5268977284431458
+          ],
+          "finiteCount": 65993
+        },
+        "referenceScan": {
+          "role": "debug/reference only; never a sensor input feature",
+          "index": "original beam index; use rayIds only to inspect the clean background",
+          "surfaceReflectance": "scene albedo assumption before incidence and weather; not the reflectivity of an intervening particle"
+        },
+        "crossModeCalibration": false,
+        "fieldCalibrated": false,
+        "trainingApproved": false,
+        "limitation": "Signal is a model quantity, not device intensity. No Ouster sensitivity, quantization or reflectivity calibration is implemented."
+      }
+    },
+    {
+      "kind": "general",
+      "mode": "edge",
+      "pose": {
+        "x": 29.194797,
+        "y": -31.991156,
+        "height": 1.200621,
+        "yawDeg": 260.788184,
+        "index": 11,
+        "id": "construction_v1:11",
+        "catalogSeed": 190940,
+        "world": [
+          29.194797,
+          -31.991156,
+          1.200621
+        ],
+        "groundZ": 0
+      },
+      "points": 69665,
+      "surface": 69665,
+      "noise": 0,
+      "hash": "d0f817d9c812ac251aaabb36001f74fc91e8e56091694c1340a8337d84bc32e1",
+      "channels": {
+        "revision": 20,
+        "pointCount": 69665,
+        "referenceRayCount": 131072,
+        "signalProxy": {
+          "available": true,
+          "units": "relative model units",
+          "source": "selected model power",
+          "observedPhotonCount": false
+        },
+        "reflectivityProxy": {
+          "available": true,
+          "formula": "signalProxy * measuredRange^2",
+          "measuredRange": "nominalRanges + rangeErrors",
+          "incidenceCorrected": false,
+          "atmosphericLossCorrected": false,
+          "ousterCalibrated": false,
+          "range": [
+            0.001311164814978838,
+            0.5070087909698486
+          ],
+          "finiteCount": 69665
+        },
+        "referenceScan": {
+          "role": "debug/reference only; never a sensor input feature",
+          "index": "original beam index; use rayIds only to inspect the clean background",
+          "surfaceReflectance": "scene albedo assumption before incidence and weather; not the reflectivity of an intervening particle"
+        },
+        "crossModeCalibration": false,
+        "fieldCalibrated": false,
+        "trainingApproved": false,
+        "limitation": "Signal is a model quantity, not device intensity. No Ouster sensitivity, quantization or reflectivity calibration is implemented."
+      }
+    }
+  ],
+  "same_seed_exact": true,
+  "new_seed_changes": true,
+  "world_surface_preserved": true,
+  "precipitation_display_follows_sensor": true,
+  "legacy_range_hash_preserved": true,
+  "manual_pose_holds_across_seeds": true,
+  "field_calibrated": false,
+  "training_approved": false,
+  "revision": 20,
+  "all_v19_xyz_label_hashes_preserved": true,
+  "unit_checks": [
+    "range compensation",
+    "label-independent channel mapping",
+    "weak-photon normalization",
+    "whole-solar-channel missingness",
+    "material reference separated from observations"
+  ],
+  "export_checks": {
+    "passed": true,
+    "created": "2026-10-09T06:33:41.644Z",
+    "json_exports": [
+      {
+        "kind": "range",
+        "points": 70342,
+        "channels": true,
+        "referenceRays": 131072
+      },
+      {
+        "kind": "sun",
+        "points": 70990,
+        "channels": false,
+        "referenceRays": 131072
+      }
+    ],
+    "fog_disabled_has_surface_signal": true,
+    "files": "outputs\\channel-export-1791527609923"
+  },
+  "browser_checks": {
+    "rain": {
+      "ready": true,
+      "points": 65312,
+      "reflectivityFinite": 65312
+    },
+    "sun": {
+      "ready": true,
+      "reflectivityAvailable": false,
+      "reflectivityFinite": 0
+    },
+    "confirmed_section_visible": true,
+    "console_errors": 0
+  }
+}

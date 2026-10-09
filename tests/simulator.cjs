@@ -31,11 +31,20 @@ async function main(){
   const frame=await sim.run({...base,...config}),r=frame.result;
   assert(r.labels.length>1000);assert.equal(r.xyz.length,r.labels.length*3);assert(r.xyz.every(Number.isFinite));
   assert(r.labels.every(x=>x<=2));assert.equal(r.stats.training,false);
+  assert.equal(r.signalProxy.length,r.labels.length);assert.equal(r.reflectivityProxy.length,r.labels.length);
+  assert.equal(r.referenceScan.ranges.length,131072);assert.equal(r.referenceScan.surfaceReflectance.length,131072);
+  if(config.kind==='sun'){
+   assert(r.powers.every(Number.isNaN));assert(r.signalProxy.every(Number.isNaN));assert(r.reflectivityProxy.every(Number.isNaN));
+   assert.equal(r.channels.reflectivityProxy.available,false);
+  }else{
+   assert(r.signalProxy.every(v=>Number.isFinite(v)&&v>=0));assert(r.reflectivityProxy.every(v=>Number.isFinite(v)&&v>=0));
+   assert.equal(r.channels.reflectivityProxy.finiteCount,r.labels.length);
+  }
   if(config.kind==='range'){range=frame;assert.equal(r.stats.dust,0);assert(r.stats.rangeError.surface.rms>.059&&r.stats.rangeError.surface.rms<.061);}
   if(config.kind==='dust'){dust=frame;assert(r.world.length>0);}
   if(['rain','snow'].includes(config.kind)){const s=frame.sensorPose.world;for(let i=0;i<r.world.length;i+=3)assert(Math.hypot(r.world[i]-s[0],r.world[i+1]-s[1],r.world[i+2]-s[2])<=100.00002);}
   assert.notEqual(frame.sensorPose.id,'legacy');
-  rows.push({kind:config.kind,mode:config.controls?.['general-mode'],pose:frame.sensorPose,points:r.labels.length,surface:r.stats.surface,noise:r.stats.dust,hash:hash(r)});
+  rows.push({kind:config.kind,mode:config.controls?.['general-mode'],pose:frame.sensorPose,points:r.labels.length,surface:r.stats.surface,noise:r.stats.dust,hash:hash(r),channels:r.channels});
   console.log(JSON.stringify(rows.at(-1)));
  }
  const replay=await sim.run({...base,kind:'dust'}),changed=await sim.run({...base,seed:73032,kind:'dust'});

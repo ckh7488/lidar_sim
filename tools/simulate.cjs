@@ -11,12 +11,12 @@ async function main(){
   for(const k of ['seed','time'])if(opts[k])config[k]=Number(opts[k]);
   const frame=await createSimulator().run(config),r=frame.result;
   const hash=crypto.createHash('sha256').update(Buffer.from(r.xyz.buffer,r.xyz.byteOffset,r.xyz.byteLength)).update(Buffer.from(r.labels)).digest('hex');
-  const summary={schema:2,sensorPose:frame.sensorPose,scene:frame.scene,kind:frame.kind,seed:frame.seed,time:frame.time,points:r.labels.length,xyz_labels_sha256:hash,units:'m',coordinates:'world XYZ, Z up',field_calibrated:false,training_approved:false,geometry:frame.geometry,config:frame.config,stats:r.stats};
+  const summary={schema:3,channels:r.channels,sensorPose:frame.sensorPose,scene:frame.scene,kind:frame.kind,seed:frame.seed,time:frame.time,points:r.labels.length,xyz_labels_sha256:hash,units:'m',coordinates:'world XYZ, Z up',field_calibrated:false,training_approved:false,geometry:frame.geometry,config:frame.config,stats:r.stats};
   if(opts.out){
     const out=path.resolve(opts.out);fs.mkdirSync(path.dirname(out),{recursive:true});
-    const arrays={};for(const k of ['xyz','labels','rayIds','nominalRanges','rangeErrors','powers','world','worldV','worldIds'])if(ArrayBuffer.isView(r[k]))arrays[k]=Array.from(r[k]);
+    const arrays={};for(const k of ['xyz','labels','rayIds','nominalRanges','rangeErrors','powers','signalProxy','reflectivityProxy','world','worldV','worldIds'])if(ArrayBuffer.isView(r[k]))arrays[k]=Array.from(r[k]);
     // Exclusive creation avoids overwriting a user's earlier export.
-    fs.writeFileSync(out,JSON.stringify({...summary,arrays}),{flag:'wx'});
+    fs.writeFileSync(out,JSON.stringify({...summary,arrays,referenceScan:Object.fromEntries(Object.entries(r.referenceScan).map(([k,v])=>[k,Array.from(v)]))}),{flag:'wx'});
     summary.output=out;
   }
   console.log(JSON.stringify(summary,null,2));

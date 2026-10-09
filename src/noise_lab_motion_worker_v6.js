@@ -10,8 +10,8 @@ async function motionObstacles(raw,beam,cm){
 onmessage=async e=>{
   const {id,input,config,raw,beam,terrainCm}=e.data;motionLatest=id;
   try{
-    if(config.reviewKind){let review;if(config.reviewKind==='fog')review=NoiseLabFullRange.fog(input,config,NoiseLabReceiver,NoiseLabAtmosphere);else if(config.reviewKind==='weak')review=NoiseLabAtmosphere.weak(input,config,NoiseLabReceiver);else {const blocked=await motionObstacles(raw,beam,terrainCm);if(id!==motionLatest)return;review=NoiseLabAtmosphere.edge(input,config,blocked.castRay);}review.metrics=NoiseLabMetrics.describe(review.xyz,review.labels);if(id===motionLatest)postMessage({id,result:review});return;}
-    if(config.solarEnabled){const blocked=await motionObstacles(raw,beam,terrainCm);if(id!==motionLatest)return;const review=NoiseLabFullRange.sunlight(input,config,NoiseLabReceiver,NoiseLabAtmosphere,blocked);review.metrics=NoiseLabMetrics.describe(review.xyz,review.labels);if(id===motionLatest)postMessage({id,result:review});return;}
+    if(config.reviewKind){let review;if(config.reviewKind==='fog')review=NoiseLabFullRange.fog(input,config,NoiseLabReceiver,NoiseLabAtmosphere);else if(config.reviewKind==='weak')review=NoiseLabAtmosphere.weak(input,config,NoiseLabReceiver);else {const blocked=await motionObstacles(raw,beam,terrainCm);if(id!==motionLatest)return;review=NoiseLabAtmosphere.edge(input,config,blocked.castRay);}review.metrics=NoiseLabMetrics.describe(review.xyz,review.labels);if(id===motionLatest)postMessage({id,result:NoiseLabChannels.attach(review,input,config)});return;}
+    if(config.solarEnabled){const blocked=await motionObstacles(raw,beam,terrainCm);if(id!==motionLatest)return;const review=NoiseLabFullRange.sunlight(input,config,NoiseLabReceiver,NoiseLabAtmosphere,blocked);review.metrics=NoiseLabMetrics.describe(review.xyz,review.labels);if(id===motionLatest)postMessage({id,result:NoiseLabChannels.attach(review,input,config)});return;}
     let motion=null,solar=null;
     if(config.motionEnabled&&config.weatherEnabled){
       const blocked=await motionObstacles(raw,beam,terrainCm);if(id!==motionLatest)return;
@@ -22,6 +22,6 @@ onmessage=async e=>{
     const r=photon?NoiseLabReceiver.simulate(input,config,NoiseLabCore):NoiseLabCore.simulate(input,config);r.metrics=NoiseLabMetrics.describe(r.xyz,r.labels);
     if(solar){r.solar=solar;r.stats.solar=solar.stats;}
     if(motion){r.world=motion.world;r.worldIds=motion.worldIds;r.worldV=motion.worldV;r.stats.motion=motion.stats;r.motionConfig=motion.config;}
-    if(id===motionLatest)postMessage({id,result:r});
+    if(id===motionLatest)postMessage({id,result:NoiseLabChannels.attach(r,input,config)});
   }catch(error){if(id===motionLatest)postMessage({id,error:String(error.stack||error)})}
 };
