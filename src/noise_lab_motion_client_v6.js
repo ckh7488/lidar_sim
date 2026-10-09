@@ -16,13 +16,13 @@ function clearMotionLines(){if(motionLines){right.scene.remove(motionLines);moti
 function renderSimulation(){
   if(!result||!simData?.scanInput)return;clearMotionLines();
   const world=motionActive()&&$('motion-view').value==='world'&&result.world;
-  if(!world){cloud(right,result.xyz,result.labels);Object.assign(right.host.dataset,{backgroundSource:'detected-surface-shared',backgroundPoints:String(result.stats.surface),backgroundRangeRms:String(result.stats.rangeError.surface.rms)});return;}
-  const xyz=[],labels=[];
+  if(!world){cloud(right,result.xyz,result.labels,result.reflectivityProxy);Object.assign(right.host.dataset,{backgroundSource:'detected-surface-shared',backgroundPoints:String(result.stats.surface),backgroundRangeRms:String(result.stats.rangeError.surface.rms)});return;}
+  const xyz=[],labels=[],reflectivity=[];
   // Share measured surface coordinates; rebuilding raw rays silently removed the configured errors.
-  for(let i=0;i<result.labels.length;i++)if(result.labels[i]!==1){const k=i*3;xyz.push(result.xyz[k],result.xyz[k+1],result.xyz[k+2]);labels.push(result.labels[i]);}
+  for(let i=0;i<result.labels.length;i++)if(result.labels[i]!==1){const k=i*3;xyz.push(result.xyz[k],result.xyz[k+1],result.xyz[k+2]);labels.push(result.labels[i]);reflectivity.push(result.reflectivityProxy[i]);}
   const background=labels.length;
-  for(let i=0;i<result.world.length;i++)xyz.push(result.world[i]);for(let i=0;i<result.worldIds.length;i++)labels.push(1);
-  cloud(right,new Float32Array(xyz),new Uint8Array(labels));
+  for(let i=0;i<result.world.length;i++)xyz.push(result.world[i]);for(let i=0;i<result.worldIds.length;i++){labels.push(1);reflectivity.push(NaN);}
+  cloud(right,new Float32Array(xyz),new Uint8Array(labels),reflectivity);
   const points=right.clouds.find(o=>o.userData.type===1);if(points){points.material.size=category==='dust'?2:1.5;points.material.opacity=category==='dust'?.65:.8;points.material.transparent=true;}
   const lines=[],dt=category==='rain'?.04:.25,stride=category==='dust'?8:4;
   for(let i=0;i<result.worldIds.length;i+=stride){const k=i*3;lines.push(result.world[k],result.world[k+1],result.world[k+2],result.world[k]-result.worldV[k]*dt,result.world[k+1]-result.worldV[k+1]*dt,result.world[k+2]-result.worldV[k+2]*dt);}

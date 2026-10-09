@@ -10,7 +10,7 @@ let bytes=0;
 for(let i=0;i<101;i++){const f=m.frames[i];assert.equal(f.time,i/10);assert.equal(fs.statSync(path.join(out,f.file)).size,f.bytes);bytes+=f.bytes;assert.deepEqual(f.dustSource,m.frames[0].dustSource);}
 for(const i of [0,1,50,100]){
  const f=m.frames[i],d=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(out,f.file))));
- assert.equal(d.schema,5);assert.equal(d.time,i/10);assert.deepEqual(d.sensorPose,f.sensorPose);assert.deepEqual(d.sequencePlan,m.sequencePlan);
+ assert.equal(d.schema,6);assert.equal(d.time,i/10);assert.deepEqual(d.sensorPose,f.sensorPose);assert.deepEqual(d.sequencePlan,m.sequencePlan);
  assert.equal(d.arrays.xyz.length,d.points*3);assert.equal(d.arrays.reflectivityProxy.length,d.points);assert.equal(d.referenceScan.surfaceReflectance.length,131072);
  const a=new Float32Array(d.arrays.xyz),h=crypto.createHash('sha256').update(Buffer.from(a.buffer)).update(Buffer.from(d.arrays.labels)).digest('hex');assert.equal(h,f.xyz_labels_sha256);
 }

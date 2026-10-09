@@ -6,7 +6,7 @@ async function main(){
  for(const kind of ['range','sun']){
   const file=path.join(folder,kind+'.json'),p=spawnSync(process.execPath,['tools/simulate.cjs','--kind',kind,'--out',file],{cwd:ROOT,encoding:'utf8'});
   assert.equal(p.status,0,p.stderr);const d=JSON.parse(fs.readFileSync(file,'utf8'));
-  assert.equal(d.schema,5);assert.equal(d.arrays.reflectivityProxy.length,d.points);assert.equal(d.arrays.signalProxy.length,d.points);
+  assert.equal(d.schema,6);assert.equal(d.arrays.reflectivityProxy.length,d.points);assert.equal(d.arrays.signalProxy.length,d.points);
   assert.equal(d.referenceScan.surfaceReflectance.length,131072);assert.equal(d.referenceScan.ranges.length,131072);
   if(kind==='sun')for(const key of ['powers','signalProxy','reflectivityProxy'])assert(d.arrays[key].every(x=>x===null));
   else assert(d.arrays.reflectivityProxy.every(x=>Number.isFinite(x)&&x>=0));

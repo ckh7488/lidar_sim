@@ -40,5 +40,8 @@
   "__SEQUENCE_CLIENT_V21__": "src/noise_lab_sequence_client_v21.js",
   "__OBSERVATION_V22__": "src/noise_lab_observation_v22.js",
   "__PRECIPITATION_V22__": "src/noise_lab_precipitation_v22.js",
-  "__PRECIPITATION_PARALLEL_V22__": "src/noise_lab_precipitation_parallel_v22.js"
+  "__PRECIPITATION_PARALLEL_V22__": "src/noise_lab_precipitation_parallel_v22.js",
+  "__SCENE_V24__": "src/noise_lab_scene_v24.js",
+  "__FREEPOSE_V24__": "src/noise_lab_freepose_v24.js",
+  "__PROP_ASSETS_V24__": "data/noise_lab_v1/asset_models_v18.json"
 }

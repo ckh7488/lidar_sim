@@ -1,5 +1,7 @@
 # 검증
 
+v24의 현재 코드·실행 감사는 [audit-v24.md](audit-v24.md), 기계 판독 집계는 [validation-v24.json](validation-v24.json)을 보세요. 아래는 이전 변경부터의 누적 기록입니다.
+
 ## 재현 명령
 
 ```sh

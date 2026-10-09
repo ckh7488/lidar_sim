@@ -33,10 +33,22 @@ async function main(){
  const engine=ctx.NoiseLabGeometry.engine(loadRaw(catalog.scenes.corridor_v1.geometry_id),beam),g={...Random.sample(42,'corridor_v1',registry.parameters),terrainCm:0,pitchDeg:0,rollDeg:0,wobbleDeg:0};
  const a=await engine.cast({...g,sensorPose:{x:0,y:0,height:1.5,yawDeg:0}}),b=await engine.cast({...g,sensorPose:{x:0,y:0,height:1.5,yawDeg:90}});
  for(let k=0;k<a.input.directions.length;k+=3){assert(Math.abs(b.input.directions[k]+a.input.directions[k+1])<1e-6);assert(Math.abs(b.input.directions[k+1]-a.input.directions[k])<1e-6);}
+ // Independent Three.js Euler transform verifies beam and optical-origin rotation in all six DoF.
+ const T=ctx.THREE;
+ for(const [yaw,pitch,roll]of [[0,25,0],[0,0,-25],[123,-18,21]]){
+  const pose={x:0,y:0,height:1.5,worldZ:1.5,yawDeg:yaw,pitchDeg:pitch,rollDeg:roll,motion6dof:true};
+  const moved=await engine.cast({...g,sensorPose:pose}),q=new T.Quaternion().setFromEuler(new T.Euler(roll*Math.PI/180,pitch*Math.PI/180,yaw*Math.PI/180,'ZYX'));
+  for(let k=0;k<a.input.directions.length;k+=3){
+   const expected=new T.Vector3().fromArray(a.input.directions,k).applyQuaternion(q);
+   assert(expected.distanceTo(new T.Vector3().fromArray(moved.input.directions,k))<1e-6);
+   const origin=new T.Vector3().fromArray(a.input.origins,k).sub(new T.Vector3(0,0,1.5)).applyQuaternion(q).add(new T.Vector3(0,0,1.5));
+   assert(origin.distanceTo(new T.Vector3().fromArray(moved.input.origins,k))<1e-6);
+  }
+ }
  await assert.rejects(engine.cast({...g,sensorPose:{x:0,y:3,height:1.65,yawDeg:0}}),/intersects/);
  await assert.rejects(engine.cast({...g,sensorPose:{x:999,y:0,height:1.65,yawDeg:0}}),/terrain/);
  assert.throws(()=>Poses.choose(catalog,'room_v1',42,40),/Invalid/);
- const report={passed:true,created:new Date().toISOString(),node:process.version,total_positions:960,full_rays_per_production_scan:131072,checked_rays_per_pose:2048,terrain_endpoints_cm:[0,.5],same_pose_exact:true,unique_range_scans:true,collision_rejected:true,yaw_checked:true,scenes:rows};
+ const report={passed:true,created:new Date().toISOString(),node:process.version,total_positions:960,full_rays_per_production_scan:131072,checked_rays_per_pose:2048,terrain_endpoints_cm:[0,.5],same_pose_exact:true,unique_range_scans:true,collision_rejected:true,yaw_checked:true,pitchRollAndOpticalOriginsChecked:true,scenes:rows};
  fs.mkdirSync(path.join(ROOT,'outputs'),{recursive:true});fs.writeFileSync(path.join(ROOT,'outputs/sensor-pose-validation.json'),JSON.stringify(report,null,2));
  console.log('PASS: 960 positions, clearance, distinct ray-cast views, replay, yaw and invalid positions');
 }

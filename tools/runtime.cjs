@@ -44,13 +44,16 @@ function createSimulator(hooks={}){
   let id=0;const assetCache=new Map(),cachedJSON=p=>{if(!assetCache.has(p))assetCache.set(p,json(p));return assetCache.get(p);};
   async function run(options={}){
     options=require('./dataset-profile.cjs').apply(options);
-    const scene=options.scene||'construction_v1',kind=options.kind||'dust';
+    const scene=options.scene||'construction_v1',kind=options.kind||'dust',modern=options.scenario!=='legacy-v23';
+    if(options.scenario&&!['legacy-v23','random-v24'].includes(options.scenario))throw Error('Unknown scenario');
+    const poseChoice=options.pose??(modern?'random':'auto');
     if(!index.scenes.some(s=>s.id===scene))throw Error('Unknown DEMO scene: '+scene);
     if(!['dust','rain','snow','fog','sun','range','general'].includes(kind))throw Error('Unsupported kind: '+kind);
     if(['rain','snow'].includes(kind)&&! /^(construction|crane_yard|apartment)_/.test(scene))throw Error('Rain/snow require an outdoor DEMO scene');
     const seed=options.seed??73031,time=options.time??3.25;
     if(!Number.isInteger(seed)||seed<0||seed>4294967295)throw Error('seed must be a uint32');
     if(!Number.isFinite(time)||time<0||time>10)throw Error('time must be in [0, 10] seconds');
+    if(options.randomScene!==undefined&&typeof options.randomScene!=='boolean')throw Error('randomScene must be boolean');
     if(options.sequence!==undefined&&typeof options.sequence!=='boolean')throw Error('sequence must be boolean');
     if(options.dustPlacement!==undefined&&!['auto','manual'].includes(options.dustPlacement))throw Error('dustPlacement must be auto or manual');
     if(options.dustEmissionS!==undefined&&![8,10].includes(options.dustEmissionS))throw Error('dustEmissionS must be 8 (legacy) or 10');
@@ -68,16 +71,16 @@ function createSimulator(hooks={}){
     // Scene/seed/time are explicit API arguments, not overridable through generic controls.
     controls['sim-scene'].value=scene;controls.seed.value=seed;controls.time.value=controls['motion-time'].value=controls['sequence-time'].value=time;
     controls['sequence-enabled'].checked=options.sequence!==false;controls['dust-auto'].checked=options.dustPlacement!=='manual';controls['dust-emission-s'].value=options.dustEmissionS??10;
-    const geometry={...Random.sample(seed,scene,index.parameter_distributions_v18.parameters),...(options.geometry||{}),sensorPose:Poses.choose(index.sensor_positions_v19,scene,seed,options.pose??'auto')};
+    const geometry={sceneVariation:{enabled:modern&&options.randomScene!==false},...Random.sample(seed,scene,index.parameter_distributions_v18.parameters),...(options.geometry||{}),sensorPose:Poses.choose(index.sensor_positions_v19,scene,seed,poseChoice==='random'?'auto':poseChoice)};
     delete geometry.sequence;
-    if(controls['sequence-enabled'].checked||controls['dust-auto'].checked)geometry.sequence={scene,seed,time,enabled:controls['sequence-enabled'].checked,sourceBounds:index.sensor_positions_v19.scenes[scene].sampling_bounds_xy};
+    if(modern||controls['sequence-enabled'].checked||controls['dust-auto'].checked)geometry.sequence={scene,seed,time,enabled:controls['sequence-enabled'].checked,sourceBounds:index.sensor_positions_v19.scenes[scene].sampling_bounds_xy,anchors:index.sensor_positions_v19.scenes[scene].positions,mode:modern?'free6dof':'ground',randomStart:poseChoice==='random'};
     const raw=cachedJSON('data/noise_lab_v1/'+index.geometry_knobs_v3.scenes.find(s=>s.scene===scene).id+'.json'),beam=options.sensorMetadata?require('./sensor-profile.cjs').load(options.sensorMetadata):cachedJSON('data/noise_lab_v1/beam_profiles_v2.json');
     hooks.onProgress?.({stage:'geometry',progress:0});
     const geometryResult=await cast({id:++id,raw,beam,config:geometry});
     hooks.onGeometry?.(geometryResult.summary);
     ctx.simData.scanGeometry=geometryResult.summary;
     vm.runInContext('this.resultConfig=cfg()',ctx);
-    const config=ctx.resultConfig;
+    const config=ctx.resultConfig;config.sceneLayout=geometryResult.summary.sceneLayout;
     const os=require('node:os'),workerBudget=Math.max(1,Math.min(4,os.cpus().length-4,Math.floor((os.freemem()-16*1024**3)/(2*1024**3))));config.precipWorkers=options.precipWorkers??workerBudget;
     if(config.precipWorkers>workerBudget)throw Error('Requested workers would violate CPU/RAM reserve');
     if(!Number.isInteger(config.precipWorkers)||config.precipWorkers<1||config.precipWorkers>4)throw Error('precipWorkers must be 1..4');

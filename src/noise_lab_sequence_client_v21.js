@@ -5,7 +5,7 @@ function sequenceControls(){const enabled=$('sequence-enabled').checked;$('seque
 function sequenceAfterResult(){
  sequenceControls();const p=simData?.scanGeometry?.sequencePlan,c=latestConfig?.sequence,enabled=!!c?.enabled;
  Object.assign(right.host.dataset,{sequenceEnabled:String(enabled),sequenceId:c?.id||'',sequenceTime:String(latestConfig?.time),dustSource:JSON.stringify([latestConfig?.emitterX,latestConfig?.emitterY]),sequenceDistance:String(p?.distanceM??0)});
- $('sequence-note').textContent=enabled?'시작 '+(p.startPose.index==null?'원점':(p.startPose.index+1)+'/40')+' · 이동 '+p.distanceM.toFixed(1)+'m · 0.1초씩 계산 후 표시':'센서 위치 고정';
+ $('sequence-note').textContent=enabled?'시작 '+(p.startPose.index==null?'연속 랜덤':(p.startPose.index+1)+'/40')+' · 이동 '+p.distanceM.toFixed(1)+'m · 0.1초씩 계산 후 표시':'센서 위치 고정';
  if($('dust-auto').checked&&c){$('motionX').value=c.dustSource[0].toFixed(3);$('motionY').value=c.dustSource[1].toFixed(3);}
  if(sequencePlaying&&enabled){if(+$('sequence-time').value>=10)sequencePause();else sequenceTimer=setTimeout(sequenceAdvance,50);}
 }

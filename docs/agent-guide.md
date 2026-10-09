@@ -25,7 +25,7 @@ const {createSimulator} = require('./tools/runtime.cjs');
 const simulator = createSimulator();
 const frame = await simulator.run({
   scene: 'construction_v1', kind: 'dust', seed: 73031, time: 3.25,
-  weatherJitter: false, pose: "auto"
+  weatherJitter: false, pose: "random"
 });
 // frame.result.xyz: Float32Array, frame.result.labels: Uint8Array
 ```
@@ -45,7 +45,7 @@ CLI 기본 예시는 seed 73031 / 3.25초입니다. UI 처음 열기는 seed 730
 - `signalProxy`, `reflectivityProxy`: 반환점과 같은 길이/순서의 미교정 모델값입니다. 아래 채널 계약을 반드시 읽으세요.
 - `referenceScan.ranges`, `referenceScan.surfaceReflectance`: 전체 원래 빔 순서의 효과 전 거리와 재질 반사도 가정입니다. 이는 가려진 깨끗한 배경을 포함한 디버그 참조이며 학습 입력에 넣으면 안 됩니다.
 - `world`, `worldV`, `worldIds`: 운동 설명용 표본의 좌표·속도·ID입니다. 검출 반환과 별도 계층입니다.
-- 출력 `config`, `geometry`, `sensorPose`, `scene`, `seed`, `time`으로 조건을 보관합니다. schema 5의 `sensorPose.world`는 실제 세계 좌표이고 `height`는 지면 위 높이입니다. `stats`에는 모드별 진단이 들어가며 공통 필드 외에는 모드에 따라 다릅니다.
+- 출력 `config`, `geometry`, `sensorPose`, `scene`, `seed`, `time`으로 조건을 보관합니다. schema 6의 `sensorPose.world`는 실제 세계 좌표이고 `height`는 지면 위 높이입니다. `stats`에는 모드별 진단이 들어가며 공통 필드 외에는 모드에 따라 다릅니다.
 - `xyz_labels_sha256`는 Float32 좌표 바이트와 라벨 바이트의 해시입니다. 같은 실행 환경에서 재현을 확인하는 용도이며 모든 JS 엔진 간 비트 단위 동일성은 보장하지 않습니다.
 
 `tools/runtime.cjs`는 빌드한 HTML의 실제 두 worker 프로그램을 실행합니다. UI의 `cfg()`와 순수 설정 함수도 원문에서 읽습니다. 이 함수들을 여러 줄로 리팩터링하면 명시적 추출 검사가 실패하므로 runtime과 테스트를 함께 수정해야 합니다. 모델을 별도로 복사해 구현하지 마세요.
@@ -55,7 +55,7 @@ CLI 기본 예시는 seed 73031 / 3.25초입니다. UI 처음 열기는 seed 730
 - `#sim-view[data-ready="true"]`: 현재 결과 준비 완료. `data-ready="error"`와 `#view-status`는 실패를 알립니다.
 - `#sim-view`의 dataset: scene, category, seed, time, surface, noise, training, range/geometry 값, displayState.
 - `#real-view`: 참고 실측 또는 같은 합성 장면의 효과 전 결과. 두 경우를 구분하세요.
-- `#sensor-pose`: `auto`, `legacy`, `0`~`39` 선택. dataset의 sensorPose/sensorXYZ/sensorYaw는 완료한 관측의 설치값입니다.
+- `#sensor-pose`: `random`(기본), `auto`, `legacy`, `0`~`39` 선택. dataset의 sensorPose/sensorXYZ/sensorYaw는 완료한 관측의 설치값입니다.
 - `#category`, `#sim-scene`, `#seed`, `#motion-view`, `#weather-jitter`: 주요 입력.
 - `[data-tab="confirmed"]`: 확정 내용 탭. 첫 페이지로 설명을 다시 옮기지 마세요.
 
@@ -63,17 +63,17 @@ CLI 기본 예시는 seed 73031 / 3.25초입니다. UI 처음 열기는 seed 730
 
 ## 다른 프로젝트에 연결할 때
 
-이 인계본은 고정 DEMO 장면에서 10초의 지상 이동 경로와 프레임별 관측을 계산합니다. 임의 PCD 입력, 차량/사람 자체의 이동, 장치 전체 36RPM 회전의 시각별 자세는 제공하지 않습니다. 다른 에이전트의 Scan Studio/SLAM 프로젝트를 이 저장소의 구현이라고 가정하지 마세요. 연결할 때 별도 브랜치에서 좌표계, 빔별 시각, 자세 적용 순서, 라벨 정책부터 합의하고 기존 인터페이스를 보존하세요.
+이 인계본은 24개 기본 DEMO 구조에 시드별 소품을 추가하고 10초의 6DoF 경로와 프레임별 관측을 계산합니다. 임의 PCD 입력, 차량/사람 자체의 이동, 장치 전체 36RPM 회전의 시각별 자세는 제공하지 않습니다. 다른 에이전트의 Scan Studio/SLAM 프로젝트를 이 저장소의 구현이라고 가정하지 마세요. 연결할 때 별도 브랜치에서 좌표계, 빔별 시각, 자세 적용 순서, 라벨 정책부터 합의하고 기존 인터페이스를 보존하세요.
 
-## 장면별 40곳 사용하기 (v19)
+## 선택적 40곳 카탈로그 사용하기 (v19)
 
 ```sh
 node tools/simulate.cjs --scene room_v1 --kind range --pose 0 --seed 42
 node tools/simulate.cjs --scene room_v1 --kind range --pose 39 --seed 42
-node tools/simulate.cjs --kind range --pose legacy --sequence off --dust-placement manual --seed 73031 --time 3.25
+node tools/simulate.cjs --kind range --scenario legacy-v23 --pose legacy --sequence off --dust-placement manual --seed 73031 --time 3.25
 ```
 
-CLI/API의 번호는 **0~39**, 화면의 번호는 **1~40**입니다. 생략하면 `auto`이며 장면·시드로 선택합니다. 같은 번호에서 날씨 시드를 바꾸려면 `pose`를 고정하세요. 지면 굴곡은 시드에 따라 달라지므로 같은 XY/설치높이여도 세계 Z는 조금 바뀔 수 있습니다. 연속 40개 uint32 시드(범위 안, 순환 경계 제외)는 모든 위치를 한 번씩 사용합니다. 임의의 시드 40개는 중복될 수 있으므로 전체 위치 생성에는 다음 순차 루프를 사용하세요.
+CLI/API의 번호는 **0~39**, 화면의 번호는 **1~40**입니다. v24에서 생략하면 `random` 연속 좌표입니다. 명시적인 `auto`는 장면·시드로 기존 40곳 중 선택합니다. 같은 번호에서 날씨 시드를 바꾸려면 `pose`를 고정하세요. 지면 굴곡은 시드에 따라 달라지므로 같은 XY/설치높이여도 세계 Z는 조금 바뀔 수 있습니다. 연속 40개 uint32 시드(범위 안, 순환 경계 제외)는 모든 위치를 한 번씩 사용합니다. 임의의 시드 40개는 중복될 수 있으므로 전체 위치 생성에는 다음 순차 루프를 사용하세요.
 
 ```js
 for (let pose = 0; pose < 40; pose++) {
@@ -82,7 +82,7 @@ for (let pose = 0; pose < 40; pose++) {
 }
 ```
 
-`geometry.sensorPose`를 직접 주입하는 인터페이스는 제공하지 않습니다. runtime은 `pose` 선택을 우선합니다. 과거 위치·운동 설정을 비교하려면 `pose:"legacy"` 또는 당시 위치에 더해 `sequence:false, dustPlacement:"manual", dustEmissionS:8`을 지정합니다. 과거 좌표의 비트 단위 재현에는 당시 커밋이 필요합니다. 이전 scan profile을 고르면 UI도 원점 비교로 명시적으로 전환합니다. 카메라 이동과 센서 이동은 다릅니다.
+`geometry.sensorPose`를 직접 주입하는 인터페이스는 제공하지 않습니다. runtime은 `pose` 선택을 우선합니다. 과거 위치·운동 설정을 비교하려면 `scenario:"legacy-v23"`, `pose:"legacy"` 또는 당시 위치에 더해 `sequence:false, dustPlacement:"manual", dustEmissionS:8`을 지정합니다. 과거 좌표의 비트 단위 재현에는 당시 커밋이 필요합니다. 이전 scan profile을 고르면 UI도 원점 비교로 명시적으로 전환합니다. 카메라 이동과 센서 이동은 다릅니다.
 
 카탈로그는 `data/noise_lab_v1/sensor_positions_v19.json`, 설정은 `configs/sensor_sampling_v19.json`입니다. 모델/설정 SHA-256가 달라지면 빌드가 실패하여 오래된 위치를 쓰지 못하게 합니다. 메시나 설치 범위를 바꿀 때 순서:
 
@@ -100,7 +100,7 @@ node tests/simulator.cjs
 
 v22 변경은 [문제 보고서 처리 내역](review-v22.md)을 먼저 확인하세요. 새 공통 거리오차 난수 때문에 과거 좌표 해시는 유지되지 않습니다. 정확한 값 재현은 해당 과거 커밋을 사용하세요.
 
-## 신호·반사도 출력 계약 (v20 채널, 현재 CLI schema 5)
+## 신호·반사도 출력 계약 (v20 채널, 현재 CLI schema 6)
 
 CLI `arrays.signalProxy`와 `arrays.reflectivityProxy`는 `arrays.xyz`의 점 순서에 대응합니다. JS API에서는 `frame.result.signalProxy`와 `frame.result.reflectivityProxy`입니다. 반사도 추정값은 다음 단순 거리 보상으로 만들며, 진짜 재질 반사도 또는 Ouster Reflectivity로 명명하지 않습니다.
 
@@ -117,12 +117,12 @@ reflectivityProxy = signalProxy * r_observed²
 
 `referenceScan`은 point 배열과 길이가 다릅니다. CLI의 최상위 referenceScan, JS의 result.referenceScan에 있으며, 선택한 센서 프로필의 전체 빔 순서로 `ranges`, `surfaceReflectance`가 있습니다. 기본 OS1-128은 131,072빔입니다. 미교차 빔/재질 미제공 구버전 프로필의 반사도는 NaN/JSON null입니다. 이는 **노이즈가 없었을 때의 배경 재질**로, 먼지나 비 반환의 재질 값을 뜻하지 않습니다. 학습 feature로 쓰면 보이지 않는 배경 정보가 유출됩니다. 검토/디버그용으로만 분리 보관하세요.
 
-재질 반사도는 현재 메시의 rho와 고정된 공간 변화에서 계산한 가정값입니다. 관측 위치가 바뀌면 관측되는 재질과 입사각이 달라지지만 날씨 시드마다 재질 자체를 다시 무작위화하지는 않습니다. 실제 재질 분포/센서 감도/양자화 교정은 미구현입니다.
+재질 반사도는 현재 메시의 rho와 고정된 공간 변화에서 계산한 가정값입니다. 관측 위치가 바뀌면 관측되는 재질과 입사각이 달라지지만 기본 구조의 재질은 날씨 시드마다 다시 무작위화하지 않습니다. v24의 추가 소품은 배치 시 반사율 0.12~0.57을 뽑고 시퀀스 동안 유지합니다. 실제 재질 분포/센서 감도/양자화 교정은 미구현입니다.
 
 공식 구분: [Ouster calibrated reflectivity](https://docs.ouster.com/sensor-docs/firmware/calibrated-reflectivity)는 측정 신호에 거리와 센서 감도 보정을 적용하는 채널입니다. 이 시뮬레이터의 거리² 보상만으로 해당 장비의 교정값을 재현했다고 간주하지 않습니다.
 
 
-## 10초 랜덤 시퀀스 (v21)
+## 10초 랜덤 시퀀스 (v24, v21 호환 옵션)
 
 ```sh
 node tools/sequence.cjs --scene construction_v1 --kind dust --seed 73031 --pose auto --fps 10 --out outputs/seq-001
@@ -136,7 +136,7 @@ node tools/simulate.cjs --kind dust --sequence off --dust-placement manual --tim
 
 출력 폴더가 이미 있으면 실패합니다. 모든 프레임이 성공한 경우에만 `manifest.json`과 `complete:true`가 생깁니다. 중간 실패 폴더를 완성 데이터로 취급하지 마세요. 새 폴더로 다시 실행하며 기존 파일은 자동 삭제하지 않습니다. 메모리에는 한 프레임씩만 유지하고 무제한 병렬 생성을 하지 않습니다.
 
-manifest는 시퀀스 전체의 경로/발생원과 프레임별 파일·시각·세계 자세·해시를 기록합니다. schema 5 프레임의 `sequencePlan`에도 시작점, 시간별 경유점, 이동 거리, 생성 가정이 들어갑니다. `config.sequence.dustSource`와 manifest의 프레임별 `dustSource`는 수동/자동 선택을 반영한 실제 XY입니다. 수동 발생 위치를 사용하면 `sequencePlan.dustSource`의 자동 후보는 사용되지 않으므로 구분하세요. schema 5는 공통 거리오차, 표면 참조와 관측 거리, 오차 분해, 입자 ID를 추가합니다. 과거 schema 3의 좌표 해시를 보장하지 않습니다.
+manifest는 시퀀스 전체의 경로/발생원과 프레임별 파일·시각·세계 자세·해시를 기록합니다. schema 6 프레임의 `sequencePlan`에도 시작점, 시간별 경유점, 이동 거리, 생성 가정이 들어갑니다. `config.sequence.dustSource`와 manifest의 프레임별 `dustSource`는 수동/자동 선택을 반영한 실제 XY입니다. 수동 발생 위치를 사용하면 `sequencePlan.dustSource`의 자동 후보는 사용되지 않으므로 구분하세요. schema 6는 공통 거리오차, 표면 참조와 관측 거리, 오차 분해, 입자 ID를 추가합니다. 과거 schema 3의 좌표 해시를 보장하지 않습니다.
 
 40개 시작점을 모두 쓰려면 `pose:0..39` 각각에 하나의 고정 시드를 정하고 각 시퀀스에서 `time:i/10`을 순차 호출하세요. 장면 24개 × 40개 × 101프레임은 **96,960개 전체 스캔**입니다. 저장 공간·계산량을 확인한 뒤 명시적으로 실행하며, 기본 검증에서 이 전체 데이터셋을 생성하지 않습니다. train/test는 장소 family/원본을 먼저 나누고 시퀀스를 통째로 배정합니다.
 
@@ -160,3 +160,11 @@ node tools/benchmark.cjs --frames 20 --kinds range,rain,snow,fog,dust,sun,genera
 `channels.roles`의 observation만 센서 입력 후보입니다. `surfaceRanges`, `nominalRanges`, 오차 분해, `weatherParticleIds`, `referenceScan`은 숨겨진 참고/정답 정보입니다. 라벨 2는 삭제 정답이 아니며 광학 원점 거리와 센서 중심에서의 XYZ 노름도 구분해야 합니다. `.lsf(.gz)`는 Node `binary-frame.cjs.read()` 또는 Python `read_lsf.read_lsf()`로 읽습니다.
 
 실제 metadata의 채널별 각도와 변환을 사용하며 128채널을 잘라 OS1-32라고 하지 않습니다. 정확한 장비 metadata가 없으면 기본 공개 OS1-128이 유지됩니다. `tools/calibrate_range.py`의 정상 정지 평면 패치 입력 형식은 `tests/calibration-v22.py`에 합성 예제가 있습니다. 입력 거리의 광학 경로 보정과 평면 측량은 호출자가 먼저 검증해야 합니다. 도구는 후보만 출력하며 설정 적용·현장 교정·학습 승인을 하지 않습니다.
+
+## v24 기본 실행
+
+`scenario:"random-v24", pose:"random", randomScene:true`가 기본입니다. 빈 공간의 시작점·XYZ·yaw/pitch/roll이 시드에 따라 바뀝니다. `randomScene:false`는 추가 소품만 끄며 6DoF는 유지합니다. `scenario:"legacy-v23"`는 기본 추가 소품을 끄고 지상 v21 경로를 사용합니다. 과거 해시 재현은 당시 커밋에서 실행하세요.
+
+`sceneLayout.instances`에는 실제 추가 물체의 모델 ID·XYZ·yaw·scale·반사율이 있습니다. `sensorPose.bodyRotation`은 행 우선 3×3 몸체 회전, worldZ는 센서 Z입니다. `routePreview`는 실제 계획의 0.1초 표본입니다. 세 필드와 전체 계획은 학습 센서 특징이 아닙니다. 고급 `geometry` 입력은 설치 오차이며 몸체 pitch/roll과 구분합니다.
+
+전체 신규 검사는 `tests/audit-geometry-v24.cjs`, `--random-grid`, `tests/audit-runtime-v24.cjs`입니다. 기존 지상 계획을 검사하는 simulator/sequence-frames/review-v22의 입력에는 명시적 legacy-v23를 유지했습니다. 신기능 검사를 이전 경로로 바꿔 통과시키지 마세요.

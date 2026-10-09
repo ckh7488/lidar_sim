@@ -2,7 +2,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {createSimulator,ROOT}=require('../tools/runtime.cjs'),{summary}=require('../tools/frame-export.cjs');
 async function main(){
- const sim=createSimulator(),base={scene:'construction_v1',kind:'dust',seed:73031},rows=[];
+ const sim=createSimulator(),base={scenario:'legacy-v23',scene:'construction_v1',kind:'dust',seed:73031},rows=[];
  async function run(options){const f=await sim.run({...base,...options});const s=summary(f);rows.push({kind:f.kind,time:f.time,pose:f.sensorPose,source:f.config.sequence?.dustSource,points:s.points,hash:s.xyz_labels_sha256,world:f.result.worldIds?.length});console.log('PASS frame: '+f.kind+' '+f.time+'s');return f;}
  const a=await run({time:3}),b=await run({time:3.1}),end=await run({time:10}),replay=await run({time:3});
  assert.equal(summary(a).xyz_labels_sha256,summary(replay).xyz_labels_sha256);

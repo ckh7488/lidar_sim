@@ -18,9 +18,11 @@ function engine(raw,beam){
     if(![pose.x,pose.y,pose.height,pose.yawDeg].every(Number.isFinite))throw Error('Invalid sensor pose');
     const floor=terrainHeight(pose.x,pose.y);
     if(floor===null)throw Error('Sensor position has no terrain support');
-    const sensor=[pose.x,pose.y,pose.legacy?1.65:floor+pose.height];
-    if(!pose.legacy&&!placementFree(pose.x,pose.y,.35,.08,Math.max(2.4,pose.height+.3)))throw Error('Sensor placement intersects scene geometry');
-    const n=beam.h*beam.w,dirs=new Float32Array(3*n),origins=new Float32Array(3*n),nominalDirs=new Float32Array(3*n),nominalOrigins=new Float32Array(3*n),ranges=new Float32Array(n),response=new Float32Array(n),isGround=new Uint8Array(n),mount=product(yawRotation(pose.yawDeg),rotation(c.pitchDeg,c.rollDeg)),rotations=[];
+    const sensor=[pose.x,pose.y,pose.legacy?1.65:pose.motion6dof?pose.worldZ:floor+pose.height];
+    if(!sensor.every(Number.isFinite))throw Error('Invalid sensor world position');
+    if(pose.motion6dof?!bodyFree(sensor,.3):!pose.legacy&&!placementFree(pose.x,pose.y,.35,.08,Math.max(2.4,pose.height+.3)))throw Error('Sensor placement intersects scene geometry');
+    const bodyRotation=product(yawRotation(pose.yawDeg),rotation(pose.pitchDeg||0,pose.rollDeg||0));
+    const n=beam.h*beam.w,dirs=new Float32Array(3*n),origins=new Float32Array(3*n),nominalDirs=new Float32Array(3*n),nominalOrigins=new Float32Array(3*n),ranges=new Float32Array(n),response=new Float32Array(n),isGround=new Uint8Array(n),mount=product(bodyRotation,rotation(c.pitchDeg,c.rollDeg)),rotations=[];
     const localOrigins=c.opticalOffset?beam.offsets:null,zero=[0,0,beam.center_origin_m[2]];
     for(let col=0;col<beam.w;col++){const theta=-col*2*Math.PI/beam.w,phase=c.wobbleCycles*theta+c.wobblePhase*rad;rotations.push(product(mount,rotation(c.wobbleDeg*Math.sin(phase),c.wobbleDeg*Math.cos(phase))))}
     const normals=new Float32Array(3*n),albedo=new Float32Array(n);let groundHits=0,clean=0;const ray=new THREE.Ray(),phase=(raw.seed%101)*.11;
@@ -36,7 +38,7 @@ function engine(raw,beam){
     }
     const input={width:beam.w,height:beam.h,sensor,ranges,response,albedo,normals,ground:isGround,directions:dirs,origins};
     if(c.wobbleDeg>0&&!c.compensateWobble){input.reportedDirections=nominalDirs;input.reportedOrigins=nominalOrigins}
-    return {input,summary:{config:{...c},sensor,sensorPose:{...pose,world:sensor,groundZ:floor},clean,groundHits,rays:n,castMs:performance.now()-start,wobbleCalibrated:false,fieldValidated:false,reportedUsing:c.wobbleDeg>0&&!c.compensateWobble?'nominal direction, uncorrected angular error':'actual ray direction'}};
+    return {input,summary:{config:{...c},sensor,sensorPose:{...pose,world:sensor,height:sensor[2]-floor,bodyRotation:Array.from(bodyRotation),groundZ:floor},clean,groundHits,rays:n,castMs:performance.now()-start,wobbleCalibrated:false,fieldValidated:false,reportedUsing:c.wobbleDeg>0&&!c.compensateWobble?'nominal direction, uncorrected angular error':'actual ray direction'}};
   }
   const motionRay=new THREE.Ray(),motionEnd=new THREE.Vector3();
   function blocked(a,b){motionRay.origin.fromArray(a);motionEnd.fromArray(b);motionRay.direction.copy(motionEnd).sub(motionRay.origin);const distance=motionRay.direction.length();if(distance<1e-7)return false;motionRay.direction.multiplyScalar(1/distance);return !!(objectBVH.raycastFirst(motionRay,THREE.DoubleSide,1e-5,distance)||groundBVH.raycastFirst(motionRay,THREE.DoubleSide,1e-5,distance));}
@@ -50,11 +52,18 @@ function engine(raw,beam){
   }
   function placementFree(x,y,radius=.35,bottom=.08,top=2.4){const h=terrainHeight(x,y);return h!==null&&freeBox(x,y,x,y,h+bottom,h+top,radius);}
   function walkFree(a,b,radius=.35,bottom=.08,top=2.4){const ha=terrainHeight(...a),hb=terrainHeight(...b);return ha!==null&&hb!==null&&Math.abs(ha-hb)<.15&&freeBox(a[0],a[1],b[0],b[1],Math.min(ha,hb)+bottom,Math.max(ha,hb)+top,radius);}
+  function sweepFree(a,b,r=.3){
+    if(![...a,...b,r].every(Number.isFinite)||r<=0)return false;
+    const box=new THREE.Box3(new THREE.Vector3(...a.map((v,i)=>Math.min(v,b[i])-r)),new THREE.Vector3(...a.map((v,i)=>Math.max(v,b[i])+r)));
+    const touches=bvh=>bvh.shapecast({intersectsBounds:b=>b.intersectsBox(box),intersectsTriangle:t=>box.intersectsTriangle(t)});
+    return !touches(objectBVH)&&!touches(groundBVH);
+  }
+  function bodyFree(p,r=.3){return terrainHeight(p[0],p[1])!==null&&sweepFree(p,p,r);}
   function hasCeiling(x,y){const h=terrainHeight(x,y);if(h===null)return false;motionRay.origin.set(x,y,h+2.4);motionRay.direction.set(0,0,1);const hit=objectBVH.raycastFirst(motionRay,THREE.DoubleSide,0,15);return !!hit&&Math.abs(hit.face.normal.z)>.5;}
   blocked.groundHeight=groundHeight;
   function castRay(o,d){motionRay.origin.fromArray(o);motionRay.direction.fromArray(d);let hit=objectBVH.raycastFirst(motionRay,THREE.DoubleSide,.3,100),g=groundBVH.raycastFirst(motionRay,THREE.DoubleSide,.3,hit?hit.distance:100),rho;if(g&&(!hit||g.distance<hit.distance)){hit=g;rho=.24;}else if(hit)rho=raw.rho[hit.face.a];if(!hit)return null;const x=hit.point,phase=(raw.seed%101)*.11,gain=Math.exp(.24*Math.sin(.81*x.x+.31*x.y+phase)+.17*Math.sin(1.7*x.y-.44*x.x));return {range:hit.distance,response:Math.max(.06,Math.min(.7,rho*gain))*Math.abs(hit.face.normal.dot(motionRay.direction))};}
   blocked.castRay=castRay;
-  return {cast,castRay,blocked,groundHeight,terrainHeight,placementFree,walkFree,hasCeiling,prepare:ground};
+  return {cast,castRay,blocked,groundHeight,terrainHeight,placementFree,walkFree,bodyFree,sweepFree,hasCeiling,prepare:ground};
 }
 root.NoiseLabGeometry={rotation,product,engine};
 })(typeof self!=='undefined'?self:globalThis);

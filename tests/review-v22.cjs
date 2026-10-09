@@ -2,7 +2,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const {createSimulator,ROOT}=require('../tools/runtime.cjs'),{summary,writeFrame}=require('../tools/frame-export.cjs'),Binary=require('../tools/binary-frame.cjs'),Profile=require('../tools/dataset-profile.cjs');
 async function main(){
- const sim=createSimulator(),rows=[],base={scene:'construction_v1',seed:11,time:2,sequence:false,dustPlacement:'manual',pose:'legacy'};
+ const sim=createSimulator(),rows=[],base={scenario:'legacy-v23',scene:'construction_v1',seed:11,time:2,sequence:false,dustPlacement:'manual',pose:'legacy'};
  let clear;
  for(const [kind,controls] of [['range',{}],['sun',{'sun-enabled':false}],['fog',{'review-enabled':false}],['general',{'general-mode':'edge','review-enabled':false}],['general',{'general-mode':'weak'}]]){
   const f=await sim.run({...base,kind,controls}),r=f.result;
@@ -29,7 +29,7 @@ async function main(){
  const folder=path.join(ROOT,'outputs','review-v22-'+Date.now());fs.mkdirSync(folder,{recursive:true});
  const file=path.join(folder,'frame.lsf.gz');writeFrame(file,edge);const loaded=Binary.read(file);
  for(const k of ['xyz','labels','rayIds','surfaceRanges','measuredRanges','baselineRangeErrors','mechanismRangeErrors','weatherParticleIds'])assert.deepEqual(loaded.arrays[k],edge.result[k]);
- assert.equal(loaded.metadata.schema,5);assert.throws(()=>writeFrame(file,edge),/EEXIST/);
+ assert.equal(loaded.metadata.schema,6);assert.throws(()=>writeFrame(file,edge),/EEXIST/);
  const sun=await sim.run({...base,kind:'sun'});assert(sun.result.signalProxy.every(Number.isNaN));assert(sun.result.stats.rangeError.baselineSurface.std>.058);
  const sunfile=path.join(folder,'sun.lsf');writeFrame(sunfile,sun);assert(Binary.read(sunfile).arrays.signalProxy.every(Number.isNaN));
  const samples={rainRate:[],snowN:[],fogVisibility:[]};for(let seed=0;seed<3000;seed++){
