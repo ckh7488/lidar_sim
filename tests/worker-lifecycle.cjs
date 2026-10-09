@@ -13,6 +13,7 @@ const task=new ctx.LatestTaskWorker('test',e=>received.push(e.data.id),e=>errors
 task.run({id:1});const first=workers.at(-1);
 task.run({id:2});assert(first.terminated);first.reply(1);assert.deepEqual(received,[]);
 const second=workers.at(-1);second.reply(1);assert.equal(task.pending.id,2);
+let progress=null;task.onProgress=p=>progress=p;second.onmessage({data:{id:2,progress:.5}});assert.equal(progress,.5);assert.equal(task.pending.id,2);assert.equal(timers.size,1);
 second.reply(2);assert.deepEqual(received,[2]);assert.equal(timers.size,0);
 task.run({id:3});assert.equal(workers.at(-1),second);second.reply(3);
 task.run({id:4});task.cancel();assert(second.terminated);second.reply(4);assert.deepEqual(received,[2,3]);
@@ -22,4 +23,4 @@ task.run({id:7});[...timers.values()][0]();assert.equal(errors.length,3);assert.
 task.run({id:8});workers.at(-1).reply(8);assert.deepEqual(received,[2,3,8]);
 task.onResult=()=>{throw Error('render failure')};task.run({id:9});workers.at(-1).reply(9);assert.equal(errors.length,4);
 failCreation=true;task.run({id:10});assert.equal(errors.length,5);assert.equal(timers.size,0);
-console.log(JSON.stringify({passed:true,cases:['cancel obsolete work','ignore stale replies','reuse idle worker','explicit cancel','worker error','message error','timeout','retry after failure','render error','creation error']}));
+console.log(JSON.stringify({passed:true,cases:['progress does not finish the job','cancel obsolete work','ignore stale replies','reuse idle worker','explicit cancel','worker error','message error','timeout','retry after failure','render error','creation error']}));

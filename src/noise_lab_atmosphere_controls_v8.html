@@ -4,7 +4,7 @@
 <span id="fog-knobs" class="controls">
 <label>가시거리 가정 <input id="fogVisibility" type="range" min="20" max="2000" step="10" value="500"><output id="fogVisibility-out">500</output>m</label>
 <label>안개 반환 민감도 가정 <input id="fogScatterLog" type="range" min="-5" max="0" step=".1" value="-3.3"><output id="fogScatterLog-out"></output></label><button id="fog-soft-preset" type="button">약한 효과 · 임시 설정</button><button id="fog-v10-preset" type="button">이전 과밀 설정 비교</button><label><input id="fogBackscatter" type="checkbox" checked>안개 산란 켜기 · 검토 후보</label>
-<label>농도 불균일 가정 <input id="fogVariation" type="range" min="0" max=".8" step=".1" value="0"><output id="fogVariation-out">0</output></label>
+<label>농도 불균일 가정 <input id="fogVariation" type="range" min="0" max=".8" step=".05" value=".25"><output id="fogVariation-out">0</output></label>
 <details><summary>수광기·안개 가정 노브</summary><div class="controls">
 <label hidden>소광/후방산란 비 <input id="fogRatio" type="range" min="20" max="100" step="5" value="65"><output id="fogRatio-out">65</output>sr</label>
 <label>펄스 반치폭 <input id="fogPulse" type="range" min="4" max="20" step="2" value="20"><output id="fogPulse-out">20</output>ns</label>

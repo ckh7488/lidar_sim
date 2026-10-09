@@ -13,9 +13,15 @@ function createSimulator(){
   const html=read('dist/index.html'), index=json('dist/assets/noise_lab_v1/index.json');
   function script(id){const match=html.match(new RegExp('<script id="'+id+'"[^>]*>([\\s\\S]*?)</script>'));if(!match)throw Error('Missing script '+id);return match[1];}
   function worker(id){
-    const ctx={console:{log(){},warn(){},error:console.error},Math,Number,Object,Array,JSON,Date,Map,Set,performance,setTimeout,clearTimeout,Float32Array,Float64Array,Uint8Array,Uint32Array,Int32Array,ArrayBuffer,Blob,Response,DecompressionStream,atob};
-    ctx.self=ctx;vm.createContext(ctx);vm.runInContext(script('three-runtime')+'\n'+script(id),ctx,{filename:id});
-    return async data=>{let value;ctx.postMessage=message=>{value=message};await ctx.onmessage({data});if(!value)throw Error(id+' produced no response');if(value.error)throw Error(value.error);return value;};
+    const {Worker}=require('node:worker_threads'),source=script('three-runtime')+'\n'+script(id);
+    const thread=new Worker(path.join(__dirname,'worker-thread.cjs'),{workerData:{source,allowPartitions:id==='lab-worker'}});
+    let pending=null,failure=null;
+    thread.on('message',message=>{if(!pending||message.progress!==undefined)return;const task=pending;pending=null;thread.unref();message.error?task.reject(Error(message.error)):task.resolve(message);});
+    thread.on('error',error=>{failure=error;if(pending){pending.reject(error);pending=null;}thread.unref();});
+    thread.on('exit',code=>{failure=Error('Worker closed: '+code);if(pending){pending.reject(failure);pending=null;}});
+    thread.unref();
+    const run=data=>new Promise((resolve,reject)=>{if(failure)return reject(failure);if(pending)return reject(Error('Await simulator runs sequentially'));pending={resolve,reject};thread.ref();thread.postMessage(data);});
+    run.close=()=>thread.terminate();return run;
   }
   const cast=worker('geometry-worker'), simulate=worker('lab-worker');
   const functions={
@@ -35,8 +41,9 @@ function createSimulator(){
   for(const [file,prefix] of [['noise_lab_motion_client_v6.js','const motionIds='],['noise_lab_atmosphere_client_v8.js','const atmosphereIds='],['noise_lab_weather_client_v4.js','const weatherDefaults=']]){
     const line=read('src/'+file).split(/\r?\n/).find(line=>line.startsWith(prefix));if(!line)throw Error('Missing '+prefix);configSource+=line+'\n';
   }
-  let id=0;
+  let id=0;const assetCache=new Map(),cachedJSON=p=>{if(!assetCache.has(p))assetCache.set(p,json(p));return assetCache.get(p);};
   async function run(options={}){
+    options=require('./dataset-profile.cjs').apply(options);
     const scene=options.scene||'construction_v1',kind=options.kind||'dust';
     if(!index.scenes.some(s=>s.id===scene))throw Error('Unknown DEMO scene: '+scene);
     if(!['dust','rain','snow','fog','sun','range','general'].includes(kind))throw Error('Unsupported kind: '+kind);
@@ -64,14 +71,21 @@ function createSimulator(){
     const geometry={...Random.sample(seed,scene,index.parameter_distributions_v18.parameters),...(options.geometry||{}),sensorPose:Poses.choose(index.sensor_positions_v19,scene,seed,options.pose??'auto')};
     delete geometry.sequence;
     if(controls['sequence-enabled'].checked||controls['dust-auto'].checked)geometry.sequence={scene,seed,time,enabled:controls['sequence-enabled'].checked,sourceBounds:index.sensor_positions_v19.scenes[scene].sampling_bounds_xy};
-    const raw=json('data/noise_lab_v1/'+index.geometry_knobs_v3.scenes.find(s=>s.scene===scene).id+'.json'),beam=json('data/noise_lab_v1/beam_profiles_v2.json');
+    const raw=cachedJSON('data/noise_lab_v1/'+index.geometry_knobs_v3.scenes.find(s=>s.scene===scene).id+'.json'),beam=options.sensorMetadata?require('./sensor-profile.cjs').load(options.sensorMetadata):cachedJSON('data/noise_lab_v1/beam_profiles_v2.json');
     const geometryResult=await cast({id:++id,raw,beam,config:geometry});
     ctx.simData.scanGeometry=geometryResult.summary;
     vm.runInContext('this.resultConfig=cfg()',ctx);
     const config=ctx.resultConfig;
+    const os=require('node:os'),workerBudget=Math.max(1,Math.min(4,os.cpus().length-4,Math.floor((os.freemem()-16*1024**3)/(2*1024**3))));config.precipWorkers=options.precipWorkers??workerBudget;
+    if(config.precipWorkers>workerBudget)throw Error('Requested workers would violate CPU/RAM reserve');
+    if(!Number.isInteger(config.precipWorkers)||config.precipWorkers<1||config.precipWorkers>4)throw Error('precipWorkers must be 1..4');
+    config.sensorProfile={name:beam.name,rows:beam.h,columns:beam.w,metadataSha256:beam.metadata_sha256||null,opticalPathOffsetM:beam.optical_path_offset_m??null,rangeDefinition:beam.range_definition||'distance from optical ray origin, not Euclidean norm from sensor center'};
+    if(options.datasetProfile)config.datasetProfile=options.datasetProfile;
+    if(options.temporalWeather!==undefined)config.temporalWeather=options.temporalWeather;
+    if(options.edgeMixing!==undefined)config.edgeMixing=!!options.edgeMixing;
     const result=(await simulate({id:++id,input:geometryResult.input,config,raw,beam,terrainCm:geometry.terrainCm})).result;
     return {scene,kind,seed,time,config,geometry:geometryResult.summary.config,sequencePlan:geometryResult.summary.sequencePlan||null,sensorPose:geometryResult.summary.sensorPose,geometrySummary:geometryResult.summary,result};
   }
-  return {run,index}; // Calls must be awaited sequentially; workers keep a geometry cache.
+  return {run,index,close(){cast.close();simulate.close();}}; // Calls must be awaited sequentially; workers keep a geometry cache.
 }
 module.exports={createSimulator,ROOT};

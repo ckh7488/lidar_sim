@@ -409,7 +409,7 @@
     "training": false
   },
   "confirmed_observation_defaults_v16": {
-    "revision": "confirmed-observation-defaults-v16",
+    "revision": "confirmed-observation-defaults-v22",
     "confirmed_date": "2026-10-07",
     "basis": "User confirmed the previously agreed review parameters; not measured sensor calibration or training authorization.",
     "geometry_random_enabled": true,
@@ -442,14 +442,22 @@
     "radial_slope_m_per_m": 0,
     "formula": "sigma(r)=sqrt(0.06^2+(0*r)^2); Gaussian error along the beam after return selection",
     "terrain_bound_meaning": "standard deviation, not an absolute height limit",
-    "seed_scope": "scene ID and user seed, unchanged by weather category or time",
+    "seed_scope": "geometry: scene+seed, held within sequence; radial measurement: scene+seed+time+ray, independent of weather category",
     "world_background": "exact detected surface XYZ shared with lidar view, including range error and uncompensated angular reconstruction",
     "world_particles": "physical transport illustrations, not sensor observations; no radial measurement error added to these particle positions",
-    "exceptions": [
-      "Sun phantom ranges keep their dedicated timing-range model",
-      "Weak-signal mode uses its own signal-dependent range error without an extra 60mm layer",
-      "Edge mixing keeps its pulse-mixing model"
-    ],
+    "exceptions": [],
+    "field_calibrated": false,
+    "training_authorized": false,
+    "additional_mechanisms": "Weak-signal range uncertainty is added separately; finite-beam edge mixing precedes the common radial layer; solar phantom ranges also receive the common radial layer"
+  },
+  "active_revision": 22,
+  "current_rules_v22": {
+    "authority": "Supersedes historical model revision sections in this file; see docs/review-v22.md",
+    "common_observation_layer": "noise_lab_observation_v22.js; sigma 0.06m all modes, separate additional mechanism errors",
+    "weather": "persistent world-space rain/snow; wind-advected fog density; uncalibrated",
+    "coverage_profile": "coverage_profile_v22.json",
+    "solar_training_profile": "excluded until measured frequency calibration",
+    "reference_features": "Follow channels.roles; hidden clean ranges, errors and particle IDs are not sensor features",
     "field_calibrated": false,
     "training_authorized": false
   }

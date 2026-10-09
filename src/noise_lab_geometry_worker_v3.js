@@ -8,8 +8,8 @@ async function makeEngine(raw,beam){
 onmessage=async e=>{
   const {id,raw,beam,config}=e.data;newest=id;
   try{
-    if(!engines.has(raw.id)){engines.clear();engines.set(raw.id,makeEngine(raw,beam))}
-    const engine=await engines.get(raw.id);if(id!==newest)return;
+    const engineKey=raw.id+':'+(beam.profileKey||beam.name);if(!engines.has(engineKey)){engines.clear();engines.set(engineKey,makeEngine(raw,beam))}
+    const engine=await engines.get(engineKey);if(id!==newest)return;
     let castConfig=config,sequencePlan=null;
     if(config.sequence){
       engine.prepare(config.terrainCm);

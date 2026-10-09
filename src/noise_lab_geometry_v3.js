@@ -23,7 +23,7 @@ function engine(raw,beam){
     const n=beam.h*beam.w,dirs=new Float32Array(3*n),origins=new Float32Array(3*n),nominalDirs=new Float32Array(3*n),nominalOrigins=new Float32Array(3*n),ranges=new Float32Array(n),response=new Float32Array(n),isGround=new Uint8Array(n),mount=product(yawRotation(pose.yawDeg),rotation(c.pitchDeg,c.rollDeg)),rotations=[];
     const localOrigins=c.opticalOffset?beam.offsets:null,zero=[0,0,beam.center_origin_m[2]];
     for(let col=0;col<beam.w;col++){const theta=-col*2*Math.PI/beam.w,phase=c.wobbleCycles*theta+c.wobblePhase*rad;rotations.push(product(mount,rotation(c.wobbleDeg*Math.sin(phase),c.wobbleDeg*Math.cos(phase))))}
-    let groundHits=0,clean=0;const ray=new THREE.Ray(),phase=(raw.seed%101)*.11;
+    const normals=new Float32Array(3*n),albedo=new Float32Array(n);let groundHits=0,clean=0;const ray=new THREE.Ray(),phase=(raw.seed%101)*.11;
     for(let i=0;i<n;i++){
       if(yieldStep&&i%4096===0&&await yieldStep(i,n)===false)return null;
       const k=3*i,col=i%beam.w,m=rotations[col],lo=localOrigins||zero,oi=localOrigins?col*3:0;
@@ -32,12 +32,9 @@ function engine(raw,beam){
       ray.origin.fromArray(origins,k);ray.direction.fromArray(dirs,k);
       let hit=objectBVH.raycastFirst(ray,THREE.DoubleSide,.3,100),g=groundBVH.raycastFirst(ray,THREE.DoubleSide,.3,hit?hit.distance:100),rho;
       if(g&&(!hit||g.distance<hit.distance)){hit=g;rho=.24;isGround[i]=1;groundHits++}else if(hit)rho=raw.rho[hit.face.a];
-      if(hit&&hit.distance<100){clean++;ranges[i]=hit.distance;const x=hit.point,inc=Math.abs(hit.face.normal.dot(ray.direction)),gain=Math.exp(.24*Math.sin(.81*x.x+.31*x.y+phase)+.17*Math.sin(1.7*x.y-.44*x.x));response[i]=Math.max(.06,Math.min(.7,rho*gain))*inc}
+      if(hit&&hit.distance<100){clean++;ranges[i]=hit.distance;const x=hit.point,inc=Math.abs(hit.face.normal.dot(ray.direction)),gain=Math.exp(.24*Math.sin(.81*x.x+.31*x.y+phase)+.17*Math.sin(1.7*x.y-.44*x.x));albedo[i]=Math.max(.06,Math.min(.7,rho*gain));response[i]=albedo[i]*inc;const sign=hit.face.normal.dot(ray.direction)>0?-1:1;for(let a=0;a<3;a++)normals[k+a]=hit.face.normal.getComponent(a)*sign}
     }
-    const normals=new Float32Array(3*n),albedo=new Float32Array(n);
-    // Surface illumination needs normals separately from the lidar incidence factor.
-    for(let i=0;i<n;i++)if(ranges[i]){const k=3*i;ray.origin.fromArray(origins,k);ray.direction.fromArray(dirs,k);const hit=(isGround[i]?groundBVH:objectBVH).raycastFirst(ray,THREE.DoubleSide,.3,100);if(hit){const sign=hit.face.normal.dot(ray.direction)>0?-1:1;for(let a=0;a<3;a++)normals[k+a]=hit.face.normal.getComponent(a)*sign;albedo[i]=response[i]/Math.max(1e-6,Math.abs(hit.face.normal.dot(ray.direction)));}}
-    const input={sensor,ranges,response,albedo,normals,ground:isGround,directions:dirs,origins};
+    const input={width:beam.w,height:beam.h,sensor,ranges,response,albedo,normals,ground:isGround,directions:dirs,origins};
     if(c.wobbleDeg>0&&!c.compensateWobble){input.reportedDirections=nominalDirs;input.reportedOrigins=nominalOrigins}
     return {input,summary:{config:{...c},sensor,sensorPose:{...pose,world:sensor,groundZ:floor},clean,groundHits,rays:n,castMs:performance.now()-start,wobbleCalibrated:false,fieldValidated:false,reportedUsing:c.wobbleDeg>0&&!c.compensateWobble?'nominal direction, uncorrected angular error':'actual ray direction'}};
   }

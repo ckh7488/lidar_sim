@@ -5,13 +5,14 @@ const {summary:frameSummary,writeFrame}=require('./frame-export.cjs');
 const {createSimulator}=require('./runtime.cjs');
 async function main(){
   const args=process.argv.slice(2), opts={};
-  if(args.includes('--help')){console.log('node tools/simulate.cjs [--config examples/dust.json] [--scene construction_v1] [--kind dust|rain|snow|fog|sun|range|general] [--pose auto|legacy|0..39] [--sequence on|off] [--dust-placement auto|manual] [--seed 73031] [--time 3.25] [--out outputs/frame.json]\nOutput uses metres, world XYZ with Z up. Labels are review categories, NOT removal ground truth.');return;}
-  for(let i=0;i<args.length;i+=2){if(!['--config','--scene','--kind','--seed','--time','--out','--pose','--sequence','--dust-placement'].includes(args[i])||args[i+1]===undefined)throw Error('Invalid arguments; use --help');opts[args[i].slice(2)]=args[i+1];}
+  if(args.includes('--help')){console.log('node tools/simulate.cjs [--config examples/dust.json] [--scene construction_v1] [--kind dust|rain|snow|fog|sun|range|general] [--pose auto|legacy|0..39] [--sequence on|off] [--dust-placement auto|manual] [--profile review|coverage-v22] [--sensor-metadata path.json] [--seed 73031] [--time 3.25] [--out outputs/frame.lsf.gz]\nOutput uses metres, world XYZ with Z up. Labels are review categories, NOT removal ground truth.');return;}
+  for(let i=0;i<args.length;i+=2){if(!['--config','--scene','--kind','--seed','--time','--out','--pose','--sequence','--dust-placement','--profile','--sensor-metadata'].includes(args[i])||args[i+1]===undefined)throw Error('Invalid arguments; use --help');opts[args[i].slice(2)]=args[i+1];}
   const config=opts.config?JSON.parse(fs.readFileSync(opts.config,'utf8')):{};
-  for(const k of ['scene','kind','pose'])if(opts[k])config[k]=opts[k];
+  for(const k of ['scene','kind','pose','profile'])if(opts[k])config[k]=opts[k];
   for(const k of ['seed','time'])if(opts[k])config[k]=Number(opts[k]);
   if(opts.sequence!==undefined){if(!['on','off'].includes(opts.sequence))throw Error('sequence must be on or off');config.sequence=opts.sequence==='on';}
   if(opts['dust-placement'])config.dustPlacement=opts['dust-placement'];
+  if(opts['sensor-metadata'])config.sensorMetadata=opts['sensor-metadata'];
   const frame=await createSimulator().run(config);
   const summary=frameSummary(frame);
   if(opts.out){

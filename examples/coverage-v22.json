@@ -1,0 +1,9 @@
+{
+  "scene": "construction_v1",
+  "kind": "rain",
+  "profile": "coverage-v22",
+  "seed": 11,
+  "pose": "auto",
+  "sequence": true,
+  "time": 2
+}

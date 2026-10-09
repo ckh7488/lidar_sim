@@ -44,11 +44,8 @@
       "unit": "m",
       "sample_scope": "per return",
       "additional_distance_slope": 0,
-      "exceptions": [
-        "sun timing model",
-        "weak signal model",
-        "edge pulse mixing model"
-      ]
+      "exceptions": [],
+      "additional_mechanisms": "weak-signal uncertainty is separate; edge mixing precedes baseline radial error"
     },
     "rainRate": {
       "distribution": "constant unless optional jitter enabled",
@@ -101,17 +98,18 @@
     }
   },
   "weather_relative_std": 0.05,
-  "weather_factor_distribution": "uniform, half-width sqrt(3)*std; actual relative std=5%, limits ±8.6603% before UI-domain clipping",
+  "weather_factor_distribution": "uniform, half-width sqrt(3)*std; actual relative std=5%, limits 짹8.6603% before UI-domain clipping",
   "weather_random_default": false,
   "seed_contract": "same scene, seed, settings and time reproduce the result; new seed resamples; redraw/tab/camera does not",
   "spatial_contract": {
-    "rain": "beam-volume Poisson sampling; independent observed returns by seed and time; world particles move coherently but are illustrative",
-    "snow": "same spatial sampling rules as rain, distinct size and settling assumptions",
-    "fog": "photon-weighted return location by seed; no advected fog field or time animation",
-    "dust": "scene+seed source and flow profile; coherent motion; emitter position remains a user control",
+    "rain": "Persistent world-cell Poisson particles with terminal advection; actual conical beam intersections; photon detections remain stochastic",
+    "snow": "Same world persistence, representative terminal speed 0.8m/s; no individual snow flutter",
+    "fog": "Wind-advected procedural density, photon-weighted stochastic returns; not CFD",
+    "dust": "Per-sequence source sampled from scene footprint; stationary world emitter and moving mass parcels",
     "sun": "seeded false ranges in configured solar direction; azimuth/elevation remain user controls"
   },
   "asset_contract": "24 fixed DEMO layouts, 3 per family; weather seed does not move buildings, trucks or props",
   "field_calibrated": false,
-  "training": false
+  "training": false,
+  "coverage_profile": "tools/dataset-profile.cjs coverage-v22; review UI defaults unchanged"
 }

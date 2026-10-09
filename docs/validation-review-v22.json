@@ -1,0 +1,475 @@
+{
+  "revision": 22,
+  "created": "2026-10-09T08:24:12.656782+00:00",
+  "passed": true,
+  "scope": "Implementation regression and performance, not measured weather fidelity or training readiness",
+  "environment": {
+    "os": "Windows",
+    "node": "v20.18.1",
+    "python": "3.12",
+    "logicalCPUs": 48,
+    "maxPrecipWorkersPerRun": 4,
+    "reservedCPU": 4,
+    "reservedRAMGiB": 16,
+    "timingCaveat": "Frames sequential within each job. Final rain/snow jobs ran concurrently (8 physics workers total); some checks overlapped. Not an isolated hardware benchmark."
+  },
+  "build": {
+    "inputs": 212,
+    "scenes": 24,
+    "measuredExamples": 36,
+    "brokenLocalLinks": 0
+  },
+  "review": {
+    "passed": true,
+    "rows": [
+      {
+        "kind": "range",
+        "controls": {},
+        "points": 73472,
+        "std": 0.06003501507656958
+      },
+      {
+        "kind": "sun",
+        "controls": {
+          "sun-enabled": false
+        },
+        "points": 73472,
+        "std": 0.06003501507656958
+      },
+      {
+        "kind": "fog",
+        "controls": {
+          "review-enabled": false
+        },
+        "points": 73472,
+        "std": 0.06003501507656958
+      },
+      {
+        "kind": "general",
+        "controls": {
+          "general-mode": "edge",
+          "review-enabled": false
+        },
+        "points": 73472,
+        "std": 0.06003501507656958
+      },
+      {
+        "kind": "general",
+        "controls": {
+          "general-mode": "weak"
+        },
+        "points": 70124,
+        "std": 0.06000900161189219
+      }
+    ],
+    "edgeLabels": 1274,
+    "edgeRainDisabledExact": true,
+    "referenceMaxErrorM": 0,
+    "binaryRoundtrip": true,
+    "profileSamples": 3000,
+    "familySplits": {
+      "room": "test",
+      "corridor": "train",
+      "warehouse": "train",
+      "construction": "train",
+      "department_store": "validation",
+      "crane_yard": "validation",
+      "underground_parking": "train",
+      "apartment": "test"
+    },
+    "fieldCalibrated": false,
+    "trainingApproved": false
+  },
+  "workerLifecycle": {
+    "passed": true,
+    "cases": 11
+  },
+  "precipitation": {
+    "sameParticleMotionPass": true,
+    "sameTimeReplayExact": true,
+    "finalNormalizedDirections": true,
+    "commonRainParticleIDs": 6977,
+    "commonSnowParticleIDs": 1196,
+    "rainCandidateRangeBins0to100m": [
+      144,
+      885,
+      2226,
+      4403,
+      7045
+    ],
+    "snowCandidateRangeBins0to100m": [
+      9,
+      93,
+      217,
+      381,
+      640
+    ],
+    "fixtureRays": 384,
+    "timeDeltaS": 0.01,
+    "serialVsFourWorkersExact": true
+  },
+  "fog": {
+    "advectionFieldInvariantPass": true,
+    "activeUIDefaultVariation": 0.25,
+    "final20FramesWithAdvectedField": true
+  },
+  "sensorMetadata": {
+    "syntheticFixtureOnly": true,
+    "channels": 32,
+    "columns": 128,
+    "maxAltitudeErrorDeg": 4.055924467394334e-07,
+    "profileCacheSwitchTo128Pass": true,
+    "targetHardwareValidated": false
+  },
+  "calibration": {
+    "syntheticOnly": true,
+    "trueSigma0M": 0.02,
+    "fittedSigma0M": 0.02006147927188692,
+    "trueSlope": 0.001,
+    "fittedSlope": 0.0009883714805548748,
+    "faultyAndRotatingCaptureRejectionPass": true,
+    "applied": false
+  },
+  "binaryExports": {
+    "passed": true,
+    "frames": 220,
+    "compressedBytes": 725514431,
+    "hashesExact": true,
+    "rangeContractCheckedEveryPoint": true,
+    "safeParticleIds": true,
+    "baselineSigmaWithin2mm": true,
+    "trainingApproved": false
+  },
+  "pythonLSFReader": {
+    "passed": true,
+    "kind": "rain",
+    "time": 10,
+    "points": 70377,
+    "rayCount": 131072
+  },
+  "sequenceExportsJSON": {
+    "passed": true,
+    "created": "2026-10-09T07:57:57.550Z",
+    "frames": 101,
+    "raysPerFrame": 131072,
+    "durationS": 10,
+    "fps": 10,
+    "endpointInclusive": true,
+    "uniqueCoordinateLabelHashes": 101,
+    "compressedBytes": 788529275,
+    "elapsedS": 138.8610484,
+    "existingOutputProtected": true,
+    "jsonRoundtripFrames": [
+      0,
+      1,
+      50,
+      100
+    ],
+    "fieldCalibrated": false,
+    "trainingApproved": false
+  },
+  "sequenceRegression": {
+    "passed": true,
+    "created": "2026-10-09T07:57:45.564Z",
+    "dustCommonIds": 1248,
+    "dustMovingIds": 1248,
+    "maxDustDisplacementInPoint1S": 0.17397726260984017,
+    "worldWeatherAnchoredIds": 1325,
+    "replayIndependentOfRequestOrder": true,
+    "framesRecast": true,
+    "fieldCalibrated": false,
+    "trainingApproved": false
+  },
+  "existingSimulatorSuite": {
+    "passed": true,
+    "geometrySamples": 3000,
+    "weatherSamplesPerKind": 5000,
+    "modeCount": 8,
+    "scope": "Run before final precipitation direction normalization and UI fog default. Those changes have dedicated final full-scan benchmarks and unit tests."
+  },
+  "benchmark": {
+    "scene": "construction_v1",
+    "seed": 11,
+    "rayCount": 131072,
+    "profile": "review",
+    "times": "20 evenly spaced samples from 0 to 10 seconds inclusive",
+    "rainRateMmH": 5,
+    "snowParticlesPerM3": 3,
+    "fogVisibilityM": 500,
+    "fogVariation": 0.25,
+    "dustFluxGS": 0.2,
+    "edgeMixing": "Only general edge; coverage-v22 enables extra edge mixing and can be slower",
+    "selectedFinalFrames": 160,
+    "binaryCheckedFramesIncludingSupersededRuns": 220,
+    "rows": [
+      {
+        "kind": "range",
+        "frames": 20,
+        "meanSimulationS": 0.61968736,
+        "meanExportS": 0.10191886500000003,
+        "meanBytes": 3261518.3,
+        "projected101FramesS": 72.882228725,
+        "timesMs": [
+          1234.4598999999998,
+          635.1415000000002,
+          634.0398,
+          653.5999999999999,
+          597.6273000000006,
+          631.7855,
+          643.2424999999994,
+          565.6970000000001,
+          554.1646000000001,
+          626.8597999999993,
+          564.6590999999999,
+          562.6188000000002,
+          581.9915000000001,
+          574.9272000000001,
+          562.3920999999991,
+          548.260400000001,
+          547.2669000000005,
+          577.4874,
+          564.2952999999998,
+          533.2306000000008
+        ]
+      },
+      {
+        "kind": "sun",
+        "frames": 20,
+        "meanSimulationS": 0.6409730150000006,
+        "meanExportS": 0.0843604199999996,
+        "meanBytes": 2558298.3,
+        "projected101FramesS": 73.25867693500003,
+        "timesMs": [
+          1056.9359999999997,
+          664.1965,
+          613.3383999999987,
+          594.6957999999977,
+          654.3072000000029,
+          551.8762000000024,
+          561.4301000000014,
+          568.414499999999,
+          550.1440000000002,
+          560.7446999999993,
+          1449.4783000000025,
+          564.5396000000001,
+          530.4897000000019,
+          547.2335999999996,
+          564.5822000000007,
+          546.4661000000015,
+          568.4645000000019,
+          576.9854999999989,
+          545.9204000000027,
+          549.2170000000006
+        ]
+      },
+      {
+        "kind": "rain",
+        "frames": 20,
+        "meanSimulationS": 25.18548314,
+        "meanExportS": 0.11483869000000323,
+        "meanBytes": 3562291.9,
+        "projected101FramesS": 2555.3325048300003,
+        "timesMs": [
+          27258.1698,
+          24936.613,
+          25179.9634,
+          25040.918399999995,
+          25689.53,
+          25559.1137,
+          24886.01879999999,
+          25255.947199999995,
+          25319.3983,
+          25488.22140000001,
+          25245.76429999998,
+          25154.631999999983,
+          25165.093400000012,
+          25506.37790000002,
+          24695.52509999997,
+          24187.815300000017,
+          24397.333800000022,
+          24864.758900000015,
+          24896.211300000024,
+          24982.256799999974
+        ]
+      },
+      {
+        "kind": "snow",
+        "frames": 20,
+        "meanSimulationS": 17.68620518,
+        "meanExportS": 0.1100344800000008,
+        "meanBytes": 3453904.45,
+        "projected101FramesS": 1797.4202056600002,
+        "timesMs": [
+          18649.2039,
+          18155.3161,
+          17383.559500000003,
+          17727.134400000003,
+          17462.224700000006,
+          17570.927899999995,
+          17491.292100000006,
+          17768.219000000012,
+          17590.84970000002,
+          17582.306699999986,
+          17655.693299999984,
+          17606.338699999993,
+          17773.2733,
+          17757.781099999993,
+          17586.314400000003,
+          17515.53130000003,
+          17631.759299999976,
+          17819.631999999983,
+          17515.777300000016,
+          17480.968900000036
+        ]
+      },
+      {
+        "kind": "fog",
+        "frames": 20,
+        "meanSimulationS": 8.630923885,
+        "meanExportS": 0.1015601299999993,
+        "meanBytes": 3292021.35,
+        "projected101FramesS": 881.9808855149998,
+        "timesMs": [
+          9580.377999999999,
+          8800.269699999999,
+          8699.2124,
+          8748.908800000001,
+          8533.235499999995,
+          8533.337599999999,
+          8461.497600000002,
+          8497.158999999992,
+          8464.8661,
+          8510.273000000001,
+          8514.633700000006,
+          8525.023399999991,
+          8611.366599999994,
+          8580.838799999998,
+          8555.205300000001,
+          8509.515199999994,
+          8565.856700000004,
+          8603.154800000018,
+          8649.9761,
+          8673.76940000002
+        ]
+      },
+      {
+        "kind": "dust",
+        "frames": 20,
+        "meanSimulationS": 1.3227716549999837,
+        "meanExportS": 0.10067800500000013,
+        "meanBytes": 3303877.35,
+        "projected101FramesS": 143.76841565999837,
+        "timesMs": [
+          801.01800000004,
+          880.5882999999449,
+          902.9686999999685,
+          882.4285000000382,
+          891.1792000000132,
+          929.7179999999935,
+          992.777999999933,
+          1017.577099999995,
+          1074.9337000000523,
+          1133.261599999969,
+          1215.9462999999523,
+          1317.8972999999532,
+          1403.7913999999873,
+          1518.794899999979,
+          1636.090099999914,
+          1760.7533999999287,
+          1867.3133999999845,
+          1961.328700000071,
+          2084.425399999949,
+          2182.641100000008
+        ]
+      },
+      {
+        "kind": "general",
+        "frames": 20,
+        "meanSimulationS": 4.1351796849999864,
+        "meanExportS": 0.10035080499998295,
+        "meanBytes": 3242082.9,
+        "projected101FramesS": 427.7885794899969,
+        "timesMs": [
+          4286.8133999999845,
+          4370.154600000009,
+          4127.6861999999965,
+          4358.673899999936,
+          4160.978899999987,
+          4069.5574999999953,
+          4076.8370000000577,
+          4071.48749999993,
+          4053.29859999998,
+          4088.5927000000374,
+          4078.545700000017,
+          4005.0670999999857,
+          4012.9359000000404,
+          4042.638200000045,
+          4019.044300000067,
+          4165.726200000034,
+          4179.916199999861,
+          4148.16240000003,
+          4215.9824999999255,
+          4171.494899999816
+        ]
+      },
+      {
+        "kind": "weak",
+        "frames": 20,
+        "meanSimulationS": 0.6325065349999998,
+        "meanExportS": 0.10530411999999988,
+        "meanBytes": 3297983.95,
+        "projected101FramesS": 74.51887615499996,
+        "timesMs": [
+          1275.761,
+          633.9354000000001,
+          605.8066999999996,
+          604.4908999999998,
+          567.6039000000001,
+          626.9298999999992,
+          664.4573,
+          555.4803000000002,
+          574.5254999999997,
+          587.5469000000003,
+          582.0613999999996,
+          590.5347000000002,
+          587.5761999999995,
+          597.3863999999994,
+          619.0065999999988,
+          601.5995000000003,
+          623.2147999999997,
+          598.6394,
+          578.0689999999995,
+          575.5048999999999
+        ]
+      }
+    ]
+  },
+  "browser": {
+    "version": "v22",
+    "checked": [
+      "header",
+      "sun radial control enabled",
+      "sun same baseline RMS as range",
+      "edge disabled retains clear surface",
+      "rapid rain/snow/fog cancellation",
+      "fog active variation 0.25",
+      "confirmed tab roundtrip"
+    ],
+    "sunSurfaceRMSM": 0.0598878801856162,
+    "sunReflectivityFinite": 0,
+    "fogSurface": 62500,
+    "fogNoise": 648,
+    "fogReady": true,
+    "consoleErrors": 0
+  },
+  "notValidated": [
+    "Normal stationary field calibration",
+    "Actual target OS1-32 metadata",
+    "Solar error frequency",
+    "New building families or moving actors",
+    "Within-scan motion and external 36RPM",
+    "Training or real-world generalization"
+  ],
+  "fieldCalibrated": false,
+  "trainingApproved": false
+}

@@ -1,0 +1,65 @@
+{
+  "revision": 22,
+  "name": "coverage-v22",
+  "scope": "scene+seed; distributions across sequences, settings constant within each 10-second sequence",
+  "parameters": {
+    "rainRate": {
+      "distribution": "uniform",
+      "min": 1,
+      "max": 20,
+      "mean": 10.5,
+      "std": 5.484827557301445,
+      "unit": "mm/h"
+    },
+    "snowN": {
+      "distribution": "uniform",
+      "min": 1,
+      "max": 10,
+      "mean": 5.5,
+      "std": 2.598076211353316,
+      "unit": "particles/m3"
+    },
+    "fogVisibility": {
+      "distribution": "log-uniform",
+      "min": 50,
+      "max": 2000,
+      "mean": 528.6158098295427,
+      "std": 512.2465526224047,
+      "unit": "m"
+    },
+    "dustFlux": {
+      "distribution": "constant",
+      "mean": 0.2,
+      "std": 0,
+      "unit": "g/s"
+    }
+  },
+  "seedKeys": {
+    "rainRate": "coverage-rain",
+    "snowN": "coverage-snow",
+    "fogVisibility": "coverage-fog"
+  },
+  "familySplits": {
+    "train": [
+      "corridor",
+      "warehouse",
+      "underground_parking",
+      "construction"
+    ],
+    "validation": [
+      "department_store",
+      "crane_yard"
+    ],
+    "test": [
+      "room",
+      "apartment"
+    ]
+  },
+  "excludedKinds": [
+    "sun"
+  ],
+  "edgeMixingDefault": true,
+  "temporalWeatherRequired": true,
+  "fieldCalibrated": false,
+  "trainingApproved": false
+}

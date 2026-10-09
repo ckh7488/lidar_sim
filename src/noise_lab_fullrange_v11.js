@@ -20,6 +20,7 @@ function worldWeather(c,blocked,M,sensor,anchor=sensor){
  return {world:new Float32Array(p),worldV:new Float32Array(v),worldIds:new Uint32Array(ids)};
 }
 function precipitation(input,cfg,blocked,overlap,P,M){
+ if(cfg.temporalWeather!==false&&root.NoiseLabPrecipitation)return root.NoiseLabPrecipitation.simulate(input,cfg,blocked,overlap,P,M);
  const start=performance.now(),c=M.config(cfg),n=input.ranges.length,power=new Float32Array(n),range=new Float32Array(n),tau=new Float32Array(n),rows=new Map(),hist=[0,0,0,0,0],lambda=4.1*c.rainRate**(-.21),emin=Math.exp(-lambda*1.5),emax=Math.exp(-lambda*6),concentration=c.mode==='rain'?8000/lambda*(emin-emax):c.snowN,maxRadius=c.mode==='rain'?.003:.004;
  let proposals=0,intersections=0,sheltered=0;
  // Cache overhead height by half-metre cells; boundaries remain an approximation.
@@ -48,7 +49,7 @@ function fog(input,cfg,P,F){
  if(c.r2<=c.r1)throw Error('광학 겹침 완료 거리는 시작 거리보다 커야 합니다.');
  for(let i=0;i<n;i++){
   const r=input.ranges[i],limit=r>0?r:MAX,k=i*3,o=input.origins?input.origins.subarray(k,k+3):input.sensor,d=input.directions.subarray(k,k+3),response=cfg.surfaceModel&&input.response?input.response[i]:.35,key=r+'/'+response;
-  let w=cache.get(key);if(!w){w=F.fogWave(r,response,c,F.field(c,o,d));if(!c.variation&&cache.size<4096)cache.set(key,w);}
+  let w=c.variation?null:cache.get(key);if(!w){w=F.fogWave(r,response,c,F.field(c,o,d));if(!c.variation&&cache.size<4096)cache.set(key,w);}
   const rand=rng((cfg.observationSeed??c.seed)^Math.imul(i+1,0x9e3779b1)),mass=[],dr=w.dr;let total=0,softTotal=0;
   // A conditional photon-arrival surrogate replaces the all-rays argmax shell.
   for(let j=0;j<w.soft.length;j++){const lo=Math.max(.3,j*dr),hi=Math.min(limit,(j+1)*dr),v=hi>lo?scatterResponse*w.soft[j]*(hi-lo)/dr:0;mass.push(v);softTotal+=v;if(v>0)support[bin((lo+hi)/2)]++;}
@@ -59,7 +60,7 @@ function fog(input,cfg,P,F){
   ranges[i]=selected;labels[i]=lab;powers[i]=selectedPower;
   const er=rng((cfg.observationSeed??c.seed)^Math.imul(i+1,0x6c8e9cf5));errors[i]=Math.sqrt(-2*Math.log(Math.max(1e-12,er())))*Math.cos(2*PI*er())*Math.hypot(cfg.radialSigma||0,(cfg.radialSlope||0)*selected);
  }
- const q={kind:'fog',enabled:true,config:c,alpha:Math.log(20)/c.visibility,scatteringRays:scatter,ambiguous:0,fullRange:true,rangeSupport:[.3,MAX],rangeHistogram:hist,positiveSupportBins:support,scatterResponse,scatterResponseBasis:'Temporary receiver-response assumption, not measured probability or fitted optical coefficient',model:'conditional detected-photon arrival surrogate with uncalibrated diffuse-return response',trainingEligible:false,fieldCalibrated:false,reason:'Not strongest-return Ouster electronics. Photon-weighted range support, no forced shell or equal-range quota.'};
+ const q={kind:'fog',enabled:true,config:c,alpha:Math.log(20)/c.visibility,scatteringRays:scatter,ambiguous:0,fullRange:true,rangeSupport:[.3,MAX],rangeHistogram:hist,positiveSupportBins:support,scatterResponse,scatterResponseBasis:'Temporary receiver-response assumption, not measured probability or fitted optical coefficient',temporalDensityCoherent:true,wind:[c.wind*Math.cos(c.windAngle),c.wind*Math.sin(c.windAngle)],model:'conditional detected-photon arrival surrogate with advected world density and uncalibrated diffuse-return response',trainingEligible:false,fieldCalibrated:false,reason:'Not strongest-return Ouster electronics. Photon-weighted range support, no forced shell or equal-range quota.'};
  const r=F.reproject(input,cfg,ranges,labels,powers,errors,q);q.shellFraction=r.rangeShellFraction;q.shellWarning=false;return r;
 }
 function sunlight(input,cfg,P,F,blocked){

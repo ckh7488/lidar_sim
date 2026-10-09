@@ -37,5 +37,8 @@
   "__POSES_V19__": "src/noise_lab_poses_v19.js",
   "__CHANNELS_V20__": "src/noise_lab_channels_v20.js",
   "__SEQUENCE_V21__": "src/noise_lab_sequence_v21.js",
-  "__SEQUENCE_CLIENT_V21__": "src/noise_lab_sequence_client_v21.js"
+  "__SEQUENCE_CLIENT_V21__": "src/noise_lab_sequence_client_v21.js",
+  "__OBSERVATION_V22__": "src/noise_lab_observation_v22.js",
+  "__PRECIPITATION_V22__": "src/noise_lab_precipitation_v22.js",
+  "__PRECIPITATION_PARALLEL_V22__": "src/noise_lab_precipitation_parallel_v22.js"
 }

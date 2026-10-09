@@ -21,6 +21,7 @@ class LatestTaskWorker {
         const w=this.worker=new Worker(this.url);
         w.onmessage=e=>{
           if(this.worker!==w || !this.pending || e.data.id!==this.pending.id)return;
+          if(e.data.progress!==undefined){this.onProgress?.(e.data.progress);return;}
           clearTimeout(this.timer); this.timer=null; this.pending=null;
           try { this.onResult(e); } catch(error) { this.fail(error); }
         };
@@ -28,7 +29,7 @@ class LatestTaskWorker {
         w.onmessageerror=()=>{if(this.worker===w)this.fail(new Error('계산 결과를 읽지 못했습니다'));};
       }
       this.pending=message;
-      this.timer=setTimeout(()=>this.fail(new Error('계산이 60초 안에 완료되지 않았습니다')),this.timeoutMs);
+      this.timer=setTimeout(()=>this.fail(new Error('계산이 '+Math.round(this.timeoutMs/1000)+'초 안에 완료되지 않았습니다')),this.timeoutMs);
       this.worker.postMessage(message);
     } catch(error) { this.fail(error); }
   }

@@ -34,7 +34,7 @@ function select(candidates,bg,c,rand,includeEmpty=true){
   return {winner:win,threshold:K,bgMean:d.mean,peak:Math.max(0,best)};
 }
 function simulate(input,cfg,core){
-  const c=config(cfg),n=input.ranges.length,selected=new Float32Array(n),labels=new Uint8Array(n),causes=new Uint8Array(n),pw=new Float32Array(n),bg=input.solar?.background,skip=input.solar?.invalid,motion=input.motion;
+  const c=config(cfg),n=input.ranges.length,selected=new Float32Array(n),labels=new Uint8Array(n),causes=new Uint8Array(n),pw=new Float32Array(n),particleIds=new Float64Array(n),bg=input.solar?.background,skip=input.solar?.invalid,motion=input.motion;
   let dust=0,surface=0,lost=0,replaced=0,skyDust=0,backgroundReturns=0,minK=Infinity,maxK=0;
   const receiverSeed=(cfg.seed>>>0)^Math.imul(Math.round((cfg.time||0)*1000)+1,0x85ebca6b);
   for(let i=0;i<n;i++){
@@ -42,11 +42,11 @@ function simulate(input,cfg,core){
     const r=input.ranges[i],clean=r>0&&r<100,tau=motion?.tau[i]||0,items=[];
     if(clean)items.push({range:r,power:(cfg.surfaceModel&&input.response?input.response[i]:.35)*Math.exp(-2*tau)/(r*r),label:0,cause:'surface'});
     const extra=motion?.candidates;
-    if(extra){for(let k=extra.offsets[i];k<extra.offsets[i+1];k++)items.push({range:extra.ranges[k],power:extra.powers[k],label:1,cause:'weather'});}
+    if(extra){for(let k=extra.offsets[i];k<extra.offsets[i+1];k++)items.push({range:extra.ranges[k],power:extra.powers[k],label:1,cause:'weather',particleId:extra.particleIds?.[k]||0});}
     else if(motion?.power[i]>0)items.push({range:motion.range[i],power:motion.power[i],label:1,cause:'weather'});
     const v=skip?.[i]?{winner:clean?{range:r,power:items[0].power,label:0,cause:'unmodeled'}:null,threshold:0}:select(items,bg?bg[i]:c.baseBackground,c,receiverRand,!!input.solar),w=v?.winner;
     if(v&&!skip?.[i]){minK=Math.min(minK,v.threshold);maxK=Math.max(maxK,v.threshold);}
-    if(w){selected[i]=w.range;labels[i]=w.label;pw[i]=w.power;causes[i]=w.cause==='background'?2:w.label?1:0;if(w.label){dust++;if(clean)replaced++;else skyDust++;if(w.cause==='background')backgroundReturns++;}else surface++;}else if(clean)lost++;
+    if(w){particleIds[i]=w.particleId||0;selected[i]=w.range;labels[i]=w.label;pw[i]=w.power;causes[i]=w.cause==='background'?2:w.label?1:0;if(w.label){dust++;if(clean)replaced++;else skyDust++;if(w.cause==='background')backgroundReturns++;}else surface++;}else if(clean)lost++;
   }
   // Preserve existing reconstruction and user radial-error layer, with a separate RNG stream.
   const result=core.simulate({...input,ranges:selected,motion:undefined,solar:undefined},{...cfg,weather:'none',dust:false,surfaceModel:false});
@@ -54,7 +54,7 @@ function simulate(input,cfg,core){
   for(let j=0;j<result.rayIds.length;j++){const id=result.rayIds[j],lab=labels[id];result.labels[j]=lab;result.powers[j]=pw[id];if(lab)xyz.push(...result.xyz.subarray(3*j,3*j+3));const s=rangeStats[lab],err=result.rangeErrors[j];s.n++;s.sum+=err;s.sum2+=err*err;if(result.nominalRanges[j]+err<=.3)s.clipped++;}
   for(let i=0;i<n;i++)if(input.ranges[i]>0&&(!selected[i]||labels[i])){const k=3*i,r=input.ranges[i];for(let a=0;a<3;a++)removed.push((input.origins?input.origins[k+a]:input.sensor[a])+r*input.directions[k+a]);}
   const rs=rangeStats.map(s=>({...s,mean:s.n?s.sum/s.n:0,rms:s.n?Math.sqrt(s.sum2/s.n):0,std:s.n?Math.sqrt(Math.max(0,s.sum2/s.n-(s.sum/s.n)**2)):0}));
-  result.config={...result.config,...cfg};result.dust=new Float32Array(xyz);result.removed=new Float32Array(removed);result.returnCauses=causes;
+  result.weatherParticleIds=Float64Array.from(result.rayIds,id=>particleIds[id]);result.config={...result.config,...cfg};result.dust=new Float32Array(xyz);result.removed=new Float32Array(removed);result.returnCauses=causes;
   Object.assign(result.stats,{surface,dust,lost,replaced,skyDust,clean:input.ranges.reduce((s,r)=>s+(r>0&&r<100),0),surfaceModel:!!cfg.surfaceModel,noiseFraction:dust/Math.max(1,dust+surface),weather:{mode:cfg.weather||'none',enabled:!!motion,intersections:motion?.stats.intersections||0,alpha:cfg.weatherAlpha||0,temporalCoherence:!!motion,sensorCalibrated:false},model:'photon-window-review-v7',receiver:{...c,minThreshold:minK,maxThreshold:maxK,backgroundReturns,independentWindows:true,backgroundQuantizationMaxRelativeError:.00251,fieldCalibrated:false}});
   result.stats.rangeError.surface=rs[0];result.stats.rangeError.dust=rs[1];return result;
 }

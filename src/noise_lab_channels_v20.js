@@ -21,13 +21,14 @@ function attach(result,input,cfg){
  if(input.albedo)for(let i=0;i<materials.length;i++)if(input.ranges[i]>0)materials[i]=input.albedo[i];
  result.signalProxy=signal;result.reflectivityProxy=reflectivity;
  result.referenceScan={ranges:input.ranges.slice(),surfaceReflectance:materials};
- result.channels={revision:20,pointCount:n,referenceRayCount:materials.length,
+ result.channels={revision:22,pointCount:n,referenceRayCount:materials.length,
+  roles:{observations:['xyz','measuredRanges','rayIds','signalProxy','reflectivityProxy'],supervision:['labels'],hiddenReference:['referenceScan','surfaceRanges','nominalRanges','rangeErrors','baselineRangeErrors','mechanismRangeErrors','weatherParticleIds','world','worldIds','worldV'],metadataNotFeatures:['config','geometry','sensorPose','sequencePlan']},
   signalProxy:{available:!unsupported,units:'relative model units',source:kind==='weak'?'expected photons / (1600 * weakPhotons)':'selected model power',observedPhotonCount:false},
   reflectivityProxy:{available:!unsupported,formula:'signalProxy * measuredRange^2',measuredRange:'nominalRanges + rangeErrors',incidenceCorrected:false,atmosphericLossCorrected:false,ousterCalibrated:false,range:[finite?min:null,finite?max:null],finiteCount:finite},
   referenceScan:{role:'debug/reference only; never a sensor input feature',index:'original beam index; use rayIds only to inspect the clean background',surfaceReflectance:'scene albedo assumption before incidence and weather; not the reflectivity of an intervening particle'},
   crossModeCalibration:false,fieldCalibrated:false,trainingApproved:false,
   limitation:unsupported?'Solar signal strength is not modeled. All signal/reflectivity/powers entries are NaN (JSON null).':kind==='fog'?'Fog powers are waveform-integrated quantities. Their scale is not calibrated to other modes.':'Signal is a model quantity, not device intensity. No Ouster sensitivity, quantization or reflectivity calibration is implemented.'};
- result.stats.channels={revision:20,reflectivityAvailable:!unsupported,reflectivityFinite:finite,fieldCalibrated:false};
+ result.stats.channels={revision:22,reflectivityAvailable:!unsupported,reflectivityFinite:finite,fieldCalibrated:false};
  return result;
 }
 root.NoiseLabChannels={attach};if(typeof module!=='undefined')module.exports=root.NoiseLabChannels;

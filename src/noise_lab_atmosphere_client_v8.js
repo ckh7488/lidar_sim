@@ -1,15 +1,15 @@
 const atmosphereIds=['fogScatterLog','fogVisibility','fogRatio','fogPulse','fogNear','fogFull','fogVariation','weakPhotons','edgePulse','edgeBeam'];
 function atmosphereActive(){return category==='fog'||category==='general';}
-function atmosphereConfig(){const kind=category==='fog'?'fog':category==='general'&&$('general-mode').value!=='none'?$('general-mode').value:'';const c={reviewKind:kind,reviewEnabled:$('review-enabled').checked,fogBackscatter:$('fogBackscatter').checked,fogScatterResponse:10**(+$('fogScatterLog').value)};for(const id of atmosphereIds)c[id]=+$(id).value;if(kind==='weak'||kind==='edge'){c.radialSigma=0;c.radialSlope=0;}return c;}
+function atmosphereConfig(){const kind=category==='fog'?'fog':category==='general'&&$('general-mode').value!=='none'?$('general-mode').value:'';const c={reviewKind:kind,reviewEnabled:$('review-enabled').checked,fogBackscatter:$('fogBackscatter').checked,fogScatterResponse:10**(+$('fogScatterLog').value)};for(const id of atmosphereIds)c[id]=+$(id).value;return c;}
 function atmosphereControls(){
  $('atmosphere-controls').hidden=!atmosphereActive();if(!atmosphereActive())return;const kind=atmosphereConfig().reviewKind;
  $('general-mode-label').hidden=category!=='general';$('fog-knobs').hidden=kind!=='fog';$('edge-knobs').hidden=kind!=='edge';$('weak-knobs').hidden=kind!=='weak';$('review-enabled').disabled=!kind;$('wave-details').hidden=!['fog','edge'].includes(kind);$('weather-controls').hidden=true;
  for(const id of atmosphereIds)if($(id+'-out'))$(id+'-out').textContent=$(id).value;
- if(kind==='edge'||kind==='weak')for(const id of ['range-enabled','radialSigma','radialSlope'])$(id).disabled=true;
+
  $('fogScatterLog-out').textContent=(100*10**(+$('fogScatterLog').value)).toFixed(3)+'%';
  $('generated-title').textContent={fog:$('fogBackscatter').checked?'안개 · 확률적 산란·감쇠 후보':'안개 · 감쇠만 비교',edge:'경계 혼합 · 노란 보정 후보',weak:'약한 신호 · 표면 오차와 누락'}[kind]||'원인 불명 · 생성 보류';
  $('mode-note').textContent=category==='general'?'같은 합성 장소의 효과 전후를 비교합니다. 노란 점은 중심 빔과 달라진 반환이며 삭제 정답이 아닙니다. 약한 신호의 흔들린 점도 표면 라벨을 유지합니다.':'안개의 산란 신호와 약해진 표면 신호에서 확률적으로 반환을 선택합니다. 첫 물체 앞의 전 거리 구간을 계산하며 가장 강한 거리만 반복 선택하지 않습니다. Ouster 수광 회로 재현은 아닙니다.';
- $('atmosphere-note').textContent={fog:'가시거리는 감쇠·농도 가정이고, 반환 민감도는 넓게 퍼진 안개 신호가 수광기 계산에 들어가는 상대 비율입니다. 기본 약한 효과는 실측 교정값이 아닙니다. 이전 과밀 설정은 비교 버튼으로만 불러옵니다.',edge:'실제 메시를 13개 부광선으로 관측합니다. 노란색은 펄스 혼합 또는 앞·뒤 다른 표면 선택으로 중심 빔과 달라진 점입니다. 최대 차이는 센서 정밀도 오차가 아니며, 경계점 전체를 제거하는 학습에는 쓰지 않습니다.',weak:'약한 신호일수록 표면 거리가 더 흔들리고 검출이 빠질 수 있습니다. 유지한 점은 모두 표면 라벨을 보존합니다. 기존 60mm 거리 노브는 중복 적용하지 않습니다.'}[kind]||'생성하지 않습니다. Class 7의 오분류·원인이 확인되지 않아, 그 모양을 복사하면 실제 물체를 삭제하도록 학습시킬 위험이 있습니다.';
+ $('atmosphere-note').textContent={fog:'가시거리는 감쇠·농도 가정이고, 반환 민감도는 넓게 퍼진 안개 신호가 수광기 계산에 들어가는 상대 비율입니다. 기본 약한 효과는 실측 교정값이 아닙니다. 이전 과밀 설정은 비교 버튼으로만 불러옵니다.',edge:'실제 메시를 13개 부광선으로 관측합니다. 노란색은 펄스 혼합 또는 앞·뒤 다른 표면 선택으로 중심 빔과 달라진 점입니다. 최대 차이는 센서 정밀도 오차가 아니며, 경계점 전체를 제거하는 학습에는 쓰지 않습니다.',weak:'약한 신호일수록 표면 거리가 더 흔들리고 검출이 빠질 수 있습니다. 유지한 점은 모두 표면 라벨을 보존합니다. 공통 거리오차에 신호량별 추가 오차를 별도 합산합니다.'}[kind]||'생성하지 않습니다. Class 7의 오분류·원인이 확인되지 않아, 그 모양을 복사하면 실제 물체를 삭제하도록 학습시킬 위험이 있습니다.';
  $('atmosphere-decision').textContent=kind==='fog'?'검토 전용: 반환 민감도를 임시로 낮춘 설정입니다. 점이 줄었다는 사실은 현실성 검증이 아닙니다. 센서 실측으로 교정하기 전에는 학습에 사용하지 않습니다.':kind?'현재 판정: 원리 검토 후보 · 센서 교정과 실측 검증 전에는 학습에서 제외':'현재 판정: 생성 보류 · 원인·라벨 검증이 먼저 필요';
  $('noise-only').disabled=kind==='weak';if(kind==='weak')$('noise-only').checked=false;
 }

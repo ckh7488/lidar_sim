@@ -26,13 +26,13 @@ outputs/      프레임·검증 출력, Git 제외
 2. `noise_lab_geometry_worker_v3.js`가 압축 메시와 빔 배열을 풉니다. `noise_lab_sequence_v21.js`가 충돌 여유를 검사한 10초 경로·먼지 발생원을 만들고, 요청 시각의 센서 자세를 고릅니다.
 3. `noise_lab_geometry_v3.js`가 BVH로 실제 교차 거리를 구합니다. 실제 빔과 복원에 쓰는 명목 빔을 구분해 축 오차를 모델링합니다.
 4. `noise_lab_motion_worker_v6.js`가 종류별 모델로 전달합니다. 먼지 운송은 `motion_v6`, 비·눈·안개·햇빛의 현재 경로는 `fullrange_v11`, 약한 신호·경계 혼합은 `atmosphere_v8`입니다.
-5. `receiver_v7`과 `core_v1`이 신호 경쟁/검출 및 적용 가능한 거리 오차를 계산합니다. `metrics_v1`은 검토 특징을 계산합니다.
+5. `observation_v22`가 선택적 모서리 혼합을 먼저 적용합니다. 비·눈은 `precipitation_v22`의 세계 입자 교차를 계산하고, `receiver_v7`과 `core_v1`이 신호 경쟁/검출을 수행합니다. 마지막에 `observation_v22`가 모든 모드의 공통 표면 검출·거리오차와 오류 분해/원래 표면 거리를 붙입니다. `metrics_v1`은 최종 결과에서 계산합니다.
 6. `noise_lab_channels_v20.js`가 모든 모델 경로의 반환에 신호·반사도 proxy와 별도 referenceScan을 붙입니다. 좌표나 검출 라벨을 바꾸지 않습니다.
 7. `client_v1`과 각 client 조각이 결과를 표시합니다. `jobs_v13`은 취소·오래된 결과 무시·오류·재시도를 관리합니다.
 
 ### 버전 이름의 주의점
 
-파일명 숫자만 보고 구버전이라고 지우면 안 됩니다. v21은 여러 세대의 활성 모듈을 조립한 UI 버전입니다. 일부 함수는 뒤에서 다시 정의됩니다. 특히 `sequence_client_v21.js`는 마지막에 시퀀스 조작과 안전한 발생원 선택을 연결합니다. `fullrange_client_v10.js`의 solar 함수들이 `solar_client_v7.js`의 이전 동작을 대체합니다. 이전 함수의 설명만 읽고 현재 동작을 판단하지 말고, **조립된 실행 순서와 테스트 결과**를 확인하세요. 이번 인계는 물리 모델 변경을 최소화하려고 이 순서를 보존했습니다.
+파일명 숫자만 보고 구버전이라고 지우면 안 됩니다. v22는 여러 세대의 활성 모듈을 조립한 UI 버전입니다. 일부 함수는 뒤에서 다시 정의됩니다. 특히 `sequence_client_v21.js`는 마지막에 시퀀스 조작과 안전한 발생원 선택을 연결합니다. `fullrange_client_v10.js`의 solar 함수들이 `solar_client_v7.js`의 이전 동작을 대체합니다. 이전 함수의 설명만 읽고 현재 동작을 판단하지 말고, **조립된 실행 순서와 테스트 결과**를 확인하세요. v22의 공통 관측층은 이 순서를 명시적으로 감싸며, 비·눈의 기본 생성기는 연속 세계 입자로 교체했습니다.
 
 ### 자산 형식
 
@@ -49,3 +49,10 @@ outputs/      프레임·검증 출력, Git 제외
 - 에셋 보기: asset_preview.html + asset_models_v18.json.
 
 실행에 사용하지 않는 이전 야외 geometry_v3 중복본, 연구 학습 코드, 임시 다운로드, 원본 PCAP은 패키지에서 제외했습니다. 원본 작업 폴더에서는 삭제하지 않았습니다.
+
+
+## CLI 실행과 프레임 저장 (v22)
+
+`runtime.cjs`는 작은 UI 설정 함수만 VM에서 평가합니다. 계산량이 큰 실제 빌드 worker는 `worker-thread.cjs`의 native Node worker에서 실행합니다. 한 simulator에는 기하/관측 worker와 원본 JSON 캐시가 유지됩니다. `run()`을 순서대로 기다리고 사용 후 `close()`할 수 있습니다. 비·눈은 자원 여유에 따라 최대 4개 ray 분할 worker를 사용하며 분할 전후 좌표·라벨·입자 ID가 동일해야 합니다. 프레임을 무제한 병렬 실행하지 마세요.
+
+`coverage_profile_v22.json`은 광범위한 날씨 설정과 family 분할의 단일 등록부입니다. `dataset-profile.cjs`가 시퀀스별로 추출합니다. UI의 약한 기본값과 혼동하지 마세요. `frame-export.cjs`와 `binary-frame.cjs`는 schema 5를 내보내며, JSON에서는 NaN이 null로 바뀌고 LSF1에서는 보존됩니다.

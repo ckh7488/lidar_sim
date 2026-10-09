@@ -11,7 +11,7 @@ function fullRangeSummary(){
 function solarControls(){
  $('pattern-controls').hidden=!motionActive();$('legacy-source-label').hidden=true;$('solar-controls').hidden=category!=='sun';if(category!=='sun')return;
  for(const id of ['sunAz','sunEl','sunWidth','sunProbability'])$(id+'-out').textContent=$(id).value;
- $('generated-title').textContent='햇빛 · 태양 방향의 가짜 거리 후보';$('noise-only').disabled=false;for(const id of ['range-enabled','radialSigma','radialSlope'])$(id).disabled=true;
+ $('generated-title').textContent='햇빛 · 태양 방향의 가짜 거리 후보';$('noise-only').disabled=false;
  $('mode-note').textContent='햇빛 방향에 따라 가짜 거리가 생기는 통계 후보입니다. 실측 논문의 현상을 참고했으며 발생률·각도 폭은 조절 가정입니다. Ouster에 교정한 결과는 아닙니다.';
 }
 function solarSummary(){
