@@ -14,11 +14,15 @@ onmessage=async e=>{
     if(config.sequence){
       engine.prepare(config.terrainCm);
       const key=JSON.stringify([raw.id,config.sensorPose,config.terrainCm,config.sequence.seed,config.sequence.sourceBounds]);
-      if(sequenceCache?.key!==key)sequenceCache={key,plan:NoiseLabSequence.plan(engine,config.sensorPose,config.sequence)};
+      if(sequenceCache?.key!==key){
+        const plan=NoiseLabSequence.plan(engine,config.sensorPose,config.sequence);
+        const preview=Array.from({length:101},(_,i)=>{const p=NoiseLabSequence.at(plan,i/10);return {time:i/10,world:[p.x,p.y,engine.terrainHeight(p.x,p.y)+p.height],yawDeg:p.yawDeg};});
+        sequenceCache={key,plan,preview};
+      }
       sequencePlan=sequenceCache.plan;
       if(config.sequence.enabled)castConfig={...config,sensorPose:NoiseLabSequence.at(sequencePlan,config.sequence.time)};
     }
     const value=await engine.cast(castConfig,async()=>{await new Promise(r=>setTimeout(r,0));return id===newest});
-    if(value&&id===newest){value.summary.sequencePlan=sequencePlan;const transfers=Object.values(value.input).filter(x=>ArrayBuffer.isView(x)).map(x=>x.buffer);postMessage({id,...value},transfers)}
+    if(value&&id===newest){value.summary.sequencePlan=sequencePlan;value.summary.routePreview=config.sequence?.enabled?sequenceCache.preview:[];const transfers=Object.values(value.input).filter(x=>ArrayBuffer.isView(x)).map(x=>x.buffer);postMessage({id,...value},transfers)}
   }catch(error){if(id===newest)postMessage({id,error:String(error)})}
 };

@@ -4,7 +4,7 @@
 
 1. `AGENTS.md`와 `docs/architecture.md`를 읽습니다.
 2. `python tools/build.py`로 저장소 안의 자료만 사용해 빌드합니다.
-3. `python tools/serve.py --no-build --port 18768`로 화면을 엽니다.
+3. 전체 환경·생성·경로 검토는 `node tools/review-server.cjs` 후 `http://127.0.0.1:18769/`입니다. 기존 상세 UI만 필요하면 `python tools/serve.py --no-build --port 18768`을 사용합니다. [검토실 API와 데이터 흐름](review-demo.md)을 읽으세요.
 4. CLI는 `node tools/simulate.cjs --config examples/dust.json --out outputs/frame-001.json`입니다.
 5. 변경 후 `tools/verify.py`, 관련 Node 테스트와 브라우저를 확인합니다.
 

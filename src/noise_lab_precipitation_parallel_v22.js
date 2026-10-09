@@ -1,13 +1,13 @@
 /* Optional Node worker-thread transport; physical field and ray ordering are unchanged. */
 async function precipitationParallel(input,config,raw,beam,terrainCm,id){
- const started=performance.now(),children=[],n=input.ranges.length,count=config.precipWorkers,parts=[];
+ const started=performance.now(),children=[],n=input.ranges.length,count=config.precipWorkers,parts=[],progresses=new Array(count).fill(0);
  for(let part=0;part<count;part++)parts.push(new Promise((resolve,reject)=>{
   const lo=Math.floor(n*part/count),hi=Math.floor(n*(part+1)/count),sub={...input};
   for(const [k,v] of Object.entries(input))if(ArrayBuffer.isView(v)){
    if(v.length===n)sub[k]=v.slice(lo,hi);else if(v.length===3*n)sub[k]=v.slice(3*lo,3*hi);
   }
   const child=new NodePartitionWorker(),done=()=>child.terminate();children.push(child);
-  child.onmessage=e=>{if(e.data.progress!==undefined)return;if(e.data.error){done();reject(Error(e.data.error));}else{done();resolve({lo,...e.data.motion});}};
+  child.onmessage=e=>{if(e.data.progress!==undefined){progresses[part]=e.data.progress;self.onWeatherProgress?.(progresses.reduce((a,b)=>a+b,0)/count);return;}if(e.data.error){done();reject(Error(e.data.error));}else{progresses[part]=1;done();resolve({lo,...e.data.motion});}};
   child.onerror=e=>{done();reject(Error(e.message));};
   child.postMessage({id,input:sub,config:{...config,precipWorkers:1,weatherDisplayFraction:input.ranges.length<=1024?1:.005},raw,beam,terrainCm,precipPartition:true});
  }));

@@ -4,7 +4,7 @@ function summary(frame){
  const r=frame.result;
  return {schema:5,datasetProfile:frame.config.datasetProfile||null,channels:r.channels,sensorPose:frame.sensorPose,sequencePlan:frame.sequencePlan,scene:frame.scene,kind:frame.kind,seed:frame.seed,time:frame.time,points:r.labels.length,
   xyz_labels_sha256:crypto.createHash('sha256').update(Buffer.from(r.xyz.buffer,r.xyz.byteOffset,r.xyz.byteLength)).update(Buffer.from(r.labels)).digest('hex'),
-  units:'m',coordinates:'world XYZ, Z up',field_calibrated:false,training_approved:false,geometry:frame.geometry,config:frame.config,stats:r.stats};
+  units:'m',coordinates:'world XYZ, Z up',field_calibrated:false,training_approved:false,geometry:frame.geometry,routePreview:frame.geometrySummary?.routePreview||[],config:frame.config,stats:r.stats};
 }
 function writeFrame(out,frame,metadata=summary(frame)){
  const r=frame.result,arrays={};

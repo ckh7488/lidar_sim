@@ -8,7 +8,7 @@ const Parameters=require('../src/noise_lab_parameters_v18.js');
 const Random=require('../src/noise_lab_random_v4.js');
 const Poses=require('../src/noise_lab_poses_v19.js');
 const Sequence=require('../src/noise_lab_sequence_v21.js');
-function createSimulator(){
+function createSimulator(hooks={}){
   if(!fs.existsSync(path.join(ROOT,'dist/index.html')))throw Error('Run python tools/build.py first');
   const html=read('dist/index.html'), index=json('dist/assets/noise_lab_v1/index.json');
   function script(id){const match=html.match(new RegExp('<script id="'+id+'"[^>]*>([\\s\\S]*?)</script>'));if(!match)throw Error('Missing script '+id);return match[1];}
@@ -16,7 +16,7 @@ function createSimulator(){
     const {Worker}=require('node:worker_threads'),source=script('three-runtime')+'\n'+script(id);
     const thread=new Worker(path.join(__dirname,'worker-thread.cjs'),{workerData:{source,allowPartitions:id==='lab-worker'}});
     let pending=null,failure=null;
-    thread.on('message',message=>{if(!pending||message.progress!==undefined)return;const task=pending;pending=null;thread.unref();message.error?task.reject(Error(message.error)):task.resolve(message);});
+    thread.on('message',message=>{if(!pending)return;if(message.progress!==undefined){hooks.onProgress?.({stage:id,progress:message.progress});return;}const task=pending;pending=null;thread.unref();message.error?task.reject(Error(message.error)):task.resolve(message);});
     thread.on('error',error=>{failure=error;if(pending){pending.reject(error);pending=null;}thread.unref();});
     thread.on('exit',code=>{failure=Error('Worker closed: '+code);if(pending){pending.reject(failure);pending=null;}});
     thread.unref();
@@ -72,7 +72,9 @@ function createSimulator(){
     delete geometry.sequence;
     if(controls['sequence-enabled'].checked||controls['dust-auto'].checked)geometry.sequence={scene,seed,time,enabled:controls['sequence-enabled'].checked,sourceBounds:index.sensor_positions_v19.scenes[scene].sampling_bounds_xy};
     const raw=cachedJSON('data/noise_lab_v1/'+index.geometry_knobs_v3.scenes.find(s=>s.scene===scene).id+'.json'),beam=options.sensorMetadata?require('./sensor-profile.cjs').load(options.sensorMetadata):cachedJSON('data/noise_lab_v1/beam_profiles_v2.json');
+    hooks.onProgress?.({stage:'geometry',progress:0});
     const geometryResult=await cast({id:++id,raw,beam,config:geometry});
+    hooks.onGeometry?.(geometryResult.summary);
     ctx.simData.scanGeometry=geometryResult.summary;
     vm.runInContext('this.resultConfig=cfg()',ctx);
     const config=ctx.resultConfig;
@@ -83,6 +85,7 @@ function createSimulator(){
     if(options.datasetProfile)config.datasetProfile=options.datasetProfile;
     if(options.temporalWeather!==undefined)config.temporalWeather=options.temporalWeather;
     if(options.edgeMixing!==undefined)config.edgeMixing=!!options.edgeMixing;
+    hooks.onProgress?.({stage:'observation',progress:0});
     const result=(await simulate({id:++id,input:geometryResult.input,config,raw,beam,terrainCm:geometry.terrainCm})).result;
     return {scene,kind,seed,time,config,geometry:geometryResult.summary.config,sequencePlan:geometryResult.summary.sequencePlan||null,sensorPose:geometryResult.summary.sensorPose,geometrySummary:geometryResult.summary,result};
   }

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NeuralMap · 환경과 노이즈 검토실</title><link rel="stylesheet" href="assets/review-demo.css"></head>
+<body>
+<header><div><span class="eyebrow">NEURALMAP / REVIEW LAB · 23</span><h1>환경과 노이즈 검토실</h1><p>실제 시뮬레이터의 형상, 관측점, 10초 경로를 함께 확인하세요.</p></div><a href="index.html" target="_blank" rel="noopener">기존 상세 시뮬레이터 ↗</a></header>
+<nav aria-label="검토 단계"><button data-tab="catalog" class="active">01 환경 24개</button><button data-tab="generators">02 생성기 8종</button><button data-tab="studio">03 직접 생성·경로</button><span class="badge">검토용 · 실측 교정 전</span></nav>
+<main>
+<section id="catalog" class="tab"><div class="section-heading"><div><h2>장소 전체를 먼저 둘러보세요.</h2><p>8종 환경마다 3개 배치. 아래 그림은 실제 사용 중인 메시를 그린 것입니다.</p></div><label>장소 <select id="family-filter" aria-label="환경 필터"><option value="all">모든 환경</option></select></label></div><p class="small">실내는 천장과 상부를 잘라 내부를 보여줍니다. 사람·차량은 현재 정지 형상이며, 새 시드는 건물 배치를 바꾸지 않습니다.</p><div id="scene-grid" class="scene-grid"></div><div id="catalog-status" role="status"></div></section>
+<section id="generators" class="tab" hidden><div class="section-heading"><div><h2>무엇을 만들고, 무엇을 확인하나요?</h2><p>표면 거리오차와 지면·설치 오차는 모든 생성기에 공통으로 적용합니다.</p></div></div><div id="generator-grid" class="generator-grid"></div><details class="deferred"><summary>아직 생성하지 않는 현상</summary><div id="deferred-list"></div></details><p class="small">물리 근사와 통계 후보입니다. 보기 좋거나 실행이 성공했다는 사실은 현장 정확도나 학습 효과를 입증하지 않습니다.</p></section>
+<section id="studio" class="tab" hidden>
+<div class="studio-grid">
+<aside>
+<div class="sidebar-title"><span class="eyebrow">조건 선택</span><h2>직접 생성</h2></div>
+<form id="generation-form">
+<label>장소 <select id="scene" aria-label="생성 장소"></select></label>
+<label>생성기 <select id="generator" aria-label="생성기"></select></label>
+<p id="model-hint" class="small"></p>
+<div class="two"><label>시드 <input id="seed" type="number" min="0" max="4294967295" value="73017" required></label><button id="random-seed" type="button">새 시드</button></div>
+<label>센서 시작점 <select id="pose"><option value="auto">시드별 자동 · 40곳</option></select></label>
+<div class="two"><label>생성 범위 <select id="mode"><option value="frame">한 순간</option><option value="sequence" selected>10초 전체</option></select></label><label id="frame-time-label">시각 <input id="frame-time" type="number" min="0" max="10" step="0.1" value="3"></label><label id="fps-label" hidden>계산 간격 <select id="fps"><option value="1">1초 · 11프레임</option><option value="2">0.5초 · 21프레임</option><option value="5">0.2초 · 51프레임</option><option value="10">0.1초 · 101프레임</option></select></label></div>
+<label class="check"><input id="edge-mixing" type="checkbox"> 모서리 혼합도 추가</label>
+<details open><summary>생성기 조절</summary><div id="model-controls"></div></details>
+<details><summary>공통 오차 · 현재 확정 범위</summary><label>거리 오차 σ <input id="radialSigma" type="range" min="0" max="0.15" step="0.005" value="0.06"><output for="radialSigma">6.0cm</output></label><p class="small">지면 높이 σ 0~0.5cm<br>앞뒤·좌우 기울기 각각 ±0.6°<br>축 흔들림 진폭 0~0.7°<br>위 값은 시드마다 뽑고 10초 동안 유지합니다.</p></details>
+<p id="estimate" class="small"></p>
+<button id="generate" class="primary" type="submit">실제 관측 생성</button><button id="cancel" type="button" hidden>생성 중지 · 완료 프레임 보존</button>
+</form>
+<p class="small">점군·경로를 꾸며서 보완하지 않습니다. 가려짐이나 약한 신호로 노이즈가 0개인 결과도 그대로 보여줍니다.</p>
+</aside>
+<div class="workspace">
+<div class="viewer-toolbar"><div><strong id="scene-title">장소 준비 중</strong><span id="scene-subtitle" class="small"></span></div><div class="button-row"><button id="fit-scene">장소 전체</button><button id="fit-route">경로 확대</button><button id="fit-source" hidden>발생원 확대</button><button id="top-view">위에서</button></div></div>
+<div id="viewer" tabindex="0" aria-label="환경과 실제 라이다 점군 3D 뷰어"><div id="viewer-caption">환경 형상 미리보기 · 관측은 아직 생성하지 않았습니다.</div><div class="viewer-help">드래그 회전 · 오른쪽 드래그 이동 · 휠 확대<br><span class="mint">● 표면</span> <span class="orange">● 산란·가짜 반환</span> <span class="yellow">● 불확실 표면</span></div></div>
+<div class="display-controls"><label>표시 <select id="display"><option value="combined">형상 + 실제 관측</option><option value="points">실제 관측만</option><option value="mesh">장소 형상만</option></select></label><label>점 색 <select id="point-color"><option value="labels">검토 라벨</option><option value="plain">단색</option><option value="reflectivity">반사도 추정값</option></select></label><label class="check"><input id="cutaway" type="checkbox"> 2.25m 위 숨김 · 표시만</label><label class="check"><input id="show-path" type="checkbox" checked> 실제 경로</label><label class="check"><input id="show-poses" type="checkbox"> 시작점 40곳</label><label class="check"><input id="show-particles" type="checkbox"> 운동 표본 · 관측 아님</label><label class="check"><input id="noise-only" type="checkbox"> 대상 라벨만</label><label>점 크기 <input id="point-size" type="range" min="1" max="5" step=".5" value="2"></label></div>
+<p id="display-note" class="small">메시의 색은 보기 위한 색이며 실제 반사도 값이 아닙니다.</p>
+<div id="job-status" role="status" aria-live="polite">조건을 고른 뒤 생성하세요.</div><progress id="job-progress" max="1" value="0" hidden></progress>
+<div class="timeline"><button id="previous-frame" disabled aria-label="이전 프레임">←</button><button id="play" disabled>재생</button><button id="next-frame" disabled aria-label="다음 프레임">→</button><input id="timeline" type="range" min="0" max="0" step="1" value="0" disabled aria-label="생성된 프레임 선택"><output id="time-label">생성된 프레임 없음</output></div>
+<p class="small">재생은 계산 완료한 프레임만 사용합니다. 프레임 사이의 점군을 보간하지 않으며, 화면 재생 속도와 생성 속도는 다릅니다.</p>
+<div class="metrics" id="metrics"><div>관측점 <b>—</b></div><div>산란·가짜 반환 <b>—</b></div><div>시각 <b>—</b></div><div>센서 위치 <b>—</b></div></div>
+<p id="observation-note" class="small"></p>
+<div class="button-row export-row"><button id="save-settings">설정 저장</button><label class="file-button">설정 불러오기<input id="load-settings" type="file" accept="application/json,.json"></label><a id="download-frame" hidden>현재 프레임 저장</a><a id="download-manifest" hidden>전체 프레임 목록 저장</a></div>
+<details><summary>이 결과의 재현 정보와 한계</summary><pre id="frame-info">생성하면 실제 적용 설정과 좌표·라벨 해시를 표시합니다.</pre><p class="small">공개 OS1-128, 131,072빔. 10초 지상 센서 이동이며 실제 외부 모터 36RPM과 스캔 내부 시간차는 미구현입니다. 건물·차량·사람은 정지 상태입니다. 신호·반사도는 미교정 추정값입니다.</p></details>
+</div></div>
+</section>
+<div id="fatal" class="error" role="alert" hidden></div>
+</main><footer>계산 결과는 이 PC의 outputs/review-demo에 보관합니다. 기존 데이터나 생성 파일을 자동 삭제하지 않습니다.</footer>
+<script src="assets/three-0.160.1.min.js"></script><script src="assets/review-demo-viewer.js"></script><script src="assets/review-demo.js"></script>
+</body></html>

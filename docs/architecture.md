@@ -16,6 +16,8 @@ outputs/      프레임·검증 출력, Git 제외
 
 ## 조립
 
+v23의 `review_demo.html`은 전체 환경·생성기 카탈로그와 파일 기반 재생 화면입니다. `review_demo.js`, `review_demo_viewer.js`, CSS를 별도로 복사합니다. `tools/review-server.cjs`가 실제 runtime을 실행하고 LSF를 저장하며 브라우저는 저장 좌표를 그대로 읽습니다. 물리 구현과 UI를 분리한 계약은 [review-demo.md](review-demo.md)에 있습니다.
+
 `tools/build.py`는 `src/template.html`의 토큰을 `src/injections.json`으로 대체합니다. 클라이언트 안의 중첩 토큰도 펼칩니다. vendor 코드는 마지막에 넣습니다. build는 configs와 활성 모델/자산 해시를 반영한 새 index를 dist에 만듭니다. 원본 데이터 index를 덮어쓰지는 않습니다.
 
 실행 페이지는 `index.html`, 호환 주소는 `measured_patch_review_v1.html`, `noise_review_lab_v1.html`입니다. `--portable`을 주면 시뮬레이터 자료를 내장한 큰 `portable.html`도 생성합니다. 연결된 역사 보고서까지 한 파일로 합치지는 않습니다.

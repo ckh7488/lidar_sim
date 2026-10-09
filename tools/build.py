@@ -71,6 +71,9 @@ def build(portable=False):
     (out/'ui-controls.json').write_text(json.dumps(parser.controls, ensure_ascii=False, indent=2), encoding='utf-8')
     preview = (ROOT/'src/asset_preview.html').read_text(encoding='utf-8').replace('__THREE__', (ROOT/'vendor/three-0.160.1.min.js').read_text(encoding='utf-8')).replace('__MODELS__', (ROOT/'data/noise_lab_v1/asset_models_v18.json').read_text(encoding='utf-8'))
     (out/'scene_asset_review_v18.html').write_text(preview, encoding='utf-8')
+    shutil.copyfile(ROOT/'src/review_demo.html', out/'review_demo.html')
+    for source, target in [('review_demo.css', 'review-demo.css'), ('review_demo_viewer.js', 'review-demo-viewer.js'), ('review_demo.js', 'review-demo.js')]:
+        shutil.copyfile(ROOT/'src'/source, out/'assets'/target)
     with zipfile.ZipFile(out/'noise_lab_v1_evidence.zip', 'w', compression=zipfile.ZIP_DEFLATED) as archive:
         for folder in ['src', 'configs', 'provenance', 'reference/evidence', 'vendor']:
             for p in sorted((ROOT/folder).rglob('*')):

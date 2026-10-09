@@ -15,6 +15,8 @@ Read this file, then `docs/agent-guide.md` and `docs/architecture.md`. Communica
 
 ## Start and verify
 
+For the v23 whole-scene/generator review demo, read `docs/review-demo.md`. Build, run `node tools/review-server.cjs`, open port 18769. Verify changes with `node tests/review-demo.cjs` plus the browser. The viewer must consume the actual runtime LSF output, never a second physics model. Keep the v22 observation invariants below.
+
 Run from this repository root. v22 tests: node tests/review-v22.cjs; node tests/weather-v22.cjs; node tests/sensor-profile-v22.cjs; python tests/calibration-v22.py. Read performance limitations before full 128-channel rain runs. Python 3.10+; Node 20+ for CLI/tests; no pip/npm install.
 
 ```sh

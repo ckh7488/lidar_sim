@@ -1,0 +1,358 @@
+{
+  "passed": true,
+  "created": "2026-10-09T08:51:36.530Z",
+  "scenes": 24,
+  "generators": 8,
+  "rows": [
+    {
+      "scene": "room_v1",
+      "generator": "range",
+      "frames": 1,
+      "points": 129691,
+      "noise": 0,
+      "hash": "b2409840f49ad0f75a68b5023afd6d853a61dec2bde6a44d61e977c0789c52cb",
+      "elapsedS": 1.087
+    },
+    {
+      "scene": "corridor_v1",
+      "generator": "range",
+      "frames": 1,
+      "points": 99433,
+      "noise": 0,
+      "hash": "e8c4eb785e71982fb8e0181018e0f226c40e94c0300d32ea18a4b16ff960af94",
+      "elapsedS": 1.004
+    },
+    {
+      "scene": "warehouse_v1",
+      "generator": "range",
+      "frames": 1,
+      "points": 130986,
+      "noise": 0,
+      "hash": "ec01c3130e1f4ba1337cac9f6fa995c085cb4861a8b23375cd3231dc5e0e565c",
+      "elapsedS": 1.14
+    },
+    {
+      "scene": "construction_v1",
+      "generator": "range",
+      "frames": 1,
+      "points": 62653,
+      "noise": 0,
+      "hash": "28d6cb8c9c2cb43cc47b86c8810e145a439d3372a6ec9e3395d57db3a9f3ddd0",
+      "elapsedS": 1.307
+    },
+    {
+      "scene": "department_store_v1",
+      "generator": "range",
+      "frames": 1,
+      "points": 130548,
+      "noise": 0,
+      "hash": "1eeb7132d8bd9774486d73eda9e9097c05b3b87b7ce19d8a701b6664977bcc6b",
+      "elapsedS": 1.092
+    },
+    {
+      "scene": "crane_yard_v1",
+      "generator": "range",
+      "frames": 1,
+      "points": 78082,
+      "noise": 0,
+      "hash": "8ac4136727fb631649b8078d8e1582c5eaaa9c55f2ef78b9579fe666a7736e7f",
+      "elapsedS": 2.524
+    },
+    {
+      "scene": "underground_parking_v1",
+      "generator": "range",
+      "frames": 1,
+      "points": 130157,
+      "noise": 0,
+      "hash": "810075db79d75da48cdff402fc8e5830ba8a30306ae47f3b696d3fd99796a2bd",
+      "elapsedS": 1.193
+    },
+    {
+      "scene": "apartment_v1",
+      "generator": "range",
+      "frames": 1,
+      "points": 86210,
+      "noise": 0,
+      "hash": "1d24c6c9c0851d59cad1c46f1c55b93d9f2baf7a3168b91d53b66993f7e98ccc",
+      "elapsedS": 2.415
+    },
+    {
+      "scene": "room_v2",
+      "generator": "range",
+      "frames": 1,
+      "points": 126466,
+      "noise": 0,
+      "hash": "aeb816416b35251019e1c6392c23d4604d77144d98e47b0700ea71950deef9aa",
+      "elapsedS": 1.079
+    },
+    {
+      "scene": "corridor_v2",
+      "generator": "range",
+      "frames": 1,
+      "points": 110446,
+      "noise": 0,
+      "hash": "2ce58b2598c275a981378cd67fe1e65459c9c62b9c844a01aba6e9bed590c13e",
+      "elapsedS": 1.052
+    },
+    {
+      "scene": "warehouse_v2",
+      "generator": "range",
+      "frames": 1,
+      "points": 130987,
+      "noise": 0,
+      "hash": "97d23cb1cdc8b4de4a5d2098aa622e1941ac8e4a9b480387ef6bfa1beca1d88a",
+      "elapsedS": 1.15
+    },
+    {
+      "scene": "construction_v2",
+      "generator": "range",
+      "frames": 1,
+      "points": 64533,
+      "noise": 0,
+      "hash": "86118d229537fb485db6099fd06319bc25655fe18ad00656f7a70a5c918196ca",
+      "elapsedS": 1.264
+    },
+    {
+      "scene": "department_store_v2",
+      "generator": "range",
+      "frames": 1,
+      "points": 130258,
+      "noise": 0,
+      "hash": "0c4a85b35a1910f92a25a74b90d69dceb2ab5880ac52e8d685fe249d42207c9d",
+      "elapsedS": 1.095
+    },
+    {
+      "scene": "crane_yard_v2",
+      "generator": "range",
+      "frames": 1,
+      "points": 69477,
+      "noise": 0,
+      "hash": "c4abd3db3bbea222e676d76c8f5a34016280ba4722d92739386d607f7424dfb8",
+      "elapsedS": 2.535
+    },
+    {
+      "scene": "underground_parking_v2",
+      "generator": "range",
+      "frames": 1,
+      "points": 130616,
+      "noise": 0,
+      "hash": "d7b42ccd409768cc0365040a7f8cd7980b69d3b410cdddce4a0fc1ef39e640c3",
+      "elapsedS": 1.164
+    },
+    {
+      "scene": "apartment_v2",
+      "generator": "range",
+      "frames": 1,
+      "points": 65287,
+      "noise": 0,
+      "hash": "21dbfe7694b154179bfd0c76c285b92471eb63f95ff13270ef4b447377ee9e4e",
+      "elapsedS": 1.402
+    },
+    {
+      "scene": "room_v3",
+      "generator": "range",
+      "frames": 1,
+      "points": 129590,
+      "noise": 0,
+      "hash": "2ef58f9d6855fa40abb420abe252dffa5cf1800de7684714e8686d4bb5495012",
+      "elapsedS": 1.092
+    },
+    {
+      "scene": "corridor_v3",
+      "generator": "range",
+      "frames": 1,
+      "points": 108534,
+      "noise": 0,
+      "hash": "acb719fc43878d8b1989d6cf3d5c510825e867187cd1b5a8614061a735015c56",
+      "elapsedS": 1.07
+    },
+    {
+      "scene": "warehouse_v3",
+      "generator": "range",
+      "frames": 1,
+      "points": 131072,
+      "noise": 0,
+      "hash": "befad48d91417c7cdfabbe6b03d4769b8d54dbcb6c9e1b14116645c61159ec7d",
+      "elapsedS": 1.125
+    },
+    {
+      "scene": "construction_v3",
+      "generator": "range",
+      "frames": 1,
+      "points": 67925,
+      "noise": 0,
+      "hash": "18b56f697ae3f0cea826cdcbbe5cfe3cd9bd0f92352eb89454b2c8dc0670dd1b",
+      "elapsedS": 1.306
+    },
+    {
+      "scene": "department_store_v3",
+      "generator": "range",
+      "frames": 1,
+      "points": 129074,
+      "noise": 0,
+      "hash": "a34ea00c8056aceaa71eeb879d22e1371c78768eeb4b02af432f9fe481868849",
+      "elapsedS": 1.141
+    },
+    {
+      "scene": "crane_yard_v3",
+      "generator": "range",
+      "frames": 1,
+      "points": 66234,
+      "noise": 0,
+      "hash": "328e93f851055697de6c4158bf67e7c62c92855a3bd9fbcce34ad786910888bf",
+      "elapsedS": 2.436
+    },
+    {
+      "scene": "underground_parking_v3",
+      "generator": "range",
+      "frames": 1,
+      "points": 131072,
+      "noise": 0,
+      "hash": "a705ea35f15e2ceafc4ac19e13d26a23524f31558475f78d6d0cfb6519582a38",
+      "elapsedS": 1.149
+    },
+    {
+      "scene": "apartment_v3",
+      "generator": "range",
+      "frames": 1,
+      "points": 70801,
+      "noise": 0,
+      "hash": "e8b48c719776183e88e538083930fd9143e2bf0d44b6ea1f0c2a0fb06cd578c5",
+      "elapsedS": 1.426
+    },
+    {
+      "scene": "construction_v1",
+      "generator": "dust",
+      "frames": 1,
+      "points": 62529,
+      "noise": 0,
+      "hash": "9a423277335e5a6910425c833b3b1eb2f32eccf72d00d606ff73bd0e13147b40",
+      "elapsedS": 2.151
+    },
+    {
+      "scene": "construction_v1",
+      "generator": "rain",
+      "frames": 1,
+      "points": 65580,
+      "noise": 3288,
+      "hash": "28e02211bf77895a079c0ce99d7babdfaaa4b3b5dcbbdd7a5d0e1b19c2d58f24",
+      "elapsedS": 25.511
+    },
+    {
+      "scene": "construction_v1",
+      "generator": "snow",
+      "frames": 1,
+      "points": 67089,
+      "noise": 5039,
+      "hash": "2d5a09e22094d9f38f5b53a15fe3ff904fed498646f4b6fcd820ddeed9cf10fe",
+      "elapsedS": 18.008
+    },
+    {
+      "scene": "construction_v1",
+      "generator": "fog",
+      "frames": 1,
+      "points": 63148,
+      "noise": 648,
+      "hash": "146043f7d7f6d740d0630c02d6eca4accc9bc40c0beb9ca25305892df1c441b4",
+      "elapsedS": 9.792
+    },
+    {
+      "scene": "construction_v1",
+      "generator": "sun",
+      "frames": 1,
+      "points": 62653,
+      "noise": 0,
+      "hash": "28d6cb8c9c2cb43cc47b86c8810e145a439d3372a6ec9e3395d57db3a9f3ddd0",
+      "elapsedS": 1.736
+    },
+    {
+      "scene": "construction_v1",
+      "generator": "edge",
+      "frames": 1,
+      "points": 62223,
+      "noise": 0,
+      "hash": "63d1af39d40ae13d9aea23a7978016fdf3fb06a8d86e58cf1f2c575ec4201cce",
+      "elapsedS": 5.055
+    },
+    {
+      "scene": "construction_v1",
+      "generator": "weak",
+      "frames": 1,
+      "points": 57802,
+      "noise": 0,
+      "hash": "78d71534bfa7196597166312b948d1b512de98198f02bc5a36f10c08f4516a0c",
+      "elapsedS": 1.292
+    },
+    {
+      "scene": "construction_v1",
+      "generator": "dust",
+      "frames": 1,
+      "points": 62529,
+      "noise": 0,
+      "hash": "9a423277335e5a6910425c833b3b1eb2f32eccf72d00d606ff73bd0e13147b40",
+      "elapsedS": 2.179
+    },
+    {
+      "scene": "construction_v1",
+      "generator": "dust",
+      "frames": 1,
+      "points": 58815,
+      "noise": 0,
+      "hash": "d30fb8f81ddd961739724095e8f1a6bfc206278939b269fbe5ee0bed99f252dd",
+      "elapsedS": 2.129
+    },
+    {
+      "scene": "construction_v1",
+      "generator": "range",
+      "frames": 11,
+      "points": 62418,
+      "noise": 0,
+      "hash": "c79d6f5930eb47de2ffadf7e3fb4d7a6210272819ab2aee67231f5473af24b8a",
+      "elapsedS": 8.183
+    }
+  ],
+  "apiGuards": true,
+  "cancellation": true,
+  "browserBinaryExact": true,
+  "directRuntimeExact": true,
+  "sequenceFrames": 11,
+  "outputRoot": "outputs\\review-demo-test-1791535782417",
+  "fieldCalibrated": false,
+  "trainingApproved": false,
+  "browser": {
+    "sceneThumbnails": 24,
+    "generatorCards": 8,
+    "sequencePlayback": "0..10 s, 11 actual saved frames, reached time 10",
+    "cancelAndRecover": "rain cancellation, then room_v2 range generation succeeded",
+    "binaryHashShown": true,
+    "sourceZoomAndWorldParticles": true,
+    "indoorDisplayClipM": 2.25,
+    "solarDirectionChange": {
+      "scene": "construction_v1",
+      "seed": 1,
+      "time": 8,
+      "sunAz": -180,
+      "falseReturns": 23,
+      "hash": "f3bbe3c73eca1e0d263ac9fddeb34bc7bfd59bc1ea7c3f0876cca41037586570"
+    },
+    "consoleErrors": 0,
+    "consoleWarning": "Bundled Three.js legacy-script deprecation warning"
+  },
+  "regression": {
+    "verify": {
+      "inputs": 217,
+      "scenes": 24,
+      "measuredExamples": 36,
+      "brokenLinks": 0
+    },
+    "workerLifecycleCases": 11,
+    "reviewV22": true,
+    "weatherV22": true,
+    "dustControlBounds": true
+  },
+  "versions": {
+    "python": "3.12",
+    "node": "20.18.1",
+    "platform": "Windows"
+  }
+}
