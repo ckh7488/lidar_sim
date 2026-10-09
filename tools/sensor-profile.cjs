@@ -2,7 +2,7 @@
 const fs=require('node:fs'),crypto=require('node:crypto'),zlib=require('node:zlib');
 const pack=a=>zlib.gzipSync(Buffer.from(a.buffer,a.byteOffset,a.byteLength)).toString('base64');
 function fromMetadata(m,sha='in-memory'){
- const b=m.beam_intrinsics||m,l=m.lidar_intrinsics||m,f=m.lidar_data_format||m.data_format||m,alt=b.beam_altitude_angles,az=b.beam_azimuth_angles,T=b.beam_to_lidar_transform,L=l.lidar_to_sensor_transform;
+ const b=m.beam_intrinsics||m,l=m.lidar_intrinsics||m,f=m.lidar_data_format||m.data_format||m,alt=b.beam_altitude_angles,az=b.beam_azimuth_angles,T=b.beam_to_lidar_transform||(Number.isFinite(b.lidar_origin_to_beam_origin_mm)?[1,0,0,b.lidar_origin_to_beam_origin_mm,0,1,0,0,0,0,1,0,0,0,0,1]:null),L=l.lidar_to_sensor_transform;
  if(!Array.isArray(alt)||!alt.length||!Array.isArray(az)||alt.length!==az.length||![...alt,...az].every(Number.isFinite))throw Error('Exact per-channel altitude and azimuth arrays are required');
  if(!Array.isArray(T)||T.length!==16||!Array.isArray(L)||L.length!==16||![...T,...L].every(Number.isFinite))throw Error('Both beam_to_lidar_transform and lidar_to_sensor_transform are required in mm');
  for(const [i,v] of [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1].entries())if(![3,7,11].includes(i)&&Math.abs(T[i]-v)>1e-8)throw Error('Unsupported non-translation beam_to_lidar_transform');
@@ -18,7 +18,8 @@ function fromMetadata(m,sha='in-memory'){
   const encoder=-col*2*Math.PI/w,o=rotate([tx*Math.cos(encoder),tx*Math.sin(encoder),tz]);for(let a=0;a<3;a++)offsets[3*col+a]=o[a]+L[4*a+3]/1000;
   for(let row=0;row<h;row++){const theta=encoder-az[row]*Math.PI/180,phi=alt[row]*Math.PI/180,d=rotate([Math.cos(theta)*Math.cos(phi),Math.sin(theta)*Math.cos(phi),Math.sin(phi)]);dirs.set(d,3*(row*w+col));}
  }
- return {name:(m.sensor_info?.prod_line||m.prod_line||'metadata sensor')+' exact intrinsics',profileKey:sha,h,w,directions:pack(dirs),origins:pack(offsets),center_origin_m:[L[3]/1000,L[7]/1000,L[11]/1000],beam_altitude_angles:alt,beam_azimuth_angles:az,metadata_sha256:sha,optical_path_offset_m:Math.hypot(tx,tz),range_definition:'simulated optical-origin distance; Ouster packet range adds optical_path_offset_m',field_calibrated:false};
+ return {name:(m.sensor_info?.prod_line||m.prod_line||'metadata sensor')+' exact intrinsics',profileKey:sha,h,w,directions:pack(dirs),origins:pack(offsets),lidar_rotation:[L[0],L[1],L[2],L[4],L[5],L[6],L[8],L[9],L[10]],center_origin_m:[L[3]/1000,L[7]/1000,L[11]/1000],beam_altitude_angles:alt,beam_azimuth_angles:az,metadata_sha256:sha,optical_path_offset_m:Math.hypot(tx,tz),range_definition:'simulated optical-origin distance; Ouster packet range adds optical_path_offset_m',field_calibrated:false};
 }
 function load(file){const raw=fs.readFileSync(file);return fromMetadata(JSON.parse(raw),crypto.createHash('sha256').update(raw).digest('hex'));}
-module.exports={load,fromMetadata};
+const builtins={'os1-128':'beam_profiles_v2','os1-32-u':'beam_os1-32-u_v25','os1-32-g':'beam_os1-32-g_v25'};
+module.exports={load,fromMetadata,builtins};

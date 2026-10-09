@@ -8,6 +8,7 @@ const Parameters=require('../src/noise_lab_parameters_v18.js');
 const Random=require('../src/noise_lab_random_v4.js');
 const Poses=require('../src/noise_lab_poses_v19.js');
 const Sequence=require('../src/noise_lab_sequence_v21.js');
+const BeamUnit=require('../src/noise_lab_beam_unit_v25.js'),SensorProfile=require('./sensor-profile.cjs');
 function createSimulator(hooks={}){
   if(!fs.existsSync(path.join(ROOT,'dist/index.html')))throw Error('Run python tools/build.py first');
   const html=read('dist/index.html'), index=json('dist/assets/noise_lab_v1/index.json');
@@ -74,7 +75,10 @@ function createSimulator(hooks={}){
     const geometry={sceneVariation:{enabled:modern&&options.randomScene!==false},...Random.sample(seed,scene,index.parameter_distributions_v18.parameters),...(options.geometry||{}),sensorPose:Poses.choose(index.sensor_positions_v19,scene,seed,poseChoice==='random'?'auto':poseChoice)};
     delete geometry.sequence;
     if(modern||controls['sequence-enabled'].checked||controls['dust-auto'].checked)geometry.sequence={scene,seed,time,enabled:controls['sequence-enabled'].checked,sourceBounds:index.sensor_positions_v19.scenes[scene].sampling_bounds_xy,anchors:index.sensor_positions_v19.scenes[scene].positions,mode:modern?'free6dof':'ground',randomStart:poseChoice==='random'};
-    const raw=cachedJSON('data/noise_lab_v1/'+index.geometry_knobs_v3.scenes.find(s=>s.scene===scene).id+'.json'),beam=options.sensorMetadata?require('./sensor-profile.cjs').load(options.sensorMetadata):cachedJSON('data/noise_lab_v1/beam_profiles_v2.json');
+    if(options.sensorMetadata&&options.sensor)throw Error('Use sensor or sensorMetadata, not both');
+    if(options.sensor!==undefined&&(typeof options.sensor!=='string'||!Object.hasOwn(SensorProfile.builtins,options.sensor)))throw Error('Unknown sensor profile');
+    geometry.beamUnit=BeamUnit.settings(options.beamUnit);
+    const raw=cachedJSON('data/noise_lab_v1/'+index.geometry_knobs_v3.scenes.find(s=>s.scene===scene).id+'.json'),beam=options.sensorMetadata?require('./sensor-profile.cjs').load(options.sensorMetadata):cachedJSON('data/noise_lab_v1/'+SensorProfile.builtins[options.sensor||'os1-128']+'.json');
     hooks.onProgress?.({stage:'geometry',progress:0});
     const geometryResult=await cast({id:++id,raw,beam,config:geometry});
     hooks.onGeometry?.(geometryResult.summary);
@@ -84,7 +88,7 @@ function createSimulator(hooks={}){
     const os=require('node:os'),workerBudget=Math.max(1,Math.min(4,os.cpus().length-4,Math.floor((os.freemem()-16*1024**3)/(2*1024**3))));config.precipWorkers=options.precipWorkers??workerBudget;
     if(config.precipWorkers>workerBudget)throw Error('Requested workers would violate CPU/RAM reserve');
     if(!Number.isInteger(config.precipWorkers)||config.precipWorkers<1||config.precipWorkers>4)throw Error('precipWorkers must be 1..4');
-    config.sensorProfile={name:beam.name,rows:beam.h,columns:beam.w,metadataSha256:beam.metadata_sha256||null,opticalPathOffsetM:beam.optical_path_offset_m??null,rangeDefinition:beam.range_definition||'distance from optical ray origin, not Euclidean norm from sensor center'};
+    config.sensorProfile={...geometryResult.summary.sensorProfile,metadataSha256:beam.metadata_sha256||null,opticalPathOffsetM:beam.optical_path_offset_m??null,rangeDefinition:beam.range_definition||'distance from optical ray origin, not Euclidean norm from sensor center'};
     if(options.datasetProfile)config.datasetProfile=options.datasetProfile;
     if(options.temporalWeather!==undefined)config.temporalWeather=options.temporalWeather;
     if(options.edgeMixing!==undefined)config.edgeMixing=!!options.edgeMixing;

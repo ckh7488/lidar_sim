@@ -168,3 +168,8 @@ node tools/benchmark.cjs --frames 20 --kinds range,rain,snow,fog,dust,sun,genera
 `sceneLayout.instances`에는 실제 추가 물체의 모델 ID·XYZ·yaw·scale·반사율이 있습니다. `sensorPose.bodyRotation`은 행 우선 3×3 몸체 회전, worldZ는 센서 Z입니다. `routePreview`는 실제 계획의 0.1초 표본입니다. 세 필드와 전체 계획은 학습 센서 특징이 아닙니다. 고급 `geometry` 입력은 설치 오차이며 몸체 pitch/roll과 구분합니다.
 
 전체 신규 검사는 `tests/audit-geometry-v24.cjs`, `--random-grid`, `tests/audit-runtime-v24.cjs`입니다. 기존 지상 계획을 검사하는 simulator/sequence-frames/review-v22의 입력에는 명시적 legacy-v23를 유지했습니다. 신기능 검사를 이전 경로로 바꿔 통과시키지 마세요.
+
+
+## OS1-32 및 개체별 고정 빔 각도 (v25)
+
+[설계·분포·API·검사](beam-variation-v25.md)를 읽으세요. 웹은 OS1-32 U와 각도 변동이 기본이고, 기존 CLI/API는 호환을 위해 OS1-128·추가 변동 끔을 유지합니다. CLI/API에서는 sensor와 beamUnit을 명시합니다. src/noise_lab_beam_unit_v25.js가 단일 분포/추출 구현이며 전체 시퀀스·장면·날씨에 동일한 sensor-unit을 유지합니다. tests/beam-unit-v25.cjs로 광선과 내보내기를 확인합니다.

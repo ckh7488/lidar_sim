@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NeuralMap · 환경과 노이즈 검토실</title><link rel="stylesheet" href="assets/review-demo.css"></head>
 <body>
-<header><div><span class="eyebrow">NEURALMAP / REVIEW LAB · 24</span><h1>환경과 노이즈 검토실</h1><p>실제 시뮬레이터의 형상, 관측점, 10초 경로를 함께 확인하세요.</p></div><a href="index.html" target="_blank" rel="noopener">기존 상세 시뮬레이터 ↗</a></header>
+<header><div><span class="eyebrow">NEURALMAP / REVIEW LAB · 25</span><h1>환경과 노이즈 검토실</h1><p>실제 시뮬레이터의 형상, 관측점, 10초 경로를 함께 확인하세요.</p></div><a href="index.html" target="_blank" rel="noopener">기존 상세 시뮬레이터 ↗</a></header>
 <nav aria-label="검토 단계"><button data-tab="catalog" class="active">01 환경 24개</button><button data-tab="generators">02 생성기 8종</button><button data-tab="studio">03 직접 생성·경로</button><span class="badge">검토용 · 실측 교정 전</span></nav>
 <main>
 <section id="catalog" class="tab"><div class="section-heading"><div><h2>장소 전체를 먼저 둘러보세요.</h2><p>8종 환경마다 3개 배치. 아래 그림은 실제 사용 중인 메시를 그린 것입니다.</p></div><label>장소 <select id="family-filter" aria-label="환경 필터"><option value="all">모든 환경</option></select></label></div><p class="small">실내는 천장과 상부를 잘라 내부를 보여줍니다. 기본 건물은 유지하고 장소에 맞는 소품의 종류·수·배치가 새 시드마다 바뀝니다. 물체 자체의 주행·보행은 미구현입니다.</p><div id="scene-grid" class="scene-grid"></div><div id="catalog-status" role="status"></div></section>
@@ -19,6 +19,7 @@
 <div class="two"><label>생성 범위 <select id="mode"><option value="frame">한 순간</option><option value="sequence" selected>10초 전체</option></select></label><label id="frame-time-label">시각 <input id="frame-time" type="number" min="0" max="10" step="0.1" value="3"></label><label id="fps-label" hidden>계산 간격 <select id="fps"><option value="1">1초 · 11프레임</option><option value="2">0.5초 · 21프레임</option><option value="5">0.2초 · 51프레임</option><option value="10">0.1초 · 101프레임</option></select></label></div>
 <label class="check"><input id="edge-mixing" type="checkbox"> 모서리 혼합도 추가</label>
 <details open><summary>생성기 조절</summary><div id="model-controls"></div></details>
+<details><summary>센서 종류 · 개체별 빔 각도</summary><label>센서 <select id="sensor"><option value="os1-32-u">OS1-32 U · 32×512</option><option value="os1-32-g">OS1-32 G · 32×1,024</option><option value="os1-128">OS1-128 · 128×1,024</option></select></label><label class="check"><input id="beam-unit-enabled" type="checkbox" checked> 개체별 각도 변동</label><div class="two"><label>가상 센서 번호 <input id="sensor-unit" type="number" min="0" max="4294967295" step="1" value="1"></label><button id="new-sensor-unit" type="button">다른 기기</button></div><label>채널별 각도 범위 ± <input id="beam-bound" type="number" min="0" max="0.01" step="0.001" value="0.01">°</label><p class="small">같은 기기 번호는 장면·시간을 바꿔도 같은 각도입니다. U/G는 다른 빔 배치입니다. 변동은 교정값에 더하는 시험 가정이며 실측 제품 간 분포가 아닙니다.</p></details>
 <details><summary>공통 오차 · 현재 확정 범위</summary><label>거리 오차 σ <input id="radialSigma" type="range" min="0" max="0.15" step="0.005" value="0.06"><output for="radialSigma">6.0cm</output></label><p class="small">지면 높이 σ 0~0.5cm<br>앞뒤·좌우 기울기 각각 ±0.6°<br>축 흔들림 진폭 0~0.7°<br>위 값은 시드마다 뽑고 10초 동안 유지합니다.</p></details>
 <p id="estimate" class="small"></p>
 <button id="generate" class="primary" type="submit">실제 관측 생성</button><button id="cancel" type="button" hidden>생성 중지 · 완료 프레임 보존</button>
@@ -36,10 +37,10 @@
 <p class="small" id="pose-info">생성 후 센서의 yaw·pitch·roll을 표시합니다.</p><div class="metrics" id="metrics"><div>관측점 <b>—</b></div><div>산란·가짜 반환 <b>—</b></div><div>시각 <b>—</b></div><div>센서 위치 <b>—</b></div></div>
 <p id="observation-note" class="small"></p>
 <div class="button-row export-row"><button id="save-settings">설정 저장</button><label class="file-button">설정 불러오기<input id="load-settings" type="file" accept="application/json,.json"></label><a id="download-frame" hidden>현재 프레임 저장</a><a id="download-manifest" hidden>전체 프레임 목록 저장</a></div>
-<details><summary>이 결과의 재현 정보와 한계</summary><pre id="frame-info">생성하면 실제 적용 설정과 좌표·라벨 해시를 표시합니다.</pre><p class="small">공개 OS1-128, 131,072빔. 10초 6DoF 센서 이동이며 실제 외부 모터 36RPM과 스캔 내부 시간차는 미구현입니다. 건물·차량·사람은 정지 상태입니다. 신호·반사도는 미교정 추정값입니다.</p></details>
+<details><summary>이 결과의 재현 정보와 한계</summary><pre id="frame-info">생성하면 실제 적용 설정과 좌표·라벨 해시를 표시합니다.</pre><p class="small">선택한 공개 OS1 교정값으로 광선을 발사합니다. 채널별 변동은 발사·복원에 함께 적용하며, 미교정 잔차·매번의 발사 흔들림은 추가하지 않습니다. 10초 6DoF 센서 이동이며 실제 외부 모터 36RPM과 스캔 내부 시간차는 미구현입니다. 건물·차량·사람은 정지 상태입니다. 신호·반사도는 미교정 추정값입니다.</p></details>
 </div></div>
 </section>
 <div id="fatal" class="error" role="alert" hidden></div>
 </main><footer>계산 결과는 이 PC의 outputs/review-demo에 보관합니다. 기존 데이터나 생성 파일을 자동 삭제하지 않습니다.</footer>
-<script src="assets/three-0.160.1.min.js"></script><script src="assets/prop-assets-v24.js"></script><script src="assets/scene-v24.js"></script><script src="assets/review-demo-viewer.js"></script><script src="assets/review-demo.js"></script>
+<script src="assets/three-0.160.1.min.js"></script><script src="assets/prop-assets-v24.js"></script><script src="assets/scene-v24.js"></script><script src="assets/review-demo-viewer.js"></script><script src="assets/beam-unit-v25.js"></script><script src="assets/review-demo.js"></script>
 </body></html>

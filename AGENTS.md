@@ -64,3 +64,8 @@ The geometry/weather suite is CPU intensive, especially fog. Read `docs/validati
 ## Handoff discipline
 
 Rebuild after edits. Verify the changed mechanism and its meaningful invariants, then inspect the browser for UI changes. Record observed results, command versions and limitations in `docs/validation.md`; never silently turn an unrun check into PASS. Before publishing, fetch origin again, inspect the diff and keep generated exports/raw logs out of Git. Preserve original/other-agent work and document any compatibility change.
+
+
+## OS1-32 및 개체별 고정 빔 각도 (v25)
+
+[설계·분포·API·검사](docs/beam-variation-v25.md)를 읽으세요. 웹은 OS1-32 U와 각도 변동이 기본이고, 기존 CLI/API는 호환을 위해 OS1-128·추가 변동 끔을 유지합니다. CLI/API에서는 sensor와 beamUnit을 명시합니다. src/noise_lab_beam_unit_v25.js가 단일 분포/추출 구현이며 전체 시퀀스·장면·날씨에 동일한 sensor-unit을 유지합니다. tests/beam-unit-v25.cjs로 광선과 내보내기를 확인합니다.

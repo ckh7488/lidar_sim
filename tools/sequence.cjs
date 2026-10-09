@@ -4,8 +4,8 @@ const fs=require('node:fs'),path=require('node:path');
 const {createSimulator}=require('./runtime.cjs'),{summary,writeFrame}=require('./frame-export.cjs');
 async function main(){
  const args=process.argv.slice(2),opts={};
- if(args.includes('--help')){console.log('node tools/sequence.cjs --out outputs/sequence-001 [--config examples/dust.json] [--scene construction_v1] [--kind dust] [--seed 73031] [--pose random|auto|legacy|0..39] [--scenario random-v24|legacy-v23] [--profile review|coverage-v22] [--sensor-metadata path.json] [--fps 10] [--format lsf.gz|lsf|json.gz|json]\n10 seconds, endpoint-inclusive: 10 Hz = 101 frames. A fresh output directory is required. Sequential generation; no training.');return;}
- for(let i=0;i<args.length;i+=2){if(!['--config','--scene','--kind','--seed','--pose','--scenario','--fps','--format','--out','--profile','--sensor-metadata'].includes(args[i])||args[i+1]===undefined)throw Error('Invalid arguments; use --help');opts[args[i].slice(2)]=args[i+1];}
+ if(args.includes('--help')){console.log('node tools/sequence.cjs --out outputs/sequence-001 [--config examples/dust.json] [--scene construction_v1] [--kind dust] [--seed 73031] [--pose random|auto|legacy|0..39] [--scenario random-v24|legacy-v23] [--profile review|coverage-v22] [--sensor os1-32-u|os1-32-g|os1-128] [--sensor-unit 1] [--beam-bound-deg 0.01] [--sensor-metadata path.json] [--fps 10] [--format lsf.gz|lsf|json.gz|json]\n10 seconds, endpoint-inclusive: 10 Hz = 101 frames. A fresh output directory is required. Sequential generation; no training.');return;}
+ for(let i=0;i<args.length;i+=2){if(!['--config','--scene','--kind','--seed','--pose','--scenario','--fps','--format','--out','--profile','--sensor-metadata','--sensor','--sensor-unit','--beam-bound-deg'].includes(args[i])||args[i+1]===undefined)throw Error('Invalid arguments; use --help');opts[args[i].slice(2)]=args[i+1];}
  if(!opts.out)throw Error('--out is required');
  const fps=Number(opts.fps??10),format=opts.format??'lsf.gz';
  if(!Number.isInteger(fps)||fps<1||fps>20)throw Error('fps must be an integer in [1,20]');
@@ -13,7 +13,9 @@ async function main(){
  const config=opts.config?JSON.parse(fs.readFileSync(opts.config,'utf8')):{};
  for(const k of ['scene','kind','pose','profile','scenario'])if(opts[k])config[k]=opts[k];
  if(opts.seed!==undefined)config.seed=Number(opts.seed);
- if(opts['sensor-metadata'])config.sensorMetadata=opts['sensor-metadata'];
+ if(opts.sensor)config.sensor=opts.sensor;
+  if(opts['sensor-unit']!==undefined||opts['beam-bound-deg']!==undefined)config.beamUnit={enabled:true,seed:Number(opts['sensor-unit']??1),boundDeg:Number(opts['beam-bound-deg']??.01)};
+  if(opts['sensor-metadata'])config.sensorMetadata=opts['sensor-metadata'];
  config.sequence=true;config.dustEmissionS=10;
  const out=path.resolve(opts.out),sim=createSimulator(),count=10*fps+1,started=performance.now(),frames=[];
  fs.mkdirSync(path.dirname(out),{recursive:true});fs.mkdirSync(out); // Never reuse another sequence's directory.

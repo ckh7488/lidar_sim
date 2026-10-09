@@ -1,0 +1,19 @@
+{
+  "commit": "46b7bceee7995914e2f3f3facf4d78418335b2d7",
+  "license": "BSD-3-Clause",
+  "sources": [
+    {
+      "id": "os1-32-u",
+      "file": "data/noise_lab_v1/metadata_os1-32-u_v25.json",
+      "source": "https://raw.githubusercontent.com/ouster-lidar/ouster-sdk/46b7bceee7995914e2f3f3facf4d78418335b2d7/tests/metadata/2_0_rc2_os-992011000121-32U0_legacy.json",
+      "sha256": "d1079e0f46c1cfe139a085a4c2388315930bd646260ab01bc48d9ce227a03d79"
+    },
+    {
+      "id": "os1-32-g",
+      "file": "data/noise_lab_v1/metadata_os1-32-g_v25.json",
+      "source": "https://raw.githubusercontent.com/ouster-lidar/ouster-sdk/46b7bceee7995914e2f3f3facf4d78418335b2d7/tests/pcaps/OS-1-32-G_v2.1.1_1024x10.json",
+      "sha256": "fdca69f72c5950e501b51ba5765f64932e22dca46c9f8b7c8f5a089a3aace3c8"
+    }
+  ],
+  "notes": "Official SDK public fixtures. U and G are different layouts, NOT two units sampled from the same product population. U uses its original 512 columns; G uses 1024. No PCAP downloaded."
+}

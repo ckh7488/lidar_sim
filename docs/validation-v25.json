@@ -1,0 +1,864 @@
+{
+  "revision": 25,
+  "passed": true,
+  "date": "2026-10-09",
+  "beam_unit": {
+    "passed": true,
+    "profiles": [
+      {
+        "id": "os1-32-u",
+        "rows": 32,
+        "columns": 512
+      },
+      {
+        "id": "os1-32-g",
+        "rows": 32,
+        "columns": 1024
+      }
+    ],
+    "maxAngleErrorDeg": 4.701463467426947e-06,
+    "distribution": {
+      "count": 128000,
+      "mean": -3.2047758976841366e-06,
+      "std": 0.005776851617228537,
+      "expectedStd": 0.005773502691896258
+    },
+    "cases": [
+      {
+        "sensor": "os1-32-u",
+        "scene": "room_v1",
+        "points": 15754,
+        "hash": "a769810330605e9e8eff57d4cc8b14064eec4ba134b47093ca110d3cdb2770c0"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "corridor_v1",
+        "points": 13671,
+        "hash": "3e09e326d831f8f95a0c6d7b261c373c419e1d4a93b6a0d3b5a7d040db090d4d"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "warehouse_v1",
+        "points": 16376,
+        "hash": "e4230a71020180613b80f64e85b7a5707852ca6f47094463a91b83abb9492a7f"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "construction_v1",
+        "points": 9406,
+        "hash": "d7f72cb32dda3fa1ddd2dd92bec13683a5e2d74f46c1db9d7a79f05411f87de9"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "department_store_v1",
+        "points": 16336,
+        "hash": "4dba8a14fdb66c6fc0d0870e8c32f1bb5da71730ee782aa8ae121166b249ecae"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "crane_yard_v1",
+        "points": 8657,
+        "hash": "630d18677a40f0ecfe3ee70e18ea3b9108b6d08afa21fa35c635b9c3b384f6af"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "underground_parking_v1",
+        "points": 16384,
+        "hash": "bce26a41eaeac398182cca5a1f0ef62e7897c3184a6ea7bae92cd492bc1cbcb7"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "apartment_v1",
+        "points": 8940,
+        "hash": "cc543cb7ba659efeda6ed99f27af42dffd14dfbc549d0dafc9b507d3b11036c2"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "room_v2",
+        "points": 16161,
+        "hash": "e7860c80e96f7f8f2a399cd1c942b42db88b226d5e154886a14513ecaffca959"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "corridor_v2",
+        "points": 9531,
+        "hash": "285a9e21cce8883e3c4ad6310a131d6552d11610c998c705e419d042afbb393a"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "warehouse_v2",
+        "points": 16372,
+        "hash": "4fc90ed0aedc2e0f8138f2953e4f759d4a0620f4cffd1fd101f6fdc6a40f832e"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "construction_v2",
+        "points": 7997,
+        "hash": "add1893341c4107ff74ffc03a2d5ece1121c48f0c8dfa5b6c18e60a700f4deaa"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "department_store_v2",
+        "points": 16346,
+        "hash": "d412fa2930e25ee6860c5a68e312b6655f5a3ceb018ffde8f051cac575a0b3be"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "crane_yard_v2",
+        "points": 9062,
+        "hash": "a8f042450d5fd3988fa629737f8bf694bb1e906d13ab3deef36c1415be2f4373"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "underground_parking_v2",
+        "points": 16384,
+        "hash": "50cfaad83384e96d95988ef8fe0f31f65ba20a780dd92233c3753aaa875ead7a"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "apartment_v2",
+        "points": 9359,
+        "hash": "d397f4352ab4c7c6a54c9ee67742261fcbdd3664a94c02c150013795b78b21e6"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "room_v3",
+        "points": 16239,
+        "hash": "bbd0aab74c34beb555e96d506e5e7793bd36aa61fa83088ff243b1d6ce2715aa"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "corridor_v3",
+        "points": 12492,
+        "hash": "676da9e8e19dae83fe2b23b6cfeef352e8c427da9f6937641e61cc086e3a1399"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "warehouse_v3",
+        "points": 16357,
+        "hash": "1f3a234ab6a952b6a33125b51875ca8457c0ea28e31ec068d9c8b3ec4a1046be"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "construction_v3",
+        "points": 6961,
+        "hash": "96c400a976a02fe8e4594211a30297e85f2cdf5651bf2ff7dce4cc5bb7946074"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "department_store_v3",
+        "points": 16308,
+        "hash": "1437d427d4c1b37cd87906901036010821551be2f4280c3e8a7e63a6dbc5016e"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "crane_yard_v3",
+        "points": 9626,
+        "hash": "3a02bb1fab6e2c8958d6544f03e4fb08c3e78bad9367e8fcd4654b8d1fe6abf4"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "underground_parking_v3",
+        "points": 16384,
+        "hash": "cf67df6bb6cb04e5a95e8230cc994c24c4c6c6d8b1b30928ed28922f8d9479d5"
+      },
+      {
+        "sensor": "os1-32-u",
+        "scene": "apartment_v3",
+        "points": 8959,
+        "hash": "093d9a4f6f2f666a0351b1cd608567f293c0e35d64906e88437669d7481321d4"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "room_v1",
+        "points": 30234,
+        "hash": "a64f75b6615b692831bc9f71c1bffce1bb31ffa68a114c39786a86f3f261bf4d"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "corridor_v1",
+        "points": 28490,
+        "hash": "baea556f9aefe6143de7f69c93c9f313516942c3dfbaf1c1d67f7752d1928fcc"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "warehouse_v1",
+        "points": 32720,
+        "hash": "b795cc2d974b8b6165dd9d0a17542783eeda2b8cc1aea2e4f586c7c7ba37b0ac"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "construction_v1",
+        "points": 19228,
+        "hash": "959a7dc9590a01fca81a7b9c3abcbafc87ad8b208dbfcbbf80b0d3e0e3cccc83"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "department_store_v1",
+        "points": 32442,
+        "hash": "dcdfbb6516525cc3d5f68a726712a4732f059199ab21a16107043a70630fe367"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "crane_yard_v1",
+        "points": 19893,
+        "hash": "8ab7e32238e019cebae55194de65785badaba50285169edc6d480696d364a8b9"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "underground_parking_v1",
+        "points": 32768,
+        "hash": "f5573ae1e7b269f7d8b9d170a4ecc998133992096708665fa9ff5cc7f00d5fd8"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "apartment_v1",
+        "points": 18335,
+        "hash": "5dac5079cd7d8dace26620abe848d743af4c826b85372c38a3ccb4bb41d6d24b"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "room_v2",
+        "points": 31646,
+        "hash": "cf8f01a0245f6737da798c37c6863fbd6263226625c98419f6b640335fd2abf2"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "corridor_v2",
+        "points": 19687,
+        "hash": "25ee82d4db14ef08614cfab5d2760a565d0743cb58e5941c8a6d18d6d753689f"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "warehouse_v2",
+        "points": 32716,
+        "hash": "3a58186a7a75efd95f8020353bb45b280028b24f3580839539c2f0c4994eacaa"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "construction_v2",
+        "points": 15409,
+        "hash": "694ff0cf218faee4719c4971cde095afd3a65173ccf3fef56326cf9429802567"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "department_store_v2",
+        "points": 32467,
+        "hash": "dab9633cf0bd16385ddf60a926a02f111fbaedfe402ca3e407814abd74fe1628"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "crane_yard_v2",
+        "points": 17742,
+        "hash": "1d9b6f4872713b37024a2335245c9c8ebf683f5afeab6db9c5b763f8697c6477"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "underground_parking_v2",
+        "points": 32768,
+        "hash": "9a0c70c37e8536918d0ef4f4c20553748768c2e140fc23f0c3900a193cf0954f"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "apartment_v2",
+        "points": 18527,
+        "hash": "0edaa21329521990091e44bdf0c2a93d9204b50acf3a624bf9c02089a55fa57d"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "room_v3",
+        "points": 31970,
+        "hash": "e25af5c77599edec9e5c84038b398725d68e749f06db87d3eaa7f012f4f5d600"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "corridor_v3",
+        "points": 26107,
+        "hash": "bd3ad40447e3f6879b0f6243d88e44b88f258ea8fe993d0362c0e27d16e0fda4"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "warehouse_v3",
+        "points": 32582,
+        "hash": "615c645847b3cc1c7aaaf37723ac9eba4ddbbe873f42471ae9a5db5e090e70d2"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "construction_v3",
+        "points": 12099,
+        "hash": "877c3800513fd0b40b93a0d96e32f1576464c89c835413461b1d86d493e4aef9"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "department_store_v3",
+        "points": 32486,
+        "hash": "e44e0621818b1d8d1d7d606d7d11e8146a0a74afc59456b60e99f2b450cd7828"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "crane_yard_v3",
+        "points": 19842,
+        "hash": "1c1f891708e41aa813ac41015655ba83f7389b05811e9df51fd373bd6acd990d"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "underground_parking_v3",
+        "points": 32763,
+        "hash": "39246057cea4843fbca91fa4d286f1e63fd212e12da90c873bad43f2fcb9fef6"
+      },
+      {
+        "sensor": "os1-32-g",
+        "scene": "apartment_v3",
+        "points": 18683,
+        "hash": "f2ef452e65afce617beb6e5d975fe71ccdfcc899b2e6ee22baf3a2bfd768483d"
+      },
+      {
+        "sensor": "os1-32-u",
+        "mode": "dust",
+        "points": 9413,
+        "hash": "5fec9e0be992ecee002c46cbcf2f8673c693417e357438eb64ae59969ec45f5b"
+      },
+      {
+        "sensor": "os1-32-u",
+        "mode": "rain",
+        "points": 9707,
+        "hash": "6b513fe2365159fa2703e3dcce0ecaaac9b885d7ea956f1ce32e44678214e45d"
+      },
+      {
+        "sensor": "os1-32-u",
+        "mode": "snow",
+        "points": 9917,
+        "hash": "94dd6de16583bc29f57eb9babf80b90002e1b9d39be0564c9be286299a9faf98"
+      },
+      {
+        "sensor": "os1-32-u",
+        "mode": "fog",
+        "points": 9470,
+        "hash": "12407952fa7de6ca324dd1a5c2495880d17d0a9d160c7ba560f7d0da03909da3"
+      },
+      {
+        "sensor": "os1-32-u",
+        "mode": "sun",
+        "points": 9413,
+        "hash": "5fec9e0be992ecee002c46cbcf2f8673c693417e357438eb64ae59969ec45f5b"
+      },
+      {
+        "sensor": "os1-32-u",
+        "mode": "edge",
+        "points": 9473,
+        "hash": "f6d248e024c8cf8569f4f9b6ae99faaefda49f56e99a8d1a8390962fc4e415d0"
+      },
+      {
+        "sensor": "os1-32-u",
+        "mode": "weak",
+        "points": 8950,
+        "hash": "cdd827e844a7eff87e1928a1359249bc19ac8556449acd4e6b16945707165291"
+      },
+      {
+        "sensor": "os1-32-g",
+        "mode": "dust",
+        "points": 19071,
+        "hash": "d82582fb302bd12a60ab90ef86c39c22c55920555fdc313e1cc5a06d67ea2830"
+      },
+      {
+        "sensor": "os1-32-g",
+        "mode": "rain",
+        "points": 19486,
+        "hash": "ef4b499f37f043a7634650798897082efd3572343c61286029ac4df87dd86ad6"
+      },
+      {
+        "sensor": "os1-32-g",
+        "mode": "snow",
+        "points": 19736,
+        "hash": "c48cd749d56192efded2eda1c30a87e6fd5f6ef7dc3bd715a542ab9dd639f831"
+      },
+      {
+        "sensor": "os1-32-g",
+        "mode": "fog",
+        "points": 19364,
+        "hash": "68513ccd882c7012938b4a969b9de827093549a70caf2b36aaab9359a48f5d44"
+      },
+      {
+        "sensor": "os1-32-g",
+        "mode": "sun",
+        "points": 19226,
+        "hash": "f63533c486c456c2130b2064f0fa539c33ff642baae9fac7430a487cf0d496d7"
+      },
+      {
+        "sensor": "os1-32-g",
+        "mode": "edge",
+        "points": 18375,
+        "hash": "54e943ec24059dcf2b16ff4278820b173e6bb288b96a32b52c31d2d299b8806d"
+      },
+      {
+        "sensor": "os1-32-g",
+        "mode": "weak",
+        "points": 15812,
+        "hash": "bb9d08e5e200f9fc1aeb7afa2f82922aac28d62a55ef8d98f1893056a6ddd34c"
+      }
+    ],
+    "sequenceFixed": true,
+    "roundTrip": true,
+    "disabledEqualsZero": true,
+    "populationMeasured": false
+  },
+  "new_api": {
+    "passed": true,
+    "newSensorApiGuards": true,
+    "requestReplayExact": true,
+    "sequenceFrames": 11,
+    "unitFixed": true,
+    "records": [
+      {
+        "sensor": "os1-32-u",
+        "unit": 17,
+        "enabled": true,
+        "frames": 1,
+        "hash": "5fc5bfc7ab65306bfb94d2a15d01547929dc48669bf6f6285b5ddac9d7753c1b"
+      },
+      {
+        "sensor": "os1-32-g",
+        "unit": 17,
+        "enabled": true,
+        "frames": 1,
+        "hash": "e0ece6bbb95394e8cb1fd69de1b8028656f04bbec566d05df2ce5418bbdb4997"
+      },
+      {
+        "sensor": "os1-32-u",
+        "unit": 17,
+        "enabled": false,
+        "frames": 1,
+        "hash": "ee4024ed337ad57f4859c04b6b34d873a40618ad3ff4cb423ddd6104aee1008a"
+      },
+      {
+        "sensor": "os1-32-u",
+        "unit": 17,
+        "enabled": true,
+        "frames": 1,
+        "hash": "5fc5bfc7ab65306bfb94d2a15d01547929dc48669bf6f6285b5ddac9d7753c1b"
+      },
+      {
+        "sensor": "os1-32-u",
+        "unit": 17,
+        "enabled": true,
+        "frames": 11,
+        "hash": "d2431d4be2b9d8d21f73f8adae90d689150de4d9ba4f512ef18fcb15c9963a54"
+      }
+    ]
+  },
+  "existing_review_api": {
+    "passed": true,
+    "created": "2026-10-09T10:09:28.706Z",
+    "scenes": 24,
+    "generators": 8,
+    "rows": [
+      {
+        "scene": "room_v1",
+        "generator": "range",
+        "frames": 1,
+        "points": 130540,
+        "noise": 0,
+        "hash": "28ce578adadab94354549c792f20367c49073497a5a9dad8e793b2ab3dbf6dbc",
+        "elapsedS": 1.199
+      },
+      {
+        "scene": "corridor_v1",
+        "generator": "range",
+        "frames": 1,
+        "points": 34696,
+        "noise": 0,
+        "hash": "c5b225b70628218cc8f8df87dbbc65b082805e3f23ffae39ba5be8e730760977",
+        "elapsedS": 0.96
+      },
+      {
+        "scene": "warehouse_v1",
+        "generator": "range",
+        "frames": 1,
+        "points": 130578,
+        "noise": 0,
+        "hash": "b5a5056f8660722aa6b9e8e14a03557190a1ee9334f1b12b4c2a0471933a98a1",
+        "elapsedS": 1.233
+      },
+      {
+        "scene": "construction_v1",
+        "generator": "range",
+        "frames": 1,
+        "points": 64018,
+        "noise": 0,
+        "hash": "17de84399f49bc457fe2f3f367c8900fae982dc6dd27590c49bd158975463c83",
+        "elapsedS": 1.558
+      },
+      {
+        "scene": "department_store_v1",
+        "generator": "range",
+        "frames": 1,
+        "points": 130691,
+        "noise": 0,
+        "hash": "adbd0a97901378bbbb9d7f6f8e116ad58474e9f897233b565be38cb3a0143a2c",
+        "elapsedS": 1.196
+      },
+      {
+        "scene": "crane_yard_v1",
+        "generator": "range",
+        "frames": 1,
+        "points": 63802,
+        "noise": 0,
+        "hash": "24ecda291bc3b313beb46934f2c61a0bf0965d877efbb6ffcdf67c4335cd97f9",
+        "elapsedS": 3.071
+      },
+      {
+        "scene": "underground_parking_v1",
+        "generator": "range",
+        "frames": 1,
+        "points": 131072,
+        "noise": 0,
+        "hash": "152cee9f6eec5e0c5acf20ea05f2ac17a8625387009a5435e38a7528b1a5458c",
+        "elapsedS": 1.369
+      },
+      {
+        "scene": "apartment_v1",
+        "generator": "range",
+        "frames": 1,
+        "points": 63976,
+        "noise": 0,
+        "hash": "718a7d088e2ea7c2d002c76901f3f7492dd672c1191d876ca771e0d5b0ea5225",
+        "elapsedS": 1.649
+      },
+      {
+        "scene": "room_v2",
+        "generator": "range",
+        "frames": 1,
+        "points": 130576,
+        "noise": 0,
+        "hash": "05e97fcfe89dec75b4ca110976a8e7d85b6a774ac86509e1039fc34391a0edcb",
+        "elapsedS": 1.186
+      },
+      {
+        "scene": "corridor_v2",
+        "generator": "range",
+        "frames": 1,
+        "points": 109703,
+        "noise": 0,
+        "hash": "0a9c137a9334e23800e6be84218e71356b9d41ba555e6aa3762869996c2dbc09",
+        "elapsedS": 1.136
+      },
+      {
+        "scene": "warehouse_v2",
+        "generator": "range",
+        "frames": 1,
+        "points": 131072,
+        "noise": 0,
+        "hash": "365ec56c28bce3ef64bb5bac895a02e1848ae28f3b974efaa79bf8467f325c28",
+        "elapsedS": 1.213
+      },
+      {
+        "scene": "construction_v2",
+        "generator": "range",
+        "frames": 1,
+        "points": 77681,
+        "noise": 0,
+        "hash": "81c48696bc0f94cd3e48eab08c7209f69630465e631ad85ea0827da947e022fb",
+        "elapsedS": 1.617
+      },
+      {
+        "scene": "department_store_v2",
+        "generator": "range",
+        "frames": 1,
+        "points": 130040,
+        "noise": 0,
+        "hash": "57e4cd236ac8780ed3a7536be64c8b9faf1c0819ed6b907352cf8f50adc7131b",
+        "elapsedS": 1.185
+      },
+      {
+        "scene": "crane_yard_v2",
+        "generator": "range",
+        "frames": 1,
+        "points": 57691,
+        "noise": 0,
+        "hash": "8207103dd0a5333684d6f1da215f45a2f093c0082c6084377ab0fa62f2cc501a",
+        "elapsedS": 3.093
+      },
+      {
+        "scene": "underground_parking_v2",
+        "generator": "range",
+        "frames": 1,
+        "points": 129797,
+        "noise": 0,
+        "hash": "0fa829ddfc27263a4931baecf3e9187480f2aa085f433d4b26c566d75df941fd",
+        "elapsedS": 1.331
+      },
+      {
+        "scene": "apartment_v2",
+        "generator": "range",
+        "frames": 1,
+        "points": 80725,
+        "noise": 0,
+        "hash": "ae7d60fa6fc1451ebed7485a1acd3665446f31c8cdbd0f1453c9f0496e3b5f8a",
+        "elapsedS": 1.735
+      },
+      {
+        "scene": "room_v3",
+        "generator": "range",
+        "frames": 1,
+        "points": 95658,
+        "noise": 0,
+        "hash": "5417a51a0c18e60023eb471a80f2a453ff63cbbcca754ef63a9408a782b10430",
+        "elapsedS": 1.108
+      },
+      {
+        "scene": "corridor_v3",
+        "generator": "range",
+        "frames": 1,
+        "points": 107633,
+        "noise": 0,
+        "hash": "4d3089caa5e9289d5101ec5461ae08d1d6a19d38e2d3042372002ae8b471997b",
+        "elapsedS": 1.13
+      },
+      {
+        "scene": "warehouse_v3",
+        "generator": "range",
+        "frames": 1,
+        "points": 130940,
+        "noise": 0,
+        "hash": "419da68a55bd38963874645842e4ff075cf3e37a8203a4ebf0d4f7a169f7e3b5",
+        "elapsedS": 1.231
+      },
+      {
+        "scene": "construction_v3",
+        "generator": "range",
+        "frames": 1,
+        "points": 48219,
+        "noise": 0,
+        "hash": "344b0d2c64fdd70e2481e9ff07f20310a2e65f63dc273e3cf44ac904bde7c59c",
+        "elapsedS": 1.437
+      },
+      {
+        "scene": "department_store_v3",
+        "generator": "range",
+        "frames": 1,
+        "points": 130620,
+        "noise": 0,
+        "hash": "57b8e030f6ccc8582b364ad652558f374eb644966645235950953e661a0e8d89",
+        "elapsedS": 1.214
+      },
+      {
+        "scene": "crane_yard_v3",
+        "generator": "range",
+        "frames": 1,
+        "points": 80960,
+        "noise": 0,
+        "hash": "df991428996ea3801abcdefdc19d2ccd48a8307f47870da51304ab617489279c",
+        "elapsedS": 3.139
+      },
+      {
+        "scene": "underground_parking_v3",
+        "generator": "range",
+        "frames": 1,
+        "points": 130914,
+        "noise": 0,
+        "hash": "aa1a2edb45c7c7de5997ada8ef82041bff34a421d670bce74add633e2efc1f13",
+        "elapsedS": 1.38
+      },
+      {
+        "scene": "apartment_v3",
+        "generator": "range",
+        "frames": 1,
+        "points": 79408,
+        "noise": 0,
+        "hash": "fcabf3af72a901145eb8a09c981a1206c48a005930c2a8d4513f5ff1e6f00139",
+        "elapsedS": 1.769
+      },
+      {
+        "scene": "construction_v1",
+        "generator": "dust",
+        "frames": 1,
+        "points": 63921,
+        "noise": 0,
+        "hash": "f8957a072d60df0d7d6f696c7d120ed18bba38ee98f73bc0de2ef65f5c25342c",
+        "elapsedS": 2.53
+      },
+      {
+        "scene": "construction_v1",
+        "generator": "rain",
+        "frames": 1,
+        "points": 66748,
+        "noise": 2997,
+        "hash": "8ec5b368138a156e5b4cfd82628a0e9d21b6f3da11b998e4fd41c1fd212a4bcd",
+        "elapsedS": 25.544
+      },
+      {
+        "scene": "construction_v1",
+        "generator": "snow",
+        "frames": 1,
+        "points": 68232,
+        "noise": 4631,
+        "hash": "bf88ecff3c9871cfb59f67fe0ddc3096e9f3ba9546e9fe222b737717ab452dc6",
+        "elapsedS": 17.655
+      },
+      {
+        "scene": "construction_v1",
+        "generator": "fog",
+        "frames": 1,
+        "points": 64504,
+        "noise": 591,
+        "hash": "5f2b3420e5d03decdc0c09541a38d67916e809db9e1a57086fdea97ee1d3a85f",
+        "elapsedS": 9.674
+      },
+      {
+        "scene": "construction_v1",
+        "generator": "sun",
+        "frames": 1,
+        "points": 64018,
+        "noise": 0,
+        "hash": "17de84399f49bc457fe2f3f367c8900fae982dc6dd27590c49bd158975463c83",
+        "elapsedS": 2.028
+      },
+      {
+        "scene": "construction_v1",
+        "generator": "edge",
+        "frames": 1,
+        "points": 63682,
+        "noise": 0,
+        "hash": "50e68c1d9128e8f5d906b9fa853e1b8775e491dd99129e870d50b89d21d7e5b1",
+        "elapsedS": 5.279
+      },
+      {
+        "scene": "construction_v1",
+        "generator": "weak",
+        "frames": 1,
+        "points": 59978,
+        "noise": 0,
+        "hash": "cd82d81f4b152f5e6fe762efe9211f8a261da03046bb554f1dead02095da8195",
+        "elapsedS": 1.525
+      },
+      {
+        "scene": "construction_v1",
+        "generator": "range",
+        "frames": 1,
+        "points": 62244,
+        "noise": 0,
+        "hash": "f49bacbc0d116331a75be8e6466874b0e131f5d51db5a69987285a80d90156af",
+        "elapsedS": 1.332
+      },
+      {
+        "scene": "construction_v1",
+        "generator": "dust",
+        "frames": 1,
+        "points": 63921,
+        "noise": 0,
+        "hash": "f8957a072d60df0d7d6f696c7d120ed18bba38ee98f73bc0de2ef65f5c25342c",
+        "elapsedS": 2.435
+      },
+      {
+        "scene": "construction_v1",
+        "generator": "dust",
+        "frames": 1,
+        "points": 62249,
+        "noise": 0,
+        "hash": "f799d365faf3276e07c46c521610dfc84c6e4a041cfe601a4eb8372150e4b998",
+        "elapsedS": 2.478
+      },
+      {
+        "scene": "construction_v1",
+        "generator": "range",
+        "frames": 11,
+        "points": 61716,
+        "noise": 0,
+        "hash": "7dee9d25d6845d0bb379a0be7686c0f4f71eab86e10232bfe230e4af254cfc26",
+        "elapsedS": 8.398
+      }
+    ],
+    "apiGuards": true,
+    "cancellation": true,
+    "browserBinaryExact": true,
+    "directRuntimeExact": true,
+    "sequenceFrames": 11,
+    "outputRoot": "outputs\\review-demo-test-1791540447226",
+    "fieldCalibrated": false,
+    "trainingApproved": false
+  },
+  "additional_checks": [
+    "sensor-profile-v22: projector + exact 1/4 worker equivalence passed",
+    "worker-lifecycle: 11 cases passed",
+    "channels: label invariance and missingness passed",
+    "CLI --sensor/--sensor-unit/--beam-bound-deg LSF export passed",
+    "65 JS source files syntax passed",
+    "UI U/G actual frames displayed, metadata and saved JSON inspected",
+    "Detailed UI U/G/128/U rapid switching and variation off/on passed",
+    "Browser errors: none; bundled Three.js deprecation warning only"
+  ],
+  "limits": [
+    "Synthetic unit distribution, not measured population",
+    "No model training or cross-device performance evaluation",
+    "Legacy CLI/API defaults unchanged: OS1-128, variation off"
+  ],
+  "source_hash_convention": "UTF-8 source with CRLF normalized to LF",
+  "source_hashes": {
+    "src/asset_preview.html": "0147916f625269f4a5adc0e0744909c833ce0e9ea75dbdd2dea433aa83c8b07d",
+    "src/injections.json": "5bb9e661f3c3c4d3cddee1abb37e90efac7df6f79fc0064055aa9ac4b017c772",
+    "src/noise_lab_atmosphere_client_v8.js": "4bf80fecd67d40c907df5a2f51eb35a2334d8c74f5ffbb3c37581fbd7d9c625b",
+    "src/noise_lab_atmosphere_controls_v8.html": "5b9bcbed7c62bc9c21c3c51b2ea6a8585d936c903204498485016bba91e59a9f",
+    "src/noise_lab_atmosphere_principle_v8.html": "88165ee96ba8337d16dacf7f9c71968a09c093f2216c08bb74926f9896705f20",
+    "src/noise_lab_atmosphere_v8.js": "01ac8f59ba9e7a3cc08e37bee2780269b4cf40278a8edcabe6e4f14147443c2a",
+    "src/noise_lab_beam_unit_v25.js": "fff8c16193404eea1d3c1dd315ac2e3d8bf7cd1b65328d0acb2f248e28d324a1",
+    "src/noise_lab_channels_v20.js": "df44355c04f5dc659509e0ee6ae79169ffbd8042b078cf1954c25cb31dabc690",
+    "src/noise_lab_client_v1.js": "c9a10b2b495ee2d0c651aca90af18b1450105eb0dbbf24bfe9e95484410109e7",
+    "src/noise_lab_core_v1.js": "2783a21c5ce4869bae4b724b337fa2fadbfbd21c0ff5921ccdc0cc373e3a0b1e",
+    "src/noise_lab_defaults_principle_v11.html": "99abae7c2e5d59e1095d9d5d166828a41bc06c313a5bdee7df86b57d9192bd43",
+    "src/noise_lab_freepose_v24.js": "0d39b96f1224751115e7b36a1b5a2d89a905e0a70ce173b2acf0b4ed28bd20b2",
+    "src/noise_lab_fullrange_client_v10.js": "b0707ee7a9a7de7612d26de8e15ba93c5d645365358afcd2092dc2f1e87df7ef",
+    "src/noise_lab_fullrange_principle_v10.html": "ebef94b0848299711a5b983ee10f7adfa3d8d7fa389a37e862fa963b4a201df6",
+    "src/noise_lab_fullrange_v11.js": "baf9402ff70d995336c7aaddd6973b238824d010fd02adda280348e2872b225b",
+    "src/noise_lab_geometry_client_v3.js": "f68c73dcbf8b973fba37a6c7f3f6433e64dfa0a4544016e701236ae85ce1015e",
+    "src/noise_lab_geometry_v3.js": "64f1e5dab5002d6e1cb2cf4574ce8d10cdbae050b964cdc7d80965c132a916b6",
+    "src/noise_lab_geometry_worker_v3.js": "3779bbeefd88fc0b20f5fec0fa3db2cf583611efef71bc991f378046e0f381ca",
+    "src/noise_lab_jobs_v13.js": "a4b6ddef06e8128e0db6d984eed056bdbc042d571fa2d8d6cf5c2e3b72690bc1",
+    "src/noise_lab_metrics_v1.js": "ee00b712f6c5d711b771c5b7a2a308c9fa2efc908b8967382f6a2974eb59f91e",
+    "src/noise_lab_motion_client_v6.js": "1696b44c8db8ebcdc0bb75c0e3237173cb2fa1b680504ad863db5e216b00de74",
+    "src/noise_lab_motion_controls_v6.html": "f2c5c416218cd742fb48748d51201665643c290df0a0d6ba921fac61cb30abed",
+    "src/noise_lab_motion_principle_v6.html": "71ba012434a5337a970f0bd5527208caf5160520d6debc825111b6fe07e67b47",
+    "src/noise_lab_motion_v6.js": "c312898563f44ebf52219bb1c795fba0ad76220fb9ddb914baf3361ff80f3718",
+    "src/noise_lab_motion_worker_v6.js": "a2db9e2397ab11b98effb39ce875d7168a7aadb4e65c7d637fbab83aa27dfaf4",
+    "src/noise_lab_navigation_v9.js": "d8bdac417f36817a06bfc191ebe09946a5072566d7dcb371992d4f2562a493a1",
+    "src/noise_lab_observation_v22.js": "0ea9dafc4cb7267a0cefc5cab757a55d2d2cb3181d399182f8d69ee6010b692a",
+    "src/noise_lab_parameters_v18.js": "af528b4ed8de529b6ce7ac690ac894d816f17d9079e6333ddf4f9d6b2c82cb00",
+    "src/noise_lab_poses_v19.js": "eed2281f07a71e4ca78b025583e5e5fdd6af0fd58ec8d7952a3483f58f221cdd",
+    "src/noise_lab_precipitation_parallel_v22.js": "ad3632898ed703dde432a7881d44855880ab1eb8051eae69505afbbc08baa75b",
+    "src/noise_lab_precipitation_v22.js": "e57ca17e21842bba5af59a5bb44755f5c2ede12760d75e273688ce9f4a52882c",
+    "src/noise_lab_random_v4.js": "e606ddb15acb51fb606a7deb304604c6326a4d9834a4c5ee4f5f60a194eae68f",
+    "src/noise_lab_receiver_v7.js": "f674521a0937c52f4e72906ca7fef6c5bc4df4ddcd6fb9d80d697505f7d80bbd",
+    "src/noise_lab_scene_v24.js": "63895b2c5a7b7dfe4abf1e14e107d4addc708b2987452e30b7e89cf5dc455bdf",
+    "src/noise_lab_sequence_client_v21.js": "466238bef687bbf2aa888f67f06e152d15efd74b41e4b974c336d18ca65e1ed7",
+    "src/noise_lab_sequence_v21.js": "e4ae1b8dc00b8c19540623754f8a876da97c9314c274d8ba2eeebbf471be5e83",
+    "src/noise_lab_solar_client_v7.js": "0c71163084c3517fcbe29bd6f53a9bb11648ce636dda43559c499155b0e4e8c8",
+    "src/noise_lab_solar_controls_v7.html": "bc71d945fbd1e6111d666831436aac924e52829fdaab82171ee3778707cc1711",
+    "src/noise_lab_solar_principle_v7.html": "97a49ef410730d154bcb80862e05be7ffa0814722e3798c545317eb163ece9e4",
+    "src/noise_lab_solar_v7.js": "3ad16a2e4e6626b806ec59f00bdac929f4903478b0a3b4952d8ece7e5e793578",
+    "src/noise_lab_unavailable_v9.html": "87229bcc5a96e99dc910afda6b17b34fecb448248adc91ecb251e4705d957bb7",
+    "src/noise_lab_weather_client_v4.js": "11f8cd4c16d383b75cacb190b1bc0175fb7e72d9ceefc8a504bb5bd22d60aec8",
+    "src/noise_lab_weather_controls_v4.html": "c6f15fcf40db56a83bb589cb504e74627d6791e26dfca2d399c11ddc79a94bed",
+    "src/noise_lab_weather_principle_v4.html": "09228fad7e94d498091a9a373c2906794625b5f611418764528080b7ee72975f",
+    "src/noise_lab_weather_v4.js": "eee8fa5c544b99c696f16ac413e399cae7a02a1f80e48a823eee703bf5d060d5",
+    "src/review_demo.html": "0d2886e6a2b560151c08f14bf375d08d280cc8f6747ba0e0cfaac3057ee4c9f6",
+    "src/review_demo.js": "acb0b1274958ab9a059f1f95e9c9f707a8d3c14a9d6e15c76b4242b025d2a270",
+    "src/review_demo_viewer.js": "c7a9226b22376dd3748c9e2ee324e24911a08625418527ab1e992c98185a2174",
+    "src/template.html": "1842e56f5d2d3f13152a7914339b8f8102c76a27d00ae3c9b78cfbc5af6ea6a4",
+    "tools/benchmark.cjs": "7a4e4be9403e85fb8d97dbed429ef95ea0a71681d7b713b7e507fcb30d50e74f",
+    "tools/binary-frame.cjs": "2188630286803d49bc84f0ab2993e8e711ee9d11e328bf653b51d96259e1cbc8",
+    "tools/build.py": "b6ff361719e75ef0d212e1641fcc5649314daac05b61928d98c4e566df5f6b55",
+    "tools/calibrate_range.py": "bbc2decc040b1fcf2b39b4ad15798b75f0c313a5822565245df5de836fb84179",
+    "tools/dataset-profile.cjs": "4a8a2e00497b14a382e25c0f8655927da9b68650913f9cba5b1c642aa7eb2376",
+    "tools/frame-export.cjs": "527aec6b445eed2acb535ef4198509e02ec5feac0e29e42c82a1c4a003deae43",
+    "tools/generate-sensor-poses.cjs": "a55f41dacc8a57083e09adc5265cd692ed27eee13ae4a884b833abaf2d2b0913",
+    "tools/geometry-assets.cjs": "7859400940ed1b4db377e1fcaa848cf1cbc47c914e2f6f1e5d72cb7016d592c5",
+    "tools/read_lsf.py": "4b1112d2c5175859ff5f763eff71becfe7dc2d95e6b61231bc66fcd0e0e54567",
+    "tools/review-server.cjs": "aeb3b510fc6389a78650f8464a4f33331ad3514faf5310db3ae28675c494b325",
+    "tools/runtime.cjs": "ba349f8d9846b55cf71cbc72761fc39695bdcdb0d35adf4a4b6ae05c1b16c9ef",
+    "tools/sensor-profile.cjs": "9e433ea1b00f5a39020774e94a44c62e0011b6652ca001e1672d0871d0ee9bfe",
+    "tools/sequence.cjs": "1899bf2b0d79626092e27cdc46da2c4131214921a6236749b5edb3a600cf588d",
+    "tools/serve.py": "eb2a972a775733ab6db1865d6d8ac2ea11cdfea7d9bac990238d82d8bca6d31f",
+    "tools/simulate.cjs": "6834a863f5853cce1ebd494c470d288fed1c35e1a526c37fe41cac870d10f9c2",
+    "tools/verify.py": "f5890effd2e097fb6f332e798b09e3081dd9faaa17fe71042d87b976010e709c",
+    "tools/worker-thread.cjs": "d37fe317691375cb4b15a6045212879be1a185de9f232281d7e98241fb9d7ed0"
+  }
+}

@@ -4,7 +4,9 @@ const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),
 const {createSimulator,ROOT}=require('./runtime.cjs'),{summary,writeFrame}=require('./frame-export.cjs');
 const DIST=path.join(ROOT,'dist'),policy=require('../configs/review_demo_v23.json');
 const controlRules={dustFlux:[0,2],dustSize:[5,25],motionEddy:[0,1.5],rainRate:[1,20],snowN:[1,10],fogVisibility:[50,2000],fogVariation:[0,.8],fogScatterLog:[-5,0],motionWind:[0,6],motionAngle:[-180,180],sunAz:[-180,180],sunEl:[-10,80],sunWidth:[.5,8],sunProbability:[0,1],weakPhotons:[20,500],radialSigma:[0,.15],radialSlope:[0,5]};
+const BeamUnit=require('../src/noise_lab_beam_unit_v25.js'),{builtins:sensors}=require('./sensor-profile.cjs');
 function validate(body,index){
+ const sensor=body.sensor??'os1-128',beamUnit=BeamUnit.settings(body.beamUnit);if(typeof sensor!=='string'||!Object.hasOwn(sensors,sensor))throw Error('알 수 없는 센서입니다.');
  const {scene,generator,seed,pose='random',mode='frame',time=3,fps=1,controls={},edgeMixing=false,randomScene=true}=body;
  if(!index.scenes.some(s=>s.id===scene))throw Error('알 수 없는 장소입니다.');
  const model=policy.generators.find(m=>m.id===generator);if(!model)throw Error('알 수 없는 생성기입니다.');
@@ -15,7 +17,7 @@ function validate(body,index){
  if(typeof randomScene!=='boolean'||typeof edgeMixing!=='boolean'||typeof controls!=='object'||!controls||Array.isArray(controls))throw Error('설정 형식이 올바르지 않습니다.');
  const clean={};for(const [k,v] of Object.entries(controls)){const range=controlRules[k];if(!range||typeof v!=='number'||!Number.isFinite(v)||v<range[0]||v>range[1])throw Error('허용되지 않은 설정: '+k);clean[k]=v;}
  const kind=['edge','weak'].includes(generator)?'general':generator;if(kind==='general')clean['general-mode']=generator;
- return {request:{scene,generator,seed,pose,mode,time,fps,controls,edgeMixing,randomScene},options:{scene,kind,seed,pose,scenario:"random-v24",randomScene,sequence:true,controls:clean,edgeMixing},times:mode==='sequence'?Array.from({length:10*fps+1},(_,i)=>i/fps):[time]};
+ return {request:{sensor,beamUnit,scene,generator,seed,pose,mode,time,fps,controls,edgeMixing,randomScene},options:{sensor,beamUnit,scene,kind,seed,pose,scenario:"random-v24",randomScene,sequence:true,controls:clean,edgeMixing},times:mode==='sequence'?Array.from({length:10*fps+1},(_,i)=>i/fps):[time]};
 }
 function createReviewServer({port=18769,outputRoot=path.join(ROOT,'outputs','review-demo')}={}){
  if(!fs.existsSync(path.join(DIST,'review_demo.html')))throw Error('먼저 python tools/build.py를 실행하세요.');
@@ -56,7 +58,7 @@ function createReviewServer({port=18769,outputRoot=path.join(ROOT,'outputs','rev
     return send(404,{error:'Unknown action'});
    }
    if(req.method!=='GET')return send(405,{error:'Method not allowed'});
-   if(pathname==='/api/catalog')return send(200,{...policy,scenes:index.scenes.map(s=>({...s,geometry:index.geometry_knobs_v3.scenes.find(g=>g.scene===s.id),poses:index.sensor_positions_v19.scenes[s.id].positions})),active:active?.id||null,knownJobs:Array.from(jobs.keys()),sensor:'공개 OS1-128 · 128×1,024빔',fieldCalibrated:false,trainingApproved:false});
+   if(pathname==='/api/catalog')return send(200,{...policy,scenes:index.scenes.map(s=>({...s,geometry:index.geometry_knobs_v3.scenes.find(g=>g.scene===s.id),poses:index.sensor_positions_v19.scenes[s.id].positions})),active:active?.id||null,knownJobs:Array.from(jobs.keys()),sensor:'공개 OS1-32 U/G 및 OS1-128',sensors:Object.keys(sensors),fieldCalibrated:false,trainingApproved:false});
    const match=pathname.match(/^\/api\/jobs\/([\w-]+)(?:\/(frames)\/(\d+)|\/(manifest))?$/);
    if(match){const j=jobs.get(match[1]);if(!j)return send(404,{error:'이 서버 실행에서 만든 작업이 아닙니다.'});if(match[2]){const n=Number(match[3]);if(!j.frames[n])return send(404,{error:'아직 생성되지 않은 프레임입니다.'});return file(path.join(j.folder,String(n).padStart(4,'0')+'.lsf.gz'),'application/gzip',j.request.scene+'-'+j.request.generator+'-'+n+'.lsf.gz');}if(match[4]){if(j.status!=='complete')return send(409,{error:'생성 완료 후 받을 수 있습니다.'});return file(path.join(j.folder,'manifest.json'),'application/json; charset=utf-8','manifest-'+j.id+'.json');}return send(200,publicJob(j));}
    if(pathname.startsWith('/api/'))return send(404,{error:'Unknown API'});

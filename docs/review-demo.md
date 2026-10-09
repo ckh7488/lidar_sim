@@ -42,3 +42,8 @@
 `node tests/review-demo.cjs`는 전체 24개 장면에서 실제 131,072빔 관측을 생성하고, 8종 경로·10초 시퀀스·경로 좌표·재현성·LSF/브라우저 디코더 일치·API 입력 검증·취소를 검사합니다. 생성 산출물과 검사 기록은 새로운 outputs 폴더에 남습니다.
 
 실제 현장 교정·학습 성능은 검사하지 않습니다. 순간 스캔 모델이며 스캔 내부 운동 왜곡과 외부 모터 36RPM은 미구현입니다. 같은 24개 장소를 많이 생성해도 독립 장소 수가 늘지 않습니다. `field_calibrated`와 `training_approved`는 계속 false입니다.
+
+
+## OS1-32 및 개체별 고정 빔 각도 (v25)
+
+[설계·분포·API·검사](beam-variation-v25.md)를 읽으세요. 웹은 OS1-32 U와 각도 변동이 기본이고, 기존 CLI/API는 호환을 위해 OS1-128·추가 변동 끔을 유지합니다. CLI/API에서는 sensor와 beamUnit을 명시합니다. src/noise_lab_beam_unit_v25.js가 단일 분포/추출 구현이며 전체 시퀀스·장면·날씨에 동일한 sensor-unit을 유지합니다. tests/beam-unit-v25.cjs로 광선과 내보내기를 확인합니다.
